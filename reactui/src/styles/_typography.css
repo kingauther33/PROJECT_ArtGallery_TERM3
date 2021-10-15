@@ -1,0 +1,76 @@
+:root {
+	--primary-color: #3772ff;
+	--secondary-color: #45b26b;
+}
+
+.hero,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: 'DMSansBold', Helvetica, Arial, sans-serif;
+}
+
+.x_letter-spacing-01 {
+	letter-spacing: 0.1em;
+}
+
+.x_text-hover:hover {
+	color: var(--primary-color);
+}
+
+.x_text-heading {
+	color: var(--primary-color) !important;
+	font-family: 'GilroyBold' !important;
+}
+
+.x_text-white {
+	color: #fff !important;
+}
+
+.x_text-primary {
+	color: var(--primary-color) !important;
+}
+
+.x_text-secondary {
+	color: var(--secondary-color) !important;
+}
+
+.x_text-primary-medium {
+	color: var(--primary-color) !important;
+	font-family: 'GilroyRegular' !important;
+}
+
+.x_font-13 {
+	font-size: 1.3rem !important;
+}
+
+.x_font-18 {
+	font-size: 1.8rem !important;
+}
+
+.x_font-20 {
+	font-size: 2rem !important;
+}
+
+.x_font-26 {
+	font-size: 2.6rem !important;
+}
+
+.x_font-32 {
+	font-size: 3.2rem !important;
+}
+
+.x_font-36 {
+	font-size: 3.6rem !important;
+}
+
+.x_font-44 {
+	font-size: 4.4rem !important;
+}
+
+.x_lh-150 {
+	line-height: 150% !important;
+}
