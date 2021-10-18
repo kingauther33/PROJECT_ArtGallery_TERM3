@@ -1,7 +1,7 @@
-import './App.css';
-import './styles/global_style.css';
-import './styles/_typography.css';
-import './styles/_font.css';
+import './App.scss';
+import './styles/global_style.scss';
+import './styles/_typography.scss';
+import './styles/_font.scss';
 
 import React from 'react';
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
@@ -13,20 +13,18 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
+				<Redirect from="/" to="homepage" exact />
 				{routes.map((route, index) => (
 					<ArtGalleryRoutes
 						key={index}
 						path={route.path}
 						page={route.page}
 						layout={route.layout}
-						exact={true}
+						exact
 					/>
 				))}
-				<Redirect from="/" to="homepage" />
-
-				<Route path="/404">
-					<Error404 />
-				</Route>
+				{/* ARRAY MAP */}
+				<Route path="/404" component={Error404} exact />
 				<Redirect from="*" to="/404" />
 			</Switch>
 		</BrowserRouter>
