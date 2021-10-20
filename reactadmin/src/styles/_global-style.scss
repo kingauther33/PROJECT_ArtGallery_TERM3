@@ -1,15 +1,13 @@
 html {
 	/* Bình thường 1rem = 16px, dòng này làm 1rem = 10px; */
-	font-size: 62.5%;
+	font-size: 100%;
 
 	/* 10px */
 }
 
 body {
-	font-size: 1.6rem;
 	box-sizing: border-box;
-	line-height: 1.6rem;
-	font-family: 'PoppinRegular', Helvetica, Arial, sans-serif;
+	font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 	/* RESET lại font-size về 16px (1.6rem) */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -32,25 +30,4 @@ body {
 
 .x_border-16 {
 	border-radius: 1.6rem !important;
-}
-
-@media (max-width: 1365px) {
-	/* IPAD PRO */
-	html {
-		font-size: 56.5%;
-	}
-}
-
-@media (max-width: 1023px) {
-	/* IPAD */
-	html {
-		font-size: 52.5%;
-	}
-}
-
-@media (max-width: 767px) {
-	/* PHONE */
-	html {
-		font-size: 48.5%;
-	}
 }

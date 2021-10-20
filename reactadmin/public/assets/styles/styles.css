@@ -2917,11 +2917,11 @@ Created using IcoMoon - icomoon.io
 -------------------------------- */
 @font-face {
 	font-family: 'Nucleo Outline';
-	src: url('./fonts/nucleo-outline.eot');
-	src: url('./fonts/nucleo-outline.eot') format('embedded-opentype'),
-		url('./fonts/nucleo-outline.woff2') format('woff2'),
-		url('./fonts/nucleo-outline.woff') format('woff'),
-		url('./fonts/nucleo-outline.ttf') format('truetype');
+	src: url('../fonts/nucleo-outline.eot');
+	src: url('../fonts/nucleo-outline.eot') format('embedded-opentype'),
+		url('../fonts/nucleo-outline.woff2') format('woff2'),
+		url('../fonts/nucleo-outline.woff') format('woff'),
+		url('../fonts/nucleo-outline.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -5618,4 +5618,9 @@ Created using IcoMoon - icomoon.io
 .card.card-upgrade .card-category {
 	max-width: 530px;
 	margin: 0 auto;
+}
+
+/* CUSTOM CSS */
+.input-group-append {
+	transform: translateX(1px);
 }

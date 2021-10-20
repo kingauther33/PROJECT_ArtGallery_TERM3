@@ -1,7 +1,4 @@
-import './App.scss';
-import './styles/global_style.scss';
-import './styles/_typography.scss';
-import './styles/fonts/_font.scss';
+import './styles/App.scss';
 
 import React from 'react';
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
@@ -13,7 +10,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Redirect from="/" to="homepage" exact />
+				<Redirect from="/" to="admin-dashboard" exact />
 				{routes.map((route, index) => (
 					<ArtGalleryRoutes
 						key={index}

@@ -55,3 +55,11 @@ INSERT INTO dbo.[category]([name], [images]) values
 	('Modern', 'https://www.byhien.com/wp-content/uploads/2020/03/modern-paintings-art-4.jpg'),
 	('Abstrait', 'https://mamsieutuong.files.wordpress.com/2018/04/untitled-first-abstract-watercolor-1910.jpg?w=640'),
 	('Cubism', 'https://thing.vn/wp-content/uploads/2020/06/truong-phai-lap-the-9.jpg')
+
+-- INSERT ARTWORK --
+INSERT INTO dbo.[artwork]([name], [description], [images], [price], [year], [status], [location], [created_at], [category_id], [user_id]) values 
+	('Statue', 'https://i.pinimg.com/originals/9d/43/c8/9d43c822f11d22eb7b3ce32682ce1291.png'),
+	('Contemporary', 'https://ik.imagekit.io/theartling/prod/original_images/soyoung.jpeg'),
+	('Modern', 'https://www.byhien.com/wp-content/uploads/2020/03/modern-paintings-art-4.jpg'),
+	('Abstrait', 'https://mamsieutuong.files.wordpress.com/2018/04/untitled-first-abstract-watercolor-1910.jpg?w=640'),
+	('Cubism', 'https://thing.vn/wp-content/uploads/2020/06/truong-phai-lap-the-9.jpg')
