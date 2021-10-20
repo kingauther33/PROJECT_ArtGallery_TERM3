@@ -20,7 +20,7 @@ CREATE TABLE [dbo].[user]
  [password]         nvarchar(max) NOT NULL ,
  [confirm_password] nvarchar(max) NOT NULL ,
  [role]             nvarchar(max) NOT NULL ,
- [deposit]          float NOT NULL ,
+ [deposit]          float NULL ,
  [created_at]       datetime NOT NULL ,
 
 
@@ -33,7 +33,7 @@ IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s
 CREATE TABLE [dbo].[deposit_log]
 (
  [id]         int IDENTITY NOT NULL ,
- [amount]     float NOT NULL ,
+ [amount]     float NULL ,
  [created_at] datetime NOT NULL ,
  [user_id]    int NOT NULL ,
 
@@ -80,7 +80,7 @@ CREATE TABLE [dbo].[category]
 (
  [id]     int IDENTITY NOT NULL ,
  [name]   nvarchar(max) NOT NULL ,
- [images] nvarchar(max) NOT NULL ,
+ [images] nvarchar(max) NULL ,
 
 
  CONSTRAINT [PK_35] PRIMARY KEY CLUSTERED ([id] ASC)
@@ -93,12 +93,13 @@ CREATE TABLE [dbo].[artwork]
 (
  [id]          int IDENTITY NOT NULL ,
  [name]        nvarchar(max) NOT NULL ,
- [description] nvarchar(max) NOT NULL ,
- [images]      nvarchar(max) NOT NULL ,
- [price]       float NOT NULL ,
- [year]        bigint NOT NULL ,
- [status]      nvarchar(max) NOT NULL ,
- [location]    nvarchar(max) NOT NULL ,
+ [description] nvarchar(max) NULL ,
+ [images]      nvarchar(max) NULL ,
+ [price]       float NULL ,
+ [year]        bigint NULL ,
+ [author]	   nvarchar(max) NOT NULL,
+ [status]      nvarchar(max) NULL ,
+ [location]    nvarchar(max) NULL ,
  [created_at]  datetime NOT NULL ,
  [category_id] int NOT NULL ,
  [user_id]     int NOT NULL ,
@@ -164,7 +165,7 @@ CREATE TABLE [dbo].[aunction]
  [id]                int IDENTITY NOT NULL ,
  [highest_money_bid] float NOT NULL ,
  [created_at]        datetime NOT NULL ,
- [finished_at]       datetime NOT NULL ,
+ [finished_at]       datetime NULL ,
  [artwork_id]        int NOT NULL ,
  [admin_id]          int NOT NULL ,
  [buyer_id]          int NOT NULL ,

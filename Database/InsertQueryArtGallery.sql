@@ -4,7 +4,7 @@ GO
 GO
 
 -- INSERT USERS --
-INSERT INTO dbo.Users([first_name], [last_name], [email],[password], [confirm_password], [role], [deposit], [created_at]) values 
+INSERT INTO [dbo].[user]([first_name], [last_name], [email],[password], [confirm_password], [role], [deposit], [created_at]) values 
 	('Gav', 'Arnal', 'admin1@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, DATEADD(day, 7, CURRENT_TIMESTAMP), 102)),
 	('Ollie', 'Hasnip', 'admin2@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, DATEADD(day, 7, CURRENT_TIMESTAMP), 102)),
 	('Gannon', 'Oxer', 'admin3@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, DATEADD(day, 7, CURRENT_TIMESTAMP), 102)),
@@ -57,9 +57,10 @@ INSERT INTO dbo.[category]([name], [images]) values
 	('Cubism', 'https://thing.vn/wp-content/uploads/2020/06/truong-phai-lap-the-9.jpg')
 
 -- INSERT ARTWORK --
-INSERT INTO dbo.[artwork]([name], [description], [images], [price], [year], [status], [location], [created_at], [category_id], [user_id]) values 
-	('Statue', 'https://i.pinimg.com/originals/9d/43/c8/9d43c822f11d22eb7b3ce32682ce1291.png'),
-	('Contemporary', 'https://ik.imagekit.io/theartling/prod/original_images/soyoung.jpeg'),
-	('Modern', 'https://www.byhien.com/wp-content/uploads/2020/03/modern-paintings-art-4.jpg'),
-	('Abstrait', 'https://mamsieutuong.files.wordpress.com/2018/04/untitled-first-abstract-watercolor-1910.jpg?w=640'),
-	('Cubism', 'https://thing.vn/wp-content/uploads/2020/06/truong-phai-lap-the-9.jpg')
+INSERT INTO dbo.[artwork]([name], [description], [images], [price], [year], [status], [author], [location], [created_at], [category_id], [user_id]) values 
+	('Mona Lisa', 'It has been described as "the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world".', 
+		'https://www.bitgab.com/uploads/1488843872-mona-lisa-leonardo-da-vinci-rosto-1488843872.jpg',
+		10000000, 1506, 'Leonardo da vinci', 'Selling', 'Paris', CONVERT(datetime, DATEADD(day, 7, CURRENT_TIMESTAMP), 102), 2, 8),
+	('The Last Supper', 'It is one of the Western world''s most recognizable paintings', 
+		'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/The-Last-Supper-Restored-Da-Vinci_32x16.jpg/2560px-The-Last-Supper-Restored-Da-Vinci_32x16.jpg',
+		10000000, 1498, 'Leonardo da vinci', 'Selling', 'Santa Maria delle Grazie in Milan', CONVERT(datetime, DATEADD(day, 7, CURRENT_TIMESTAMP), 102), 2, 8)
