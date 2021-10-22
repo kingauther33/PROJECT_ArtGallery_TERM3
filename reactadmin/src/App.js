@@ -1,10 +1,10 @@
-import './styles/App.scss';
+import 'styles/App.scss';
 
 import React from 'react';
 import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
-import { routes } from './routes/routes';
+import { routes } from 'routes/routes';
 import ArtGalleryRoutes from './routes';
-import Error404 from './pages/Error404/index';
+import Error404 from 'pages/Error404/index';
 
 function App() {
 	return (
