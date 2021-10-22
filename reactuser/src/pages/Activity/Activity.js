@@ -1,49 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Crypter-NFT</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Epic NFT Marketplace UI Design Kit">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ui8">
-    <meta name="twitter:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:description" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:creator" content="@ui8">
-    <meta name="twitter:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/twitter-card.png">
-    <meta property="og:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="og:type" content="Article">
-    <meta property="og:url" content="https://ui8.net/ui8/products/crypter-nft-marketplace-ui-kit">
-    <meta property="og:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/fb-og-image.png">
-    <meta property="og:description" content="Epic NFT Marketplace UI Design Kit">
-    <meta property="og:site_name" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="fb:admins" content="132951670226590">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="css/app.min.css">
-    <script>
-      var viewportmeta = document.querySelector('meta[name="viewport"]');
-      if (viewportmeta) {
-        if (screen.width < 375) {
-          var newScale = screen.width / 375;
-          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
-        } else {
-          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
-        }
-      }
-    </script>
-  </head>
+import React from 'react';
+
+const activity = () => {
+    return
+    <>
+
   <body>
-    <script>
+    {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
         document.body.classList.add("dark");
@@ -51,7 +13,7 @@
           document.querySelector('.js-theme input').checked = true;
         });
       }
-    </script>
+    </script> */}
     <div class="outer">
 
           <div class="header__item header__item_notification js-header-item">
@@ -63,28 +25,28 @@
             <div class="header__body js-header-body">
               <div class="header__title h4">Notification</div>
               <div class="header__list"><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-1.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">2 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-2.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">C O I N Z</div>
                                     <div class="header__price">New bid 0.2 ETH</div>
                                     <div class="header__date">3 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-3.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">4 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-4.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
@@ -96,7 +58,7 @@
           </div>
           <div class="header__item header__item_user js-header-item js-demo-user">
             <button class="header__head js-header-head">
-              <div class="header__avatar"><img src="img/content/avatar-user.jpg" alt="Avatar"></div>
+              <div class="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
               <div class="header__wallet">7.00698 <span class="header__currency">ETH</span></div>
             </button>
             <div class="header__body js-header-body">
@@ -111,7 +73,7 @@
               </div>
               <div class="header__wrap">
                 <div class="header__line">
-                  <div class="header__img"><img src="img/content/etherium-circle.jpg" alt="Etherium"></div>
+                  <div class="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
                   <div class="header__details">
                     <div class="header__info">Balance</div>
                     <div class="header__money">4.689 ETH</div>
@@ -186,56 +148,56 @@
               <div class="activity__wrapper">
                 <div class="activity__nav"><a class="activity__link active" href="#">My activity</a><a class="activity__link" href="#">Following</a><a class="activity__link" href="#">All activity</a></div>
                 <div class="activity__list"><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-1.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#EF466F;"><img src="img/content/flag.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-1.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#EF466F;"><img src={"img/content/flag.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">Something went wrong</div>
                                         <div class="activity__description">Can't display activity card. Try again later</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-2.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/play.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-2.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/play.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">UI8</div>
                                         <div class="activity__description">started following you</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-3.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/download.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-3.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/download.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-4.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/megaphone.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-4.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/megaphone.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">C O I N Z</div>
                                         <div class="activity__description">purchased by You for 0.001 ETH from UI8</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-5.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/wallet.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-5.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-6.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/wallet.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-6.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
                                       </div></a><a class="activity__item" href="#">
-                                      <div class="activity__preview"><img src="img/content/activity-pic-7.jpg" alt="Notification">
-                                        <div class="activity__icon" style="background-color:#141416;"><img src="img/content/wallet.svg" alt="Icon notification"></div>
+                                      <div class="activity__preview"><img src={"img/content/activity-pic-7.jpg"} alt="Notification"/>
+                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
@@ -285,7 +247,6 @@
       </div>
 
     </div>
-    <!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/slick.min.js"></script>
     <script src="js/lib/jquery.nice-select.min.js"></script>
@@ -296,7 +257,6 @@
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <!-- svg sprite-->
     <div style="display: none"><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
@@ -448,4 +408,5 @@
 </svg>
     </div>
   </body>
-</html>
+    </>;
+}
