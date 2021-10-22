@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Crypter-NFT</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Epic NFT Marketplace UI Design Kit">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ui8">
-    <meta name="twitter:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:description" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:creator" content="@ui8">
-    <meta name="twitter:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/twitter-card.png">
-    <meta property="og:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="og:type" content="Article">
-    <meta property="og:url" content="https://ui8.net/ui8/products/crypter-nft-marketplace-ui-kit">
-    <meta property="og:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/fb-og-image.png">
-    <meta property="og:description" content="Epic NFT Marketplace UI Design Kit">
-    <meta property="og:site_name" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="fb:admins" content="132951670226590">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="css/app.min.css">
-    <script>
-      var viewportmeta = document.querySelector('meta[name="viewport"]');
-      if (viewportmeta) {
-        if (screen.width < 375) {
-          var newScale = screen.width / 375;
-          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
-        } else {
-          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
-        }
-      }
-    </script>
-  </head>
+import React from 'react';
+
+const uploadDetails = () => {
+    return
+    <>
   <body>
-    <script>
+    {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
         document.body.classList.add("dark");
@@ -51,7 +12,7 @@
           document.querySelector('.js-theme input').checked = true;
         });
       }
-    </script>
+    </script> */}
     <div class="outer">
 
           <div class="header__item header__item_notification js-header-item">
@@ -63,28 +24,28 @@
             <div class="header__body js-header-body">
               <div class="header__title h4">Notification</div>
               <div class="header__list"><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-1.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">2 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-2.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">C O I N Z</div>
                                     <div class="header__price">New bid 0.2 ETH</div>
                                     <div class="header__date">3 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-3.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">4 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-4.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
@@ -96,7 +57,7 @@
           </div>
           <div class="header__item header__item_user js-header-item js-demo-user">
             <button class="header__head js-header-head">
-              <div class="header__avatar"><img src="img/content/avatar-user.jpg" alt="Avatar"></div>
+              <div class="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
               <div class="header__wallet">7.00698 <span class="header__currency">ETH</span></div>
             </button>
             <div class="header__body js-header-body">
@@ -111,7 +72,7 @@
               </div>
               <div class="header__wrap">
                 <div class="header__line">
-                  <div class="header__img"><img src="img/content/etherium-circle.jpg" alt="Etherium"></div>
+                  <div class="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
                   <div class="header__details">
                     <div class="header__info">Balance</div>
                     <div class="header__money">4.689 ETH</div>
@@ -155,40 +116,254 @@
           <button class="header__burger js-header-burger"></button>
 
       <div class="outer__inner">
-        <div class="control">
-          <div class="control__center center"><a class="button-stroke button-small control__button" href="index.html">
-              <svg class="icon icon-arrow-prev">
-                <use xlink:href="#icon-arrow-prev"></use>
-              </svg><span>Back to home</span></a>
-            <div class="breadcrumbs">
-              <ul class="breadcrumbs">
-                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
-                <li class="breadcrumbs__item">Upload Item</li>
-              </ul>
+        <div class="section upload">
+          <div class="upload__center center">
+            <div class="upload__wrapper">
+              <div class="upload__head">
+                <h2 class="upload__title h2">Create single collectible</h2><a class="button-stroke button-small upload__button" href="upload-details-multiple.html">Switch to Multiple</a>
+              </div>
+              <div class="upload__form">
+                <div class="upload__list">
+                  <div class="upload__item">
+                    <div class="upload__category">Upload file</div>
+                    <div class="upload__note">Drag or choose your file to upload</div>
+                    <div class="upload__file">
+                      <input class="upload__input" type="file"/>
+                      <div class="upload__icon">
+                        <svg class="icon icon-upload-file">
+                          <use xlink:href="#icon-upload-file"></use>
+                        </svg>
+                      </div>
+                      <div class="upload__format">PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.</div>
+                    </div>
+                  </div>
+                  <div class="upload__item">
+                    <div class="upload__category">Item Details</div>
+                    <div class="upload__fieldset">
+                      <div class="field">
+                        <div class="field__label">Item name</div>
+                        <div class="field__wrap">
+                          <input class="field__input" type="text" name="item" placeholder="e. g. Redeemable Bitcoin Card with logo&quot;" required/>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="field__label">Description</div>
+                        <div class="field__wrap">
+                          <input class="field__input" type="text" name="description" placeholder="e. g. “After purchasing you will able to recived the logo...”" required/>
+                        </div>
+                      </div>
+                      <div class="upload__row">
+                        <div class="upload__col">
+                          <div class="field">
+                            <div class="field__label">Royalties</div>
+                            <div class="field__wrap">
+                              <select class="select">
+                                <option>10%</option>
+                                <option>20%</option>
+                                <option>30%</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="upload__col">
+                          <div class="field">
+                            <div class="field__label">Size</div>
+                            <div class="field__wrap">
+                              <input class="field__input" type="text" name="size" placeholder="e. g. Size" required/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="upload__col">
+                          <div class="field">
+                            <div class="field__label">Propertie</div>
+                            <div class="field__wrap">
+                              <input class="field__input" type="text" name="propertie" placeholder="e. g. Propertie" required/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="upload__options">
+                  <div class="upload__option">
+                    <div class="upload__box">
+                      <div class="upload__category">Put on sale</div>
+                      <div class="upload__text">You’ll receive bids on this item</div>
+                    </div>
+                    <label class="switch">
+                      <input class="switch__input" type="checkbox" checked="checked"/><span class="switch__inner"><span class="switch__box"></span></span>
+                    </label>
+                  </div>
+                  <div class="upload__option">
+                    <div class="upload__box">
+                      <div class="upload__category">Instant sale price</div>
+                      <div class="upload__text">Enter the price for which the item will be instantly sold</div>
+                    </div>
+                    <label class="switch">
+                      <input class="switch__input" type="checkbox"/><span class="switch__inner"><span class="switch__box"></span></span>
+                    </label>
+                  </div>
+                  <div class="upload__option">
+                    <div class="upload__box">
+                      <div class="upload__category">Unlock once purchased</div>
+                      <div class="upload__text">Content will be unlocked after successful transaction</div>
+                    </div>
+                    <label class="switch">
+                      <input class="switch__input" type="checkbox"/><span class="switch__inner"><span class="switch__box"></span></span>
+                    </label>
+                  </div>
+                  <div class="upload__category">Choose collection</div>
+                  <div class="upload__text">Choose an exiting collection or create a new one</div>
+                  <div class="upload__cards">
+                    <div class="upload__card">
+                      <div class="upload__plus" style="background-color: #4BC9F0;">
+                        <svg class="icon icon-plus">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </div>
+                      <div class="upload__subtitle">Create collection</div>
+                    </div>
+                    <div class="upload__card">
+                      <div class="upload__plus" style="background-color: #45B26B;">
+                        <svg class="icon icon-plus">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </div>
+                      <div class="upload__subtitle">Crypto Legend - Professor</div>
+                    </div>
+                    <div class="upload__card">
+                      <div class="upload__plus" style="background-color: #EF466F;">
+                        <svg class="icon icon-plus">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </div>
+                      <div class="upload__subtitle">Crypto Legend - Professor</div>
+                    </div>
+                    <div class="upload__card">
+                      <div class="upload__plus" style="background-color: #9757D7;">
+                        <svg class="icon icon-plus">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </div>
+                      <div class="upload__subtitle">Legend Photography</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="upload__foot">
+                  <button class="button-stroke tablet-show upload__button js-preview-open">Preview</button><a class="button upload__button js-popup-open" href="#popup-wallet" data-effect="mfp-zoom-in"><span>Create item</span>
+                    <svg class="icon icon-arrow-next">
+                      <use xlink:href="#icon-arrow-next"></use>
+                    </svg></a>
+                  <div class="upload__saving">Auto saving
+                    <div class="loader"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preview js-preview">
+              <div class="preview__inner">
+                <button class="preview__close js-preview-close">
+                  <svg class="icon icon-close">
+                    <use xlink:href="#icon-close"></use>
+                  </svg>
+                </button>
+                <div class="preview__info">Preview</div>
+                <div class="card">
+                  <div class="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
+                    <div class="card__control">
+                      <div class="status-green card__category">purchasing !</div>
+                      <button class="card__favorite">
+                        <svg class="icon icon-heart">
+                          <use xlink:href="#icon-heart"></use>
+                        </svg>
+                      </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                        <svg class="icon icon-scatter-up">
+                          <use xlink:href="#icon-scatter-up"></use>
+                        </svg></a>
+                    </div>
+                  </div><a class="card__link" href="item.html">
+                    <div class="card__body">
+                      <div class="card__line"> 
+                        <div class="card__title">Black Golden Tiger</div>
+                        <div class="card__price">2.45 ETH</div>
+                      </div>
+                      <div class="card__line">
+                        <div class="card__users">
+                          <div class="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
+                          <div class="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
+                          <div class="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                        </div>
+                        <div class="card__counter">3 in stock</div>
+                      </div>
+                    </div>
+                    <div class="card__foot">
+                      <div class="card__status">
+                        <svg class="icon icon-candlesticks-up">
+                          <use xlink:href="#icon-candlesticks-up"></use>
+                        </svg>Highest bid <span>0.001 ETH</span>
+                      </div>
+                      <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
+                    </div></a>
+                </div><a class="preview__clear" href="#">
+                  <svg class="icon icon-circle-close">
+                    <use xlink:href="#icon-circle-close"></use>
+                  </svg>Clear all</a>
+              </div>
             </div>
           </div>
         </div>
-        <div class="section-pt80 variants">
-          <div class="variants__center center">
-            <div class="variants__top">
-              <h1 class="variants__title h2">Upload item</h1>
-              <div class="variants__info">Choose <span>“Single”</span> if you want your collectible to be one of a kind or <span>“Multiple”</span> if you want to sell one collectible multiple times</div>
-            </div>
-            <div class="variants__list">
-              <div class="variants__item">
-                <div class="variants__preview"><img srcSet="img/content/upload-pic-1@2x.jpg 2x" src="img/content/upload-pic-1.jpg" alt="Upload"></div><a class="button-stroke variants__button" href="upload-details.html">Create Single</a>
+        <div class="popup popup_wallet mfp-hide" id="popup-wallet">
+          <div class="popup__title h4">Folow steps</div>
+          <div class="steps">
+            <div class="steps__item">
+              <div class="steps__head">
+                <div class="steps__icon">
+                  <svg class="icon icon-upload-file">
+                    <use xlink:href="#icon-upload-file"></use>
+                  </svg>
+                </div>
+                <div class="steps__details">
+                  <div class="steps__info">Upload files & Mint token</div>
+                  <div class="steps__text">Call contract method</div>
+                </div>
               </div>
-              <div class="variants__item">
-                <div class="variants__preview"><img srcSet="img/content/upload-pic-2@2x.jpg 2x" src="img/content/upload-pic-2.jpg" alt="Upload"></div><a class="button-stroke variants__button" href="upload-details-multiple.html">Create Multiple</a>
-              </div>
+              <button class="button steps__button">Start now</button>
             </div>
-            <div class="variants__note">We do not own your private keys and cannot access your funds without your confirmation.</div>
+            <div class="steps__item">
+              <div class="steps__head">
+                <div class="steps__icon">
+                  <svg class="icon icon-pencil">
+                    <use xlink:href="#icon-pencil"></use>
+                  </svg>
+                </div>
+                <div class="steps__details">
+                  <div class="steps__info">Sign sell order</div>
+                  <div class="steps__text">Sign sell order using your wallet</div>
+                </div>
+              </div>
+              <button class="button steps__button disabled">Start now</button>
+            </div>
+            <div class="steps__item">
+              <div class="steps__head">
+                <div class="steps__icon">
+                  <svg class="icon icon-bag">
+                    <use xlink:href="#icon-bag"></use>
+                  </svg>
+                </div>
+                <div class="steps__details">
+                  <div class="steps__info">Sign lock order</div>
+                  <div class="steps__text">Sign sell order using your wallet</div>
+                </div>
+              </div>
+              <button class="button steps__button disabled js-popup-close">Start now</button>
+            </div>
           </div>
+          <div class="steps__note">Something went wrong, please <a class='js-popup-close' href="#">try again</a></div>
         </div>
       </div>
 
     </div>
-    <!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/slick.min.js"></script>
     <script src="js/lib/jquery.nice-select.min.js"></script>
@@ -199,7 +374,6 @@
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <!-- svg sprite-->
     <div style="display: none"><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
@@ -351,4 +525,5 @@
 </svg>
     </div>
   </body>
-</html>
+    </>;
+}

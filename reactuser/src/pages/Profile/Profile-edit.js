@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Crypter-NFT</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="Epic NFT Marketplace UI Design Kit">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@ui8">
-    <meta name="twitter:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:description" content="Crypter - NFT Marketplace UI Kit">
-    <meta name="twitter:creator" content="@ui8">
-    <meta name="twitter:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/twitter-card.png">
-    <meta property="og:title" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="og:type" content="Article">
-    <meta property="og:url" content="https://ui8.net/ui8/products/crypter-nft-marketplace-ui-kit">
-    <meta property="og:image" content="https://ui8-crypter-nft-html.herokuapp.com/img/fb-og-image.png">
-    <meta property="og:description" content="Epic NFT Marketplace UI Design Kit">
-    <meta property="og:site_name" content="Crypter - NFT Marketplace UI Kit">
-    <meta property="fb:admins" content="132951670226590">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="css/app.min.css">
-    <script>
-      var viewportmeta = document.querySelector('meta[name="viewport"]');
-      if (viewportmeta) {
-        if (screen.width < 375) {
-          var newScale = screen.width / 375;
-          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
-        } else {
-          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
-        }
-      }
-    </script>
-  </head>
+import React from 'react';
+
+const profileEdit = () => {
+    return 
+    <>
   <body>
-    <script>
+    {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
         document.body.classList.add("dark");
@@ -51,7 +12,7 @@
           document.querySelector('.js-theme input').checked = true;
         });
       }
-    </script>
+    </script> */}
     <div class="outer">
 
           <div class="header__item header__item_notification js-header-item">
@@ -63,28 +24,28 @@
             <div class="header__body js-header-body">
               <div class="header__title h4">Notification</div>
               <div class="header__list"><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-1.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">2 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-2.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">C O I N Z</div>
                                     <div class="header__price">New bid 0.2 ETH</div>
                                     <div class="header__date">3 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-3.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">4 days ago</div>
                                   </div>
                                   <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src="img/content/notification-pic-4.jpg" alt="Notification"></div>
+                                  <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
@@ -96,7 +57,7 @@
           </div>
           <div class="header__item header__item_user js-header-item js-demo-user">
             <button class="header__head js-header-head">
-              <div class="header__avatar"><img src="img/content/avatar-user.jpg" alt="Avatar"></div>
+              <div class="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
               <div class="header__wallet">7.00698 <span class="header__currency">ETH</span></div>
             </button>
             <div class="header__body js-header-body">
@@ -111,7 +72,7 @@
               </div>
               <div class="header__wrap">
                 <div class="header__line">
-                  <div class="header__img"><img src="img/content/etherium-circle.jpg" alt="Etherium"></div>
+                  <div class="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
                   <div class="header__details">
                     <div class="header__info">Balance</div>
                     <div class="header__money">4.689 ETH</div>
@@ -154,41 +115,106 @@
           </div>
           <button class="header__burger js-header-burger"></button>
 
+
       <div class="outer__inner">
         <div class="control">
-          <div class="control__center center"><a class="button-stroke button-small control__button" href="index.html">
+          <div class="control__center center"><a class="button-stroke button-small control__button" href="profile.html">
               <svg class="icon icon-arrow-prev">
                 <use xlink:href="#icon-arrow-prev"></use>
-              </svg><span>Back to home</span></a>
+              </svg><span>Back to profile</span></a>
             <div class="breadcrumbs">
               <ul class="breadcrumbs">
-                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
-                <li class="breadcrumbs__item">Upload Item</li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="profile.html">Home</a></li>
+                <li class="breadcrumbs__item">Edit Profile</li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="section-pt80 variants">
-          <div class="variants__center center">
-            <div class="variants__top">
-              <h1 class="variants__title h2">Upload item</h1>
-              <div class="variants__info">Choose <span>“Single”</span> if you want your collectible to be one of a kind or <span>“Multiple”</span> if you want to sell one collectible multiple times</div>
+        <div class="section-pt80 details">
+          <div class="details__center center">
+            <div class="details__top">
+              <h1 class="details__title h2">Edit profile</h1>
+              <div class="details__info">You can set preferred display name, create <strong>your profile URL</strong> and manage other personal settings.</div>
             </div>
-            <div class="variants__list">
-              <div class="variants__item">
-                <div class="variants__preview"><img srcSet="img/content/upload-pic-1@2x.jpg 2x" src="img/content/upload-pic-1.jpg" alt="Upload"></div><a class="button-stroke variants__button" href="upload-details.html">Create Single</a>
+            <div class="details__row">
+              <div class="details__col">
+                <div class="details__user">
+                  <div class="details__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
+                  <div class="details__wrap">
+                    <div class="details__stage">Profile photo</div>
+                    <div class="details__text">We recommend an image of at least 400x400. Gifs work too <span role="img" aria-label="hooray">🙌</span></div>
+                    <div class="details__file">
+                      <input class="details__input" type="file"/>
+                      <button class="button-stroke button-small details__button">Upload</button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="variants__item">
-                <div class="variants__preview"><img srcSet="img/content/upload-pic-2@2x.jpg 2x" src="img/content/upload-pic-2.jpg" alt="Upload"></div><a class="button-stroke variants__button" href="upload-details-multiple.html">Create Multiple</a>
+              <div class="details__col">
+                <div class="details__list">
+                  <div class="details__item">
+                    <div class="details__category">Account info</div>
+                    <div class="details__fieldset">
+                      <div class="field">
+                        <div class="field__label">display name</div>
+                        <div class="field__wrap">
+                          <input class="field__input" type="text" name="name" placeholder="Enter your display name" required/>
+                        </div>
+                      </div>
+                      <div class="field">
+                        <div class="field__label">Custom url</div>
+                        <div class="field__wrap">
+                          <input class="field__input" type="text" name="url" placeholder="ui8.net/Your custom URL" required/>
+                        </div>
+                      </div>
+                      <div class="field field_textarea">
+                        <div class="field__label">Bio</div>
+                        <div class="field__wrap">
+                          <textarea class="field__textarea" name="bio" placeholder="About yourselt in a few words" required></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="details__item">
+                    <div class="details__category">Social</div>
+                    <div class="details__fieldset">
+                      <div class="field">
+                        <div class="field__label">portfolio or website</div>
+                        <div class="field__wrap">
+                          <input class="field__input" type="text" name="portfolio" placeholder="Enter URL" required/>
+                        </div>
+                      </div>
+                      <div class="details__box">
+                        <div class="field">
+                          <div class="field__label">twitter</div>
+                          <div class="field__wrap">
+                            <input class="field__input" type="text" name="twitter" placeholder="@twitter username" required/>
+                          </div>
+                        </div>
+                        <button class="button-stroke button-small details__button">Verify account</button>
+                      </div>
+                    </div>
+                    <button class="button-stroke button-small details__button">
+                      <svg class="icon icon-plus-circle">
+                        <use xlink:href="#icon-plus-circle"></use>
+                      </svg><span>Add more social account</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="details__note">To update your settings you should sign message through your wallet. Click 'Update profile' then sign the message</div>
+                <div class="details__btns">
+                  <button class="button details__button">Update Profile</button><a class="details__clear" href="#">
+                    <svg class="icon icon-circle-close">
+                      <use xlink:href="#icon-circle-close"></use>
+                    </svg>Clear all</a>
+                </div>
               </div>
             </div>
-            <div class="variants__note">We do not own your private keys and cannot access your funds without your confirmation.</div>
           </div>
         </div>
       </div>
 
     </div>
-    <!-- scripts-->
     <script src="js/lib/jquery.min.js"></script>
     <script src="js/lib/slick.min.js"></script>
     <script src="js/lib/jquery.nice-select.min.js"></script>
@@ -199,7 +225,6 @@
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <!-- svg sprite-->
     <div style="display: none"><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
@@ -351,4 +376,5 @@
 </svg>
     </div>
   </body>
-</html>
+    </>;
+}
