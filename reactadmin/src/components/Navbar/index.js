@@ -60,21 +60,6 @@ const AdminNavbar = () => {
 						className="collapse navbar-collapse justify-content-end"
 						id="navigation"
 					>
-						<form>
-							<div className="input-group no-border">
-								<input
-									type="text"
-									value=""
-									className="form-control"
-									placeholder="Search..."
-								/>
-								<div className="input-group-append">
-									<div className="input-group-text">
-										<i className="now-ui-icons ui-1_zoom-bold"></i>
-									</div>
-								</div>
-							</div>
-						</form>
 						<ul className="navbar-nav">
 							<li className="nav-item">
 								<Link className="nav-link" to="#pablo">

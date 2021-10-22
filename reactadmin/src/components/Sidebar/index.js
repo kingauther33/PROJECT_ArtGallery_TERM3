@@ -21,19 +21,21 @@ const AdminSidebar = () => {
 					ART GALLERY
 				</Link>
 			</div>
+
+			{/* SIDEBAR WRAPPER */}
 			<PerfectScrollbar>
 				<div className="sidebar-wrapper" id="sidebar-wrapper">
 					<ul className="nav">
-						<li className="active ">
-							<Link to="./dashboard.html">
+						<li className="active">
+							<Link to="/admin-dashboard">
 								<i className="now-ui-icons design_app"></i>
 								<p>Dashboard</p>
 							</Link>
 						</li>
 						<li>
-							<Link to="./icons.html">
+							<Link to="/manage-user">
 								<i className="now-ui-icons education_atom"></i>
-								<p>Icons</p>
+								<p>Users</p>
 							</Link>
 						</li>
 						<li>
