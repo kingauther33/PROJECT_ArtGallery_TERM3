@@ -1,7 +1,7 @@
 // USER
 import UserLayout from '../layout/UserLayout';
-import HomePage from '../pages/User/HomePage';
-import AboutUs from './../pages/User/AboutUs';
+import HomePage from '../pages/HomePage';
+import AboutUs from './../pages/AboutUs';
 
 // USER
 const HomePageRoute = {

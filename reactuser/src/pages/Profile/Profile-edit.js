@@ -1,9 +1,8 @@
 import React from 'react';
 
 const profileEdit = () => {
-    return 
+    return (
     <>
-  <body>
     {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
@@ -103,7 +102,7 @@ const profileEdit = () => {
                   <label class="theme js-theme">
                     <input class="theme__input" type="checkbox"/><span class="theme__inner"><span class="theme__box"></span></span>
                   </label>
-                </div><a class="header__link" href="#">
+                </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
                       <use xlink:href="#icon-exit"></use>
@@ -203,7 +202,7 @@ const profileEdit = () => {
                 </div>
                 <div class="details__note">To update your settings you should sign message through your wallet. Click 'Update profile' then sign the message</div>
                 <div class="details__btns">
-                  <button class="button details__button">Update Profile</button><a class="details__clear" href="#">
+                  <button class="button details__button">Update Profile</button><a class="details__clear" href="/">
                     <svg class="icon icon-circle-close">
                       <use xlink:href="#icon-circle-close"></use>
                     </svg>Clear all</a>
@@ -225,7 +224,7 @@ const profileEdit = () => {
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <div style="display: none"><svg width="0" height="0">
+    <div style={{display: "none"}}><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
 </symbol>
@@ -375,6 +374,6 @@ const profileEdit = () => {
 </symbol>
 </svg>
     </div>
-  </body>
-    </>;
+    </>
+    );
 }

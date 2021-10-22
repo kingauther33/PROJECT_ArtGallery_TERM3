@@ -1,9 +1,8 @@
 import React from 'react';
 
-const uploadDetails = () => {
-    return
+const uploadDetails = (props) => {
+    return (
     <>
-  <body>
     {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
@@ -103,7 +102,7 @@ const uploadDetails = () => {
                   <label class="theme js-theme">
                     <input class="theme__input" type="checkbox"/><span class="theme__inner"><span class="theme__box"></span></span>
                   </label>
-                </div><a class="header__link" href="#">
+                </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
                       <use xlink:href="#icon-exit"></use>
@@ -217,7 +216,7 @@ const uploadDetails = () => {
                   <div class="upload__text">Choose an exiting collection or create a new one</div>
                   <div class="upload__cards">
                     <div class="upload__card">
-                      <div class="upload__plus" style="background-color: #4BC9F0;">
+                      <div class="upload__plus" style={{backgroundColor: "#4BC9F0"}}>
                         <svg class="icon icon-plus">
                           <use xlink:href="#icon-plus"></use>
                         </svg>
@@ -225,7 +224,7 @@ const uploadDetails = () => {
                       <div class="upload__subtitle">Create collection</div>
                     </div>
                     <div class="upload__card">
-                      <div class="upload__plus" style="background-color: #45B26B;">
+                      <div class="upload__plus" style={{backgroundColor: "#45B26B"}}>
                         <svg class="icon icon-plus">
                           <use xlink:href="#icon-plus"></use>
                         </svg>
@@ -233,7 +232,7 @@ const uploadDetails = () => {
                       <div class="upload__subtitle">Crypto Legend - Professor</div>
                     </div>
                     <div class="upload__card">
-                      <div class="upload__plus" style="background-color: #EF466F;">
+                      <div class="upload__plus" style={{backgroundColor: "#EF466F"}}>
                         <svg class="icon icon-plus">
                           <use xlink:href="#icon-plus"></use>
                         </svg>
@@ -241,7 +240,7 @@ const uploadDetails = () => {
                       <div class="upload__subtitle">Crypto Legend - Professor</div>
                     </div>
                     <div class="upload__card">
-                      <div class="upload__plus" style="background-color: #9757D7;">
+                      <div class="upload__plus" style={{backgroundColor: "#9757D7"}}>
                         <svg class="icon icon-plus">
                           <use xlink:href="#icon-plus"></use>
                         </svg>
@@ -305,7 +304,7 @@ const uploadDetails = () => {
                       </div>
                       <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
                     </div></a>
-                </div><a class="preview__clear" href="#">
+                </div><a class="preview__clear" href="/">
                   <svg class="icon icon-circle-close">
                     <use xlink:href="#icon-circle-close"></use>
                   </svg>Clear all</a>
@@ -359,7 +358,7 @@ const uploadDetails = () => {
               <button class="button steps__button disabled js-popup-close">Start now</button>
             </div>
           </div>
-          <div class="steps__note">Something went wrong, please <a class='js-popup-close' href="#">try again</a></div>
+          <div class="steps__note">Something went wrong, please <a class='js-popup-close' href="/">try again</a></div>
         </div>
       </div>
 
@@ -374,7 +373,7 @@ const uploadDetails = () => {
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <div style="display: none"><svg width="0" height="0">
+    <div style={{display: "none"}}><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
 </symbol>
@@ -524,6 +523,6 @@ const uploadDetails = () => {
 </symbol>
 </svg>
     </div>
-  </body>
-    </>;
+    </>
+    );
 }

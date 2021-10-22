@@ -1,10 +1,9 @@
 import React from 'react';
 
 const profile = () => {
-    return
+    return (
     <>
 
-  <body>
     {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
@@ -190,16 +189,16 @@ const profile = () => {
                     </svg></a><a class="user__social" href="https://www.instagram.com/ui8net/" target="_blank">
                     <svg class="icon icon-instagram">
                       <use xlink:href="#icon-instagram"></use>
-                    </svg></a><a class="user__social" href="https://www.facebook.com/ui8.net/" target="_blank">
+                    </svg></a><a class="user__social" href="https://www.facebook.com/ui8.net/" target={{_blank}}>
                     <svg class="icon icon-facebook">
                       <use xlink:href="#icon-facebook"></use>
                     </svg></a></div>
                 <div class="user__note">Member since Mar 15, 2021</div>
               </div>
               <div class="profile__wrapper js-tabs">
-                <div class="profile__nav"><a class="profile__link js-tabs-link active" href="#">On Sale</a><a class="profile__link js-tabs-link" href="#">Collectibles</a><a class="profile__link js-tabs-link" href="#">Created</a><a class="profile__link js-tabs-link" href="#">Likes</a><a class="profile__link js-tabs-link" href="#">Following</a><a class="profile__link js-tabs-link" href="#">Followers</a></div>
+                <div class="profile__nav"><a class="profile__link js-tabs-link active" href="/">On Sale</a><a class="profile__link js-tabs-link" href="/">Collectibles</a><a class="profile__link js-tabs-link" href="/">Created</a><a class="profile__link js-tabs-link" href="/">Likes</a><a class="profile__link js-tabs-link" href="/">Following</a><a class="profile__link js-tabs-link" href="/">Followers</a></div>
                 <div class="profile__container">
-                  <div class="profile__item js-tabs-item" style="display: block;">
+                  <div class="profile__item js-tabs-item" style={{display: "block"}}>
                     <div class="profile__list">
                       <div class="card">
                         <div class="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
@@ -1041,7 +1040,7 @@ const profile = () => {
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <div style="display: none"><svg width="0" height="0">
+    <div style={{display: "none"}}><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
 </symbol>
@@ -1191,6 +1190,6 @@ const profile = () => {
 </symbol>
 </svg>
     </div>
-  </body>
-    </>;
+    </>
+    );
 }
