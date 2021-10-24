@@ -1,10 +1,9 @@
 import React from 'react';
 
 const activity = () => {
-    return
+    return (
     <>
 
-  <body>
     {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
@@ -104,7 +103,7 @@ const activity = () => {
                   <label class="theme js-theme">
                     <input class="theme__input" type="checkbox"/><span class="theme__inner"><span class="theme__box"></span></span>
                   </label>
-                </div><a class="header__link" href="#">
+                </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
                       <use xlink:href="#icon-exit"></use>
@@ -146,58 +145,58 @@ const activity = () => {
             </div>
             <div class="activity__row">
               <div class="activity__wrapper">
-                <div class="activity__nav"><a class="activity__link active" href="#">My activity</a><a class="activity__link" href="#">Following</a><a class="activity__link" href="#">All activity</a></div>
-                <div class="activity__list"><a class="activity__item" href="#">
+                <div class="activity__nav"><a class="activity__link active" href="/">My activity</a><a class="activity__link" href="/">Following</a><a class="activity__link" href="/">All activity</a></div>
+                <div class="activity__list"><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-1.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#EF466F;"><img src={"img/content/flag.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#EF466F"}}><img src={"img/content/flag.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">Something went wrong</div>
                                         <div class="activity__description">Can't display activity card. Try again later</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-2.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/play.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/play.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">UI8</div>
                                         <div class="activity__description">started following you</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-3.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/download.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/download.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-4.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/megaphone.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/megaphone.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">C O I N Z</div>
                                         <div class="activity__description">purchased by You for 0.001 ETH from UI8</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-5.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-6.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
                                         <div class="activity__description">0.08 ETH recived</div>
                                         <div class="activity__date">2 days ago</div>
-                                      </div></a><a class="activity__item" href="#">
+                                      </div></a><a class="activity__item" href="/">
                                       <div class="activity__preview"><img src={"img/content/activity-pic-7.jpg"} alt="Notification"/>
-                                        <div class="activity__icon" style="background-color:#141416;"><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
+                                        <div class="activity__icon" style={{backgroundColor: "#141416"}}><img src={"img/content/wallet.svg"} alt="Icon notification"/></div>
                                       </div>
                                       <div class="activity__details">
                                         <div class="activity__subtitle">ETH received</div>
@@ -257,7 +256,7 @@ const activity = () => {
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <div style="display: none"><svg width="0" height="0">
+    <div style={{display: "none"}}><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
 </symbol>
@@ -407,6 +406,6 @@ const activity = () => {
 </symbol>
 </svg>
     </div>
-  </body>
-    </>;
+    </>
+    );
 }

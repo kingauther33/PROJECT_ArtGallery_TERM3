@@ -1,10 +1,9 @@
 import React from 'react';
 
 const item = () => {
-    return
+    return (
     <>
 
-  <body>
     {/* <script>
       console.log(localStorage.getItem('darkMode'));
       if (localStorage.getItem('darkMode') === "on") {
@@ -104,7 +103,7 @@ const item = () => {
                   <label class="theme js-theme">
                     <input class="theme__input" type="checkbox"/><span class="theme__inner"><span class="theme__box"></span></span>
                   </label>
-                </div><a class="header__link" href="#">
+                </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
                       <use xlink:href="#icon-exit"></use>
@@ -165,10 +164,10 @@ const item = () => {
                 </div>
                 <div class="options__box js-options-box">
                   <div class="options__stage">Share link to this page</div>
-                  <div class="options__share share-btn" data-url="https://ui8.net"><a class="options__direction btn-twitter" data-id="tw"><span>
+                  <div class="options__share share-btn" data-url="https://ui8.net"><a class="options__direction btn-twitter" href="/" data-id="tw"><span>
                         <svg class="icon icon-twitter">
                           <use xlink:href="#icon-twitter"></use>
-                        </svg></span></a><a class="options__direction btn-facebook" data-id="fb"><span>
+                        </svg></span></a><a class="options__direction btn-facebook" href="/" data-id="fb"><span>
                         <svg class="icon icon-facebook">
                           <use xlink:href="#icon-facebook"></use>
                         </svg></span></a></div>
@@ -182,11 +181,11 @@ const item = () => {
                 <div class="status-stroke-black item__price">$4,429.87</div>
                 <div class="item__counter">10 in stock</div>
               </div>
-              <div class="item__text">This NFT Card will give you Access to Special Airdrops. To learn more about UI8 please visit <a href="https://ui8.net" target="_blank">https://ui8.net</a></div>
+              <div class="item__text">This NFT Card will give you Access to Special Airdrops. To learn more about UI8 please visit <a href="https://ui8.net" target="_blank" rel="noreferrer">https://ui8.net</a></div>
               <div class="item__tabs js-tabs">
-                <div class="item__nav"><a class="item__link js-tabs-link active" href="#">Info</a><a class="item__link js-tabs-link" href="#">Owners</a><a class="item__link js-tabs-link" href="#">History</a><a class="item__link js-tabs-link" href="#">Bids</a></div>
+                <div class="item__nav"><a class="item__link js-tabs-link active" href="/">Info</a><a class="item__link js-tabs-link" href="/">Owners</a><a class="item__link js-tabs-link" href="/">History</a><a class="item__link js-tabs-link" href="/">Bids</a></div>
                 <div class="item__container">
-                  <div class="item__box js-tabs-item" style="display: block;">
+                  <div class="item__box js-tabs-item" style={{display: "block"}}>
                     <div class="item__users">
                       <div class="item__user">
                         <div class="item__avatar"><img src={"img/content/avatar-2.jpg"} alt="Avatar"/>
@@ -298,7 +297,7 @@ const item = () => {
           </div>
         </div>
         <div class="popup popup_purchase mfp-hide" id="popup-purchase">
-          <div class="popup__item" style="display: block;">
+          <div class="popup__item" style={{display: "block"}}>
             <div class="popup__title h4">Checkout</div>
             <div class="popup__info">You are about to purchase <strong>C O I N Z</strong> from <strong>UI8</strong></div>
             <div class="popup__table">
@@ -382,16 +381,16 @@ const item = () => {
                 </div>
               </div>
               <div class="success__stage">Time to show-off</div>
-              <div class="success__socials"><a class="success__social" href="https://www.facebook.com/ui8.net/" target="_blank">
+              <div class="success__socials"><a class="success__social" href="https://www.facebook.com/ui8.net/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-facebook">
                     <use xlink:href="#icon-facebook"></use>
-                  </svg></a><a class="success__social" href="https://twitter.com/ui8" target="_blank">
+                  </svg></a><a class="success__social" href="https://twitter.com/ui8" target="_blank" rel="noreferrer">
                   <svg class="icon icon-twitter">
                     <use xlink:href="#icon-twitter"></use>
-                  </svg></a><a class="success__social" href="https://www.instagram.com/ui8net/" target="_blank">
+                  </svg></a><a class="success__social" href="https://www.instagram.com/ui8net/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-instagram">
                     <use xlink:href="#icon-instagram"></use>
-                  </svg></a><a class="success__social" href="https://www.pinterest.com/ui8m/" target="_blank">
+                  </svg></a><a class="success__social" href="https://www.pinterest.com/ui8m/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-pinterest">
                     <use xlink:href="#icon-pinterest"></use>
                   </svg></a></div>
@@ -605,7 +604,7 @@ const item = () => {
     <script src="js/lib/share-buttons.js"></script>
     <script src="js/demo.js"></script>
     <script src="js/app.js"></script>
-    <div style="display: none"><svg width="0" height="0">
+    <div style={{display: "none"}}><svg width="0" height="0">
 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-search">
 <path d="M6.667 1.334c2.945 0 5.333 2.388 5.333 5.333a5.31 5.31 0 0 1-1.12 3.27l3.592 3.592c.26.26.26.682 0 .943s-.682.26-.943 0l-3.591-3.592a5.31 5.31 0 0 1-3.27 1.12c-2.946 0-5.333-2.388-5.333-5.333s2.388-5.333 5.333-5.333zm0 1.333a4 4 0 1 0 0 8 4 4 0 1 0 0-8z"></path>
 </symbol>
@@ -755,6 +754,6 @@ const item = () => {
 </symbol>
 </svg>
     </div>
-  </body>
-    </>;
+    </>
+    );
 }
