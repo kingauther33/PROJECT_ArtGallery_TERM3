@@ -17,7 +17,7 @@ const ProfileEdit = () => {
           <div class="header__item header__item_notification js-header-item">
             <button class="header__head js-header-head active">
               <svg class="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div class="header__body js-header-body">
@@ -65,7 +65,7 @@ const ProfileEdit = () => {
                 <div class="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button class="header__copy">
                   <svg class="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -82,20 +82,20 @@ const ProfileEdit = () => {
               <div class="header__menu"><a class="header__link" href="profile.html">
                   <div class="header__icon">
                     <svg class="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
                   <div class="header__icon">
                     <svg class="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div class="header__text">My items</div></a>
                 <div class="header__link">
                   <div class="header__icon">
                     <svg class="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div class="header__text">Dark theme</div>
@@ -105,7 +105,7 @@ const ProfileEdit = () => {
                 </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div class="header__text">Disconnect</div></a>
@@ -119,7 +119,7 @@ const ProfileEdit = () => {
         <div class="control">
           <div class="control__center center"><a class="button-stroke button-small control__button" href="profile.html">
               <svg class="icon icon-arrow-prev">
-                <use xlink:href="#icon-arrow-prev"></use>
+                <use xlinkHref="#icon-arrow-prev"></use>
               </svg><span>Back to profile</span></a>
             <div class="breadcrumbs">
               <ul class="breadcrumbs">
@@ -195,7 +195,7 @@ const ProfileEdit = () => {
                     </div>
                     <button class="button-stroke button-small details__button">
                       <svg class="icon icon-plus-circle">
-                        <use xlink:href="#icon-plus-circle"></use>
+                        <use xlinkHref="#icon-plus-circle"></use>
                       </svg><span>Add more social account</span>
                     </button>
                   </div>
@@ -204,7 +204,7 @@ const ProfileEdit = () => {
                 <div class="details__btns">
                   <button class="button details__button">Update Profile</button><a class="details__clear" href="/">
                     <svg class="icon icon-circle-close">
-                      <use xlink:href="#icon-circle-close"></use>
+                      <use xlinkHref="#icon-circle-close"></use>
                     </svg>Clear all</a>
                 </div>
               </div>

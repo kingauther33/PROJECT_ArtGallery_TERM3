@@ -18,7 +18,7 @@ const item = () => {
           <div class="header__item header__item_notification js-header-item">
             <button class="header__head js-header-head active">
               <svg class="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div class="header__body js-header-body">
@@ -66,7 +66,7 @@ const item = () => {
                 <div class="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button class="header__copy">
                   <svg class="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -83,20 +83,20 @@ const item = () => {
               <div class="header__menu"><a class="header__link" href="profile.html">
                   <div class="header__icon">
                     <svg class="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
                   <div class="header__icon">
                     <svg class="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div class="header__text">My items</div></a>
                 <div class="header__link">
                   <div class="header__icon">
                     <svg class="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div class="header__text">Dark theme</div>
@@ -106,7 +106,7 @@ const item = () => {
                 </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div class="header__text">Disconnect</div></a>
@@ -130,35 +130,35 @@ const item = () => {
                 <div class="options__list">
                   <button class="button-circle-stroke options__button options__button_share js-options-share">
                     <svg class="icon icon-share">
-                      <use xlink:href="#icon-share"></use>
+                      <use xlinkHref="#icon-share"></use>
                     </svg>
                   </button>
                   <button class="button-circle-stroke options__button options__button_favorite active">
                     <svg class="icon icon-heart">
-                      <use xlink:href="#icon-heart"></use>
+                      <use xlinkHref="#icon-heart"></use>
                     </svg>
                   </button>
                   <div class="actions js-actions">
                     <button class="button-circle-stroke actions__button js-actions-button">
                       <svg class="icon icon-more">
-                        <use xlink:href="#icon-more"></use>
+                        <use xlinkHref="#icon-more"></use>
                       </svg>
                     </button>
                     <div class="actions__body js-actions-body"><a class="actions__item js-popup-open" href="#popup-price" data-effect="mfp-zoom-in">
                         <svg class="icon icon-coin">
-                          <use xlink:href="#icon-coin"></use>
+                          <use xlinkHref="#icon-coin"></use>
                         </svg>Change price</a><a class="actions__item js-popup-open" href="#popup-transfer" data-effect="mfp-zoom-in">
                         <svg class="icon icon-arrow-right-square">
-                          <use xlink:href="#icon-arrow-right-square"></use>
+                          <use xlinkHref="#icon-arrow-right-square"></use>
                         </svg>Transfer token</a><a class="actions__item js-popup-open" href="#popup-remove" data-effect="mfp-zoom-in">
                         <svg class="icon icon-close-circle">
-                          <use xlink:href="#icon-close-circle"></use>
+                          <use xlinkHref="#icon-close-circle"></use>
                         </svg>Remove from sale</a><a class="actions__item js-popup-open" href="#popup-burn" data-effect="mfp-zoom-in">
                         <svg class="icon icon-close-circle">
-                          <use xlink:href="#icon-close-circle"></use>
+                          <use xlinkHref="#icon-close-circle"></use>
                         </svg>Burn token</a><a class="actions__item js-popup-open" href="#popup-report" data-effect="mfp-zoom-in">
                         <svg class="icon icon-info-circle">
-                          <use xlink:href="#icon-info-circle"></use>
+                          <use xlinkHref="#icon-info-circle"></use>
                         </svg>Report</a></div>
                   </div>
                 </div>
@@ -166,10 +166,10 @@ const item = () => {
                   <div class="options__stage">Share link to this page</div>
                   <div class="options__share share-btn" data-url="https://ui8.net"><a class="options__direction btn-twitter" href="/" data-id="tw"><span>
                         <svg class="icon icon-twitter">
-                          <use xlink:href="#icon-twitter"></use>
+                          <use xlinkHref="#icon-twitter"></use>
                         </svg></span></a><a class="options__direction btn-facebook" href="/" data-id="fb"><span>
                         <svg class="icon icon-facebook">
-                          <use xlink:href="#icon-facebook"></use>
+                          <use xlinkHref="#icon-facebook"></use>
                         </svg></span></a></div>
                 </div>
               </div>
@@ -321,7 +321,7 @@ const item = () => {
             <div class="popup__attention">
               <div class="popup__preview">
                 <svg class="icon icon-info-circle">
-                  <use xlink:href="#icon-info-circle"></use>
+                  <use xlinkHref="#icon-info-circle"></use>
                 </svg>
               </div>
               <div class="popup__details">
@@ -352,7 +352,7 @@ const item = () => {
             <div class="popup__attention">
               <div class="popup__preview">
                 <svg class="icon icon-info-circle">
-                  <use xlink:href="#icon-info-circle"></use>
+                  <use xlinkHref="#icon-info-circle"></use>
                 </svg>
               </div>
               <div class="popup__details">
@@ -383,16 +383,16 @@ const item = () => {
               <div class="success__stage">Time to show-off</div>
               <div class="success__socials"><a class="success__social" href="https://www.facebook.com/ui8.net/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-facebook">
-                    <use xlink:href="#icon-facebook"></use>
+                    <use xlinkHref="#icon-facebook"></use>
                   </svg></a><a class="success__social" href="https://twitter.com/ui8" target="_blank" rel="noreferrer">
                   <svg class="icon icon-twitter">
-                    <use xlink:href="#icon-twitter"></use>
+                    <use xlinkHref="#icon-twitter"></use>
                   </svg></a><a class="success__social" href="https://www.instagram.com/ui8net/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-instagram">
-                    <use xlink:href="#icon-instagram"></use>
+                    <use xlinkHref="#icon-instagram"></use>
                   </svg></a><a class="success__social" href="https://www.pinterest.com/ui8m/" target="_blank" rel="noreferrer">
                   <svg class="icon icon-pinterest">
-                    <use xlink:href="#icon-pinterest"></use>
+                    <use xlinkHref="#icon-pinterest"></use>
                   </svg></a></div>
             </div>
           </div>
@@ -425,7 +425,7 @@ const item = () => {
           <div class="popup__line"> 
             <div class="popup__icon">
               <svg class="icon icon-coin">
-                <use xlink:href="#icon-coin"></use>
+                <use xlinkHref="#icon-coin"></use>
               </svg>
             </div>
             <div class="popup__box">
@@ -551,7 +551,7 @@ const item = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-upload-file">
-                    <use xlink:href="#icon-upload-file"></use>
+                    <use xlinkHref="#icon-upload-file"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -565,7 +565,7 @@ const item = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-check">
-                    <use xlink:href="#icon-check"></use>
+                    <use xlinkHref="#icon-check"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -579,7 +579,7 @@ const item = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-pencil">
-                    <use xlink:href="#icon-pencil"></use>
+                    <use xlinkHref="#icon-pencil"></use>
                   </svg>
                 </div>
                 <div class="steps__details">

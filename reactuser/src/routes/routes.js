@@ -2,11 +2,11 @@
 import UserLayout from '../layout/UserLayout';
 import HomePage from '../pages/HomePage';
 import AboutUs from './../pages/AboutUs';
-import search from './../pages/Search';
-import Profile from './../pages/Profile';
-import ProfileEdit from './../pages/Profile';
-import item from './../pages/Item';
-import Activity from './../pages/Activity';
+import search from './../pages/Search/search';
+import Profile from './../pages/Profile/Profile';
+import ProfileEdit from './../pages/Profile/Profile-edit';
+import item from './../pages/Item/Item';
+import Activity from './../pages/Activity/Activity';
 
 
 // USER
