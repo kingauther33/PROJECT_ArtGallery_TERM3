@@ -1,6 +1,6 @@
 import React from 'react';
 
-const profileEdit = () => {
+const ProfileEdit = () => {
     return (
     <>
     {/* <script>
@@ -377,3 +377,5 @@ const profileEdit = () => {
     </>
     );
 }
+
+export default ProfileEdit;

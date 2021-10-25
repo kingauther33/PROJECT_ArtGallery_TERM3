@@ -6,7 +6,7 @@ const HomePage = () => {
         <div className="header__item header__item_notification js-header-item">
             <button className="header__head js-header-head active">
                 <svg className="icon icon-notification">
-                    <use xlink:href="#icon-notification"></use>
+                    <use xlinkHref="#icon-notification"></use>
                 </svg>
             </button>
             <div className="header__body js-header-body">
@@ -54,7 +54,7 @@ const HomePage = () => {
                     <div className="header__number">0xc4c16ab5ac7d...b21a</div>
                     <button className="header__copy">
                         <svg className="icon icon-copy">
-                            <use xlink:href="#icon-copy"></use>
+                            <use xlinkHref="#icon-copy"></use>
                         </svg>
                     </button>
                 </div>
@@ -71,20 +71,20 @@ const HomePage = () => {
                 <div className="header__menu"><a className="header__link" href="profile.html">
                     <div className="header__icon">
                         <svg className="icon icon-user">
-                            <use xlink:href="#icon-user"></use>
+                            <use xlinkHref="#icon-user"></use>
                         </svg>
                     </div>
                     <div className="header__text">My profile</div></a><a className="header__link" href="item.html">
                     <div className="header__icon">
                         <svg className="icon icon-image">
-                            <use xlink:href="#icon-image"></use>
+                            <use xlinkHref="#icon-image"></use>
                         </svg>
                     </div>
                     <div className="header__text">My items</div></a>
                     <div className="header__link">
                         <div className="header__icon">
                             <svg className="icon icon-bulb">
-                                <use xlink:href="#icon-bulb"></use>
+                                <use xlinkHref="#icon-bulb"></use>
                             </svg>
                         </div>
                         <div className="header__text">Dark theme</div>
@@ -94,7 +94,7 @@ const HomePage = () => {
                     </div><a className="header__link" href="/">
                         <div className="header__icon">
                             <svg className="icon icon-exit">
-                                <use xlink:href="#icon-exit"></use>
+                                <use xlinkHref="#icon-exit"></use>
                             </svg>
                         </div>
                         <div className="header__text">Disconnect</div></a>
@@ -120,7 +120,7 @@ const HomePage = () => {
                                 {/* <div className="player__control">
                                     <button className="player__button">
                                         <svg className="icon icon-play">
-                                            <use xlink:href="#icon-play"></use>
+                                            <use xlinkHref="#icon-play"></use>
                                         </svg>
                                     </button>
                                     <div className="player__line">
@@ -129,12 +129,12 @@ const HomePage = () => {
                                     <div className="player__time">2:20</div>
                                     <button className="player__button">
                                         <svg className="icon icon-volume">
-                                            <use xlink:href="#icon-volume"></use>
+                                            <use xlinkHref="#icon-volume"></use>
                                         </svg>
                                     </button>
                                     <button className="player__button">
                                         <svg className="icon icon-full-screen">
-                                            <use xlink:href="#icon-full-screen"></use>
+                                            <use xlinkHref="#icon-full-screen"></use>
                                         </svg>
                                     </button>
                                 </div> */}
@@ -152,7 +152,7 @@ const HomePage = () => {
                                     <div className="main__item">
                                         <div className="main__icon">
                                             <svg className="icon icon-stop">
-                                                <use xlink:href="#icon-stop"></use>
+                                                <use xlinkHref="#icon-stop"></use>
                                             </svg>
                                         </div>
                                         <div className="main__description">
@@ -179,7 +179,7 @@ const HomePage = () => {
                                 {/* <div className="player__control">
                                     <button className="player__button">
                                         <svg className="icon icon-play">
-                                            <use xlink:href="#icon-play"></use>
+                                            <use xlinkHref="#icon-play"></use>
                                         </svg>
                                     </button>
                                     <div className="player__line">
@@ -188,12 +188,12 @@ const HomePage = () => {
                                     <div className="player__time">2:20</div>
                                     <button className="player__button">
                                         <svg className="icon icon-volume">
-                                            <use xlink:href="#icon-volume"></use>
+                                            <use xlinkHref="#icon-volume"></use>
                                         </svg>
                                     </button>
                                     <button className="player__button">
                                         <svg className="icon icon-full-screen">
-                                            <use xlink:href="#icon-full-screen"></use>
+                                            <use xlinkHref="#icon-full-screen"></use>
                                         </svg>
                                     </button>
                                 </div> */}
@@ -211,7 +211,7 @@ const HomePage = () => {
                                     <div className="main__item">
                                         <div className="main__icon">
                                             <svg className="icon icon-stop">
-                                                <use xlink:href="#icon-stop"></use>
+                                                <use xlinkHref="#icon-stop"></use>
                                             </svg>
                                         </div>
                                         <div className="main__description">
@@ -250,7 +250,7 @@ const HomePage = () => {
                                     <div className="main__item">
                                         <div className="main__icon">
                                             <svg className="icon icon-stop">
-                                                <use xlink:href="#icon-stop"></use>
+                                                <use xlinkHref="#icon-stop"></use>
                                             </svg>
                                         </div>
                                         <div className="main__description">
@@ -289,7 +289,7 @@ const HomePage = () => {
                                     <div className="main__item">
                                         <div className="main__icon">
                                             <svg className="icon icon-stop">
-                                                <use xlink:href="#icon-stop"></use>
+                                                <use xlinkHref="#icon-stop"></use>
                                             </svg>
                                         </div>
                                         <div className="main__description">
@@ -404,7 +404,7 @@ const HomePage = () => {
                     </div>
                 </div><a className="button-stroke button-small selection__button" href="search01.html"><span>Discover more</span>
                 <svg className="icon icon-arrow-next">
-                    <use xlink:href="#icon-arrow-next"></use>
+                    <use xlinkHref="#icon-arrow-next"></use>
                 </svg></a>
             </div>
         </div>
@@ -444,14 +444,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -476,14 +476,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -508,14 +508,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -540,14 +540,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -572,14 +572,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -604,14 +604,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -636,14 +636,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -668,14 +668,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -700,14 +700,14 @@ const HomePage = () => {
                                 <div className="popular__control">
                                     <button className="popular__button popular__add">
                                         <svg className="icon icon-add-square">
-                                            <use xlink:href="#icon-add-square"></use>
+                                            <use xlinkHref="#icon-add-square"></use>
                                         </svg>
                                         <svg className="icon icon-minus-square">
-                                            <use xlink:href="#icon-minus-square"></use>
+                                            <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
                                     </button><a className="popular__button" href="profile.html">
                                     <svg className="icon icon-arrow-expand">
-                                        <use xlink:href="#icon-arrow-expand"></use>
+                                        <use xlinkHref="#icon-arrow-expand"></use>
                                     </svg></a>
                                 </div>
                             </div>
@@ -738,11 +738,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -763,7 +763,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -777,11 +777,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -802,7 +802,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -816,11 +816,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -841,7 +841,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -855,11 +855,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -880,7 +880,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -894,11 +894,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -919,7 +919,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -933,11 +933,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -958,7 +958,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -972,11 +972,11 @@ const HomePage = () => {
                                         <div className="status-green card__category">purchasing !</div>
                                         <button className="card__favorite">
                                             <svg className="icon icon-heart">
-                                                <use xlink:href="#icon-heart"></use>
+                                                <use xlinkHref="#icon-heart"></use>
                                             </svg>
                                         </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
-                                            <use xlink:href="#icon-scatter-up"></use>
+                                            <use xlinkHref="#icon-scatter-up"></use>
                                         </svg></a>
                                     </div>
                                 </div><a className="card__link" href="item.html">
@@ -997,7 +997,7 @@ const HomePage = () => {
                                 <div className="card__foot">
                                     <div className="card__status">
                                         <svg className="icon icon-candlesticks-up">
-                                            <use xlink:href="#icon-candlesticks-up"></use>
+                                            <use xlinkHref="#icon-candlesticks-up"></use>
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1084,10 +1084,10 @@ const HomePage = () => {
                     <div className="discover__text">Filter</div>
                     <div className="discover__icon">
                         <svg className="icon icon-filter">
-                            <use xlink:href="#icon-filter"></use>
+                            <use xlinkHref="#icon-filter"></use>
                         </svg>
                         <svg className="icon icon-close">
-                            <use xlink:href="#icon-close"></use>
+                            <use xlinkHref="#icon-close"></use>
                         </svg>
                     </div>
                 </button>
@@ -1148,11 +1148,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1173,7 +1173,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1185,11 +1185,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1210,7 +1210,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1222,11 +1222,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1247,7 +1247,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1259,11 +1259,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1284,7 +1284,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1296,11 +1296,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1321,7 +1321,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1333,11 +1333,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1358,7 +1358,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1370,11 +1370,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1395,7 +1395,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1407,11 +1407,11 @@ const HomePage = () => {
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
                                     <svg className="icon icon-heart">
-                                        <use xlink:href="#icon-heart"></use>
+                                        <use xlinkHref="#icon-heart"></use>
                                     </svg>
                                 </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
-                                    <use xlink:href="#icon-scatter-up"></use>
+                                    <use xlinkHref="#icon-scatter-up"></use>
                                 </svg></a>
                             </div>
                         </div><a className="card__link" href="item.html">
@@ -1432,7 +1432,7 @@ const HomePage = () => {
                         <div className="card__foot">
                             <div className="card__status">
                                 <svg className="icon icon-candlesticks-up">
-                                    <use xlink:href="#icon-candlesticks-up"></use>
+                                    <use xlinkHref="#icon-candlesticks-up"></use>
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -1467,7 +1467,7 @@ const HomePage = () => {
     <div className="popup popup_connect mfp-hide" id="popup-connect">
         <div className="popup__img">
             <svg className="icon icon-wallet">
-                <use xlink:href="#icon-wallet"></use>
+                <use xlinkHref="#icon-wallet"></use>
             </svg>
         </div>
         <div className="popup__description">You need to connect your wallet first to sign messages and send transaction to Ethereum network</div>
@@ -1482,7 +1482,7 @@ const HomePage = () => {
                 <div className="steps__head">
                     <div className="steps__icon">
                         <svg className="icon icon-upload-file">
-                            <use xlink:href="#icon-upload-file"></use>
+                            <use xlinkHref="#icon-upload-file"></use>
                         </svg>
                     </div>
                     <div className="steps__details">
@@ -1496,7 +1496,7 @@ const HomePage = () => {
                 <div className="steps__head">
                     <div className="steps__icon">
                         <svg className="icon icon-check">
-                            <use xlink:href="#icon-check"></use>
+                            <use xlinkHref="#icon-check"></use>
                         </svg>
                     </div>
                     <div className="steps__details">
@@ -1510,7 +1510,7 @@ const HomePage = () => {
                 <div className="steps__head">
                     <div className="steps__icon">
                         <svg className="icon icon-pencil">
-                            <use xlink:href="#icon-pencil"></use>
+                            <use xlinkHref="#icon-pencil"></use>
                         </svg>
                     </div>
                     <div className="steps__details">

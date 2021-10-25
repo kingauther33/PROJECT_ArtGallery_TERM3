@@ -18,7 +18,7 @@ const search = () => {
           <div class="header__item header__item_notification js-header-item">
             <button class="header__head js-header-head active">
               <svg class="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div class="header__body js-header-body">
@@ -66,7 +66,7 @@ const search = () => {
                 <div class="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button class="header__copy">
                   <svg class="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -83,20 +83,20 @@ const search = () => {
               <div class="header__menu"><a class="header__link" href="profile.html">
                   <div class="header__icon">
                     <svg class="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
                   <div class="header__icon">
                     <svg class="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div class="header__text">My items</div></a>
                 <div class="header__link">
                   <div class="header__icon">
                     <svg class="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div class="header__text">Dark theme</div>
@@ -106,7 +106,7 @@ const search = () => {
                 </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div class="header__text">Disconnect</div></a>
@@ -125,7 +125,7 @@ const search = () => {
                 <input class="catalog__input" type="text" name="search" placeholder="Search..." required/>
                 <button class="catalog__result">
                   <svg class="icon icon-search">
-                    <use xlink:href="#icon-search"></use>
+                    <use xlinkHref="#icon-search"></use>
                   </svg>
                 </button>
               </form>
@@ -175,7 +175,7 @@ const search = () => {
                   </div>
                 </div><a class="catalog__reset" href="/">
                   <svg class="icon icon-close-circle-fill">
-                    <use xlink:href="#icon-close-circle-fill"></use>
+                    <use xlinkHref="#icon-close-circle-fill"></use>
                   </svg>Reset filter</a>
               </div>
               <div class="catalog__wrapper">
@@ -186,11 +186,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -211,7 +211,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -223,11 +223,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -248,7 +248,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -260,11 +260,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -285,7 +285,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -297,11 +297,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -322,7 +322,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -334,11 +334,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -359,7 +359,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -371,11 +371,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -396,7 +396,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -408,11 +408,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -433,7 +433,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -445,11 +445,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -470,7 +470,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -482,11 +482,11 @@ const search = () => {
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
                           <svg class="icon icon-heart">
-                            <use xlink:href="#icon-heart"></use>
+                            <use xlinkHref="#icon-heart"></use>
                           </svg>
                         </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                           <svg class="icon icon-scatter-up">
-                            <use xlink:href="#icon-scatter-up"></use>
+                            <use xlinkHref="#icon-scatter-up"></use>
                           </svg></a>
                       </div>
                     </div><a class="card__link" href="item.html">
@@ -507,7 +507,7 @@ const search = () => {
                       <div class="card__foot">
                         <div class="card__status">
                           <svg class="icon icon-candlesticks-up">
-                            <use xlink:href="#icon-candlesticks-up"></use>
+                            <use xlinkHref="#icon-candlesticks-up"></use>
                           </svg>Highest bid <span>0.001 ETH</span>
                         </div>
                         <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -528,7 +528,7 @@ const search = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-upload-file">
-                    <use xlink:href="#icon-upload-file"></use>
+                    <use xlinkHref="#icon-upload-file"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -542,7 +542,7 @@ const search = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-check">
-                    <use xlink:href="#icon-check"></use>
+                    <use xlinkHref="#icon-check"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -556,7 +556,7 @@ const search = () => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-pencil">
-                    <use xlink:href="#icon-pencil"></use>
+                    <use xlinkHref="#icon-pencil"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -765,3 +765,5 @@ const search = () => {
     </>
     );
 }
+
+export default search;

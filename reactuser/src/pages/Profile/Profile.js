@@ -18,7 +18,7 @@ const profile = () => {
           <div className="header__item header__item_notification js-header-item">
             <button className="header__head js-header-head active">
               <svg className="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div className="header__body js-header-body">
@@ -66,7 +66,7 @@ const profile = () => {
                 <div className="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button className="header__copy">
                   <svg className="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -83,20 +83,20 @@ const profile = () => {
               <div className="header__menu"><a className="header__link" href="profile.html">
                   <div className="header__icon">
                     <svg className="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div className="header__text">My profile</div></a><a className="header__link" href="item.html">
                   <div className="header__icon">
                     <svg className="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div className="header__text">My items</div></a>
                 <div className="header__link">
                   <div className="header__icon">
                     <svg className="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div className="header__text">Dark theme</div>
@@ -106,7 +106,7 @@ const profile = () => {
                 </div><a className="header__link" href="/">
                   <div className="header__icon">
                     <svg className="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div className="header__text">Disconnect</div></a>
@@ -124,7 +124,7 @@ const profile = () => {
                 <input type="file"/>
                 <div className="profile__wrap">
                   <svg className="icon icon-upload-file">
-                    <use xlink:href="#icon-upload-file"></use>
+                    <use xlinkHref="#icon-upload-file"></use>
                   </svg>
                   <div className="profile__info">Drag and drop your photo here</div>
                   <div className="profile__text">or click to browse</div>
@@ -134,11 +134,11 @@ const profile = () => {
               <div className="profile__btns">
                 <button className="button-stroke button-small profile__button js-profile-load"><span>Edit cover photo</span>
                   <svg className="icon icon-edit">
-                    <use xlink:href="#icon-edit"></use>
+                    <use xlinkHref="#icon-edit"></use>
                   </svg>
                 </button><a className="button-stroke button-small profile__button" href="profile-edit.html"> <span>Edit profile</span>
                   <svg className="icon icon-image">
-                    <use xlink:href="#icon-image"></use>
+                    <use xlinkHref="#icon-image"></use>
                   </svg></a>
               </div>
             </div>
@@ -152,46 +152,46 @@ const profile = () => {
                   <div className="user__number">0xc4c16a645...b21a</div>
                   <button className="user__copy">
                     <svg className="icon icon-copy">
-                      <use xlink:href="#icon-copy"></use>
+                      <use xlinkHref="#icon-copy"></use>
                     </svg>
                   </button>
                 </div>
                 <div className="user__info">A wholesome farm owner in Montana. Upcoming gallery solo show in Germany</div><a className="user__site" href="https://ui8.net" target="_blank" rel="noreferrer" >
                   <svg className="icon icon-globe">
-                    <use xlink:href="#icon-globe"></use>
+                    <use xlinkHref="#icon-globe"></use>
                   </svg>https://ui8.net</a>
                 <div className="user__control">
                   <div className="user__btns">
                     <button className="button-stroke button-small user__button js-user-follow active"><span>Unfollow</span><span>Follow</span></button>
                     <button className="button-circle-stroke button-small user__button js-user-share">
                       <svg className="icon icon-share">
-                        <use xlink:href="#icon-share"></use>
+                        <use xlinkHref="#icon-share"></use>
                       </svg>
                     </button><a className="button-circle-stroke button-small user__button js-popup-open" href="#popup-report" data-effect="mfp-zoom-in"> 
                       <svg className="icon icon-report">
-                        <use xlink:href="#icon-report"></use>
+                        <use xlinkHref="#icon-report"></use>
                       </svg></a>
                   </div>
                   <div className="user__box js-user-box">
                     <div className="user__stage">Share link to this page</div>
                     <div className="user__share share-btn" data-url="https://ui8.net"><a className="user__direction btn-twitter" href="/" data-id="tw"><span>
                           <svg className="icon icon-twitter">
-                            <use xlink:href="#icon-twitter"></use>
+                            <use xlinkHref="#icon-twitter"></use>
                           </svg></span></a><a className="user__direction btn-facebook" href="/" data-id="fb"><span>
                           <svg className="icon icon-facebook">
-                            <use xlink:href="#icon-facebook"></use>
+                            <use xlinkHref="#icon-facebook"></use>
                           </svg></span></a></div>
                   </div>
                 </div>
                 <div className="user__socials"><a className="user__social" href="https://twitter.com/ui8" rel="noreferrer" target="_blank">
                     <svg className="icon icon-twitter">
-                      <use xlink:href="#icon-twitter"></use>
+                      <use xlinkHref="#icon-twitter"></use>
                     </svg></a><a className="user__social" href="https://www.instagram.com/ui8net/" target="_blank" rel="noreferrer">
                     <svg className="icon icon-instagram">
-                      <use xlink:href="#icon-instagram"></use>
+                      <use xlinkHref="#icon-instagram"></use>
                     </svg></a><a className="user__social" href="https://www.facebook.com/ui8.net/" target="_blank" rel="noreferrer">
                     <svg className="icon icon-facebook">
-                      <use xlink:href="#icon-facebook"></use>
+                      <use xlinkHref="#icon-facebook"></use>
                     </svg></a></div>
                 <div className="user__note">Member since Mar 15, 2021</div>
               </div>
@@ -206,11 +206,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -231,7 +231,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -243,11 +243,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -268,7 +268,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -280,11 +280,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -305,7 +305,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -322,11 +322,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -347,7 +347,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -359,11 +359,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -384,7 +384,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -401,11 +401,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -426,7 +426,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -438,11 +438,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -463,7 +463,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -475,11 +475,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -500,7 +500,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -512,11 +512,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -537,7 +537,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -554,11 +554,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -579,7 +579,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -591,11 +591,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -616,7 +616,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -628,11 +628,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -653,7 +653,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -665,11 +665,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -690,7 +690,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -702,11 +702,11 @@ const profile = () => {
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
                               <svg className="icon icon-heart">
-                                <use xlink:href="#icon-heart"></use>
+                                <use xlinkHref="#icon-heart"></use>
                               </svg>
                             </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                               <svg className="icon icon-scatter-up">
-                                <use xlink:href="#icon-scatter-up"></use>
+                                <use xlinkHref="#icon-scatter-up"></use>
                               </svg></a>
                           </div>
                         </div><a className="card__link" href="item.html">
@@ -727,7 +727,7 @@ const profile = () => {
                           <div className="card__foot">
                             <div className="card__status">
                               <svg className="icon icon-candlesticks-up">
-                                <use xlink:href="#icon-candlesticks-up"></use>
+                                <use xlinkHref="#icon-candlesticks-up"></use>
                               </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
@@ -956,7 +956,7 @@ const profile = () => {
               <div className="steps__head">
                 <div className="steps__icon">
                   <svg className="icon icon-upload-file">
-                    <use xlink:href="#icon-upload-file"></use>
+                    <use xlinkHref="#icon-upload-file"></use>
                   </svg>
                 </div>
                 <div className="steps__details">
@@ -970,7 +970,7 @@ const profile = () => {
               <div className="steps__head">
                 <div className="steps__icon">
                   <svg className="icon icon-check">
-                    <use xlink:href="#icon-check"></use>
+                    <use xlinkHref="#icon-check"></use>
                   </svg>
                 </div>
                 <div className="steps__details">
@@ -984,7 +984,7 @@ const profile = () => {
               <div className="steps__head">
                 <div className="steps__icon">
                   <svg className="icon icon-pencil">
-                    <use xlink:href="#icon-pencil"></use>
+                    <use xlinkHref="#icon-pencil"></use>
                   </svg>
                 </div>
                 <div className="steps__details">
@@ -1193,3 +1193,5 @@ const profile = () => {
     </>
     );
 }
+
+export default profile;
