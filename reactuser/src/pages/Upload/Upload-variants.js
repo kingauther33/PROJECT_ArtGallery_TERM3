@@ -1,6 +1,6 @@
 import React from "react";
 
-const uploadVariants = (props) => {
+const UploadVariants = (props) => {
     return (
     <>
   <body>
@@ -18,7 +18,7 @@ const uploadVariants = (props) => {
           <div class="header__item header__item_notification js-header-item">
             <button class="header__head js-header-head active">
               <svg class="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div class="header__body js-header-body">
@@ -66,7 +66,7 @@ const uploadVariants = (props) => {
                 <div class="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button class="header__copy">
                   <svg class="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -83,20 +83,20 @@ const uploadVariants = (props) => {
               <div class="header__menu"><a class="header__link" href="profile.html">
                   <div class="header__icon">
                     <svg class="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
                   <div class="header__icon">
                     <svg class="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div class="header__text">My items</div></a>
                 <div class="header__link">
                   <div class="header__icon">
                     <svg class="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div class="header__text">Dark theme</div>
@@ -106,7 +106,7 @@ const uploadVariants = (props) => {
                 </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div class="header__text">Disconnect</div></a>
@@ -119,7 +119,7 @@ const uploadVariants = (props) => {
         <div class="control">
           <div class="control__center center"><a class="button-stroke button-small control__button" href="index.html">
               <svg class="icon icon-arrow-prev">
-                <use xlink:href="#icon-arrow-prev"></use>
+                <use xlinkHref="#icon-arrow-prev"></use>
               </svg><span>Back to home</span></a>
             <div class="breadcrumbs">
               <ul class="breadcrumbs">
@@ -314,3 +314,5 @@ const uploadVariants = (props) => {
     );
 
 }
+
+export default UploadVariants;

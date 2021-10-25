@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
 	return (
@@ -11,35 +12,40 @@ const HomePage = () => {
             </button>
             <div className="header__body js-header-body">
                 <div className="header__title h4">Notification</div>
-                <div className="header__list"><a className="header__notification" href="activity.html">
+                <div className="header__list">
+                    <Link className="header__notification" to="Activity">
                     <div className="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                     <div className="header__details">
                         <div className="header__subtitle">ETH received</div>
                         <div className="header__price">0.08 ETH recived</div>
                         <div className="header__date">2 days ago</div>
                     </div>
-                    <div className="header__status"></div></a><a className="header__notification" href="activity.html">
+                    <div className="header__status"></div>
+                    </Link>
+                    <Link className="header__notification" to="Activity">
                     <div className="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                     <div className="header__details">
                         <div className="header__subtitle">C O I N Z</div>
                         <div className="header__price">New bid 0.2 ETH</div>
                         <div className="header__date">3 days ago</div>
                     </div>
-                    <div className="header__status"></div></a><a className="header__notification" href="activity.html">
+                    <div className="header__status"></div>
+                    </Link>
+                    <Link className="header__notification" to="Activity">
                     <div className="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                     <div className="header__details">
                         <div className="header__subtitle">ETH received</div>
                         <div className="header__price">0.08 ETH recived</div>
                         <div className="header__date">4 days ago</div>
                     </div>
-                    <div className="header__status"></div></a><a className="header__notification" href="activity.html">
+                    <div className="header__status"></div></Link><Link className="header__notification" to="Activity">
                     <div className="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                     <div className="header__details">
                         <div className="header__subtitle">ETH received</div>
                         <div className="header__price">0.08 ETH recived</div>
                         <div className="header__date">5 days ago</div>
                     </div>
-                    <div className="header__status"></div></a><a className="button-small header__button" href="activity.html">See all</a>
+                    <div className="header__status"></div></Link><Link className="button-small header__button" to="Activity">See all</Link>
                 </div>
             </div>
         </div>
@@ -68,19 +74,19 @@ const HomePage = () => {
                     </div>
                     <button className="button-stroke button-small header__button">Manage fun on Coinbase</button>
                 </div>
-                <div className="header__menu"><a className="header__link" href="profile.html">
+                <div className="header__menu"><Link className="header__link" to="Profile">
                     <div className="header__icon">
                         <svg className="icon icon-user">
                             <use xlinkHref="#icon-user"></use>
                         </svg>
                     </div>
-                    <div className="header__text">My profile</div></a><a className="header__link" href="item.html">
+                    <div className="header__text">My profile</div></Link><Link className="header__link" to="Item">
                     <div className="header__icon">
                         <svg className="icon icon-image">
                             <use xlinkHref="#icon-image"></use>
                         </svg>
                     </div>
-                    <div className="header__text">My items</div></a>
+                    <div className="header__text">My items</div></Link>
                     <div className="header__link">
                         <div className="header__icon">
                             <svg className="icon icon-bulb">
@@ -91,13 +97,13 @@ const HomePage = () => {
                         <label className="theme js-theme">
                             <input className="theme__input" type="checkbox"/><span className="theme__inner"><span className="theme__box"></span></span>
                         </label>
-                    </div><a className="header__link" href="/">
+                    </div><Link className="header__link" to="/">
                         <div className="header__icon">
                             <svg className="icon icon-exit">
                                 <use xlinkHref="#icon-exit"></use>
                             </svg>
                         </div>
-                        <div className="header__text">Disconnect</div></a>
+                        <div className="header__text">Disconnect</div></Link>
                 </div>
             </div>
         </div>
@@ -109,7 +115,7 @@ const HomePage = () => {
         <div className="main__center center">
             <div className="main__head">
                 <div className="main__stage">Create, explore, collect digital art NFTs.</div>
-                <h3 className="main__title h3">The new creative economy.</h3><a className="button-stroke main__button" href="search01.html">Start your search</a>
+                <h3 className="main__title h3">The new creative economy.</h3><Link className="button-stroke main__button" to="search">Start your search</Link>
             </div>
             <div className="main__wrapper">
                 <div className="main__slider js-slider-main">
@@ -168,7 +174,7 @@ const HomePage = () => {
                                     <div className="main__info">Auction ending in</div>
                                     <div className="main__timer"></div>
                                 </div>
-                                <div className="main__btns"><a className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</a><a className="button-stroke main__button" href="item.html">View item </a></div>
+                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
@@ -227,7 +233,7 @@ const HomePage = () => {
                                     <div className="main__info">Auction ending in</div>
                                     <div className="main__timer"></div>
                                 </div>
-                                <div className="main__btns"><a className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</a><a className="button-stroke main__button" href="item.html">View item </a></div>
+                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
@@ -266,7 +272,7 @@ const HomePage = () => {
                                     <div className="main__info">Auction ending in</div>
                                     <div className="main__timer"></div>
                                 </div>
-                                <div className="main__btns"><a className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</a><a className="button-stroke main__button" href="item.html">View item </a></div>
+                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
@@ -305,7 +311,7 @@ const HomePage = () => {
                                     <div className="main__info">Auction ending in</div>
                                     <div className="main__timer"></div>
                                 </div>
-                                <div className="main__btns"><a className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</a><a className="button-stroke main__button" href="item.html">View item </a></div>
+                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
@@ -316,7 +322,7 @@ const HomePage = () => {
     <div className="section-pb selection">
         <div className="selection__center center">
             <div className="selection__row">
-                <div className="selection__col"><a className="selection__card" href="item.html">
+                <div className="selection__col"><Link className="selection__card" to="Item">
                     <div className="selection__preview"><img srcSet={"img/content/selection-pic-1@2x.jpg 2x"} src={"img/content/selection-pic-1.jpg"} alt="Selection"/></div>
                     <div className="selection__head">
                         <div className="selection__line">
@@ -330,8 +336,8 @@ const HomePage = () => {
                             <div className="selection__content">Highest bid</div>
                             <div className="selection__price">1.125 ETH</div>
                         </div>
-                    </div></a></div>
-                <div className="selection__col"><a className="selection__item" href="item.html">
+                    </div></Link></div>
+                <div className="selection__col"><Link className="selection__item" to="Item">
                     <div className="selection__preview"><img srcSet={"img/content/selection-pic-2@2x.jpg 2x"} src={"img/content/selection-pic-2.jpg"} alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">ETH never die</div>
@@ -341,7 +347,7 @@ const HomePage = () => {
                             <div className="selection__content">1 of 12</div>
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
-                    </div></a><a className="selection__item" href="item.html">
+                    </div></Link><Link className="selection__item" to="Item">
                     <div className="selection__preview"><img srcSet={"img/content/selection-pic-1@2x.jpg 2x"} src={"img/content/selection-pic-1.jpg"} alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">Future coming soon</div>
@@ -351,7 +357,7 @@ const HomePage = () => {
                             <div className="selection__content">1 of 3</div>
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
-                    </div></a><a className="selection__item" href="item.html">
+                    </div></Link><Link className="selection__item" to="Item">
                     <div className="selection__preview"><img srcSet={"img/content/selection-pic-3@2x.jpg 2x"} src={"img/content/selection-pic-3.jpg"} alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">Elon Musk silver coin 3d print</div>
@@ -361,7 +367,7 @@ const HomePage = () => {
                             <div className="selection__content">1 of 4</div>
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
-                    </div></a></div>
+                    </div></Link></div>
             </div>
             <div className="selection__sidebar">
                 <div className="selection__info">Latest upload from creators <span role="img" aria-label="fire">🔥</span></div>
@@ -402,10 +408,10 @@ const HomePage = () => {
                             <div className="selection__price"><span>2.456</span> ETH</div>
                         </div>
                     </div>
-                </div><a className="button-stroke button-small selection__button" href="search01.html"><span>Discover more</span>
+                </div><Link className="button-stroke button-small selection__button" to="search"><span>Discover more</span>
                 <svg className="icon icon-arrow-next">
                     <use xlinkHref="#icon-arrow-next"></use>
-                </svg></a>
+                </svg></Link>
             </div>
         </div>
     </div>
@@ -449,10 +455,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -481,10 +487,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -513,10 +519,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -545,10 +551,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -577,10 +583,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -609,10 +615,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -641,10 +647,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -673,10 +679,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -705,10 +711,10 @@ const HomePage = () => {
                                         <svg className="icon icon-minus-square">
                                             <use xlinkHref="#icon-minus-square"></use>
                                         </svg>
-                                    </button><a className="popular__button" href="profile.html">
+                                    </button><Link className="popular__button" to="Profile">
                                     <svg className="icon icon-arrow-expand">
                                         <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></a>
+                                    </svg></Link>
                                 </div>
                             </div>
                             <div className="popular__body">
@@ -740,12 +746,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Amazing digital art</div>
@@ -767,7 +773,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -779,12 +785,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Ribbon Hunter</div>
@@ -806,7 +812,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -818,12 +824,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Amazing digital art</div>
@@ -845,7 +851,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -857,12 +863,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Ribbon Hunter</div>
@@ -884,7 +890,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -896,12 +902,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Amazing digital art</div>
@@ -923,7 +929,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -935,12 +941,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Ribbon Hunter</div>
@@ -962,7 +968,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                         <div className="hot__slide">
@@ -974,12 +980,12 @@ const HomePage = () => {
                                             <svg className="icon icon-heart">
                                                 <use xlinkHref="#icon-heart"></use>
                                             </svg>
-                                        </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                         <svg className="icon icon-scatter-up">
                                             <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></a>
+                                        </svg></Link>
                                     </div>
-                                </div><a className="card__link" href="item.html">
+                                </div><Link className="card__link" to="Item">
                                 <div className="card__body">
                                     <div className="card__line">
                                         <div className="card__title">Amazing digital art</div>
@@ -1001,7 +1007,7 @@ const HomePage = () => {
                                         </svg>Highest bid <span>0.001 ETH</span>
                                     </div>
                                     <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></a>
+                                </div></Link>
                             </div>
                         </div>
                     </div>
@@ -1014,7 +1020,7 @@ const HomePage = () => {
             <div className="collections__wrapper">
                 <h3 className="collections__title h3">Hot collections</h3>
                 <div className="collections__inner">
-                    <div className="collections__slider js-slider-collections"><a className="collections__item" href="profile.html">
+                    <div className="collections__slider js-slider-collections"><Link className="collections__item" to="Profile">
                         <div className="collections__gallery">
                             <div className="collections__preview"><img src={"img/content/photo-1.1.jpg"} alt="Collections"/></div>
                             <div className="collections__preview"><img src={"img/content/photo-1.2.jpg"} alt="Collections"/></div>
@@ -1028,7 +1034,7 @@ const HomePage = () => {
                                 <div className="collections__author">By <span>Kennith Olson</span></div>
                             </div>
                             <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></a><a className="collections__item" href="profile.html">
+                        </div></Link><Link className="collections__item" to="Profile">
                         <div className="collections__gallery">
                             <div className="collections__preview"><img src={"img/content/photo-2.1.jpg"} alt="Collections"/></div>
                             <div className="collections__preview"><img src={"img/content/photo-2.2.jpg"} alt="Collections"/></div>
@@ -1042,7 +1048,7 @@ const HomePage = () => {
                                 <div className="collections__author">By <span>Willie Barton</span></div>
                             </div>
                             <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></a><a className="collections__item" href="profile.html">
+                        </div></Link><Link className="collections__item" to="Profile">
                         <div className="collections__gallery">
                             <div className="collections__preview"><img src={"img/content/photo-3.1.jpg"} alt="Collections"/></div>
                             <div className="collections__preview"><img src={"img/content/photo-3.2.jpg"} alt="Collections"/></div>
@@ -1056,7 +1062,7 @@ const HomePage = () => {
                                 <div className="collections__author">By <span>Halle Jakubowski</span></div>
                             </div>
                             <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></a></div>
+                        </div></Link></div>
                 </div>
             </div>
         </div>
@@ -1069,7 +1075,7 @@ const HomePage = () => {
                     <option>Recently added</option>
                     <option>Long added</option>
                 </select>
-                <div className="discover__nav"><a className="discover__link active" href="/">All items</a><a className="discover__link" href="/">Art</a><a className="discover__link" href="/">Game</a><a className="discover__link" href="/">Photography</a><a className="discover__link" href="/">Music</a><a className="discover__link" href="/">Video</a></div>
+                <div className="discover__nav"><Link className="discover__link active" to="/">All items</Link><Link className="discover__link" to="/">Art</Link><Link className="discover__link" to="/">Game</Link><Link className="discover__link" to="/">Photography</Link><Link className="discover__link" to="/">Music</Link><Link className="discover__link" to="/">Video</Link></div>
                 <div className="tablet-show">
                     <select className="select">
                         <option>All items</option>
@@ -1150,12 +1156,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Amazing digital art</div>
@@ -1177,7 +1183,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-2@2x.jpg 2x" src="img/content/card-pic-2.jpg" alt="Card preview"/>
@@ -1187,12 +1193,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Ribbon Hunter</div>
@@ -1214,7 +1220,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-3@2x.jpg 2x" src="img/content/card-pic-3.jpg" alt="Card preview"/>
@@ -1224,12 +1230,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Amazing digital art</div>
@@ -1251,7 +1257,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-4@2x.jpg 2x" src="img/content/card-pic-4.jpg" alt="Card preview"/>
@@ -1261,12 +1267,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Ribbon Hunter</div>
@@ -1288,7 +1294,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-5@2x.jpg 2x" src="img/content/card-pic-5.jpg" alt="Card preview"/>
@@ -1298,12 +1304,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Amazing digital art</div>
@@ -1325,7 +1331,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-6@2x.jpg 2x" src="img/content/card-pic-6.jpg" alt="Card preview"/>
@@ -1335,12 +1341,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Ribbon Hunter</div>
@@ -1362,7 +1368,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-7@2x.jpg 2x" src="img/content/card-pic-7.jpg" alt="Card preview"/>
@@ -1372,12 +1378,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Amazing digital art</div>
@@ -1399,7 +1405,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                     <div className="card">
                         <div className="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
@@ -1409,12 +1415,12 @@ const HomePage = () => {
                                     <svg className="icon icon-heart">
                                         <use xlinkHref="#icon-heart"></use>
                                     </svg>
-                                </button><a className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
+                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                                 <svg className="icon icon-scatter-up">
                                     <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></a>
+                                </svg></Link>
                             </div>
-                        </div><a className="card__link" href="item.html">
+                        </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
                                 <div className="card__title">Amazing digital art</div>
@@ -1436,7 +1442,7 @@ const HomePage = () => {
                                 </svg>Highest bid <span>0.001 ETH</span>
                             </div>
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></a>
+                        </div></Link>
                     </div>
                 </div>
             </div>
@@ -1451,7 +1457,7 @@ const HomePage = () => {
                 <div className="description__stage">Save your time with Stacks</div>
                 <h1 className="description__title h1">Earn free crypto with Crypter</h1>
                 <div className="description__text">A creative agency that lead and inspire</div>
-                <div className="description__btns"><a className="button description__button" href="upload-variants.html">Create item</a><a className="button-stroke description__button" href="search01.html">Discover more</a></div>
+                <div className="description__btns"><Link className="button description__button" to="Upload-variants">Create item</Link><Link className="button-stroke description__button" to="search">Discover more</Link></div>
             </div>
             <div className="description__gallery">
                 <div className="description__preview">
@@ -1471,7 +1477,7 @@ const HomePage = () => {
             </svg>
         </div>
         <div className="popup__description">You need to connect your wallet first to sign messages and send transaction to Ethereum network</div>
-        <div className="popup__btns"><a className="button popup__button" href="connect-wallet.html">Connect wallet</a>
+        <div className="popup__btns"><Link className="button popup__button" href="connect-wallet.html">Connect wallet</Link>
             <button className="button-stroke popup__button js-popup-close">Cancel</button>
         </div>
     </div>
@@ -1549,7 +1555,7 @@ const HomePage = () => {
                 <div className="popup__col">0 ETH</div>
             </div>
         </div>
-        <div className="popup__btns"><a className="button popup__button js-popup-open" href="#popup-wallet" data-effect="mfp-zoom-in">Place a bid</a>
+        <div className="popup__btns"><Link className="button popup__button js-popup-open" href="#popup-wallet" data-effect="mfp-zoom-in">Place a bid</Link>
             <button className="button-stroke popup__button js-popup-close">Cancel</button>
         </div>
     </div>

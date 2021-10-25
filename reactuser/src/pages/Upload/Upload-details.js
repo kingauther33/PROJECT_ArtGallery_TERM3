@@ -1,6 +1,6 @@
 import React from 'react';
 
-const uploadDetails = (props) => {
+const UploadDetails = (props) => {
     return (
     <>
     {/* <script>
@@ -17,7 +17,7 @@ const uploadDetails = (props) => {
           <div class="header__item header__item_notification js-header-item">
             <button class="header__head js-header-head active">
               <svg class="icon icon-notification">
-                <use xlink:href="#icon-notification"></use>
+                <use xlinkHref="#icon-notification"></use>
               </svg>
             </button>
             <div class="header__body js-header-body">
@@ -65,7 +65,7 @@ const uploadDetails = (props) => {
                 <div class="header__number">0xc4c16ab5ac7d...b21a</div>
                 <button class="header__copy">
                   <svg class="icon icon-copy">
-                    <use xlink:href="#icon-copy"></use>
+                    <use xlinkHref="#icon-copy"></use>
                   </svg>
                 </button>
               </div>
@@ -82,20 +82,20 @@ const uploadDetails = (props) => {
               <div class="header__menu"><a class="header__link" href="profile.html">
                   <div class="header__icon">
                     <svg class="icon icon-user">
-                      <use xlink:href="#icon-user"></use>
+                      <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
                   <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
                   <div class="header__icon">
                     <svg class="icon icon-image">
-                      <use xlink:href="#icon-image"></use>
+                      <use xlinkHref="#icon-image"></use>
                     </svg>
                   </div>
                   <div class="header__text">My items</div></a>
                 <div class="header__link">
                   <div class="header__icon">
                     <svg class="icon icon-bulb">
-                      <use xlink:href="#icon-bulb"></use>
+                      <use xlinkHref="#icon-bulb"></use>
                     </svg>
                   </div>
                   <div class="header__text">Dark theme</div>
@@ -105,7 +105,7 @@ const uploadDetails = (props) => {
                 </div><a class="header__link" href="/">
                   <div class="header__icon">
                     <svg class="icon icon-exit">
-                      <use xlink:href="#icon-exit"></use>
+                      <use xlinkHref="#icon-exit"></use>
                     </svg>
                   </div>
                   <div class="header__text">Disconnect</div></a>
@@ -130,7 +130,7 @@ const uploadDetails = (props) => {
                       <input class="upload__input" type="file"/>
                       <div class="upload__icon">
                         <svg class="icon icon-upload-file">
-                          <use xlink:href="#icon-upload-file"></use>
+                          <use xlinkHref="#icon-upload-file"></use>
                         </svg>
                       </div>
                       <div class="upload__format">PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.</div>
@@ -218,7 +218,7 @@ const uploadDetails = (props) => {
                     <div class="upload__card">
                       <div class="upload__plus" style={{backgroundColor: "#4BC9F0"}}>
                         <svg class="icon icon-plus">
-                          <use xlink:href="#icon-plus"></use>
+                          <use xlinkHref="#icon-plus"></use>
                         </svg>
                       </div>
                       <div class="upload__subtitle">Create collection</div>
@@ -226,7 +226,7 @@ const uploadDetails = (props) => {
                     <div class="upload__card">
                       <div class="upload__plus" style={{backgroundColor: "#45B26B"}}>
                         <svg class="icon icon-plus">
-                          <use xlink:href="#icon-plus"></use>
+                          <use xlinkHref="#icon-plus"></use>
                         </svg>
                       </div>
                       <div class="upload__subtitle">Crypto Legend - Professor</div>
@@ -234,7 +234,7 @@ const uploadDetails = (props) => {
                     <div class="upload__card">
                       <div class="upload__plus" style={{backgroundColor: "#EF466F"}}>
                         <svg class="icon icon-plus">
-                          <use xlink:href="#icon-plus"></use>
+                          <use xlinkHref="#icon-plus"></use>
                         </svg>
                       </div>
                       <div class="upload__subtitle">Crypto Legend - Professor</div>
@@ -242,7 +242,7 @@ const uploadDetails = (props) => {
                     <div class="upload__card">
                       <div class="upload__plus" style={{backgroundColor: "#9757D7"}}>
                         <svg class="icon icon-plus">
-                          <use xlink:href="#icon-plus"></use>
+                          <use xlinkHref="#icon-plus"></use>
                         </svg>
                       </div>
                       <div class="upload__subtitle">Legend Photography</div>
@@ -252,7 +252,7 @@ const uploadDetails = (props) => {
                 <div class="upload__foot">
                   <button class="button-stroke tablet-show upload__button js-preview-open">Preview</button><a class="button upload__button js-popup-open" href="#popup-wallet" data-effect="mfp-zoom-in"><span>Create item</span>
                     <svg class="icon icon-arrow-next">
-                      <use xlink:href="#icon-arrow-next"></use>
+                      <use xlinkHref="#icon-arrow-next"></use>
                     </svg></a>
                   <div class="upload__saving">Auto saving
                     <div class="loader"></div>
@@ -264,7 +264,7 @@ const uploadDetails = (props) => {
               <div class="preview__inner">
                 <button class="preview__close js-preview-close">
                   <svg class="icon icon-close">
-                    <use xlink:href="#icon-close"></use>
+                    <use xlinkHref="#icon-close"></use>
                   </svg>
                 </button>
                 <div class="preview__info">Preview</div>
@@ -274,11 +274,11 @@ const uploadDetails = (props) => {
                       <div class="status-green card__category">purchasing !</div>
                       <button class="card__favorite">
                         <svg class="icon icon-heart">
-                          <use xlink:href="#icon-heart"></use>
+                          <use xlinkHref="#icon-heart"></use>
                         </svg>
                       </button><a class="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
                         <svg class="icon icon-scatter-up">
-                          <use xlink:href="#icon-scatter-up"></use>
+                          <use xlinkHref="#icon-scatter-up"></use>
                         </svg></a>
                     </div>
                   </div><a class="card__link" href="item.html">
@@ -299,14 +299,14 @@ const uploadDetails = (props) => {
                     <div class="card__foot">
                       <div class="card__status">
                         <svg class="icon icon-candlesticks-up">
-                          <use xlink:href="#icon-candlesticks-up"></use>
+                          <use xlinkHref="#icon-candlesticks-up"></use>
                         </svg>Highest bid <span>0.001 ETH</span>
                       </div>
                       <div class="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
                     </div></a>
                 </div><a class="preview__clear" href="/">
                   <svg class="icon icon-circle-close">
-                    <use xlink:href="#icon-circle-close"></use>
+                    <use xlinkHref="#icon-circle-close"></use>
                   </svg>Clear all</a>
               </div>
             </div>
@@ -319,7 +319,7 @@ const uploadDetails = (props) => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-upload-file">
-                    <use xlink:href="#icon-upload-file"></use>
+                    <use xlinkHref="#icon-upload-file"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -333,7 +333,7 @@ const uploadDetails = (props) => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-pencil">
-                    <use xlink:href="#icon-pencil"></use>
+                    <use xlinkHref="#icon-pencil"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -347,7 +347,7 @@ const uploadDetails = (props) => {
               <div class="steps__head">
                 <div class="steps__icon">
                   <svg class="icon icon-bag">
-                    <use xlink:href="#icon-bag"></use>
+                    <use xlinkHref="#icon-bag"></use>
                   </svg>
                 </div>
                 <div class="steps__details">
@@ -526,3 +526,5 @@ const uploadDetails = (props) => {
     </>
     );
 }
+
+export default UploadDetails;

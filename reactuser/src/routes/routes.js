@@ -7,6 +7,8 @@ import Profile from './../pages/Profile/Profile';
 import ProfileEdit from './../pages/Profile/Profile-edit';
 import item from './../pages/Item/Item';
 import Activity from './../pages/Activity/Activity';
+import UploadDetails from '../pages/Upload/Upload-details';
+import UploadVariants from '../pages/Upload/Upload-variants';
 
 
 // USER
@@ -52,6 +54,19 @@ const ActivityRoute = {
 	page: Activity, // PAGE ứng với ROUTE đó
 };
 
+const UploadDetailsRoute = {
+	path: '/upload-details', // URL trên browser
+	layout: UserLayout, // LAYOUT ứng với từng ROUTE
+	page: UploadDetails, // PAGE ứng với ROUTE đó
+};
+
+const UploadVariantsRoute = {
+	path: '/upload-variants', // URL trên browser
+	layout: UserLayout, // LAYOUT ứng với từng ROUTE
+	page: UploadVariants, // PAGE ứng với ROUTE đó
+};
+
+
 export const routes = [
 	// USER
 	HomePageRoute,
@@ -61,4 +76,6 @@ export const routes = [
 	ProfileEditRoute,
 	ItemRoute,
 	ActivityRoute,
+	UploadDetailsRoute,
+	UploadVariantsRoute,
 ];

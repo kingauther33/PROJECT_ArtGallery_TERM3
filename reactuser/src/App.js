@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import { routes } from './routes/routes';
 import ArtGalleryRoutes from './routes';
 import Error404 from './pages/Error404/index';
+import Activity from './pages/Activity/Activity';
 
 function App() {
 	return (
