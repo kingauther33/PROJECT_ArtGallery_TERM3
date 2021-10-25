@@ -23,35 +23,35 @@ const UploadVariants = (props) => {
             </button>
             <div class="header__body js-header-body">
               <div class="header__title h4">Notification</div>
-              <div class="header__list"><a class="header__notification" href="activity.html">
+              <div class="header__list"><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">2 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">C O I N Z</div>
                                     <div class="header__price">New bid 0.2 ETH</div>
                                     <div class="header__date">3 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">4 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">5 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="button-small header__button" href="activity.html">See all</a>
+                                  <div class="header__status"></div></a><a class="button-small header__button" href="activity">See all</a>
               </div>
             </div>
           </div>
@@ -80,13 +80,13 @@ const UploadVariants = (props) => {
                 </div>
                 <button class="button-stroke button-small header__button">Manage fun on Coinbase</button>
               </div>
-              <div class="header__menu"><a class="header__link" href="profile.html">
+              <div class="header__menu"><a class="header__link" href="profile">
                   <div class="header__icon">
                     <svg class="icon icon-user">
                       <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
-                  <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
+                  <div class="header__text">My profile</div></a><a class="header__link" href="item">
                   <div class="header__icon">
                     <svg class="icon icon-image">
                       <use xlinkHref="#icon-image"></use>
@@ -117,13 +117,13 @@ const UploadVariants = (props) => {
 
       <div class="outer__inner">
         <div class="control">
-          <div class="control__center center"><a class="button-stroke button-small control__button" href="index.html">
+          <div class="control__center center"><a class="button-stroke button-small control__button" href="index">
               <svg class="icon icon-arrow-prev">
                 <use xlinkHref="#icon-arrow-prev"></use>
               </svg><span>Back to home</span></a>
             <div class="breadcrumbs">
               <ul class="breadcrumbs">
-                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Home</a></li>
+                <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index">Home</a></li>
                 <li class="breadcrumbs__item">Upload Item</li>
               </ul>
             </div>
@@ -137,10 +137,10 @@ const UploadVariants = (props) => {
             </div>
             <div class="variants__list">
               <div class="variants__item">
-                <div class="variants__preview"><img srcSet={"img/content/upload-pic-1@2x.jpg 2x"} src={"img/content/upload-pic-1.jpg"} alt="Upload"/></div><a class="button-stroke variants__button" href="upload-details.html">Create Single</a>
+                <div class="variants__preview"><img srcSet={"img/content/upload-pic-1@2x.jpg 2x"} src={"img/content/upload-pic-1.jpg"} alt="Upload"/></div><a class="button-stroke variants__button" href="upload-details">Create Single</a>
               </div>
               <div class="variants__item">
-                <div class="variants__preview"><img srcSet={"img/content/upload-pic-2@2x.jpg 2x"} src={"img/content/upload-pic-2.jpg"} alt="Upload"/></div><a class="button-stroke variants__button" href="upload-details-multiple.html">Create Multiple</a>
+                <div class="variants__preview"><img srcSet={"img/content/upload-pic-2@2x.jpg 2x"} src={"img/content/upload-pic-2.jpg"} alt="Upload"/></div><a class="button-stroke variants__button" href="upload-details-multiple">Create Multiple</a>
               </div>
             </div>
             <div class="variants__note">We do not own your private keys and cannot access your funds without your confirmation.</div>
