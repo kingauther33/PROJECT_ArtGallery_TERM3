@@ -1,23 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import BreadCrumbContext from 'stores/breadcrumb-context';
+
+const sideBarItems = [
+	{
+		link: '/admin-dashboard',
+		name: 'Dashboard',
+		icon: 'design_app',
+	},
+	{
+		link: '/manage-user',
+		name: 'User',
+		icon: 'users_single-02',
+	},
+];
 
 const AdminSidebar = () => {
+	const location = useLocation();
+	const breadCrumbCtx = useContext(BreadCrumbContext);
+
+	const pageChangeHandler = (item) => {
+		breadCrumbCtx.setBreadCrumbState(item);
+	};
+
 	return (
 		<div className="sidebar" data-color="orange">
 			{/* Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow" */}
 			<div className="logo">
-				<Link
-					to="http://www.creative-tim.com"
-					className="simple-text logo-mini"
-				>
+				<Link to="#" className="simple-text logo-mini">
 					ART
 				</Link>
-				<Link
-					to="http://www.creative-tim.com"
-					className="simple-text logo-normal"
-				>
+				<Link to="#" className="simple-text logo-normal">
 					ART GALLERY
 				</Link>
 			</div>
@@ -26,7 +41,21 @@ const AdminSidebar = () => {
 			<PerfectScrollbar>
 				<div className="sidebar-wrapper" id="sidebar-wrapper">
 					<ul className="nav">
-						<li className="active">
+						{sideBarItems.map((item, index) => (
+							<li
+								className={location.pathname === item.link ? 'active' : ''}
+								key={index}
+							>
+								<Link
+									to={item.link}
+									onClick={pageChangeHandler.bind(null, item)}
+								>
+									<i className={`now-ui-icons ${item.icon}`}></i>
+									<p>{item.name}</p>
+								</Link>
+							</li>
+						))}
+						{/* <li className="active">
 							<Link to="/admin-dashboard">
 								<i className="now-ui-icons design_app"></i>
 								<p>Dashboard</p>
@@ -73,7 +102,7 @@ const AdminSidebar = () => {
 								<i className="now-ui-icons arrows-1_cloud-download-93"></i>
 								<p>Upgrade to PRO</p>
 							</Link>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 			</PerfectScrollbar>

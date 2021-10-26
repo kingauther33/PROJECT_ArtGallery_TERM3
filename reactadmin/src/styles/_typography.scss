@@ -10,7 +10,19 @@
 .h4,
 .h5,
 .h6 {
-	font-family: 'DMSansBold', Helvetica, Arial, sans-serif;
+	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+.x_font-poppin {
+	font-family: 'Poppins', Helvetica, Arial, sans-serif !important;
+}
+
+.x_font-w700 {
+	font-weight: 700 !important;
+}
+
+.x_font-w600 {
+	font-weight: 600 !important;
 }
 
 .x_letter-spacing-01 {
@@ -23,7 +35,8 @@
 
 .x_text-heading {
 	color: var(--primary-color) !important;
-	font-family: 'DMSansBold' !important;
+	font-family: 'Montserrat' !important;
+	font-weight: 700 !important;
 }
 
 .x_text-white {
@@ -45,6 +58,14 @@
 
 .x_font-13 {
 	font-size: 1.3rem !important;
+}
+
+.x_font-14 {
+	font-size: 1.4rem !important;
+}
+
+.x_font-16 {
+	font-size: 1.6rem !important;
 }
 
 .x_font-18 {

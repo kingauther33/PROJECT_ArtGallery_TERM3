@@ -1,6 +1,8 @@
-import React from 'react';
-import { useTable } from 'react-table';
+import React, { useEffect, useState } from 'react';
+import { useTable, usePagination } from 'react-table';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import ReactPaginate from 'react-paginate';
 
 const StyledTable = styled.div`
 	.table {
@@ -79,12 +81,61 @@ const StyledTable = styled.div`
 	}
 `;
 
-const CustomTable = ({ columns, data }) => {
-	const { getTableProps, getTableBodyProps, headerGroups, prepareRow, rows } =
-		useTable({
+const CustomTable = ({ columns, listData }) => {
+	const [listRows, setListRows] = useState([]);
+	debugger;
+
+	useEffect(() => {
+		let dataFetched = [];
+		if (listData.length) {
+			dataFetched = listData.map((data) => {
+				data.action = (
+					<>
+						<Link to="#">
+							<i className="fas fa-trash"></i>
+						</Link>
+						<Link to="#" style={{ marginLeft: '0.6em' }}>
+							<i className="fas fa-edit"></i>
+						</Link>
+					</>
+				);
+
+				return data;
+			});
+		}
+
+		setListRows(dataFetched);
+	}, [listData]);
+
+	const {
+		getTableProps,
+		getTableBodyProps,
+		headerGroups,
+		prepareRow,
+		// rows,
+		page,
+		nextPage,
+		previousPage,
+		canNextPage,
+		canPreviousPage,
+		pageOptions,
+		gotoPage,
+		pageCount,
+		setPageSize,
+		state,
+	} = useTable(
+		{
 			columns,
-			data,
-		});
+			data: listRows,
+		},
+		usePagination
+	);
+
+	const pageChange = (e) => {
+		gotoPage(e.selected);
+	};
+
+	const { pageIndex, pageSize } = state;
 
 	return (
 		<StyledTable>
@@ -100,7 +151,7 @@ const CustomTable = ({ columns, data }) => {
 				</thead>
 
 				<tbody {...getTableBodyProps()}>
-					{rows.map((row) => {
+					{page.map((row) => {
 						prepareRow(row);
 						return (
 							<tr {...row.getRowProps()}>
@@ -118,6 +169,34 @@ const CustomTable = ({ columns, data }) => {
 					})}
 				</tbody>
 			</table>
+			<div className="text-center">
+				<button
+					className="btn btn-primary"
+					disabled={!canPreviousPage}
+					onClick={() => previousPage()}
+				>
+					Previous
+				</button>
+				<button
+					className="btn btn-primary"
+					disabled={!canNextPage}
+					onClick={() => nextPage()}
+				>
+					Next
+				</button>
+			</div>
+			<ReactPaginate
+				previousLabel={'<'}
+				nextLabel={'>'}
+				breakLabel={'...'}
+				breakClassName={'btn btn-primary'}
+				pageCount={pageCount}
+				marginPagesDisplayed={2}
+				pageRangeDisplayed={3}
+				onPageChange={pageChange}
+				containerClassName={'btn btn-primary btn-block'}
+				activeClassName={'active'}
+			/>
 		</StyledTable>
 	);
 };
