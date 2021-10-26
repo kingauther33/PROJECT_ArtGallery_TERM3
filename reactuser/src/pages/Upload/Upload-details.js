@@ -22,35 +22,35 @@ const UploadDetails = (props) => {
             </button>
             <div class="header__body js-header-body">
               <div class="header__title h4">Notification</div>
-              <div class="header__list"><a class="header__notification" href="activity.html">
+              <div class="header__list"><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">2 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">C O I N Z</div>
                                     <div class="header__price">New bid 0.2 ETH</div>
                                     <div class="header__date">3 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">4 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
+                                  <div class="header__status"></div></a><a class="header__notification" href="activity">
                                   <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
                                   <div class="header__details">
                                     <div class="header__subtitle">ETH received</div>
                                     <div class="header__price">0.08 ETH recived</div>
                                     <div class="header__date">5 days ago</div>
                                   </div>
-                                  <div class="header__status"></div></a><a class="button-small header__button" href="activity.html">See all</a>
+                                  <div class="header__status"></div></a><a class="button-small header__button" href="activity">See all</a>
               </div>
             </div>
           </div>
@@ -79,13 +79,13 @@ const UploadDetails = (props) => {
                 </div>
                 <button class="button-stroke button-small header__button">Manage fun on Coinbase</button>
               </div>
-              <div class="header__menu"><a class="header__link" href="profile.html">
+              <div class="header__menu"><a class="header__link" href="profile">
                   <div class="header__icon">
                     <svg class="icon icon-user">
                       <use xlinkHref="#icon-user"></use>
                     </svg>
                   </div>
-                  <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
+                  <div class="header__text">My profile</div></a><a class="header__link" href="item">
                   <div class="header__icon">
                     <svg class="icon icon-image">
                       <use xlinkHref="#icon-image"></use>
@@ -119,7 +119,7 @@ const UploadDetails = (props) => {
           <div class="upload__center center">
             <div class="upload__wrapper">
               <div class="upload__head">
-                <h2 class="upload__title h2">Create single collectible</h2><a class="button-stroke button-small upload__button" href="upload-details-multiple.html">Switch to Multiple</a>
+                <h2 class="upload__title h2">Create single collectible</h2><a class="button-stroke button-small upload__button" href="upload-details-multiple">Switch to Multiple</a>
               </div>
               <div class="upload__form">
                 <div class="upload__list">
@@ -281,7 +281,7 @@ const UploadDetails = (props) => {
                           <use xlinkHref="#icon-scatter-up"></use>
                         </svg></a>
                     </div>
-                  </div><a class="card__link" href="item.html">
+                  </div><a class="card__link" href="item">
                     <div class="card__body">
                       <div class="card__line"> 
                         <div class="card__title">Black Golden Tiger</div>

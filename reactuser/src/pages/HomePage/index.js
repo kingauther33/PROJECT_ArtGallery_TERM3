@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+
+
 	return (
 	<>
         <div className="header__item header__item_notification js-header-item">

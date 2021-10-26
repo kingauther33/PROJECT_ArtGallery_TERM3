@@ -1,8 +1,10 @@
+import React, { useMemo, useEffect, useState } from 'react';
 import CustomTable from 'components/CustomTable/table';
 import SearchInput from 'components/SearchInput';
 import { WidthResponsive } from 'components/UI/WidthResponsive';
-import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { API } from 'API';
 
 const ManageUser = () => {
 	const columns = useMemo(
@@ -13,11 +15,11 @@ const ManageUser = () => {
 			},
 			{
 				Header: 'First Name',
-				accessor: 'first_name',
+				accessor: 'firstName',
 			},
 			{
 				Header: 'Last Name',
-				accessor: 'last_name',
+				accessor: 'lastName',
 			},
 			{
 				Header: 'Email',
@@ -30,6 +32,10 @@ const ManageUser = () => {
 			{
 				Header: 'Deposit',
 				accessor: 'deposit',
+			},
+			{
+				Header: 'Action',
+				accessor: 'action',
 			},
 		],
 		[]
@@ -65,6 +71,24 @@ const ManageUser = () => {
 		[]
 	);
 
+	const [listData, setListData] = useState([]);
+
+	const fetchUsers = async () => {
+		await axios
+			.get(API.users.url, API.headers)
+			.then((res) => {
+				setListData(res.data);
+				debugger;
+			})
+			.catch((err) => console.log(err));
+	};
+
+	useEffect(() => {
+		fetchUsers();
+
+		return () => {};
+	}, []);
+
 	return (
 		<>
 			<div className="panel-header panel-header-sm"></div>
@@ -73,14 +97,17 @@ const ManageUser = () => {
 					<div className="col-12">
 						<div className="card">
 							<div className="card-header">
-								<h5 className="title">Users</h5>
+								<h5 className="title">User</h5>
 								<SearchInput />
 							</div>
 							<div className="card-body">
-								<CustomTable columns={columns} data={data} />
+								<CustomTable columns={columns} listData={listData} />
 								<WidthResponsive>
-									<Link to="#" className="btn btn-primary btn-block">
-										<i class="fas fa-plus"></i>Add more User
+									<Link
+										to="#"
+										className="btn btn-primary btn-block x_font-poppin x_font-w600"
+									>
+										<i className="fas fa-plus mr-2"></i>Add more User
 									</Link>
 								</WidthResponsive>
 							</div>

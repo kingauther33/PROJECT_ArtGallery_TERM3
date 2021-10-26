@@ -38,7 +38,7 @@ const AdminNavbar = () => {
 								<span className="navbar-toggler-bar bar3"></span>
 							</button>
 						</div>
-						<Link className="navbar-brand" to="#pablo">
+						<Link className="navbar-brand" to="/admin-dashboard">
 							Dashboard
 						</Link>
 					</div>

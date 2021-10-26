@@ -14,7 +14,7 @@ GO
 DROP DATABASE T2004E_React_ArtGallery;
 GO
 
-SELECT * FROM [dbo].[user];
+SELECT * FROM [dbo].[user]
 SELECT * FROM [dbo].[deposit_log]
 SELECT * FROM [dbo].[user_log]
 SELECT * FROM [dbo].[category]

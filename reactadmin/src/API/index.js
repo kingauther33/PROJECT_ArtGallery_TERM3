@@ -1,5 +1,13 @@
-const BASE_URL = 'http://localhost:4443';
+const BASE_URL = 'https://localhost:44379/api/';
 
-const API = {};
-
-export default API;
+export const API = {
+	headers: {
+		'Content-Type': 'application/json',
+		'Access-Control-Allow-Origin': '*',
+	},
+	users: {
+		url: BASE_URL + 'Users',
+		params: {},
+		method: 'GET',
+	},
+};
