@@ -1,11 +1,13 @@
 import React from 'react';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const UserLayout = (props) => {
 	return (
 		<>
-			{/* HEADER */}
+			<Header></Header>
 			{props.children}
-			{/* FOOTER */}
+			<Footer></Footer>
 		</>
 	);
 };

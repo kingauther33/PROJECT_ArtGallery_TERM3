@@ -9,6 +9,7 @@ import item from './../pages/Item/Item';
 import Activity from './../pages/Activity/Activity';
 import UploadDetails from '../pages/Upload/Upload-details';
 import UploadVariants from '../pages/Upload/Upload-variants';
+import ContactUs from "../pages/ContactUs";
 
 
 // USER
@@ -22,6 +23,12 @@ const AboutUsRoute = {
 	path: '/about-us', // URL trên browser
 	layout: UserLayout, // LAYOUT ứng với từng ROUTE
 	page: AboutUs, // PAGE ứng với ROUTE đó
+};
+
+const ContactUsRoute = {
+	path: '/contact-us', // URL trên browser
+	layout: UserLayout, // LAYOUT ứng với từng ROUTE
+	page: ContactUs, // PAGE ứng với ROUTE đó
 };
 
 const SearchRoute = {
@@ -71,6 +78,7 @@ export const routes = [
 	// USER
 	HomePageRoute,
 	AboutUsRoute,
+	ContactUsRoute,
 	SearchRoute,
 	ProfileRoute,
 	ProfileEditRoute,

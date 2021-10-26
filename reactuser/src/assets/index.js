@@ -1,9 +1,11 @@
 const images = {
 	Homepage: {
-		banner: require('./banner-demo.jpg').default,
+		banner: require('./banner.png').default,
 	},
 	AboutUs: {},
-	ContactUs: {},
+	ContactUs: {
+		img:require('./support.png').default,
+	},
 };
 
 export default images;
