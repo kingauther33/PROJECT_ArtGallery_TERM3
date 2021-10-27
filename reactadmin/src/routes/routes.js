@@ -1,6 +1,8 @@
 import AdminLayout from 'layout/AdminLayout';
 import AdminDashboard from 'pages/Dashboard';
-import ManageUser from 'pages/ManageUser';
+import ManageUser from 'pages/User/ManageUser';
+import AddUser from 'pages/User/AddUser';
+import EditUser from 'pages/User/AddUser';
 
 const AdminDashboardRoute = {
 	path: '/admin-dashboard', // URL trên browser
@@ -14,4 +16,21 @@ const ManageUserRoute = {
 	page: ManageUser,
 };
 
-export const routes = [AdminDashboardRoute, ManageUserRoute];
+const AddUserRoute = {
+	path: '/add-user',
+	layout: AdminLayout,
+	page: AddUser,
+};
+
+const EditUserRoute = {
+	path: '/edit-user/:id',
+	layout: AdminLayout,
+	page: EditUser,
+};
+
+export const routes = [
+	AdminDashboardRoute,
+	ManageUserRoute,
+	AddUserRoute,
+	EditUserRoute,
+];

@@ -78,7 +78,6 @@ const ManageUser = () => {
 			.get(API.users.url, API.headers)
 			.then((res) => {
 				setListData(res.data);
-				debugger;
 			})
 			.catch((err) => console.log(err));
 	};
@@ -104,7 +103,7 @@ const ManageUser = () => {
 								<CustomTable columns={columns} listData={listData} />
 								<WidthResponsive>
 									<Link
-										to="#"
+										to="/add-user"
 										className="btn btn-primary btn-block x_font-poppin x_font-w600"
 									>
 										<i className="fas fa-plus mr-2"></i>Add more User

@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[user]
  [id]               int IDENTITY NOT NULL ,
  [first_name]       nvarchar(max) NOT NULL ,
  [last_name]        nvarchar(max) NOT NULL ,
- [email]            nvarchar(max) NOT NULL UNIQUE,
+ [email]            nvarchar(450) NOT NULL UNIQUE,
  [password]         nvarchar(max) NOT NULL ,
  [confirm_password] nvarchar(max) NOT NULL ,
  [role]             nvarchar(max) NOT NULL ,
