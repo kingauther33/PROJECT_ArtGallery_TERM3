@@ -14,6 +14,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 namespace ReactAPI
 {
     public class Startup
@@ -30,6 +34,10 @@ namespace ReactAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Dòng này để đảm bảo CONTROLLER chạy ổn
+            // services.AddTransient<Models.T2004E_ReactProjectContext, Models.T2004E_ReactProjectContext>();
+
+            //Dòng này để thay thế DB context mặc định có sẵn trong Modal Context, Thay thế Transient:
             var connectionString = Configuration.GetConnectionString("T2004E_React_ArtGallery");
             services.AddDbContextPool<T2004E_React_ArtGalleryContext>(options => options.UseSqlServer(connectionString));
 
@@ -56,6 +64,20 @@ namespace ReactAPI
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                };
+            });
 
             services.AddSwaggerGen(c =>
             {
