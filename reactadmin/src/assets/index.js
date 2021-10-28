@@ -2,8 +2,9 @@ const images = {
 	Homepage: {
 		banner: require('./banner-demo.jpg').default,
 	},
-	AboutUs: {},
-	ContactUs: {},
+	Login: {
+		hero: require('./login-hero.png').default,
+	},
 };
 
 export default images;

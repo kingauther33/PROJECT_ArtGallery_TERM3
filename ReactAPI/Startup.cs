@@ -101,6 +101,8 @@ namespace ReactAPI
 
             app.UseCors(MyAllowSpecificOrigins);
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

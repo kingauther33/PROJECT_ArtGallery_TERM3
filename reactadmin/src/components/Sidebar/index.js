@@ -43,7 +43,11 @@ const AdminSidebar = () => {
 					<ul className="nav">
 						{sideBarItems.map((item, index) => (
 							<li
-								className={location.pathname === item.link ? 'active' : ''}
+								className={
+									location.pathname.split('/')[1] === item.link.split('/')[1]
+										? 'active'
+										: ''
+								}
 								key={index}
 							>
 								<Link

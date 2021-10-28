@@ -47,13 +47,14 @@ namespace ReactAPI.Controllers
                         new Claim("Id", user.Email),
                         new Claim("FirstName", user.FirstName),
                         new Claim("LastName", user.LastName),
+                        new Claim("Role", user.Role),
                     };
 
                     var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
                     var sign = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
                     var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Audience"], claims, expires: DateTime.Now.AddDays(1), signingCredentials: sign);
 
-                    return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), role = user.Role });
                 }
 
                 return BadRequest("Username or password incorrect!");
