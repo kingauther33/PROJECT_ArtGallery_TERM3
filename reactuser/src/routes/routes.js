@@ -10,6 +10,7 @@ import Activity from './../pages/Activity/Activity';
 import UploadDetails from '../pages/Upload/Upload-details';
 import UploadVariants from '../pages/Upload/Upload-variants';
 import ContactUs from "../pages/ContactUs";
+import Deposit from "../pages/Deposit/index";
 
 
 // USER
@@ -72,6 +73,11 @@ const UploadVariantsRoute = {
 	layout: UserLayout, // LAYOUT ứng với từng ROUTE
 	page: UploadVariants, // PAGE ứng với ROUTE đó
 };
+const DepositRoute = {
+	path: '/deposit',
+	layout: UserLayout,
+	page: Deposit,
+};
 
 
 export const routes = [
@@ -86,4 +92,5 @@ export const routes = [
 	ActivityRoute,
 	UploadDetailsRoute,
 	UploadVariantsRoute,
+	DepositRoute,
 ];
