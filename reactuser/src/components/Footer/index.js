@@ -3,46 +3,53 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
 	return( <div>
-		<footer className='footer'>
-			<div className="footer-main">
-				<div className="footer-row">
-					<div className="footer-col">
-						<h4 className='text-footer'>Folow Us</h4>
-						<div className="social-links">
-							<Link to=''><i className='fab fa-facebook'></i></Link>
-							<Link to=''><i className='fab fa-facebook'></i></Link>
-							<Link to=''><i className='fab fa-facebook'></i></Link>
-							<Link to=''><i className='fab fa-facebook'></i></Link>
+		<footer className="footer">
+			<div className="footer__center center">
+				<div className="footer__row">
+					<div className="footer__col">
+						<img className="some-icon" src="img/logo-dark.png" alt="logo"/>
 
+						<div className="footer__info">The New Creative Economy.</div>
+
+					</div>
+					<div className="footer__col">
+						<div className="footer__group">
+							<div className="footer__head">Crypter.
+								<svg className="icon icon-arrow-bottom">
+
+								</svg>
+							</div>
+							<div className="footer__body">
+								<div className="footer__menu"><a className="footer__link"
+																 href="search01.html">Discover</a><a
+									className="footer__link" href="connect-wallet.html">Connect wallet</a></div>
+							</div>
+						</div>
+						<div className="footer__group">
+							<div className="footer__head">Info
+								<svg className="icon icon-arrow-bottom">
+
+								</svg>
+							</div>
+							<div className="footer__body">
+								<div className="footer__menu"><a className="footer__link" href="faq.html">FAQ</a><a
+									className="footer__link" href="upload-variants.html">Create item</a></div>
+							</div>
 						</div>
 					</div>
-					<div className="footer-col">
-						<h4 className='text-footer'>Company</h4>
-						<ul className='footer-ul'>
-							<li className='footer-li'><Link to=''>About us</Link></li>
-							<li className='footer-li'><Link to=''>Contact</Link></li>
-							<li className='footer-li'><Link to=''>Privacy policy</Link></li>
-							<li className='footer-li'><Link to=''>affiliate program</Link></li>
-						</ul>
-					</div>
-					<div className="footer-col">
-						<h4 className='text-footer'>Get help</h4>
-						<ul className='footer-ul'>
+					<div className="footer__col">
+						<div className="footer__category">Join Newsletter</div>
+						<div className="footer__text">Subscribe our newsletter to get more free design course and
+							resource
+						</div>
 
-						</ul>
-					</div>
-					<div className="footer-col">
-						<h4 className='text-footer'>Online Shop</h4>
-						<ul className='footer-ul'>
-							<li className='footer-li'><Link to=''>Artist</Link></li>
-							<li className='footer-li'><Link to=''>Atwork</Link></li>
-
-						</ul>
 					</div>
 				</div>
+				<div className="footer__foot">
+					<div className="footer__copyright">Copyright © 2021 UI8 LLC. All rights reserved</div>
 
+				</div>
 			</div>
-
 		</footer>
 	</div>
 );

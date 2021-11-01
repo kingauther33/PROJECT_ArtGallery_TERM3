@@ -1,115 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import images from '../../assets';
 
 const HomePage = () => {
 
 
 	return (
 	<>
-        <div className="header__item header__item_notification js-header-item">
-            <button className="header__head js-header-head active">
-                <svg className="icon icon-notification">
-                    <use xlinkHref="#icon-notification"></use>
-                </svg>
-            </button>
-            <div className="header__body js-header-body">
-                <div className="header__title h4">Notification</div>
-                <div className="header__list">
-                    <Link className="header__notification" to="Activity">
-                    <div className="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
-                    <div className="header__details">
-                        <div className="header__subtitle">ETH received</div>
-                        <div className="header__price">0.08 ETH recived</div>
-                        <div className="header__date">2 days ago</div>
-                    </div>
-                    <div className="header__status"></div>
-                    </Link>
-                    <Link className="header__notification" to="Activity">
-                    <div className="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
-                    <div className="header__details">
-                        <div className="header__subtitle">C O I N Z</div>
-                        <div className="header__price">New bid 0.2 ETH</div>
-                        <div className="header__date">3 days ago</div>
-                    </div>
-                    <div className="header__status"></div>
-                    </Link>
-                    <Link className="header__notification" to="Activity">
-                    <div className="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
-                    <div className="header__details">
-                        <div className="header__subtitle">ETH received</div>
-                        <div className="header__price">0.08 ETH recived</div>
-                        <div className="header__date">4 days ago</div>
-                    </div>
-                    <div className="header__status"></div></Link><Link className="header__notification" to="Activity">
-                    <div className="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
-                    <div className="header__details">
-                        <div className="header__subtitle">ETH received</div>
-                        <div className="header__price">0.08 ETH recived</div>
-                        <div className="header__date">5 days ago</div>
-                    </div>
-                    <div className="header__status"></div></Link><Link className="button-small header__button" to="Activity">See all</Link>
-                </div>
-            </div>
-        </div>
-        <div className="header__item header__item_user js-header-item js-demo-user">
-            <button className="header__head js-header-head">
-                <div className="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
-                <div className="header__wallet">7.00698 <span className="header__currency">ETH</span></div>
-            </button>
-            <div className="header__body js-header-body">
-                <div className="header__name">Enrico Cole</div>
-                <div className="header__code">
-                    <div className="header__number">0xc4c16ab5ac7d...b21a</div>
-                    <button className="header__copy">
-                        <svg className="icon icon-copy">
-                            <use xlinkHref="#icon-copy"></use>
-                        </svg>
-                    </button>
-                </div>
-                <div className="header__wrap">
-                    <div className="header__line">
-                        <div className="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
-                        <div className="header__details">
-                            <div className="header__info">Balance</div>
-                            <div className="header__money">4.689 ETH</div>
-                        </div>
-                    </div>
-                    <button className="button-stroke button-small header__button">Manage fun on Coinbase</button>
-                </div>
-                <div className="header__menu"><Link className="header__link" to="Profile">
-                    <div className="header__icon">
-                        <svg className="icon icon-user">
-                            <use xlinkHref="#icon-user"></use>
-                        </svg>
-                    </div>
-                    <div className="header__text">My profile</div></Link><Link className="header__link" to="Item">
-                    <div className="header__icon">
-                        <svg className="icon icon-image">
-                            <use xlinkHref="#icon-image"></use>
-                        </svg>
-                    </div>
-                    <div className="header__text">My items</div></Link>
-                    <div className="header__link">
-                        <div className="header__icon">
-                            <svg className="icon icon-bulb">
-                                <use xlinkHref="#icon-bulb"></use>
-                            </svg>
-                        </div>
-                        <div className="header__text">Dark theme</div>
-                        <label className="theme js-theme">
-                            <input className="theme__input" type="checkbox"/><span className="theme__inner"><span className="theme__box"></span></span>
-                        </label>
-                    </div><Link className="header__link" to="/">
-                        <div className="header__icon">
-                            <svg className="icon icon-exit">
-                                <use xlinkHref="#icon-exit"></use>
-                            </svg>
-                        </div>
-                        <div className="header__text">Disconnect</div></Link>
-                </div>
-            </div>
-        </div>
-        <button className="header__burger js-header-burger"></button>
 
 
 <div className="outer__inner">
@@ -120,136 +17,17 @@ const HomePage = () => {
                 <h3 className="main__title h3">The new creative economy.</h3><Link className="button-stroke main__button" to="search">Start your search</Link>
             </div>
             <div className="main__wrapper">
-                <div className="main__slider js-slider-main">
                     <div className="main__slide">
                         <div className="main__row">
                             <div className="player">
-                                <div className="player__preview"><img srcSet={"img/content/img.png 2x"} src={"img/content/img.png"} alt="Video preview"/></div>
-                                {/* <div className="player__control">
-                                    <button className="player__button">
-                                        <svg className="icon icon-play">
-                                            <use xlinkHref="#icon-play"></use>
-                                        </svg>
-                                    </button>
-                                    <div className="player__line">
-                                        <div className="player__progress" style="width: 20%;"></div>
-                                    </div>
-                                    <div className="player__time">2:20</div>
-                                    <button className="player__button">
-                                        <svg className="icon icon-volume">
-                                            <use xlinkHref="#icon-volume"></use>
-                                        </svg>
-                                    </button>
-                                    <button className="player__button">
-                                        <svg className="icon icon-full-screen">
-                                            <use xlinkHref="#icon-full-screen"></use>
-                                        </svg>
-                                    </button>
-                                </div> */}
-                            </div>
-                            <div className="main__details">
-                                <div className="main__subtitle h1">the creator network®</div>
-                                <div className="main__line">
-                                    <div className="main__item">
-                                        <div className="main__avatar"><img src={"img/content/avatar-creator.jpg"} alt="Avatar"/></div>
-                                        <div className="main__description">
-                                            <div className="main__category">Creator</div>
-                                            <div className="main__text">Enrico Cole</div>
-                                        </div>
-                                    </div>
-                                    <div className="main__item">
-                                        <div className="main__icon">
-                                            <svg className="icon icon-stop">
-                                                <use xlinkHref="#icon-stop"></use>
-                                            </svg>
-                                        </div>
-                                        <div className="main__description">
-                                            <div className="main__category">Instant price</div>
-                                            <div className="main__text">3.5 ETH</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="main__wrap">
-                                    <div className="main__info">Current Bid</div>
-                                    <div className="main__currency">1.00 ETH</div>
-                                    <div className="main__price">$3,618.36</div>
-                                    <div className="main__info">Auction ending in</div>
-                                    <div className="main__timer"></div>
-                                </div>
-                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="main__slide">
-                        <div className="main__row">
-                            <div className="player">
-                                <div className="player__preview"><img srcSet={"img/content/img.png 2x"} src={"img/content/img.png"} alt="Video preview"/></div>
-                                {/* <div className="player__control">
-                                    <button className="player__button">
-                                        <svg className="icon icon-play">
-                                            <use xlinkHref="#icon-play"></use>
-                                        </svg>
-                                    </button>
-                                    <div className="player__line">
-                                        <div className="player__progress" style="width: 20%;"></div>
-                                    </div>
-                                    <div className="player__time">2:20</div>
-                                    <button className="player__button">
-                                        <svg className="icon icon-volume">
-                                            <use xlinkHref="#icon-volume"></use>
-                                        </svg>
-                                    </button>
-                                    <button className="player__button">
-                                        <svg className="icon icon-full-screen">
-                                            <use xlinkHref="#icon-full-screen"></use>
-                                        </svg>
-                                    </button>
-                                </div> */}
-                            </div>
-                            <div className="main__details">
-                                <div className="main__subtitle h1">Marco carrillo®</div>
-                                <div className="main__line">
-                                    <div className="main__item">
-                                        <div className="main__avatar"><img src={"img/content/avatar-creator.jpg"} alt="Avatar"/></div>
-                                        <div className="main__description">
-                                            <div className="main__category">Creator</div>
-                                            <div className="main__text">Enrico Cole</div>
-                                        </div>
-                                    </div>
-                                    <div className="main__item">
-                                        <div className="main__icon">
-                                            <svg className="icon icon-stop">
-                                                <use xlinkHref="#icon-stop"></use>
-                                            </svg>
-                                        </div>
-                                        <div className="main__description">
-                                            <div className="main__category">Instant price</div>
-                                            <div className="main__text">3.5 ETH</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="main__wrap">
-                                    <div className="main__info">Current Bid</div>
-                                    <div className="main__currency">1.00 ETH</div>
-                                    <div className="main__price">$3,618.36</div>
-                                    <div className="main__info">Auction ending in</div>
-                                    <div className="main__timer"></div>
-                                </div>
-                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="main__slide">
-                        <div className="main__row">
-                            <div className="player">
-                                <div className="player__preview"><img srcSet={"img/content/video-preview-2@2x.png 2x"} src={"img/content/video-preview-2.png"} alt="Video preview"/></div>
+                                <img className='player__img' src={images.Homepage.img_main} alt=""/>
 
                             </div>
                             <div className="main__details">
                                 <div className="main__subtitle h1">the creator network®</div>
                                 <div className="main__line">
                                     <div className="main__item">
-                                        <div className="main__avatar"><img src={"img/content/avatar-creator.jpg"} alt="Avatar"/></div>
+                                        <div className="main__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                         <div className="main__description">
                                             <div className="main__category">Creator</div>
                                             <div className="main__text">Enrico Cole</div>
@@ -272,52 +50,34 @@ const HomePage = () => {
                                     <div className="main__currency">1.00 ETH</div>
                                     <div className="main__price">$3,618.36</div>
                                     <div className="main__info">Auction ending in</div>
-                                    <div className="main__timer"></div>
+                                    <div className="main__timer">
+                                        {/* <div className="player__control">*/}
+                                        {/*    <button className="player__button">*/}
+                                        {/*        <svg className="icon icon-play">*/}
+                                        {/*            <use xlinkHref="#icon-play"></use>*/}
+                                        {/*        </svg>*/}
+                                        {/*    </button>*/}
+                                        {/*    <div className="player__line">*/}
+                                        {/*        <div className="player__progress" style="width: 20%;"></div>*/}
+                                        {/*    </div>*/}
+                                        {/*    <div className="player__time">2:20</div>*/}
+                                        {/*    <button className="player__button">*/}
+                                        {/*        <svg className="icon icon-volume">*/}
+                                        {/*            <use xlinkHref="#icon-volume"></use>*/}
+                                        {/*        </svg>*/}
+                                        {/*    </button>*/}
+                                        {/*    <button className="player__button">*/}
+                                        {/*        <svg className="icon icon-full-screen">*/}
+                                        {/*            <use xlinkHref="#icon-full-screen"></use>*/}
+                                        {/*        </svg>*/}
+                                        {/*    </button>*/}
+                                        {/*</div> */}
+                                    </div>
                                 </div>
                                 <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
-                    <div className="main__slide">
-                        <div className="main__row">
-                            <div className="player">
-                                <div className="player__preview"><img srcSet={"img/content/video-preview-3@2x.png 2x"} src={"img/content/video-preview-3.png"} alt="Video preview"/></div>
-                                
-                            </div>
-                            <div className="main__details">
-                                <div className="main__subtitle h1">the creator network®</div>
-                                <div className="main__line">
-                                    <div className="main__item">
-                                        <div className="main__avatar"><img src={"img/content/avatar-creator.jpg"} alt="Avatar"/></div>
-                                        <div className="main__description">
-                                            <div className="main__category">Creator</div>
-                                            <div className="main__text">Enrico Cole</div>
-                                        </div>
-                                    </div>
-                                    <div className="main__item">
-                                        <div className="main__icon">
-                                            <svg className="icon icon-stop">
-                                                <use xlinkHref="#icon-stop"></use>
-                                            </svg>
-                                        </div>
-                                        <div className="main__description">
-                                            <div className="main__category">Instant price</div>
-                                            <div className="main__text">3.5 ETH</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="main__wrap">
-                                    <div className="main__info">Current Bid</div>
-                                    <div className="main__currency">1.00 ETH</div>
-                                    <div className="main__price">$3,618.36</div>
-                                    <div className="main__info">Auction ending in</div>
-                                    <div className="main__timer"></div>
-                                </div>
-                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -325,10 +85,10 @@ const HomePage = () => {
         <div className="selection__center center">
             <div className="selection__row">
                 <div className="selection__col"><Link className="selection__card" to="Item">
-                    <div className="selection__preview"><img srcSet={"img/content/selection-pic-1@2x.jpg 2x"} src={"img/content/selection-pic-1.jpg"} alt="Selection"/></div>
+                    <div className="selection__preview"><img  src={images.Homepage.pic1} alt="Selection"/></div>
                     <div className="selection__head">
                         <div className="selection__line">
-                            <div className="selection__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
+                            <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__description">
                                 <div className="selection__title">The future of ETH®</div>
                                 <div className="selection__counter">18 in stock</div>
@@ -340,31 +100,31 @@ const HomePage = () => {
                         </div>
                     </div></Link></div>
                 <div className="selection__col"><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={"img/content/selection-pic-2@2x.jpg 2x"} src={"img/content/selection-pic-2.jpg"} alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={images.Homepage.card1}  alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">ETH never die</div>
                         <div className="selection__line">
-                            <div className="selection__avatar"><img src={"img/content/avatar-4.jpg"} alt="Avatar"/></div>
+                            <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
                             <div className="selection__content">1 of 12</div>
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
                     </div></Link><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={"img/content/selection-pic-1@2x.jpg 2x"} src={"img/content/selection-pic-1.jpg"} alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={images.Homepage.card2}  alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">Future coming soon</div>
                         <div className="selection__line">
-                            <div className="selection__avatar"><img src={"img/content/avatar-3.jpg"} alt="Avatar"/></div>
+                            <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
                             <div className="selection__content">1 of 3</div>
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
                     </div></Link><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={"img/content/selection-pic-3@2x.jpg 2x"} src={"img/content/selection-pic-3.jpg"} alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={images.Homepage.card3}  alt="Selection"/></div>
                     <div className="selection__description">
                         <div className="selection__title">Elon Musk silver coin 3d print</div>
                         <div className="selection__line">
-                            <div className="selection__avatar"><img src={"img/content/avatar-4.jpg"} alt="Avatar"/></div>
+                            <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
                             <div className="selection__content">1 of 4</div>
                         </div>
@@ -375,7 +135,7 @@ const HomePage = () => {
                 <div className="selection__info">Latest upload from creators <span role="img" aria-label="fire">🔥</span></div>
                 <div className="selection__list">
                     <div className="selection__user">
-                        <div className="selection__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/>
+                        <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                             <div className="selection__number">6</div>
                         </div>
                         <div className="selection__description">
@@ -384,7 +144,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="selection__user">
-                        <div className="selection__avatar"><img src={"img/content/avatar-2.jpg"} alt="Avatar"/>
+                        <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                             <div className="selection__number">2</div>
                         </div>
                         <div className="selection__description">
@@ -393,7 +153,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="selection__user">
-                        <div className="selection__avatar"><img src={"img/content/avatar-3.jpg"} alt="Avatar"/>
+                        <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                             <div className="selection__number">3</div>
                         </div>
                         <div className="selection__description">
@@ -402,7 +162,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className="selection__user">
-                        <div className="selection__avatar"><img src={"img/content/avatar-4.jpg"} alt="Avatar"/>
+                        <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                             <div className="selection__number">4</div>
                         </div>
                         <div className="selection__description">
@@ -417,658 +177,7 @@ const HomePage = () => {
             </div>
         </div>
     </div>
-    <div className="section-bg popular">
-        <div className="popular__center center">
-            <div className="popular__top">
-                <div className="popular__box">
-                    <div className="popular__stage">Popular</div>
-                    <select className="select-empty">
-                        <option>Sellers</option>
-                        <option>Buyers</option>
-                    </select>
-                </div>
-                <div className="field">
-                    <div className="field__label">timeframe</div>
-                    <div className="field__wrap">
-                        <select className="select">
-                            <option>Today</option>
-                            <option>Morning</option>
-                            <option>Dinner</option>
-                            <option>Evening</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div className="popular__wrapper">
-                <div className="popular__slider js-slider-popular">
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#3772FF"}}>
-                                    <div className="popular__icon"><img src={"img/content/cup.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#1
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-5.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Edd Harris</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#9757D7"}}>
-                                    <div className="popular__icon"><img src={"img/content/donut.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#2
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-6.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Odell Hane</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#45B26B"}}>
-                                    <div className="popular__icon"><img src={"img/content/lightning.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#3
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-7.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Marlee Kuphal</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#23262F"}}>
-                                    <div className="popular__icon"><img src={"img/content/donut.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#4
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-8.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Payton Kunde</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#777E90"}}>
-                                    <div className="popular__icon"><img src={"img/content/donut.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#5
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-9.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Payton Buckridge</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#3772FF"}}>
-                                    <div className="popular__icon"><img src={"img/content/cup.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#1
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-5.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Edd Harris</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#9757D7"}}>
-                                    <div className="popular__icon"><img src={"img/content/donut.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#2
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-6.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Odell Hane</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#45B26B"}}>
-                                    <div className="popular__icon"><img src={"img/content/lightning.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#3
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-7.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Marlee Kuphal</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="popular__slide">
-                        <div className="popular__item">
-                            <div className="popular__head">
-                                <div className="popular__rating" style={{backgroundColor:"#23262F"}}>
-                                    <div className="popular__icon"><img src={"img/content/donut.svg"} alt="Rating"/></div>
-                                    <div className="popular__number">#4
-                                    </div>
-                                </div>
-                                <div className="popular__control">
-                                    <button className="popular__button popular__add">
-                                        <svg className="icon icon-add-square">
-                                            <use xlinkHref="#icon-add-square"></use>
-                                        </svg>
-                                        <svg className="icon icon-minus-square">
-                                            <use xlinkHref="#icon-minus-square"></use>
-                                        </svg>
-                                    </button><Link className="popular__button" to="Profile">
-                                    <svg className="icon icon-arrow-expand">
-                                        <use xlinkHref="#icon-arrow-expand"></use>
-                                    </svg></Link>
-                                </div>
-                            </div>
-                            <div className="popular__body">
-                                <div className="popular__avatar">
-                                    <div className="popular__preview"><img src={"img/content/avatar-8.jpg"} alt="Avatar"/></div>
-                                    <div className="popular__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
-                                </div>
-                                <div className="popular__name">Payton Kunde</div>
-                                <div className="popular__price"><span>2.456</span> ETH</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="section hot">
-        <div className="hot__center center">
-            <div className="hot__wrapper">
-                <h3 className="hot__title h3">Hot bid</h3>
-                <div className="hot__inner">
-                    <div className="hot__slider js-slider-hot">
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Amazing digital art</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-2@2x.jpg 2x" src="img/content/card-pic-2.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Ribbon Hunter</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-3@2x.jpg 2x" src="img/content/card-pic-3.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Amazing digital art</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-4@2x.jpg 2x" src="img/content/card-pic-4.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Ribbon Hunter</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-5@2x.jpg 2x" src="img/content/card-pic-5.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Amazing digital art</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-6@2x.jpg 2x" src="img/content/card-pic-6.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Ribbon Hunter</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                        <div className="hot__slide">
-                            <div className="card">
-                                <div className="card__preview"><img srcSet="img/content/card-pic-7@2x.jpg 2x" src="img/content/card-pic-7.jpg" alt="Card preview"/>
-                                    <div className="card__control">
-                                        <div className="status-green card__category">purchasing !</div>
-                                        <button className="card__favorite">
-                                            <svg className="icon icon-heart">
-                                                <use xlinkHref="#icon-heart"></use>
-                                            </svg>
-                                        </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                        <svg className="icon icon-scatter-up">
-                                            <use xlinkHref="#icon-scatter-up"></use>
-                                        </svg></Link>
-                                    </div>
-                                </div><Link className="card__link" to="Item">
-                                <div className="card__body">
-                                    <div className="card__line">
-                                        <div className="card__title">Amazing digital art</div>
-                                        <div className="card__price">2.45 ETH</div>
-                                    </div>
-                                    <div className="card__line">
-                                        <div className="card__users">
-                                            <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                            <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
-                                        </div>
-                                        <div className="card__counter">3 in stock</div>
-                                    </div>
-                                </div>
-                                <div className="card__foot">
-                                    <div className="card__status">
-                                        <svg className="icon icon-candlesticks-up">
-                                            <use xlinkHref="#icon-candlesticks-up"></use>
-                                        </svg>Highest bid <span>0.001 ETH</span>
-                                    </div>
-                                    <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                                </div></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="section-bg collections">
-        <div className="collections__center center">
-            <div className="collections__wrapper">
-                <h3 className="collections__title h3">Hot collections</h3>
-                <div className="collections__inner">
-                    <div className="collections__slider js-slider-collections"><Link className="collections__item" to="Profile">
-                        <div className="collections__gallery">
-                            <div className="collections__preview"><img src={"img/content/photo-1.1.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-1.2.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-1.3.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-1.4.jpg"} alt="Collections"/></div>
-                        </div>
-                        <div className="collections__subtitle">Awesome collection</div>
-                        <div className="collections__line">
-                            <div className="collections__user">
-                                <div className="collections__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
-                                <div className="collections__author">By <span>Kennith Olson</span></div>
-                            </div>
-                            <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></Link><Link className="collections__item" to="Profile">
-                        <div className="collections__gallery">
-                            <div className="collections__preview"><img src={"img/content/photo-2.1.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-2.2.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-2.3.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-2.4.jpg"} alt="Collections"/></div>
-                        </div>
-                        <div className="collections__subtitle">Awesome collection</div>
-                        <div className="collections__line">
-                            <div className="collections__user">
-                                <div className="collections__avatar"><img src={"img/content/avatar-3.jpg"} alt="Avatar"/></div>
-                                <div className="collections__author">By <span>Willie Barton</span></div>
-                            </div>
-                            <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></Link><Link className="collections__item" to="Profile">
-                        <div className="collections__gallery">
-                            <div className="collections__preview"><img src={"img/content/photo-3.1.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-3.2.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-3.3.jpg"} alt="Collections"/></div>
-                            <div className="collections__preview"><img src={"img/content/photo-3.4.jpg"} alt="Collections"/></div>
-                        </div>
-                        <div className="collections__subtitle">Awesome collection</div>
-                        <div className="collections__line">
-                            <div className="collections__user">
-                                <div className="collections__avatar"><img src={"img/content/avatar-4.jpg"} alt="Avatar"/></div>
-                                <div className="collections__author">By <span>Halle Jakubowski</span></div>
-                            </div>
-                            <div className="status-stroke-black collections__counter"><span>28 items</span></div>
-                        </div></Link></div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div className="section discover">
         <div className="discover__center center">
             <h3 className="discover__title h3">Discover</h3>
@@ -1151,7 +260,7 @@ const HomePage = () => {
             <div className="discover__list">
                 <div className="discover__slider js-slider-discover js-slider-resize">
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img1} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1171,9 +280,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1188,7 +297,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-2@2x.jpg 2x" src="img/content/card-pic-2.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img2} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1208,9 +317,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1225,7 +334,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-3@2x.jpg 2x" src="img/content/card-pic-3.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img3} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1245,9 +354,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1262,7 +371,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-4@2x.jpg 2x" src="img/content/card-pic-4.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img4} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1282,9 +391,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1299,7 +408,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-5@2x.jpg 2x" src="img/content/card-pic-5.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img5} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1319,9 +428,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1336,7 +445,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-6@2x.jpg 2x" src="img/content/card-pic-6.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img6} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1356,9 +465,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1373,7 +482,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-7@2x.jpg 2x" src="img/content/card-pic-7.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img7} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1393,9 +502,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1410,7 +519,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.img2} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -1430,9 +539,9 @@ const HomePage = () => {
                             </div>
                             <div className="card__line">
                                 <div className="card__users">
-                                    <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                                 </div>
                                 <div className="card__counter">3 in stock</div>
                             </div>
@@ -1463,12 +572,12 @@ const HomePage = () => {
             </div>
             <div className="description__gallery">
                 <div className="description__preview">
-					<img className="some-icon" srcSet={"img/content/cubes@2x.png 2x"} src={"img/content/cubes.png"} alt="Cubes"/>
-					<img className="some-icon-dark" srcSet={"img/content/cubes-dark@2x.png 2x"} src="img/content/cubes-dark.png" alt="Cubes"/>
+					<img className="some-icon" srcSet={images.Homepage.dis1} alt="Cubes"/>
+
 				</div>
                 <div className="description__preview">
-					<img className="some-icon" srcSet={"img/content/cube@2x.png 2x"} src={"img/content/cube.png"} alt="Cube"/>
-					<img className="some-icon-dark" srcSet={"img/content/cube-dark@2x.png 2x"} src="img/content/cube-dark.png" alt="Cube"/>
+					<img className="some-icon" srcSet={images.Homepage.dis2} alt="Cube"/>
+
             	</div>			
         	</div>
     	</div>

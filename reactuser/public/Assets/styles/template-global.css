@@ -1907,9 +1907,10 @@ body.dark .theme__box {
 
 .player {
     position: relative; }
-.player img {
-    width: 100%;
-    border-radius: 16px; }
+.player__img {
+    width: 95%;
+    border-radius: 16px;
+}
 .player__control {
     position: absolute;
     left: 8px;
@@ -2266,6 +2267,7 @@ body.dark .selection__row {
     overflow: hidden; }
 .selection__preview img {
     width: 100%;
+
     transition: -webkit-transform 1s;
     transition: transform 1s;
     transition: transform 1s, -webkit-transform 1s; }
@@ -3374,7 +3376,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     align-items: center;
     min-height: 800px;
     padding: 80px 0;
-    border-top: 1px solid #E6E8EC; }
+    border-top: 1px solid #E6E8EC;
+    border-bottom:1px solid #E6E8EC;
+}
+
 @media only screen and (max-width: 1179px) {
     .description {
         min-height: 576px; } }
@@ -5530,6 +5535,9 @@ body.dark .result__category {
 .profile__head .container {
     display: flex;
     justify-content: flex-end; }
+.profile__bg{
+    background-image: url("./src/assets/bg-profile.png");
+}
 .profile__head.active .profile__btns {
     opacity: 0; }
 .profile__head.active .profile__file {
@@ -7175,7 +7183,7 @@ body.dark .accept__row:first-child {
 .header-main{
     padding: 10px 40px;
     height: 100%;
-    background-color: black;
+    background-color: white;
 }
 .header-menu{
     padding: 0 5px 0 30px;
@@ -7195,11 +7203,11 @@ body.dark .accept__row:first-child {
     font-size: 15px;
 }
  .header__a:hover{
-    text-decoration: underline white;
+    text-decoration: underline black;
 }
  .btn-header{
-     background-color: white;
-      color: black;
+     background-color: black;
+      color: white;
      font-size: 15px;
      padding: 10px 15px;
      border-radius: 10px;
@@ -7208,21 +7216,22 @@ body.dark .accept__row:first-child {
  }
 
 .header-menu .header-nav .header__a{
-    color:white;
+    color:black;
 }
 
 
 header{
     margin-bottom: 10px;
-    position: fixed;
+    border-bottom: solid 1px #d7d4d4;
+
     top: 0;
     left: 0;
     width: 100%;
 
 }
 .footer{
-  background-color:black;
-  padding: 50px 0;
+  background-color:white;
+  padding: 5px 0;
 }
 .footer-main{
   max-width: 1170px;

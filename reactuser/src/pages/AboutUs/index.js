@@ -1,5 +1,5 @@
 import React from 'react';
-import images from '../../assets'
+
 const AboutUs = () => {
 	return(
 		<div className='about'>

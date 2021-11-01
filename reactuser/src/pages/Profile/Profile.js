@@ -1,5 +1,5 @@
 import React from 'react';
-
+import images from "../../assets";
 const profile = () => {
     return (
     <>
@@ -14,111 +14,9 @@ const profile = () => {
       }
     </script> */}
     <div className="outer">
-
-          <div className="header__item header__item_notification js-header-item">
-            <button className="header__head js-header-head active">
-              <svg className="icon icon-notification">
-                <use xlinkHref="#icon-notification"></use>
-              </svg>
-            </button>
-            <div className="header__body js-header-body">
-              <div className="header__title h4">Notification</div>
-              <div className="header__list"><a className="header__notification" href="activity.html">
-                                  <div className="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
-                                  <div className="header__details">
-                                    <div className="header__subtitle">ETH received</div>
-                                    <div className="header__price">0.08 ETH recived</div>
-                                    <div className="header__date">2 days ago</div>
-                                  </div>
-                                  <div className="header__status"></div></a><a className="header__notification" href="activity.html">
-                                  <div className="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
-                                  <div className="header__details">
-                                    <div className="header__subtitle">C O I N Z</div>
-                                    <div className="header__price">New bid 0.2 ETH</div>
-                                    <div className="header__date">3 days ago</div>
-                                  </div>
-                                  <div className="header__status"></div></a><a className="header__notification" href="activity.html">
-                                  <div className="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
-                                  <div className="header__details">
-                                    <div className="header__subtitle">ETH received</div>
-                                    <div className="header__price">0.08 ETH recived</div>
-                                    <div className="header__date">4 days ago</div>
-                                  </div>
-                                  <div className="header__status"></div></a><a className="header__notification" href="activity.html">
-                                  <div className="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
-                                  <div className="header__details">
-                                    <div className="header__subtitle">ETH received</div>
-                                    <div className="header__price">0.08 ETH recived</div>
-                                    <div className="header__date">5 days ago</div>
-                                  </div>
-                                  <div className="header__status"></div></a><a className="button-small header__button" href="activity.html">See all</a>
-              </div>
-            </div>
-          </div>
-          <div className="header__item header__item_user js-header-item js-demo-user">
-            <button className="header__head js-header-head">
-              <div className="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
-              <div className="header__wallet">7.00698 <span className="header__currency">ETH</span></div>
-            </button>
-            <div className="header__body js-header-body">
-              <div className="header__name">Enrico Cole</div>
-              <div className="header__code">
-                <div className="header__number">0xc4c16ab5ac7d...b21a</div>
-                <button className="header__copy">
-                  <svg className="icon icon-copy">
-                    <use xlinkHref="#icon-copy"></use>
-                  </svg>
-                </button>
-              </div>
-              <div className="header__wrap">
-                <div className="header__line">
-                  <div className="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
-                  <div className="header__details">
-                    <div className="header__info">Balance</div>
-                    <div className="header__money">4.689 ETH</div>
-                  </div>
-                </div>
-                <button className="button-stroke button-small header__button">Manage fun on Coinbase</button>
-              </div>
-              <div className="header__menu"><a className="header__link" href="profile.html">
-                  <div className="header__icon">
-                    <svg className="icon icon-user">
-                      <use xlinkHref="#icon-user"></use>
-                    </svg>
-                  </div>
-                  <div className="header__text">My profile</div></a><a className="header__link" href="item.html">
-                  <div className="header__icon">
-                    <svg className="icon icon-image">
-                      <use xlinkHref="#icon-image"></use>
-                    </svg>
-                  </div>
-                  <div className="header__text">My items</div></a>
-                <div className="header__link">
-                  <div className="header__icon">
-                    <svg className="icon icon-bulb">
-                      <use xlinkHref="#icon-bulb"></use>
-                    </svg>
-                  </div>
-                  <div className="header__text">Dark theme</div>
-                  <label className="theme js-theme">
-                    <input className="theme__input" type="checkbox"/><span className="theme__inner"><span className="theme__box"></span></span>
-                  </label>
-                </div><a className="header__link" href="/">
-                  <div className="header__icon">
-                    <svg className="icon icon-exit">
-                      <use xlinkHref="#icon-exit"></use>
-                    </svg>
-                  </div>
-                  <div className="header__text">Disconnect</div></a>
-              </div>
-            </div>
-          </div>
-          <button className="header__burger js-header-burger"></button>
-
-
       <div className="outer__inner">
         <div className="profile">
-          <div className="profile__head js-profile-head" style={{backgroundImage: "url('img/content/bg-profile.jpg')"}}>
+          <div className="profile__head js-profile-head profile__bg" >
             <div className="profile__center center">
               <div className="profile__file">
                 <input type="file"/>
@@ -146,7 +44,7 @@ const profile = () => {
           <div className="profile__body">
             <div className="profile__center center">
               <div className="user">
-                <div className="user__avatar"><img src={"img/content/avatar-big.jpg"} alt="Avatar"/></div>
+                <div className="user__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                 <div className="user__name">Enrico Cole</div>
                 <div className="user__code">
                   <div className="user__number">0xc4c16a645...b21a</div>
@@ -201,7 +99,7 @@ const profile = () => {
                   <div className="profile__item js-tabs-item" style={{display: "block"}}>
                     <div className="profile__list">
                       <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-1@2x.jpg 2x" src="img/content/card-pic-1.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.card1} alt="Card preview"/>
                           <div className="card__control">
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
@@ -221,9 +119,9 @@ const profile = () => {
                             </div>
                             <div className="card__line">
                               <div className="card__users">
-                                <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                               </div>
                               <div className="card__counter">3 in stock</div>
                             </div>
@@ -238,7 +136,7 @@ const profile = () => {
                           </div></a>
                       </div>
                       <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-2@2x.jpg 2x" src="img/content/card-pic-2.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.card2} alt="Card preview"/>
                           <div className="card__control">
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
@@ -258,9 +156,9 @@ const profile = () => {
                             </div>
                             <div className="card__line">
                               <div className="card__users">
-                                <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                               </div>
                               <div className="card__counter">3 in stock</div>
                             </div>
@@ -275,7 +173,7 @@ const profile = () => {
                           </div></a>
                       </div>
                       <div className="card">
-                        <div className="card__preview"><img srcSet="img/content/card-pic-3@2x.jpg 2x" src="img/content/card-pic-3.jpg" alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={images.Homepage.card3} alt="Card preview"/>
                           <div className="card__control">
                             <div className="status-green card__category">purchasing !</div>
                             <button className="card__favorite">
@@ -295,9 +193,9 @@ const profile = () => {
                             </div>
                             <div className="card__line">
                               <div className="card__users">
-                                <div className="card__avatar"><img src="img/content/avatar-1.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-3.jpg" alt="Avatar"/></div>
-                                <div className="card__avatar"><img src="img/content/avatar-4.jpg" alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
+                                <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                               </div>
                               <div className="card__counter">3 in stock</div>
                             </div>

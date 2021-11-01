@@ -1,121 +1,10 @@
 import React from 'react';
+import images from "../../assets";
 
 const item = () => {
     return (
     <>
-
-    {/* <script>
-      console.log(localStorage.getItem('darkMode'));
-      if (localStorage.getItem('darkMode') === "on") {
-        document.body.classList.add("dark");
-        document.addEventListener("DOMContentLoaded", function() {
-          document.querySelector('.js-theme input').checked = true;
-        });
-      }
-    </script> */}
     <div class="outer">
-
-          <div class="header__item header__item_notification js-header-item">
-            <button class="header__head js-header-head active">
-              <svg class="icon icon-notification">
-                <use xlinkHref="#icon-notification"></use>
-              </svg>
-            </button>
-            <div class="header__body js-header-body">
-              <div class="header__title h4">Notification</div>
-              <div class="header__list"><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src={"img/content/notification-pic-1.jpg"} alt="Notification"/></div>
-                                  <div class="header__details">
-                                    <div class="header__subtitle">ETH received</div>
-                                    <div class="header__price">0.08 ETH recived</div>
-                                    <div class="header__date">2 days ago</div>
-                                  </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src={"img/content/notification-pic-2.jpg"} alt="Notification"/></div>
-                                  <div class="header__details">
-                                    <div class="header__subtitle">C O I N Z</div>
-                                    <div class="header__price">New bid 0.2 ETH</div>
-                                    <div class="header__date">3 days ago</div>
-                                  </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src={"img/content/notification-pic-3.jpg"} alt="Notification"/></div>
-                                  <div class="header__details">
-                                    <div class="header__subtitle">ETH received</div>
-                                    <div class="header__price">0.08 ETH recived</div>
-                                    <div class="header__date">4 days ago</div>
-                                  </div>
-                                  <div class="header__status"></div></a><a class="header__notification" href="activity.html">
-                                  <div class="header__preview"><img src={"img/content/notification-pic-4.jpg"} alt="Notification"/></div>
-                                  <div class="header__details">
-                                    <div class="header__subtitle">ETH received</div>
-                                    <div class="header__price">0.08 ETH recived</div>
-                                    <div class="header__date">5 days ago</div>
-                                  </div>
-                                  <div class="header__status"></div></a><a class="button-small header__button" href="activity.html">See all</a>
-              </div>
-            </div>
-          </div>
-          <div class="header__item header__item_user js-header-item js-demo-user">
-            <button class="header__head js-header-head">
-              <div class="header__avatar"><img src={"img/content/avatar-user.jpg"} alt="Avatar"/></div>
-              <div class="header__wallet">7.00698 <span class="header__currency">ETH</span></div>
-            </button>
-            <div class="header__body js-header-body">
-              <div class="header__name">Enrico Cole</div>
-              <div class="header__code">
-                <div class="header__number">0xc4c16ab5ac7d...b21a</div>
-                <button class="header__copy">
-                  <svg class="icon icon-copy">
-                    <use xlinkHref="#icon-copy"></use>
-                  </svg>
-                </button>
-              </div>
-              <div class="header__wrap">
-                <div class="header__line">
-                  <div class="header__img"><img src={"img/content/etherium-circle.jpg"} alt="Etherium"/></div>
-                  <div class="header__details">
-                    <div class="header__info">Balance</div>
-                    <div class="header__money">4.689 ETH</div>
-                  </div>
-                </div>
-                <button class="button-stroke button-small header__button">Manage fun on Coinbase</button>
-              </div>
-              <div class="header__menu"><a class="header__link" href="profile.html">
-                  <div class="header__icon">
-                    <svg class="icon icon-user">
-                      <use xlinkHref="#icon-user"></use>
-                    </svg>
-                  </div>
-                  <div class="header__text">My profile</div></a><a class="header__link" href="item.html">
-                  <div class="header__icon">
-                    <svg class="icon icon-image">
-                      <use xlinkHref="#icon-image"></use>
-                    </svg>
-                  </div>
-                  <div class="header__text">My items</div></a>
-                <div class="header__link">
-                  <div class="header__icon">
-                    <svg class="icon icon-bulb">
-                      <use xlinkHref="#icon-bulb"></use>
-                    </svg>
-                  </div>
-                  <div class="header__text">Dark theme</div>
-                  <label class="theme js-theme">
-                    <input class="theme__input" type="checkbox"/><span class="theme__inner"><span class="theme__box"></span></span>
-                  </label>
-                </div><a class="header__link" href="/">
-                  <div class="header__icon">
-                    <svg class="icon icon-exit">
-                      <use xlinkHref="#icon-exit"></use>
-                    </svg>
-                  </div>
-                  <div class="header__text">Disconnect</div></a>
-              </div>
-            </div>
-          </div>
-          <button class="header__burger js-header-burger"></button>
-
-
       <div class="outer__inner">
         <div class="section item">
           <div class="item__center center">
@@ -124,7 +13,7 @@ const item = () => {
                 <div class="item__categories">
                   <div class="status-black item__category">art</div>
                   <div class="status-purple item__category">unlockable</div>
-                </div><img srcSet={"img/content/item-pic@2x.jpg 2x"} src={"img/content/item-pic.jpg"} alt="Item"/>
+                </div><img srcSet={images.Homepage.img_main} alt="Item"/>
               </div>
               <div class="options">
                 <div class="options__list">
@@ -188,8 +77,8 @@ const item = () => {
                   <div class="item__box js-tabs-item" style={{display: "block"}}>
                     <div class="item__users">
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-2.jpg"} alt="Avatar"/>
-                          <div class="item__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
+                          <div class="item__reward"><img src={images.Homepage.owner} alt="Reward"/></div>
                         </div>
                         <div class="item__description">
                           <div class="item__position">Owner</div>
@@ -197,7 +86,7 @@ const item = () => {
                         </div>
                       </div>
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                         <div class="item__description">
                           <div class="item__position">Creator</div>
                           <div class="item__name">Selina Mayert</div>
@@ -208,7 +97,7 @@ const item = () => {
                   <div class="item__box js-tabs-item">
                     <div class="item__users">
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                         <div class="item__description">
                           <div class="item__position">Owner</div>
                           <div class="item__name">Cole Mayert</div>
@@ -219,8 +108,8 @@ const item = () => {
                   <div class="item__box js-tabs-item">
                     <div class="item__users">
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-2.jpg"} alt="Avatar"/>
-                          <div class="item__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
+                          <div class="item__reward"><img src={images.Homepage.owner} alt="Reward"/></div>
                         </div>
                         <div class="item__description">
                           <div class="item__name">Raquel Will</div>
@@ -229,7 +118,7 @@ const item = () => {
                         <div class="item__time">Jun 14 - 4:12 PM</div>
                       </div>
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-6.jpg"} alt="Avatar"/>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                           <div class="item__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
                         </div>
                         <div class="item__description">
@@ -239,7 +128,7 @@ const item = () => {
                         <div class="item__time">Jun 14 - 4:12 PM</div>
                       </div>
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-7.jpg"} alt="Avatar"/>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                           <div class="item__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
                         </div>
                         <div class="item__description">
@@ -253,7 +142,7 @@ const item = () => {
                   <div class="item__box js-tabs-item">
                     <div class="item__users">
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-2.jpg"} alt="Avatar"/>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/>
                           <div class="item__reward"><img src={"img/content/reward-1.svg"} alt="Reward"/></div>
                         </div>
                         <div class="item__description">
@@ -262,14 +151,14 @@ const item = () => {
                         </div>
                       </div>
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-1.jpg"} alt="Avatar"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                         <div class="item__description">
                           <div class="item__action">#2</div>
                           <div class="item__name">Cole Fahey</div>
                         </div>
                       </div>
                       <div class="item__user">
-                        <div class="item__avatar"><img src={"img/content/avatar-8.jpg"} alt="Avatar"/></div>
+                        <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                         <div class="item__description">
                           <div class="item__action">#3</div>
                           <div class="item__name">Selina Mayert</div>
@@ -281,7 +170,7 @@ const item = () => {
               </div>
               <div class="item__control">
                 <div class="item__head">
-                  <div class="item__avatar"><img src={"img/content/avatar-4.jpg"} alt="Avatar"/></div>
+                  <div class="item__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                   <div class="item__description">
                     <div class="item__info">Highest bid by <span>Kohaku Tora</span></div>
                     <div class="item__currency">
