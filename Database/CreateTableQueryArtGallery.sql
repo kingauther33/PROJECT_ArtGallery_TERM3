@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[user]
  [id]               int IDENTITY NOT NULL ,
  [first_name]       nvarchar(max) NOT NULL ,
  [last_name]        nvarchar(max) NOT NULL ,
- [email]            nvarchar(max) NOT NULL UNIQUE,
+ [email]            nvarchar(450) NOT NULL UNIQUE,
  [password]         nvarchar(max) NOT NULL ,
  [confirm_password] nvarchar(max) NOT NULL ,
  [role]             nvarchar(max) NOT NULL ,
@@ -25,6 +25,7 @@ CREATE TABLE [dbo].[user]
 
 
  CONSTRAINT [PK_5] PRIMARY KEY CLUSTERED ([id] ASC)
+ ON DELETE CASCADE
 );
 GO
 
@@ -40,6 +41,7 @@ CREATE TABLE [dbo].[deposit_log]
 
  CONSTRAINT [PK_187] PRIMARY KEY CLUSTERED ([id] ASC),
  CONSTRAINT [FK_190] FOREIGN KEY ([user_id])  REFERENCES [dbo].[user]([id])
+ ON DELETE CASCADE
 );
 GO
 
@@ -63,6 +65,7 @@ CREATE TABLE [dbo].[user_log]
 
  CONSTRAINT [PK_148] PRIMARY KEY CLUSTERED ([id] ASC),
  CONSTRAINT [FK_25] FOREIGN KEY ([user_id])  REFERENCES [dbo].[user]([id])
+ ON DELETE CASCADE
 );
 GO
 
@@ -84,6 +87,7 @@ CREATE TABLE [dbo].[category]
 
 
  CONSTRAINT [PK_35] PRIMARY KEY CLUSTERED ([id] ASC)
+ ON DELETE CASCADE
 );
 GO
 
@@ -108,6 +112,7 @@ CREATE TABLE [dbo].[artwork]
  CONSTRAINT [PK_149] PRIMARY KEY CLUSTERED ([id] ASC),
  CONSTRAINT [FK_39] FOREIGN KEY ([category_id])  REFERENCES [dbo].[category]([id]),
  CONSTRAINT [FK_42] FOREIGN KEY ([user_id])  REFERENCES [dbo].[user]([id])
+ ON DELETE CASCADE
 );
 GO
 
@@ -140,6 +145,7 @@ CREATE TABLE [dbo].[artwork_comment]
  CONSTRAINT [PK_207] PRIMARY KEY CLUSTERED ([id] ASC),
  CONSTRAINT [FK_196] FOREIGN KEY ([artwork_id])  REFERENCES [dbo].[artwork]([id]),
  CONSTRAINT [FK_199] FOREIGN KEY ([user_id])  REFERENCES [dbo].[user]([id])
+ ON DELETE CASCADE
 );
 GO
 
@@ -175,6 +181,7 @@ CREATE TABLE [dbo].[aunction]
  CONSTRAINT [FK_159] FOREIGN KEY ([buyer_id])  REFERENCES [dbo].[user]([id]),
  CONSTRAINT [FK_165] FOREIGN KEY ([admin_id])  REFERENCES [dbo].[user]([id]),
  CONSTRAINT [FK_98] FOREIGN KEY ([artwork_id])  REFERENCES [dbo].[artwork]([id])
+ ON DELETE CASCADE
 );
 GO
 
@@ -214,6 +221,7 @@ CREATE TABLE [dbo].[aunction_log]
  CONSTRAINT [PK_169] PRIMARY KEY CLUSTERED ([id] ASC),
  CONSTRAINT [FK_173] FOREIGN KEY ([aunction_id])  REFERENCES [dbo].[aunction]([id]),
  CONSTRAINT [FK_176] FOREIGN KEY ([buyer_id])  REFERENCES [dbo].[user]([id])
+ ON DELETE CASCADE
 );
 GO
 

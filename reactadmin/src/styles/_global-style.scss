@@ -13,6 +13,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+	--primary-color: 249, 99, 50;
+}
+
 .x_container {
 	width: 100%;
 	max-width: 128rem;
@@ -30,4 +34,51 @@ body {
 
 .x_border-16 {
 	border-radius: 1.6rem !important;
+}
+
+.x_pagination {
+	padding: 1.5rem 0;
+	background: white;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.x_pagination a {
+	padding: 11px 16px;
+	color: white;
+	background: rgba(var(--primary-color), 0.85);
+	border-radius: 4px;
+	font-size: 0.8571em;
+	cursor: pointer;
+	transition: all 0.15s;
+}
+
+.x_pagination .next a,
+.x_pagination .previous a {
+	background: rgb(var(--primary-color));
+}
+
+.x_pagination a:hover {
+	color: white;
+	opacity: 0.8;
+	box-shadow: 0 3px 8px 0 rgb(0 0 0 / 17%);
+}
+
+.x_pagination_disabled {
+	cursor: not-allowed;
+}
+
+.x_pagination_disabled a {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.x_pagination_active a,
+.x_pagination_active a:hover {
+	opacity: 1;
+	background: rgb(var(--primary-color));
+	color: white;
 }

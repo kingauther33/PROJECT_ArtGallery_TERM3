@@ -4,7 +4,7 @@ import SearchInput from 'components/SearchInput';
 import { WidthResponsive } from 'components/UI/WidthResponsive';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { API } from 'API';
+import { API, HeaderOptions } from 'API';
 
 const ManageUser = () => {
 	const columns = useMemo(
@@ -74,11 +74,11 @@ const ManageUser = () => {
 	const [listData, setListData] = useState([]);
 
 	const fetchUsers = async () => {
+		console.log(API);
 		await axios
-			.get(API.users.url, API.headers)
+			.get(API.get_users.url, HeaderOptions)
 			.then((res) => {
 				setListData(res.data);
-				debugger;
 			})
 			.catch((err) => console.log(err));
 	};
@@ -101,10 +101,14 @@ const ManageUser = () => {
 								<SearchInput />
 							</div>
 							<div className="card-body">
-								<CustomTable columns={columns} listData={listData} />
+								<CustomTable
+									columns={columns}
+									listData={listData}
+									deleteAPI={API.delete_user.url}
+								/>
 								<WidthResponsive>
 									<Link
-										to="#"
+										to="/manage-user/add-user"
 										className="btn btn-primary btn-block x_font-poppin x_font-w600"
 									>
 										<i className="fas fa-plus mr-2"></i>Add more User

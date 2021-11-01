@@ -15,7 +15,33 @@ INSERT INTO [dbo].[user]([first_name], [last_name], [email],[password], [confirm
 	('Warren', 'Kinchley', 'artist1@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
 	('Aprilette', 'Sandeman', 'artist2@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
 	('Amye', 'McCambrois', 'artist3@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
-	('Keefer', 'de Clercq', 'artist4@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102))
+	('Keefer', 'de Clercq', 'artist4@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+
+	('Gav', 'Arnal', 'admin4@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ollie', 'Hasnip', 'admin5@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Gannon', 'Oxer', 'admin6@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Martainn', 'Whyffen', 'customer5@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Sheffy', 'Kerford', 'customer6@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ignace', 'Pieroni', 'customer7@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ilyse', 'Arsey', 'customer8@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Warren', 'Kinchley', 'artist5@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Aprilette', 'Sandeman', 'artist6@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Amye', 'McCambrois', 'artist7@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Keefer', 'de Clercq', 'artist8@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+
+--INSERT INTO [dbo].[user]([first_name], [last_name], [email],[password], [confirm_password], [role], [deposit], [created_at]) values 
+
+	('Gav', 'Arnal', 'admin7@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ollie', 'Hasnip', 'admin8@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Gannon', 'Oxer', 'admin9@gmail.com', '123456a@', '123456a@', 'Admin', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Martainn', 'Whyffen', 'customer9@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Sheffy', 'Kerford', 'customer10@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ignace', 'Pieroni', 'customer11@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Ilyse', 'Arsey', 'customer12@gmail.com', '123456a@', '123456a@', 'Customer', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Warren', 'Kinchley', 'artist9@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Aprilette', 'Sandeman', 'artist10@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Amye', 'McCambrois', 'artist11@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102)),
+	('Keefer', 'de Clercq', 'artist12@gmail.com', '123456a@', '123456a@', 'Artist', 10000, CONVERT(datetime, CURRENT_TIMESTAMP, 102))
 
 	--11 ban ghi
 

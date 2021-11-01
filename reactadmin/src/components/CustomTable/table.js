@@ -3,6 +3,11 @@ import { useTable, usePagination } from 'react-table';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
+import axios from 'axios';
+import { HeaderOptions } from 'API';
+import { Modal, Button } from 'react-bootstrap';
+import SnackbarPopup from 'components/SnackbarPopup';
+// Importing the Bootstrap CSS
 
 const StyledTable = styled.div`
 	.table {
@@ -81,17 +86,55 @@ const StyledTable = styled.div`
 	}
 `;
 
-const CustomTable = ({ columns, listData }) => {
+const CustomTable = ({ columns, listData, deleteAPI }) => {
 	const [listRows, setListRows] = useState([]);
-	debugger;
+	const [showDeleteModal, setShowDeleteModal] = useState(false);
+	const [deleteId, setDeleteId] = useState(0);
+	const [notification, setNotification] = useState({
+		message: '',
+		isSuccess: true,
+		isOpen: false,
+	});
+
+	const onCloseDeleteModal = () => {
+		setShowDeleteModal(false);
+	};
+
+	const handleDelete = async () => {
+		await axios
+			.delete(deleteAPI + `/${deleteId}`, HeaderOptions)
+			.then((res) => {
+				console.log(res);
+				setNotification({
+					message: 'Delete successfully!',
+					isOpen: true,
+					isSuccess: true,
+				});
+			})
+			.catch((err) => {
+				console.log(err);
+				setNotification({
+					message: 'Failed to delete!',
+					isOpen: true,
+					isSuccess: false,
+				});
+			});
+	};
 
 	useEffect(() => {
 		let dataFetched = [];
 		if (listData.length) {
 			dataFetched = listData.map((data) => {
+				const handleEdit = () => {};
+
+				const handleDelete = (data) => {
+					setShowDeleteModal(true);
+					setDeleteId(data.id);
+				};
+
 				data.action = (
 					<>
-						<Link to="#">
+						<Link to="#" onClick={handleDelete.bind(null, data)}>
 							<i className="fas fa-trash"></i>
 						</Link>
 						<Link to="#" style={{ marginLeft: '0.6em' }}>
@@ -114,15 +157,15 @@ const CustomTable = ({ columns, listData }) => {
 		prepareRow,
 		// rows,
 		page,
-		nextPage,
-		previousPage,
-		canNextPage,
-		canPreviousPage,
-		pageOptions,
+		// nextPage,
+		// previousPage,
+		// canNextPage,
+		// canPreviousPage,
+		// pageOptions,
 		gotoPage,
 		pageCount,
-		setPageSize,
-		state,
+		// setPageSize,
+		// state,
 	} = useTable(
 		{
 			columns,
@@ -135,41 +178,44 @@ const CustomTable = ({ columns, listData }) => {
 		gotoPage(e.selected);
 	};
 
-	const { pageIndex, pageSize } = state;
+	// const { pageIndex, pageSize } = state;
 
 	return (
-		<StyledTable>
-			<table className="table" {...getTableProps()}>
-				<thead>
-					{headerGroups.map((headerGroup) => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
-							{headerGroup.headers.map((column) => (
-								<th {...column.getHeaderProps()}>{column.render('Header')}</th>
-							))}
-						</tr>
-					))}
-				</thead>
-
-				<tbody {...getTableBodyProps()}>
-					{page.map((row) => {
-						prepareRow(row);
-						return (
-							<tr {...row.getRowProps()}>
-								{row.cells.map((cell) => (
-									<td {...cell.getCellProps()}>
-										<span className="d-inline-block d-lg-none heading-mobile">
-											{cell.column.Header}
-											{':'}
-										</span>{' '}
-										{cell.render('Cell')}
-									</td>
+		<>
+			<StyledTable>
+				<table className="table" {...getTableProps()}>
+					<thead>
+						{headerGroups.map((headerGroup) => (
+							<tr {...headerGroup.getHeaderGroupProps()}>
+								{headerGroup.headers.map((column) => (
+									<th {...column.getHeaderProps()}>
+										{column.render('Header')}
+									</th>
 								))}
 							</tr>
-						);
-					})}
-				</tbody>
-			</table>
-			<div className="text-center">
+						))}
+					</thead>
+
+					<tbody {...getTableBodyProps()}>
+						{page.map((row) => {
+							prepareRow(row);
+							return (
+								<tr {...row.getRowProps()}>
+									{row.cells.map((cell) => (
+										<td {...cell.getCellProps()}>
+											<span className="d-inline-block d-lg-none heading-mobile">
+												{cell.column.Header}
+												{':'}
+											</span>{' '}
+											{cell.render('Cell')}
+										</td>
+									))}
+								</tr>
+							);
+						})}
+					</tbody>
+				</table>
+				{/* <div className="text-center">
 				<button
 					className="btn btn-primary"
 					disabled={!canPreviousPage}
@@ -184,20 +230,42 @@ const CustomTable = ({ columns, listData }) => {
 				>
 					Next
 				</button>
-			</div>
-			<ReactPaginate
-				previousLabel={'<'}
-				nextLabel={'>'}
-				breakLabel={'...'}
-				breakClassName={'btn btn-primary'}
-				pageCount={pageCount}
-				marginPagesDisplayed={2}
-				pageRangeDisplayed={3}
-				onPageChange={pageChange}
-				containerClassName={'btn btn-primary btn-block'}
-				activeClassName={'active'}
+			</div> */}
+				<ReactPaginate
+					previousLabel={'Previous'}
+					nextLabel={'Next'}
+					breakLabel={'...'}
+					breakClassName={'break-me'}
+					pageCount={pageCount}
+					marginPagesDisplayed={2}
+					pageRangeDisplayed={3}
+					onPageChange={pageChange}
+					containerClassName={'x_pagination'}
+					previousLinkClassName={'x_pagination_button'}
+					nextLinkClassName={'x_pagination_button'}
+					activeClassName={'x_pagination_active'}
+					disabledClassName={'x_pagination_disabled'}
+				/>
+			</StyledTable>
+			<Modal show={showDeleteModal} onHide={onCloseDeleteModal}>
+				<Modal.Header closeButton>
+					<Modal.Title>Modal heading</Modal.Title>
+				</Modal.Header>
+				<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={onCloseDeleteModal}>
+						Close
+					</Button>
+					<Button variant="primary" onClick={handleDelete}>
+						Save Changes
+					</Button>
+				</Modal.Footer>
+			</Modal>
+			<SnackbarPopup
+				notification={notification}
+				setNotification={setNotification}
 			/>
-		</StyledTable>
+		</>
 	);
 };
 
