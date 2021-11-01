@@ -19,7 +19,7 @@ function App() {
 			<> 
 			<h3>$10.00</h3> 
 			<img src={sup1} alt="support"/>
-			<button onClick={() => setShowItem(true)}>Purchase</button>
+			<button className="button" onClick={() => setShowItem(true)}>Purchase</button>
 			</>}
 		</div>
 

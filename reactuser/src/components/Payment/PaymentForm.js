@@ -40,7 +40,7 @@ export default function PaymentForm(){
     if(!error){
         try{
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost:3000/payment", {
+            const response = await axios.post("http://localhost:4000/payment", {
                 amount: 1000,
                 id
             })
@@ -66,7 +66,7 @@ export default function PaymentForm(){
                             <CardElement options={CARD_OPTIONS}/>
                         </div>
                     </fieldset>
-                    <button>Pay</button>
+                    <button className="button">Pay</button>
                 </form>
                 :
                 <div>
