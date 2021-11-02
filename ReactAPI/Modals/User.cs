@@ -14,6 +14,8 @@ namespace ReactAPI.Modals
             AunctionAdmins = new HashSet<Aunction>();
             AunctionBuyers = new HashSet<Aunction>();
             AunctionLogs = new HashSet<AunctionLog>();
+            CustomerFeedbackAdmins = new HashSet<CustomerFeedback>();
+            CustomerFeedbackCustomers = new HashSet<CustomerFeedback>();
             DepositLogs = new HashSet<DepositLog>();
             UserLogs = new HashSet<UserLog>();
         }
@@ -27,12 +29,15 @@ namespace ReactAPI.Modals
         public string Role { get; set; }
         public double? Deposit { get; set; }
         public DateTime CreatedAt { get; set; }
+        public int? IsDeleted { get; set; }
 
         public virtual ICollection<ArtworkComment> ArtworkComments { get; set; }
         public virtual ICollection<Artwork> Artworks { get; set; }
         public virtual ICollection<Aunction> AunctionAdmins { get; set; }
         public virtual ICollection<Aunction> AunctionBuyers { get; set; }
         public virtual ICollection<AunctionLog> AunctionLogs { get; set; }
+        public virtual ICollection<CustomerFeedback> CustomerFeedbackAdmins { get; set; }
+        public virtual ICollection<CustomerFeedback> CustomerFeedbackCustomers { get; set; }
         public virtual ICollection<DepositLog> DepositLogs { get; set; }
         public virtual ICollection<UserLog> UserLogs { get; set; }
     }

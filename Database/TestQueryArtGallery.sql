@@ -32,6 +32,14 @@ DELETE FROM [dbo].Recipes
 DELETE FROM [dbo].CampaignComments
 DELETE FROM [dbo].EventComments
 
+UPDATE [dbo].[user] SET [user].is_deleted = 0;
+UPDATE [dbo].[deposit_log] SET [deposit_log].is_deleted = 0;
+UPDATE [dbo].[user_log] SET [user_log].is_deleted = 0;
+UPDATE [dbo].[category] SET [category].is_deleted = 0;
+UPDATE [dbo].[artwork] SET [artwork].is_deleted = 0;
+UPDATE [dbo].[artwork_comment] SET [artwork_comment].is_deleted = 0;
+UPDATE [dbo].[aunction] SET [aunction].is_deleted = 0;
+UPDATE [dbo].[aunction_log] SET [aunction_log].is_deleted = 0;
 
 DELETE FROM dbo.CampaignComments WHERE Id = 1
 DELETE FROM dbo.Events WHERE Id = 2 

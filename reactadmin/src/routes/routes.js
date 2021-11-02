@@ -3,7 +3,7 @@ import AdminLayout from 'layout/AdminLayout';
 import AdminDashboard from 'pages/Dashboard';
 import ManageUser from 'pages/User/ManageUser';
 import AddUser from 'pages/User/AddUser';
-import EditUser from 'pages/User/AddUser';
+import EditUser from 'pages/User/EditUser';
 import Login from 'pages/Login';
 
 const AdminDashboardRoute = {

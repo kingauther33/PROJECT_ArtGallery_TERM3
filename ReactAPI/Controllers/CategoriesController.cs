@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            return await _context.Categories
+                .Where(c => c.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var category = await _context.Categories.FindAsync(id);
+            var category = await _context.Categories
+                .Where(c => c.IsDeleted == 0 && c.Id == id)
+                .FirstOrDefaultAsync();
 
             if (category == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(int id, Category category)
         {
+            if (category.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != category.Id)
             {
                 return BadRequest();

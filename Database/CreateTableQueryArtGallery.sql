@@ -244,3 +244,40 @@ CREATE NONCLUSTERED INDEX [fkIdx_178] ON [dbo].[aunction_log]
  )
 
 GO
+
+-- CUSTOMER FEEDBACK --
+IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='customer_feedback')
+CREATE TABLE [dbo].[customer_feedback]
+(
+ [id]				int IDENTITY NOT NULL ,
+ [title]			nvarchar(max) NOT NULL ,
+ [description]		nvarchar(max) NULL,
+ [answer]			nvarchar(max) NULL ,
+ [status]			int NULL DEFAULT 0, -- CHUA TRA LOI, DA TRA LOI
+ [is_deleted]		int NULL DEFAULT 0,
+ [created_at]		datetime NOT NULL,
+ [customer_id]		int NULL ,
+ [admin_id]			int NULL ,
+
+
+ CONSTRAINT [PK_1000] PRIMARY KEY CLUSTERED ([id] ASC),
+ CONSTRAINT [FK_1000] FOREIGN KEY ([customer_id])  REFERENCES [dbo].[user]([id]),
+ CONSTRAINT [FK_1010] FOREIGN KEY ([admin_id])  REFERENCES [dbo].[user]([id])
+);
+GO
+
+
+
+CREATE NONCLUSTERED INDEX [FKIdx_1000] ON [dbo].[customer_feedback] 
+ (
+  [customer_id] ASC
+ )
+
+GO
+
+CREATE NONCLUSTERED INDEX [FKIdx_1010] ON [dbo].[customer_feedback] 
+ (
+  [admin_id] ASC
+ )
+
+GO

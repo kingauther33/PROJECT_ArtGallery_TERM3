@@ -22,9 +22,20 @@ namespace ReactAPI.Modals
         public virtual DbSet<Aunction> Aunctions { get; set; }
         public virtual DbSet<AunctionLog> AunctionLogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
         public virtual DbSet<DepositLog> DepositLogs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
+
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Data Source=DESKTOP-IS0140H\\SQLEXPRESS;Initial Catalog=T2004E_React_ArtGallery;Integrated Security=True");
+//            }
+//        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
@@ -53,6 +64,10 @@ namespace ReactAPI.Modals
 
                 entity.Property(e => e.Images).HasColumnName("images");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.Location).HasColumnName("location");
 
                 entity.Property(e => e.Name)
@@ -73,7 +88,6 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Artworks)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_42");
             });
 
@@ -97,6 +111,10 @@ namespace ReactAPI.Modals
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.HasOne(d => d.Artwork)
@@ -107,7 +125,6 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.ArtworkComments)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_199");
             });
 
@@ -139,6 +156,10 @@ namespace ReactAPI.Modals
 
                 entity.Property(e => e.HighestMoneyBid).HasColumnName("highest_money_bid");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.HasOne(d => d.Admin)
                     .WithMany(p => p.AunctionAdmins)
                     .HasForeignKey(d => d.AdminId)
@@ -147,7 +168,6 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Artwork)
                     .WithMany(p => p.Aunctions)
                     .HasForeignKey(d => d.ArtworkId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_98");
 
                 entity.HasOne(d => d.Buyer)
@@ -174,6 +194,10 @@ namespace ReactAPI.Modals
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.MoneyBid).HasColumnName("money_bid");
 
                 entity.HasOne(d => d.Aunction)
@@ -184,7 +208,6 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.AunctionLogs)
                     .HasForeignKey(d => d.BuyerId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_176");
             });
 
@@ -196,9 +219,58 @@ namespace ReactAPI.Modals
 
                 entity.Property(e => e.Images).HasColumnName("images");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasColumnName("name");
+            });
+
+            modelBuilder.Entity<CustomerFeedback>(entity =>
+            {
+                entity.ToTable("customer_feedback");
+
+                entity.HasIndex(e => e.CustomerId, "FKIdx_1000");
+
+                entity.HasIndex(e => e.AdminId, "FKIdx_1010");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AdminId).HasColumnName("admin_id");
+
+                entity.Property(e => e.Answer).HasColumnName("answer");
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_at");
+
+                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+
+                entity.Property(e => e.Description).HasColumnName("description");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasColumnName("title");
+
+                entity.HasOne(d => d.Admin)
+                    .WithMany(p => p.CustomerFeedbackAdmins)
+                    .HasForeignKey(d => d.AdminId)
+                    .HasConstraintName("FK_1010");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.CustomerFeedbackCustomers)
+                    .HasForeignKey(d => d.CustomerId)
+                    .HasConstraintName("FK_1000");
             });
 
             modelBuilder.Entity<DepositLog>(entity =>
@@ -215,12 +287,15 @@ namespace ReactAPI.Modals
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.DepositLogs)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_190");
             });
 
@@ -228,7 +303,7 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E616423B9FBD1")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164ECFA189B")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");
@@ -250,6 +325,10 @@ namespace ReactAPI.Modals
                 entity.Property(e => e.FirstName)
                     .IsRequired()
                     .HasColumnName("first_name");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.LastName)
                     .IsRequired()
@@ -274,6 +353,10 @@ namespace ReactAPI.Modals
 
                 entity.Property(e => e.Ip).HasColumnName("ip");
 
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
                 entity.Property(e => e.LastOnline)
                     .HasColumnType("datetime")
                     .HasColumnName("last_online");
@@ -283,7 +366,6 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserLogs)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_25");
             });
 

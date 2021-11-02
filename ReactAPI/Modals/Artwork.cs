@@ -22,6 +22,7 @@ namespace ReactAPI.Modals
         public string Status { get; set; }
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
+        public int? IsDeleted { get; set; }
         public int? CategoryId { get; set; }
         public int? UserId { get; set; }
 

@@ -53,6 +53,18 @@ const StyledTable = styled.div`
 	.table tr:hover {
 		background-color: #ddd;
 	}
+	/* 
+	.table .disabled,
+	.table .disabled:hover,
+	.table .disabled:nth-child(even) {
+		background: #f37c7c;
+		cursor: not-allowed;
+	}
+
+	.table .disabled a,
+	.table .disabled a:hover {
+		pointer-events: none !important;
+	} */
 
 	@media screen and (max-width: 600px) {
 		.table {
@@ -86,7 +98,7 @@ const StyledTable = styled.div`
 	}
 `;
 
-const CustomTable = ({ columns, listData, deleteAPI }) => {
+const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 	const [listRows, setListRows] = useState([]);
 	const [showDeleteModal, setShowDeleteModal] = useState(false);
 	const [deleteId, setDeleteId] = useState(0);
@@ -100,7 +112,7 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 		setShowDeleteModal(false);
 	};
 
-	const handleDelete = async () => {
+	const onDeleteHandler = async () => {
 		await axios
 			.delete(deleteAPI + `/${deleteId}`, HeaderOptions)
 			.then((res) => {
@@ -118,26 +130,31 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 					isOpen: true,
 					isSuccess: false,
 				});
+			})
+			.finally(() => {
+				setShowDeleteModal(false);
+				dataFetch();
 			});
 	};
 
 	useEffect(() => {
 		let dataFetched = [];
+		let index = 1;
 		if (listData.length) {
 			dataFetched = listData.map((data) => {
-				const handleEdit = () => {};
-
-				const handleDelete = (data) => {
+				const getDeleteId = (data) => {
 					setShowDeleteModal(true);
 					setDeleteId(data.id);
 				};
 
+				data.index = index++;
+
 				data.action = (
 					<>
-						<Link to="#" onClick={handleDelete.bind(null, data)}>
+						<Link to="#" onClick={getDeleteId.bind(null, data)}>
 							<i className="fas fa-trash"></i>
 						</Link>
-						<Link to="#" style={{ marginLeft: '0.6em' }}>
+						<Link to={editURL + data.id} style={{ marginLeft: '0.6em' }}>
 							<i className="fas fa-edit"></i>
 						</Link>
 					</>
@@ -148,7 +165,7 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 		}
 
 		setListRows(dataFetched);
-	}, [listData]);
+	}, [editURL, listData]);
 
 	const {
 		getTableProps,
@@ -178,6 +195,18 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 		gotoPage(e.selected);
 	};
 
+	/* const checkRowAdmin = (row) => {
+		let isAdmin = false;
+		row.cells.forEach((cell) => {
+			if (cell.column.Header === 'Role' && cell.value === 'Admin') {
+				console.log('In Role + Admin');
+				isAdmin = true;
+			}
+		});
+
+		return isAdmin;
+	}; */
+
 	// const { pageIndex, pageSize } = state;
 
 	return (
@@ -200,7 +229,10 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 						{page.map((row) => {
 							prepareRow(row);
 							return (
-								<tr {...row.getRowProps()}>
+								<tr
+									{...row.getRowProps()}
+									// className={checkRowAdmin(row) ? 'disabled' : ''}
+								>
 									{row.cells.map((cell) => (
 										<td {...cell.getCellProps()}>
 											<span className="d-inline-block d-lg-none heading-mobile">
@@ -249,15 +281,16 @@ const CustomTable = ({ columns, listData, deleteAPI }) => {
 			</StyledTable>
 			<Modal show={showDeleteModal} onHide={onCloseDeleteModal}>
 				<Modal.Header closeButton>
-					<Modal.Title>Modal heading</Modal.Title>
+					<Modal.Title>
+						Are you sure you want to delete this record?
+					</Modal.Title>
 				</Modal.Header>
-				<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={onCloseDeleteModal}>
-						Close
+						No
 					</Button>
-					<Button variant="primary" onClick={handleDelete}>
-						Save Changes
+					<Button variant="primary" onClick={onDeleteHandler}>
+						Yes
 					</Button>
 				</Modal.Footer>
 			</Modal>

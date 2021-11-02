@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Aunction>>> GetAunctions()
         {
-            return await _context.Aunctions.ToListAsync();
+            return await _context.Aunctions
+                .Where(a => a.IsDeleted == 0)
+                .ToListAsync(); ;
         }
 
         // GET: api/Aunctions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Aunction>> GetAunction(int id)
         {
-            var aunction = await _context.Aunctions.FindAsync(id);
+            var aunction = await _context.Aunctions
+                .Where(c => c.IsDeleted == 0 && c.Id == id)
+                .FirstOrDefaultAsync();
 
             if (aunction == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAunction(int id, Aunction aunction)
         {
+            if (aunction.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != aunction.Id)
             {
                 return BadRequest();

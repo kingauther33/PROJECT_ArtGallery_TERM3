@@ -15,6 +15,7 @@ namespace ReactAPI.Modals
         public int Id { get; set; }
         public string Name { get; set; }
         public string Images { get; set; }
+        public int? IsDeleted { get; set; }
 
         public virtual ICollection<Artwork> Artworks { get; set; }
     }
