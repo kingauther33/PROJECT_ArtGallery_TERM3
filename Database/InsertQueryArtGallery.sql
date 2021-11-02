@@ -118,3 +118,11 @@ INSERT INTO dbo.[aunction_log]([money_bid], [created_at], [aunction_id], [buyer_
 	(200000, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 1, 7),
 	(300000, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 1, 5),
 	(400000, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 1, 4)
+
+
+-- INSERT CUSTOMER FEEDBACK --
+INSERT INTO dbo.[customer_feedback]([title], [description], [answer], [status], [created_at], [customer_id], [admin_id]) values 
+	('Change artwork', 'Please make this artwork available in my country', 'Yes, I have updated it! Thank for your feedback!', 1, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 7, 2),
+	('Add artwork', 'Please add this artwork to the list!', 'Yes, I have updated it! Thank for your feedback!', 1, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 8, 2),
+	('Remove artwork', 'This artwork is disgusting!!!', 'Yes, I have updated it! Thank for your feedback!', 1, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 8, 2)
+

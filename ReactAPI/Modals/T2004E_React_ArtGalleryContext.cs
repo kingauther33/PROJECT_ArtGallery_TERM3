@@ -22,9 +22,19 @@ namespace ReactAPI.Modals
         public virtual DbSet<Aunction> Aunctions { get; set; }
         public virtual DbSet<AunctionLog> AunctionLogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
         public virtual DbSet<DepositLog> DepositLogs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
+
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Data Source=DESKTOP-IS0140H\\SQLEXPRESS;Initial Catalog=T2004E_React_ArtGallery;Integrated Security=True");
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -218,6 +228,51 @@ namespace ReactAPI.Modals
                     .HasColumnName("name");
             });
 
+            modelBuilder.Entity<CustomerFeedback>(entity =>
+            {
+                entity.ToTable("customer_feedback");
+
+                entity.HasIndex(e => e.CustomerId, "FKIdx_1000");
+
+                entity.HasIndex(e => e.AdminId, "FKIdx_1010");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AdminId).HasColumnName("admin_id");
+
+                entity.Property(e => e.Answer).HasColumnName("answer");
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_at");
+
+                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+
+                entity.Property(e => e.Description).HasColumnName("description");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasColumnName("title");
+
+                entity.HasOne(d => d.Admin)
+                    .WithMany(p => p.CustomerFeedbackAdmins)
+                    .HasForeignKey(d => d.AdminId)
+                    .HasConstraintName("FK_1010");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.CustomerFeedbackCustomers)
+                    .HasForeignKey(d => d.CustomerId)
+                    .HasConstraintName("FK_1000");
+            });
+
             modelBuilder.Entity<DepositLog>(entity =>
             {
                 entity.ToTable("deposit_log");
@@ -248,7 +303,7 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164E1B4F018")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164ECFA189B")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");

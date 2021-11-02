@@ -35,7 +35,6 @@ const EditUser = () => {
 		confirmPassword: '',
 		role: '',
 		deposit: 0,
-		createdAt: new Date(),
 	});
 
 	const validationSchema = Yup.object().shape({
