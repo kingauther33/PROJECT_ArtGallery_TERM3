@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworks()
         {
-            return await _context.Artworks.ToListAsync();
+            return await _context.Artworks
+                .Where(a => a.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/Artworks/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Artwork>> GetArtwork(int id)
         {
-            var artwork = await _context.Artworks.FindAsync(id);
+            var artwork = await _context.Artworks
+                .Where(a => a.IsDeleted == 0 && a.Id == id)
+                .FirstOrDefaultAsync();
 
             if (artwork == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArtwork(int id, Artwork artwork)
         {
+            if (artwork.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != artwork.Id)
             {
                 return BadRequest();

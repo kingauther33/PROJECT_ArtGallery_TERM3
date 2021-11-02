@@ -27,14 +27,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users
+                .Where(u => u.IsDeleted == 0 && u.Role != "Admin")
+                .ToListAsync();
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Where(u => u.IsDeleted == 0 && u.Id == id && u.Role != "Admin")
+                .FirstOrDefaultAsync();
 
             if (user == null)
             {
@@ -49,6 +53,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
+            if (user.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != user.Id)
             {
                 return BadRequest();
@@ -90,13 +99,59 @@ namespace ReactAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.ArtworkComments)
+                .Include(u => u.Artworks)
+                .Include(u => u.AunctionAdmins)
+                .Include(u => u.AunctionBuyers)
+                .Include(u => u.AunctionLogs)
+                .Include(u => u.DepositLogs)
+                .Include(u => u.UserLogs)
+                .Where(u => u.IsDeleted == 0 && u.Id == id)
+                .FirstOrDefaultAsync();
+
             if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            user.IsDeleted = 1;
+            foreach (var userComment in user.ArtworkComments)
+            {
+                userComment.IsDeleted = 1;
+            }
+
+            foreach (var userArtwork in user.Artworks)
+            {
+                userArtwork.IsDeleted = 1;
+            }
+
+            foreach (var userAunctionAdmin in user.AunctionAdmins)
+            {
+                userAunctionAdmin.IsDeleted = 1;
+            }
+
+            foreach (var userAunctionBuyer in user.AunctionBuyers)
+            {
+                userAunctionBuyer.IsDeleted = 1;
+            }
+
+            foreach (var userAunctionLog in user.AunctionLogs)
+            {
+                userAunctionLog.IsDeleted = 1;
+            }
+
+            foreach (var userDepositLog in user.DepositLogs)
+            {
+                userDepositLog.IsDeleted = 1;
+            }
+
+            foreach (var userUserLog in user.UserLogs)
+            {
+                userUserLog.IsDeleted = 1;
+            }
+
+            //_context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return NoContent();

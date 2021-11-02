@@ -27,6 +27,7 @@ namespace ReactAPI.Modals
         public string Role { get; set; }
         public double? Deposit { get; set; }
         public DateTime CreatedAt { get; set; }
+        public int? IsDeleted { get; set; }
 
         public virtual ICollection<ArtworkComment> ArtworkComments { get; set; }
         public virtual ICollection<Artwork> Artworks { get; set; }

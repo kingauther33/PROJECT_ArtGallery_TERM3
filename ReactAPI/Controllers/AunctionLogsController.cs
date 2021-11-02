@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AunctionLog>>> GetAunctionLogs()
         {
-            return await _context.AunctionLogs.ToListAsync();
+            return await _context.AunctionLogs
+                .Where(al => al.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/AunctionLogs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<AunctionLog>> GetAunctionLog(int id)
         {
-            var aunctionLog = await _context.AunctionLogs.FindAsync(id);
+            var aunctionLog = await _context.AunctionLogs
+                .Where(al => al.IsDeleted == 0 && al.Id == id)
+                .FirstOrDefaultAsync();
 
             if (aunctionLog == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAunctionLog(int id, AunctionLog aunctionLog)
         {
+            if (aunctionLog.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != aunctionLog.Id)
             {
                 return BadRequest();

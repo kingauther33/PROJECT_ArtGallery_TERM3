@@ -5,13 +5,17 @@ import { WidthResponsive } from 'components/UI/WidthResponsive';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { API, HeaderOptions } from 'API';
+import CustomBackdrop from 'components/CustomBackdrop';
 
 const ManageUser = () => {
+	const [listData, setListData] = useState([]);
+	const [openBackdrop, setOpenBackdrop] = useState(false);
+
 	const columns = useMemo(
 		() => [
 			{
 				Header: 'ID',
-				accessor: 'id',
+				accessor: 'index',
 			},
 			{
 				Header: 'First Name',
@@ -71,8 +75,6 @@ const ManageUser = () => {
 		[]
 	);
 
-	const [listData, setListData] = useState([]);
-
 	const fetchUsers = async () => {
 		console.log(API);
 		await axios
@@ -80,10 +82,14 @@ const ManageUser = () => {
 			.then((res) => {
 				setListData(res.data);
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => console.log(err))
+			.finally(() => {
+				setOpenBackdrop(false);
+			});
 	};
 
 	useEffect(() => {
+		setOpenBackdrop(true);
 		fetchUsers();
 
 		return () => {};
@@ -105,6 +111,8 @@ const ManageUser = () => {
 									columns={columns}
 									listData={listData}
 									deleteAPI={API.delete_user.url}
+									editURL="/manage-user/edit-user/"
+									dataFetch={fetchUsers}
 								/>
 								<WidthResponsive>
 									<Link
@@ -119,6 +127,7 @@ const ManageUser = () => {
 					</div>
 				</div>
 			</div>
+			<CustomBackdrop openBackdrop={openBackdrop} />
 		</>
 	);
 };
