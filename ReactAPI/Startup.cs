@@ -39,7 +39,7 @@ namespace ReactAPI
 
             //Dòng này để thay thế DB context mặc định có sẵn trong Modal Context, Thay thế Transient:
             var connectionString = Configuration.GetConnectionString("T2004E_React_ArtGallery");
-            services.AddDbContextPool<T2004E_React_ArtGalleryContext>(options => options.UseSqlServer(connectionString));
+            //services.AddDbContextPool<T2004E_React_ArtGalleryContext>(options => options.UseSqlServer(connectionString));
 
             // ADD dòng này để Allow Origin (CORS), nhớ tải package Microsoft.AspNetCore.Cors
             services.AddCors(options =>

@@ -16,9 +16,9 @@ namespace ReactAPI.Modals
         public double HighestMoneyBid { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
-        public int ArtworkId { get; set; }
-        public int AdminId { get; set; }
-        public int BuyerId { get; set; }
+        public int? ArtworkId { get; set; }
+        public int? AdminId { get; set; }
+        public int? BuyerId { get; set; }
 
         public virtual User Admin { get; set; }
         public virtual Artwork Artwork { get; set; }
