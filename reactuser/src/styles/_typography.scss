@@ -1,0 +1,47 @@
+:root {
+	--primary-color: #3772ff;
+	--secondary-color: #45b26b;
+}
+
+.hero,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: 'DMSans', Helvetica, Arial, sans-serif !important;
+	font-weight: 700 !important;
+}
+
+.x_letter-spacing-01 {
+	letter-spacing: 0.1em;
+}
+
+.x_text-hover:hover {
+	color: var(--primary-color);
+}
+
+.x_text-heading {
+	color: var(--primary-color) !important;
+	font-family: 'DMSansBold' !important;
+	font-weight: 700 !important;
+}
+
+.x_text-white {
+	color: #fff !important;
+}
+
+.x_text-primary {
+	color: var(--primary-color) !important;
+}
+
+.x_text-secondary {
+	color: var(--secondary-color) !important;
+}
+
+.x_text-primary-medium {
+	color: var(--primary-color) !important;
+	font-family: 'PoppinSemiBold' !important;
+	font-weight: 500 !important;
+}
