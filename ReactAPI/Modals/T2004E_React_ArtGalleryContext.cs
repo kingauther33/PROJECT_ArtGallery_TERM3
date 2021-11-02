@@ -25,7 +25,6 @@ namespace ReactAPI.Modals
         public virtual DbSet<DepositLog> DepositLogs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
@@ -69,13 +68,12 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Category)
                     .WithMany(p => p.Artworks)
                     .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_39");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Artworks)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_42");
             });
 
@@ -104,13 +102,12 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Artwork)
                     .WithMany(p => p.ArtworkComments)
                     .HasForeignKey(d => d.ArtworkId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_196");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.ArtworkComments)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_199");
             });
 
@@ -145,19 +142,17 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Admin)
                     .WithMany(p => p.AunctionAdmins)
                     .HasForeignKey(d => d.AdminId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_165");
 
                 entity.HasOne(d => d.Artwork)
                     .WithMany(p => p.Aunctions)
                     .HasForeignKey(d => d.ArtworkId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_98");
 
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.AunctionBuyers)
                     .HasForeignKey(d => d.BuyerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_159");
             });
 
@@ -184,13 +179,12 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.Aunction)
                     .WithMany(p => p.AunctionLogs)
                     .HasForeignKey(d => d.AunctionId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_173");
 
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.AunctionLogs)
                     .HasForeignKey(d => d.BuyerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_176");
             });
 
@@ -226,7 +220,7 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.DepositLogs)
                     .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_190");
             });
 
@@ -234,7 +228,7 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164C557CD19")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E616423B9FBD1")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");
@@ -289,6 +283,7 @@ namespace ReactAPI.Modals
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserLogs)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK_25");
             });
 

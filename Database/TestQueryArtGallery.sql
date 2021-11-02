@@ -27,7 +27,7 @@ DELETE FROM [dbo].Campaigns
 DELETE FROM [dbo].Categories
 DELETE FROM [dbo].Events
 DELETE FROM [dbo].ConnectedBrands
-DELETE FROM [dbo].Users
+DELETE FROM [dbo].[user] where [user].id = 1
 DELETE FROM [dbo].Recipes
 DELETE FROM [dbo].CampaignComments
 DELETE FROM [dbo].EventComments
