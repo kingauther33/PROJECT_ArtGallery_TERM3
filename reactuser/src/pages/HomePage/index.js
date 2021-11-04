@@ -93,7 +93,7 @@ const HomePage = () => {
                                         {/*</div> */}
                                     </div>
                                 </div>
-                                <div className="main__btns"><Link className="button main__button js-popup-open" href="#popup-connect" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
+                                <div className="main__btns"><Link className="button main__button js-popup-open" href="/" data-effect="mfp-zoom-in">Place a bid</Link><Link className="button-stroke main__button" to="Item">View item </Link></div>
                             </div>
                         </div>
                     </div>
