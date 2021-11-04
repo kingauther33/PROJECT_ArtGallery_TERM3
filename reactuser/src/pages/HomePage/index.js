@@ -5,32 +5,26 @@ import { API,HeaderOptions } from '../../API';
 import images from '../../assets';
 
 const HomePage = () => {
+
     const [listData, setListData] = useState([]);
-    const [openBackdrop, setOpenBackdrop] = useState(false);
-    
-    const fetchUsers = async () => {
+
+    const fetchData = async () => {
         console.log(API);
         await axios
-        .get(API.getArtworks.url, HeaderOptions)
-        .then((res) => {
-            setListData(res.data);
-        })
-        .catch((error) => console.log(error))
-        .finally(() => {
-            setOpenBackdrop(false);
-        });
+            .get(API.getArtworks.url, HeaderOptions)
+            .then((res) => {
+                console.log(res.data);
+                setListData(res.data);
+            })
+            .catch((error) => console.log(error))
     };
 
     useEffect(() => {
-        setOpenBackdrop(true);
-        fetchUsers();
-
-        return () => {};
+        fetchData();
     }, [])
 
 	return (
 	<>
-
 
 <div className="outer__inner">
     <div className="section main">
@@ -39,15 +33,17 @@ const HomePage = () => {
                 <div className="main__stage">Create, explore, collect digital art NFTs.</div>
                 <h3 className="main__title h3">The new creative economy.</h3><Link className="button-stroke main__button" to="search">Start your search</Link>
             </div>
+
+
             <div className="main__wrapper">
                     <div className="main__slide">
                         <div className="main__row">
                             <div className="player">
-                                <img className='player__img' src={images.Homepage.img_main} alt=""/>
+                                <img className='player__img' src={listData[0]?.images} alt=""/>
 
                             </div>
                             <div className="main__details">
-                                <div className="main__subtitle h1">the creator network®</div>
+                                <div className="main__subtitle h1">{listData[0]?.name}</div>
                                 <div className="main__line">
                                     <div className="main__item">
                                         <div className="main__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
@@ -108,12 +104,12 @@ const HomePage = () => {
         <div className="selection__center center">
             <div className="selection__row">
                 <div className="selection__col"><Link className="selection__card" to="Item">
-                    <div className="selection__preview"><img  src={images.Homepage.pic1} alt="Selection"/></div>
+                    <div className="selection__preview"><img  src={listData[1]?.images} alt="Selection"/></div>
                     <div className="selection__head">
                         <div className="selection__line">
                             <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__description">
-                                <div className="selection__title">The future of ETH®</div>
+                                <div className="selection__title">{listData[1]?.name}</div>
                                 <div className="selection__counter">18 in stock</div>
                             </div>
                         </div>
