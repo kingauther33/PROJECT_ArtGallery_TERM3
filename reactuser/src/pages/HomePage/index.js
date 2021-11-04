@@ -119,9 +119,9 @@ const HomePage = () => {
                         </div>
                     </div></Link></div>
                 <div className="selection__col"><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={images.Homepage.card1}  alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={listData[2]?.images}  alt="Selection"/></div>
                     <div className="selection__description">
-                        <div className="selection__title">ETH never die</div>
+                        <div className="selection__title">{listData[2]?.name}</div>
                         <div className="selection__line">
                             <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
@@ -129,9 +129,9 @@ const HomePage = () => {
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
                     </div></Link><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={images.Homepage.card2}  alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={listData[3]?.images}  alt="Selection"/></div>
                     <div className="selection__description">
-                        <div className="selection__title">Future coming soon</div>
+                        <div className="selection__title">{listData[3]?.name}</div>
                         <div className="selection__line">
                             <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
@@ -139,9 +139,9 @@ const HomePage = () => {
                         </div>
                         <button className="button-stroke button-small selection__button">Place a bid</button>
                     </div></Link><Link className="selection__item" to="Item">
-                    <div className="selection__preview"><img srcSet={images.Homepage.card3}  alt="Selection"/></div>
+                    <div className="selection__preview"><img srcSet={listData[4]?.images}  alt="Selection"/></div>
                     <div className="selection__description">
-                        <div className="selection__title">Elon Musk silver coin 3d print</div>
+                        <div className="selection__title">{listData[4]?.name}</div>
                         <div className="selection__line">
                             <div className="selection__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
                             <div className="selection__price">0.27 ETH</div>
@@ -279,7 +279,7 @@ const HomePage = () => {
             <div className="discover__list">
                 <div className="discover__slider js-slider-discover js-slider-resize">
                     <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img1} alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={listData[0]?.images} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -294,7 +294,7 @@ const HomePage = () => {
                         </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
-                                <div className="card__title">Amazing digital art</div>
+                                <div className="card__title">{listData[0]?.name}</div>
                                 <div className="card__price">2.45 ETH</div>
                             </div>
                             <div className="card__line">
@@ -316,7 +316,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img2} alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={listData[2]?.images} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -331,7 +331,7 @@ const HomePage = () => {
                         </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
-                                <div className="card__title">Ribbon Hunter</div>
+                                <div className="card__title">{listData[2]?.name}</div>
                                 <div className="card__price">2.45 ETH</div>
                             </div>
                             <div className="card__line">
@@ -353,7 +353,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img3} alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={listData[3]?.images} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -368,7 +368,7 @@ const HomePage = () => {
                         </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
-                                <div className="card__title">Amazing digital art</div>
+                                <div className="card__title">{listData[3]?.name}</div>
                                 <div className="card__price">2.45 ETH</div>
                             </div>
                             <div className="card__line">
@@ -390,7 +390,7 @@ const HomePage = () => {
                         </div></Link>
                     </div>
                     <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img4} alt="Card preview"/>
+                        <div className="card__preview"><img srcSet={listData[3]?.images} alt="Card preview"/>
                             <div className="card__control">
                                 <div className="status-green card__category">purchasing !</div>
                                 <button className="card__favorite">
@@ -405,7 +405,7 @@ const HomePage = () => {
                         </div><Link className="card__link" to="Item">
                         <div className="card__body">
                             <div className="card__line">
-                                <div className="card__title">Ribbon Hunter</div>
+                                <div className="card__title">{listData[3]?.name}</div>
                                 <div className="card__price">2.45 ETH</div>
                             </div>
                             <div className="card__line">
@@ -426,154 +426,7 @@ const HomePage = () => {
                             <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
                         </div></Link>
                     </div>
-                    <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img5} alt="Card preview"/>
-                            <div className="card__control">
-                                <div className="status-green card__category">purchasing !</div>
-                                <button className="card__favorite">
-                                    <svg className="icon icon-heart">
-                                        <use xlinkHref="#icon-heart"></use>
-                                    </svg>
-                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                <svg className="icon icon-scatter-up">
-                                    <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></Link>
-                            </div>
-                        </div><Link className="card__link" to="Item">
-                        <div className="card__body">
-                            <div className="card__line">
-                                <div className="card__title">Amazing digital art</div>
-                                <div className="card__price">2.45 ETH</div>
-                            </div>
-                            <div className="card__line">
-                                <div className="card__users">
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                </div>
-                                <div className="card__counter">3 in stock</div>
-                            </div>
-                        </div>
-                        <div className="card__foot">
-                            <div className="card__status">
-                                <svg className="icon icon-candlesticks-up">
-                                    <use xlinkHref="#icon-candlesticks-up"></use>
-                                </svg>Highest bid <span>0.001 ETH</span>
-                            </div>
-                            <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></Link>
-                    </div>
-                    <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img6} alt="Card preview"/>
-                            <div className="card__control">
-                                <div className="status-green card__category">purchasing !</div>
-                                <button className="card__favorite">
-                                    <svg className="icon icon-heart">
-                                        <use xlinkHref="#icon-heart"></use>
-                                    </svg>
-                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                <svg className="icon icon-scatter-up">
-                                    <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></Link>
-                            </div>
-                        </div><Link className="card__link" to="Item">
-                        <div className="card__body">
-                            <div className="card__line">
-                                <div className="card__title">Ribbon Hunter</div>
-                                <div className="card__price">2.45 ETH</div>
-                            </div>
-                            <div className="card__line">
-                                <div className="card__users">
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                </div>
-                                <div className="card__counter">3 in stock</div>
-                            </div>
-                        </div>
-                        <div className="card__foot">
-                            <div className="card__status">
-                                <svg className="icon icon-candlesticks-up">
-                                    <use xlinkHref="#icon-candlesticks-up"></use>
-                                </svg>Highest bid <span>0.001 ETH</span>
-                            </div>
-                            <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></Link>
-                    </div>
-                    <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img7} alt="Card preview"/>
-                            <div className="card__control">
-                                <div className="status-green card__category">purchasing !</div>
-                                <button className="card__favorite">
-                                    <svg className="icon icon-heart">
-                                        <use xlinkHref="#icon-heart"></use>
-                                    </svg>
-                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                <svg className="icon icon-scatter-up">
-                                    <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></Link>
-                            </div>
-                        </div><Link className="card__link" to="Item">
-                        <div className="card__body">
-                            <div className="card__line">
-                                <div className="card__title">Amazing digital art</div>
-                                <div className="card__price">2.45 ETH</div>
-                            </div>
-                            <div className="card__line">
-                                <div className="card__users">
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                </div>
-                                <div className="card__counter">3 in stock</div>
-                            </div>
-                        </div>
-                        <div className="card__foot">
-                            <div className="card__status">
-                                <svg className="icon icon-candlesticks-up">
-                                    <use xlinkHref="#icon-candlesticks-up"></use>
-                                </svg>Highest bid <span>0.001 ETH</span>
-                            </div>
-                            <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></Link>
-                    </div>
-                    <div className="card">
-                        <div className="card__preview"><img srcSet={images.Homepage.img2} alt="Card preview"/>
-                            <div className="card__control">
-                                <div className="status-green card__category">purchasing !</div>
-                                <button className="card__favorite">
-                                    <svg className="icon icon-heart">
-                                        <use xlinkHref="#icon-heart"></use>
-                                    </svg>
-                                </button><Link className="button-small card__button js-popup-open" href="#popup-bid" data-effect="mfp-zoom-in"><span>Place a bid</span>
-                                <svg className="icon icon-scatter-up">
-                                    <use xlinkHref="#icon-scatter-up"></use>
-                                </svg></Link>
-                            </div>
-                        </div><Link className="card__link" to="Item">
-                        <div className="card__body">
-                            <div className="card__line">
-                                <div className="card__title">Amazing digital art</div>
-                                <div className="card__price">2.45 ETH</div>
-                            </div>
-                            <div className="card__line">
-                                <div className="card__users">
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                    <div className="card__avatar"><img src={images.Homepage.avatar1} alt="Avatar"/></div>
-                                </div>
-                                <div className="card__counter">3 in stock</div>
-                            </div>
-                        </div>
-                        <div className="card__foot">
-                            <div className="card__status">
-                                <svg className="icon icon-candlesticks-up">
-                                    <use xlinkHref="#icon-candlesticks-up"></use>
-                                </svg>Highest bid <span>0.001 ETH</span>
-                            </div>
-                            <div className="card__bid">New bid <span role="img" aria-label="fire">🔥</span></div>
-                        </div></Link>
-                    </div>
+                
                 </div>
             </div>
             <div className="discover__btns">
