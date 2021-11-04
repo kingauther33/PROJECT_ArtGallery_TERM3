@@ -1,7 +1,7 @@
 const BASE_URL = 'https://localhost:44379/api/';
 
 
-export const API = {
+export const ProductApi = {
     getArtworks: {
         url: BASE_URL + 'Artworks',
         params: {},

@@ -1,9 +1,32 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { API,HeaderOptions } from '../../API';
 import images from '../../assets';
 
 const HomePage = () => {
+    const [listData, setListData] = useState([]);
+    const [openBackdrop, setOpenBackdrop] = useState(false);
+    
+    const fetchUsers = async () => {
+        console.log(API);
+        await axios
+        .get(API.getArtworks.url, HeaderOptions)
+        .then((res) => {
+            setListData(res.data);
+        })
+        .catch((error) => console.log(error))
+        .finally(() => {
+            setOpenBackdrop(false);
+        });
+    };
 
+    useEffect(() => {
+        setOpenBackdrop(true);
+        fetchUsers();
+
+        return () => {};
+    }, [])
 
 	return (
 	<>
