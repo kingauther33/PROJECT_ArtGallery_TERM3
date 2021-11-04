@@ -34,7 +34,7 @@ export const API = {
 		method: 'POST',
 	},
 	delete_user: {
-		url: BASE_URL + 'Users',
+		url: BASE_URL + 'Users/', // + id
 		params: {},
 		method: 'DELETE',
 	},
@@ -51,6 +51,27 @@ export const API = {
 			createdAt: Date.now(),
 		},
 		method: 'PUT',
+	},
+
+	get_customer_requests: {
+		url: BASE_URL + 'CustomerRequests',
+		params: {},
+		method: 'GET',
+	},
+
+	edit_customer_report: {
+		url: BASE_URL + 'CustomerRequests/', // + id
+		params: {
+			status: 0,
+			response: '',
+		},
+		method: 'POST',
+	},
+
+	get_aunctions: {
+		url: BASE_URL + 'Aunctions',
+		params: {},
+		method: 'GET',
 	},
 };
 

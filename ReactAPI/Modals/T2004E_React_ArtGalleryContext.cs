@@ -23,6 +23,7 @@ namespace ReactAPI.Modals
         public virtual DbSet<AunctionLog> AunctionLogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
+        public virtual DbSet<CustomerRequest> CustomerRequests { get; set; }
         public virtual DbSet<DepositLog> DepositLogs { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserLog> UserLogs { get; set; }
@@ -74,7 +75,9 @@ namespace ReactAPI.Modals
                     .IsRequired()
                     .HasColumnName("name");
 
-                entity.Property(e => e.Status).HasColumnName("status");
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
@@ -273,6 +276,45 @@ namespace ReactAPI.Modals
                     .HasConstraintName("FK_1000");
             });
 
+            modelBuilder.Entity<CustomerRequest>(entity =>
+            {
+                entity.ToTable("customer_request");
+
+                entity.HasIndex(e => e.CustomerId, "FKIdx_1100");
+
+                entity.HasIndex(e => e.AdminId, "FKIdx_1110");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AdminId).HasColumnName("admin_id");
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("datetime")
+                    .HasColumnName("created_at");
+
+                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+
+                entity.Property(e => e.IsDeleted)
+                    .HasColumnName("is_deleted")
+                    .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.Response).HasColumnName("response");
+
+                entity.Property(e => e.Status)
+                    .HasColumnName("status")
+                    .HasDefaultValueSql("((0))");
+
+                entity.HasOne(d => d.Admin)
+                    .WithMany(p => p.CustomerRequestAdmins)
+                    .HasForeignKey(d => d.AdminId)
+                    .HasConstraintName("FK_1110");
+
+                entity.HasOne(d => d.Customer)
+                    .WithMany(p => p.CustomerRequestCustomers)
+                    .HasForeignKey(d => d.CustomerId)
+                    .HasConstraintName("FK_1100");
+            });
+
             modelBuilder.Entity<DepositLog>(entity =>
             {
                 entity.ToTable("deposit_log");
@@ -303,7 +345,7 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164ECFA189B")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164428A86D0")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");

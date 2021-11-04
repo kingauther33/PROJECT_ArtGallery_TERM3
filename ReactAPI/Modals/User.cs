@@ -16,6 +16,8 @@ namespace ReactAPI.Modals
             AunctionLogs = new HashSet<AunctionLog>();
             CustomerFeedbackAdmins = new HashSet<CustomerFeedback>();
             CustomerFeedbackCustomers = new HashSet<CustomerFeedback>();
+            CustomerRequestAdmins = new HashSet<CustomerRequest>();
+            CustomerRequestCustomers = new HashSet<CustomerRequest>();
             DepositLogs = new HashSet<DepositLog>();
             UserLogs = new HashSet<UserLog>();
         }
@@ -38,6 +40,8 @@ namespace ReactAPI.Modals
         public virtual ICollection<AunctionLog> AunctionLogs { get; set; }
         public virtual ICollection<CustomerFeedback> CustomerFeedbackAdmins { get; set; }
         public virtual ICollection<CustomerFeedback> CustomerFeedbackCustomers { get; set; }
+        public virtual ICollection<CustomerRequest> CustomerRequestAdmins { get; set; }
+        public virtual ICollection<CustomerRequest> CustomerRequestCustomers { get; set; }
         public virtual ICollection<DepositLog> DepositLogs { get; set; }
         public virtual ICollection<UserLog> UserLogs { get; set; }
     }

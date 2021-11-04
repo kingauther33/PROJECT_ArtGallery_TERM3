@@ -107,6 +107,10 @@ namespace ReactAPI.Controllers
                 .Include(u => u.AunctionLogs)
                 .Include(u => u.DepositLogs)
                 .Include(u => u.UserLogs)
+                .Include(u => u.CustomerFeedbackAdmins)
+                .Include(u => u.CustomerFeedbackCustomers)
+                .Include(u => u.CustomerRequestAdmins)
+                .Include(u => u.CustomerRequestCustomers)
                 .Where(u => u.IsDeleted == 0 && u.Id == id)
                 .FirstOrDefaultAsync();
 
@@ -151,6 +155,25 @@ namespace ReactAPI.Controllers
                 userUserLog.IsDeleted = 1;
             }
 
+            foreach (var userCustomerFeedbackAdmin in user.CustomerFeedbackAdmins)
+            {
+                userCustomerFeedbackAdmin.IsDeleted = 1;
+            }
+
+            foreach (var userCustomerFeedbackCustomer in user.CustomerFeedbackCustomers)
+            {
+                userCustomerFeedbackCustomer.IsDeleted = 1;
+            }
+
+            foreach (var userCustomerRequestAdmin in user.CustomerRequestAdmins)
+            {
+                userCustomerRequestAdmin.IsDeleted = 1;
+            }
+
+            foreach (var userCustomerRequestCustomer in user.CustomerRequestCustomers)
+            {
+                userCustomerRequestCustomer.IsDeleted = 1;
+            }
             //_context.Users.Remove(user);
             await _context.SaveChangesAsync();
 

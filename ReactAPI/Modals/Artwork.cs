@@ -19,7 +19,7 @@ namespace ReactAPI.Modals
         public string Images { get; set; }
         public long? Year { get; set; }
         public string Author { get; set; }
-        public string Status { get; set; }
+        public int? Status { get; set; }
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? IsDeleted { get; set; }

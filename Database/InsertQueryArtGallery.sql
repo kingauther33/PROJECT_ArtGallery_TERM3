@@ -83,19 +83,19 @@ INSERT INTO dbo.[category]([name], [images]) values
 	('Cubism', 'https://thing.vn/wp-content/uploads/2020/06/truong-phai-lap-the-9.jpg')
 
 -- INSERT ARTWORK --
-INSERT INTO dbo.[artwork]([name], [description], [images], [year], [status], [author], [location], [created_at], [category_id], [user_id]) values 
+INSERT INTO dbo.[artwork]([name], [description], [images], [year], [author], [location], [created_at], [category_id], [user_id]) values 
 	('Mona Lisa', 'It has been described as "the best known, the most visited, the most written about, the most sung about, the most parodied work of art in the world".', 
 		'https://www.bitgab.com/uploads/1488843872-mona-lisa-leonardo-da-vinci-rosto-1488843872.jpg',
-		 1506, 'Leonardo da vinci', 'Standby', 'Paris', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
+		 1506, 'Leonardo da vinci', 'Paris', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
 	('The Last Supper', 'It is one of the Western world''s most recognizable paintings', 
 		'https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/The-Last-Supper-Restored-Da-Vinci_32x16.jpg/2560px-The-Last-Supper-Restored-Da-Vinci_32x16.jpg',
-		 1498, 'Leonardo da vinci', 'Standby', 'Santa Maria delle Grazie in Milan', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
+		 1498, 'Leonardo da vinci', 'Santa Maria delle Grazie in Milan', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
 	('Marilyn Monroe', ' Famous American actress, sex symbol and pop icon of the 20th century', 
 		'https://designs.vn/wp-content/images/24-08-2014/phong-trao-nghe-thuat-pop-art-la-gi3(1).jpg',
-		 2000, 'Mark Ashkenazi', 'Sold', 'USA', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
+		 2000, 'Mark Ashkenazi', 'USA', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8),
 	('Pin Girl', 'Pop Art Pin Girl by KarmenSanda on deviantart.com', 
 		'https://designs.vn/wp-content/images/31-08-2014/phong-trao-nghe-thuat-pop-art-la-gi9.jpg',
-		 2000, 'KarmenSanda ', 'Selling', 'USA', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8)
+		 2000, 'KarmenSanda ', 'USA', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 2, 8)
 
 -- INSERT ARTWORK COMMENTS --
 INSERT INTO dbo.[artwork_comment]([comment], [created_at], [artwork_id], [user_id]) values 
@@ -126,3 +126,10 @@ INSERT INTO dbo.[customer_feedback]([title], [description], [answer], [status], 
 	('Add artwork', 'Please add this artwork to the list!', 'Yes, I have updated it! Thank for your feedback!', 1, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 8, 2),
 	('Remove artwork', 'This artwork is disgusting!!!', 'Yes, I have updated it! Thank for your feedback!', 1, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 8, 2)
 
+
+INSERT INTO dbo.[customer_request]([status], [response], [created_at], [customer_id], [admin_id]) values 
+	(0, null, CONVERT(datetime, CURRENT_TIMESTAMP, 102), 4, 1),
+	(1, 'You don''t meet the requirements to become an artist', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 4, 1),
+	(1, 'You don''t meet the requirements to become an artist', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 5, 1),
+	(2, 'We have upgraded your account to become artist', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 4, 1),
+	(2, 'We have upgraded your account to become artist', CONVERT(datetime, CURRENT_TIMESTAMP, 102), 5, 1)

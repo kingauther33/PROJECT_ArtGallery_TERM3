@@ -25,7 +25,11 @@ namespace ReactAPI.Controllers
         public async Task<ActionResult<IEnumerable<Aunction>>> GetAunctions()
         {
             return await _context.Aunctions
+                .Include(a => a.Admin)
+                .Include(a => a.Buyer)
+                .Include(a => a.Artwork).ThenInclude(a => a.User)
                 .Where(a => a.IsDeleted == 0)
+                .OrderBy(a => a.Artwork.Status)
                 .ToListAsync(); ;
         }
 

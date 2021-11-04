@@ -15,6 +15,16 @@ const sideBarItems = [
 		name: 'User',
 		icon: 'users_single-02',
 	},
+	{
+		link: '/customer-request',
+		name: 'Customer Request',
+		icon: 'users_circle-08',
+	},
+	{
+		link: '/manage-aunction',
+		name: 'Aunction',
+		icon: 'business_money-coins',
+	},
 ];
 
 const AdminSidebar = () => {

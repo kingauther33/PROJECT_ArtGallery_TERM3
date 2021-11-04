@@ -103,7 +103,7 @@ CREATE TABLE [dbo].[artwork]
  --[price]       float NULL ,
  [year]        bigint NULL ,
  [author]	   nvarchar(max) NOT NULL,
- [status]      nvarchar(max) NULL ,
+ [status]      int NULL DEFAULT 0 ,
  [location]    nvarchar(max) NULL ,
  [created_at]  datetime NOT NULL ,
  [is_deleted]	int NULL DEFAULT 0,
@@ -276,6 +276,41 @@ CREATE NONCLUSTERED INDEX [FKIdx_1000] ON [dbo].[customer_feedback]
 GO
 
 CREATE NONCLUSTERED INDEX [FKIdx_1010] ON [dbo].[customer_feedback] 
+ (
+  [admin_id] ASC
+ )
+
+GO
+
+-- CUSTOMER REQUEST TO ARTIST --
+IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='customer_request')
+CREATE TABLE [dbo].[customer_request]
+(
+ [id]				int IDENTITY NOT NULL ,
+ [status]			int NULL DEFAULT 0, -- CHUA PHAN HOI, KHONG DONG Y, DONG Y
+ [response]			nvarchar(max) NULL,
+ [is_deleted]		int NULL DEFAULT 0,
+ [created_at]		datetime NOT NULL,
+ [customer_id]		int NULL ,
+ [admin_id]			int NULL ,
+
+
+ CONSTRAINT [PK_1100] PRIMARY KEY CLUSTERED ([id] ASC),
+ CONSTRAINT [FK_1100] FOREIGN KEY ([customer_id])  REFERENCES [dbo].[user]([id]),
+ CONSTRAINT [FK_1110] FOREIGN KEY ([admin_id])  REFERENCES [dbo].[user]([id])
+);
+GO
+
+
+
+CREATE NONCLUSTERED INDEX [FKIdx_1100] ON [dbo].[customer_request] 
+ (
+  [customer_id] ASC
+ )
+
+GO
+
+CREATE NONCLUSTERED INDEX [FKIdx_1110] ON [dbo].[customer_request] 
  (
   [admin_id] ASC
  )
