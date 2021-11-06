@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './about.module.css';
 
 const AboutUs = () => {
 	return(
@@ -8,21 +9,20 @@ const AboutUs = () => {
 					<h2>About Us</h2>
 				</div>
 			</section>
-			<div className='about-content'>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto labore odio quae quia voluptatibus. Architecto explicabo laborum velit voluptate voluptatum? Ex libero nam natus voluptas. Dolorum fuga laudantium quasi voluptatum?</p>
-				<p>LLorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lor
-					em ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur
-					adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque
-					doloremque ducimus, vLorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor
-					sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem
-					ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing
-					elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem
-					ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, Lorem ipsum dolor sit amet,
-					consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, cumque doloremque ducimus, earum eos et eum fugiat inventore libero nulla obcaecati omnis placeat quos sequi sint temporibus velit veritatis voluptatibus.</p>
-
+			<div className='row'>
+				<div className='col-lg-7'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+					exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
+				<div className='col-lg-5'>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+					nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+					in culpa qui officia deserunt mollit anim id est laborum.
+				</div>
 			</div>
 		</div>
 	)

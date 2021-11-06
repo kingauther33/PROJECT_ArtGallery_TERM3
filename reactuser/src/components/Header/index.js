@@ -13,7 +13,7 @@ const Header = () => {
 						<li><Link className='header__a' to=''>Nghe Si</Link></li>
 						<li><Link className='header__a' to=''>Tac pham</Link></li>
 						<li><Link className='header__a' to=''>Contact</Link></li>
-						<li><Link className='header__a' to=''>About</Link></li>
+						<li><Link className='header__a' to='/about-us'>About</Link></li>
 						<button type='button'  className='btn-header'><span>Dang nhap</span></button>
 
 					</ul>
