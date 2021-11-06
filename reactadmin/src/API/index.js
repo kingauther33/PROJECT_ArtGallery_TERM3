@@ -1,12 +1,6 @@
 const BASE_URL = 'https://localhost:44379/api/';
 
 export const API = {
-	headers: {
-		'Content-Type': 'application/json',
-		'Access-Control-Allow-Origin': '*',
-		Authorization: `Bearer ${localStorage.getItem('token')}`,
-		Accept: 'application/json',
-	},
 	login: {
 		url: BASE_URL + 'Login',
 		params: JSON.stringify({
@@ -17,6 +11,11 @@ export const API = {
 	},
 	get_users: {
 		url: BASE_URL + 'Users',
+		params: {},
+		method: 'GET',
+	},
+	get_user_by_id: {
+		url: BASE_URL + 'Users/', // + id
 		params: {},
 		method: 'GET',
 	},
@@ -35,9 +34,44 @@ export const API = {
 		method: 'POST',
 	},
 	delete_user: {
-		url: BASE_URL + 'Users',
+		url: BASE_URL + 'Users/', // + id
 		params: {},
 		method: 'DELETE',
+	},
+	edit_user: {
+		url: BASE_URL + 'Users/', // + id
+		params: {
+			firstName: '',
+			lastName: '',
+			email: '',
+			password: '',
+			confirmPassword: '',
+			role: '',
+			deposit: 0,
+			createdAt: Date.now(),
+		},
+		method: 'PUT',
+	},
+
+	get_customer_requests: {
+		url: BASE_URL + 'CustomerRequests',
+		params: {},
+		method: 'GET',
+	},
+
+	edit_customer_report: {
+		url: BASE_URL + 'CustomerRequests/', // + id
+		params: {
+			status: 0,
+			response: '',
+		},
+		method: 'POST',
+	},
+
+	get_aunctions: {
+		url: BASE_URL + 'Aunctions',
+		params: {},
+		method: 'GET',
 	},
 };
 

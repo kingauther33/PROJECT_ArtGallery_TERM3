@@ -4,9 +4,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import PaymentForm from "./PaymentForm";
 
 
-const PUBLIC_KEY= "pk_test_51Jp1UGJfKEcxVVQebtQvpOwMdVKYkMkwejv9u3u4aKD8Qp8kSYLpj1oLK33PfR2XqntrjsBfuGlhV04b0gRn63QX00xRxTbjC1"
+const PUBLIC_KEY= "pk_test_51JpPHIB2z1KbtnvFqoH49sQHvs5b9dso3Cv6uezHoqw2LuHEQqt3FXymLrAswRK8LaE8Doq3WjMpTpmFyRJ5i68G00i6YD008s"
 
-const stripeTestPromise =loadStripe(PUBLIC_KEY)
+const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
 export default function StripeContainer(){
     return (

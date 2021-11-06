@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<DepositLog>>> GetDepositLogs()
         {
-            return await _context.DepositLogs.ToListAsync();
+            return await _context.DepositLogs
+                .Where(dl => dl.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/DepositLogs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<DepositLog>> GetDepositLog(int id)
         {
-            var depositLog = await _context.DepositLogs.FindAsync(id);
+            var depositLog = await _context.DepositLogs
+                .Where(dl => dl.IsDeleted == 0 && dl.Id == id)
+                .FirstOrDefaultAsync();
 
             if (depositLog == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDepositLog(int id, DepositLog depositLog)
         {
+            if (depositLog.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != depositLog.Id)
             {
                 return BadRequest();

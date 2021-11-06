@@ -8,22 +8,29 @@ const DashboardChart = () => {
 
 	const data = {
 		labels: [
-			'JAN',
-			'FEB',
-			'MAR',
-			'APR',
-			'MAY',
-			'JUN',
-			'JUL',
-			'AUG',
-			'SEP',
-			'OCT',
-			'NOV',
-			'DEC',
+			'0:00',
+			'3:00',
+			'6:00',
+			'9:00',
+			'12:00',
+			'15:00',
+			'18:00',
+			'21:00',
+			'24:00',
+			// 'MAR',
+			// 'APR',
+			// 'MAY',
+			// 'JUN',
+			// 'JUL',
+			// 'AUG',
+			// 'SEP',
+			// 'OCT',
+			// 'NOV',
+			// 'DEC',
 		],
 		datasets: [
 			{
-				label: 'Data',
+				label: 'User Visit',
 				borderColor: chartColor,
 				pointBorderColor: chartColor,
 				pointBackgroundColor: '#1e3d60',
@@ -66,7 +73,7 @@ const DashboardChart = () => {
 			fillStyle: '#FFF',
 			display: false,
 		},
-		scales: {
+		/* scales: {
 			yAxes: [
 				{
 					ticks: {
@@ -98,7 +105,7 @@ const DashboardChart = () => {
 					},
 				},
 			],
-		},
+		}, */
 	};
 
 	return (

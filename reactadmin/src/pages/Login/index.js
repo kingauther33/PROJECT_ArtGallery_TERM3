@@ -11,7 +11,10 @@ import { API } from 'API';
 import axios from 'axios';
 
 const Login = () => {
-	const [isSubmitError, setIsSubmitError] = useState(false);
+	const [submitError, setSubmitError] = useState({
+		isSubmitError: false,
+		errorMessage: '',
+	});
 
 	//INITIAL FORM VALUES
 	const initialValues = {
@@ -27,7 +30,6 @@ const Login = () => {
 
 	const handleFormSubmit = async (values) => {
 		const json = JSON.stringify(values);
-		debugger;
 
 		await axios
 			.post(API.login.url, json, {
@@ -37,18 +39,30 @@ const Login = () => {
 				},
 			})
 			.then((response) => {
-				localStorage.setItem('token', response.data.token);
-				localStorage.setItem('role', response.data.role);
+				if (response.data.role === 'Admin') {
+					localStorage.setItem('token', response.data.token);
+					localStorage.setItem('role', response.data.role);
+					window.location.reload();
+				} else {
+					setSubmitError({
+						isSubmitError: true,
+						errorMessage: 'Please login using Admin Account!!',
+					});
+				}
 			})
 			.catch((err) => {
 				console.log(err);
-				setIsSubmitError(true);
+				setSubmitError({
+					isSubmitError: true,
+					errorMessage: 'Invalid Email or Password!!',
+				});
 			});
 	};
 
 	return (
 		<>
 			{localStorage.getItem('token') && <Redirect to="/admin-dashboard" />}
+
 			<div className={styles['limiter']}>
 				<div className={styles['container-login100']}>
 					<div className={styles['wrap-login100']}>
@@ -149,10 +163,10 @@ const Login = () => {
 											Login
 										</button>
 									</div>
-									{isSubmitError && (
+									{submitError.isSubmitError && (
 										<div className="mt-0 pt-0 ms-2 mb-2 text-danger text-center">
 											<Typography variant="inherit" color="error">
-												Invalid Email or Password!!
+												{submitError.errorMessage}
 											</Typography>
 										</div>
 									)}

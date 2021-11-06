@@ -3,8 +3,10 @@ import AdminLayout from 'layout/AdminLayout';
 import AdminDashboard from 'pages/Dashboard';
 import ManageUser from 'pages/User/ManageUser';
 import AddUser from 'pages/User/AddUser';
-import EditUser from 'pages/User/AddUser';
+import EditUser from 'pages/User/EditUser';
 import Login from 'pages/Login';
+import CustomerRequest from 'pages/CustomerRequest';
+import Aunction from 'pages/Aunction';
 
 const AdminDashboardRoute = {
 	path: '/admin-dashboard', // URL trên browser
@@ -36,10 +38,24 @@ const LoginRoute = {
 	page: Login,
 };
 
+const CustomerRequestRoute = {
+	path: '/customer-request',
+	layout: AdminLayout,
+	page: CustomerRequest,
+};
+
+const AunctionRoute = {
+	path: '/manage-aunction',
+	layout: AdminLayout,
+	page: Aunction,
+};
+
 export const routes = [
 	AdminDashboardRoute,
 	ManageUserRoute,
 	AddUserRoute,
 	EditUserRoute,
 	LoginRoute,
+	CustomerRequestRoute,
+	AunctionRoute,
 ];

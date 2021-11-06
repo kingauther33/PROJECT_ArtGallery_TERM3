@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ArtworkComment>>> GetArtworkComments()
         {
-            return await _context.ArtworkComments.ToListAsync();
+            return await _context.ArtworkComments
+                .Where(ac => ac.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/ArtworkComments/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ArtworkComment>> GetArtworkComment(int id)
         {
-            var artworkComment = await _context.ArtworkComments.FindAsync(id);
+            var artworkComment = await _context.ArtworkComments
+                .Where(ac => ac.IsDeleted == 0 && ac.Id == id)
+                .FirstOrDefaultAsync();
 
             if (artworkComment == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArtworkComment(int id, ArtworkComment artworkComment)
         {
+            if (artworkComment.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != artworkComment.Id)
             {
                 return BadRequest();

@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import TextInput from 'components/Forms/TextInput';
 import SelectInput from 'components/Forms/SelectInput';
 import axios from 'axios';
 import { API, HeaderOptions } from 'API';
 import SnackbarPopup from 'components/SnackbarPopup';
+import { Redirect } from 'react-router-dom';
 
 const AddUser = () => {
 	const [notification, setNotification] = useState({
@@ -16,7 +17,6 @@ const AddUser = () => {
 
 	const options = useMemo(
 		() => [
-			{ value: 'Admin', label: 'Admin' },
 			{ value: 'Customer', label: 'Customer' },
 			{ value: 'Artist', label: 'Artist' },
 		],
@@ -31,7 +31,7 @@ const AddUser = () => {
 		confirmPassword: '',
 		role: '',
 		deposit: 0,
-		createdAt: Date.now(),
+		createdAt: new Date(),
 	};
 
 	const validationSchema = Yup.object().shape({
@@ -68,7 +68,7 @@ const AddUser = () => {
 	const handleSubmit = async (values) => {
 		const json = JSON.stringify(values);
 		await axios
-			.post(API.post_user.url, json, API.headers)
+			.post(API.post_user.url, json, HeaderOptions)
 			.then((res) => {
 				setNotification({
 					message: 'Successfully created new user!',
@@ -87,6 +87,9 @@ const AddUser = () => {
 
 	return (
 		<>
+			{notification.message === 'Successfully created new user!' && (
+				<Redirect to="/manage-user" />
+			)}
 			<div className="panel-header panel-header-sm"></div>
 			<div className="content">
 				<div className="row">

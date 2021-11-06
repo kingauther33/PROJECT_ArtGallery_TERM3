@@ -1,0 +1,66 @@
+html {
+	/* Bình thường 1rem = 16px, dòng này làm 1rem = 10px; */
+	font-size: 62.5%;
+
+	/* 10px */
+}
+
+body {
+	font-size: 1.6rem;
+	box-sizing: border-box;
+	line-height: 1.6rem;
+	font-family: 'PoppinRegular', Helvetica, Arial, sans-serif;
+	/* RESET lại font-size về 16px (1.6rem) */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'DMSans', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+.x_container {
+	width: 100%;
+	max-width: 128rem;
+	margin: 0 auto;
+	padding: 0 8rem;
+}
+
+.x_bg-primary {
+	background: var(--primary-color) !important;
+}
+
+.x_border-8 {
+	border-radius: 0.8rem !important;
+}
+
+.x_border-16 {
+	border-radius: 1.6rem !important;
+}
+
+@media (max-width: 1365px) {
+	/* IPAD PRO */
+	html {
+		font-size: 56.5%;
+	}
+}
+
+@media (max-width: 1023px) {
+	/* IPAD */
+	html {
+		font-size: 52.5%;
+	}
+}
+
+@media (max-width: 767px) {
+	/* PHONE */
+	html {
+		font-size: 48.5%;
+	}
+}
+@media screen and(max-width: 950px){
+	.contact-section{
+		flex-direction: column;
+	}
+}

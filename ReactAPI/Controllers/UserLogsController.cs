@@ -24,14 +24,18 @@ namespace ReactAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserLog>>> GetUserLogs()
         {
-            return await _context.UserLogs.ToListAsync();
+            return await _context.UserLogs
+                .Where(ul => ul.IsDeleted == 0)
+                .ToListAsync();
         }
 
         // GET: api/UserLogs/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserLog>> GetUserLog(int id)
         {
-            var userLog = await _context.UserLogs.FindAsync(id);
+            var userLog = await _context.UserLogs
+                .Where(ul => ul.IsDeleted == 0 && ul.Id == id)
+                .FirstOrDefaultAsync();
 
             if (userLog == null)
             {
@@ -46,6 +50,11 @@ namespace ReactAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUserLog(int id, UserLog userLog)
         {
+            if (userLog.IsDeleted == 1)
+            {
+                return NotFound();
+            }
+
             if (id != userLog.Id)
             {
                 return BadRequest();

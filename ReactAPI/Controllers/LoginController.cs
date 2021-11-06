@@ -35,7 +35,7 @@ namespace ReactAPI.Controllers
             {
                 // Kiem tra user va tra ve token neu login thanh cong
                 var user = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Email == _userData.Email && u.Password == _userData.Password);
+                    .FirstOrDefaultAsync(u => u.Email == _userData.Email && u.Password == _userData.Password && u.IsDeleted == 0);
                 if (user != null)
                 {
                     // Neu tim thay user thi sinh ra token de tra ve
@@ -54,7 +54,7 @@ namespace ReactAPI.Controllers
                     var sign = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
                     var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Audience"], claims, expires: DateTime.Now.AddDays(1), signingCredentials: sign);
 
-                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), role = user.Role });
+                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), role = user.Role, id = user.Id });
                 }
 
                 return BadRequest("Username or password incorrect!");
