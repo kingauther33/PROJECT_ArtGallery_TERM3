@@ -1,17 +1,16 @@
 // USER
-import UserLayout from '../layout/UserLayout';
-import HomePage from '../pages/HomePage';
-import AboutUs from './../pages/AboutUs';
-import search from './../pages/Search/search';
-import Profile from './../pages/Profile/Profile';
-import ProfileEdit from './../pages/Profile/Profile-edit';
-import item from './../pages/Item/Item';
-import Activity from './../pages/Activity/Activity';
-import UploadDetails from '../pages/Upload/Upload-details';
-import UploadVariants from '../pages/Upload/Upload-variants';
-import ContactUs from "../pages/ContactUs";
-import Deposit from "../pages/Deposit/index";
-
+import UserLayout from 'layout/UserLayout';
+import HomePage from 'pages/HomePage';
+import AboutUs from 'pages/AboutUs';
+import search from 'pages/Search/search';
+import Profile from 'pages/Profile/Profile';
+import ProfileEdit from 'pages/Profile/Profile-edit';
+import item from 'pages/Item/Item';
+import Activity from 'pages/Activity/Activity';
+import UploadDetails from 'pages/Upload/Upload-details';
+import UploadVariants from 'pages/Upload/Upload-variants';
+import ContactUs from 'pages/ContactUs';
+import Deposit from 'pages/Deposit/index';
 
 // USER
 const HomePageRoute = {
@@ -78,7 +77,6 @@ const DepositRoute = {
 	layout: UserLayout,
 	page: Deposit,
 };
-
 
 export const routes = [
 	// USER
