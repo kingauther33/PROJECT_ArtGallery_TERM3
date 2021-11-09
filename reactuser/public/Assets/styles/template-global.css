@@ -7320,6 +7320,7 @@ header{
   margin-right: 15px;
 }
 .text-area{
+    resize: none;
   width:100%;
   padding: 12px;
   font-size: 18px;
