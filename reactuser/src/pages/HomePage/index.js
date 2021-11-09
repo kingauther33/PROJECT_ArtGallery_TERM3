@@ -60,7 +60,7 @@ const HomePage = () => {
                                         </div>
                                         <div className="main__description">
                                             <div className="main__category">Instant price</div>
-                                            <div className="main__text">{listData[1]?.highestMoneyBid}</div>
+                                            <div className="main__text">3.5 ETH</div>
                                         </div>
                                     </div>
                                 </div>
