@@ -6,6 +6,7 @@ import { routes } from './routes/routes';
 import ArtGalleryRoutes from './routes';
 import Error404 from './pages/Error404/index';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
