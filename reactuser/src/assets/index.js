@@ -26,7 +26,7 @@ const images = {
 	ContactUs: {
 		img: require('./support.png').default,
 	},
-	logo: require('./logo.jfif').default,
+	logo: require('./logo2.svg').default,
 };
 
 export default images;

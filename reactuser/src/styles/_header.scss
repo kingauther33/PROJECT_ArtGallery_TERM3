@@ -1,0 +1,54 @@
+header {
+	padding: 0 128px;
+}
+
+.header-main {
+	padding: 10px 0;
+	height: 100%;
+	background-color: white;
+}
+
+.header-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-nav {
+	margin: 0 auto;
+	padding: 3px 20px;
+	list-style: none;
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+}
+
+.header__a {
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	color: #23262f;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.header__a:hover {
+	text-decoration: underline #23262f;
+	color: #23262f;
+}
+
+.btn-header {
+	font-family: 'DM Sans', sans-serif;
+	font-weight: 700;
+	background-color: rgb(35, 38, 47);
+	color: white;
+	font-size: 15px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: solid 1px;
+}
+
+.btn-header:hover {
+	background-color: rgba(35, 38, 47, 0.6);
+}
