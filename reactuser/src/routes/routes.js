@@ -14,7 +14,7 @@ import Deposit from 'pages/Deposit/index';
 
 // USER
 const HomePageRoute = {
-	path: '/homepage', // URL trên browser
+	path: '/home', // URL trên browser
 	layout: UserLayout, // LAYOUT ứng với từng ROUTE
 	page: HomePage, // PAGE ứng với ROUTE đó
 };
@@ -32,7 +32,7 @@ const ContactUsRoute = {
 };
 
 const SearchRoute = {
-	path: '/search', // URL trên browser
+	path: '/artwork', // URL trên browser
 	layout: UserLayout, //LAYOUT ứng với từng ROUTE
 	page: search, // PAGE ứng với ROUTE đó
 };

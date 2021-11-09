@@ -8,14 +8,11 @@ import Error404 from './pages/Error404/index';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 function App() {
-
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Redirect from="/" to="homepage" exact />
+				<Redirect from="/" to="/home" exact />
 				{routes.map((route, index) => (
 					<ArtGalleryRoutes
 						key={index}
