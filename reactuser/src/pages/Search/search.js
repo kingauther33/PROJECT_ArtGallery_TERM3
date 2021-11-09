@@ -1,27 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import images from "assets";
-import { API, HeaderOptions } from 'API';
-import axios from 'axios';
+import React from 'react';
+import images from "../../assets";
 
-const Search = () => {
-
-  const [listData, setListData] = useState([]);
-
-  const fetchData = async () => {
-      console.log(API);
-      await axios
-          .get(API.getArtworks.url, HeaderOptions)
-          .then((res) => {
-              console.log(res.data);
-              setListData(res.data);
-          })
-          .catch((error) => console.log(error))
-  };
-
-  useEffect(() => {
-      fetchData();
-  }, [])
-
+const search = () => {
     return (
     <>
     <div class="outer">
@@ -90,7 +70,7 @@ const Search = () => {
               <div class="catalog__wrapper">
                 <div class="catalog__list">
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[2]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.card1} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -127,7 +107,7 @@ const Search = () => {
                       </div></a>
                   </div>
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[3]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.card2} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -164,7 +144,7 @@ const Search = () => {
                       </div></a>
                   </div>
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[2]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.card3} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -201,7 +181,7 @@ const Search = () => {
                       </div></a>
                   </div>
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[3]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.img3} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -238,7 +218,7 @@ const Search = () => {
                       </div></a>
                   </div>
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[2]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.img4} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -275,7 +255,7 @@ const Search = () => {
                       </div></a>
                   </div>
                   <div class="card">
-                    <div class="card__preview"><img srcSet={listData[3]?.images} alt="Card preview"/>
+                    <div class="card__preview"><img srcSet={images.Homepage.img5} alt="Card preview"/>
                       <div class="card__control">
                         <div class="status-green card__category">purchasing !</div>
                         <button class="card__favorite">
@@ -675,4 +655,4 @@ const Search = () => {
     );
 }
 
-export default Search;
+export default search;
