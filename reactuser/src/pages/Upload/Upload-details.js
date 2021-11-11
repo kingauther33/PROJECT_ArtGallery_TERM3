@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { storage } from 'API/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from '@firebase/storage';
 import { Link } from 'react-router-dom';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 
 const UploadDetails = (props) => {
 	const [progress, setProgress] = useState(0);
@@ -9,7 +11,35 @@ const UploadDetails = (props) => {
 	const [file, setFile] = useState();
 	const imageRef = useRef(null);
 
-	const initialState = {};
+	const initialValues = {
+		name: '',
+		description: '',
+		fileImage: File,
+		year: 0,
+		author: '',
+		location: '',
+	};
+
+	const validationSchema = {
+		name: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
+		description: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
+		fileImage: Yup.mixed().required('Required!'),
+		year: Yup.number().required('Required!'),
+		author: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
+		location: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
+	};
 
 	const formHandler = (e) => {
 		e.preventDefault();
@@ -85,182 +115,188 @@ const UploadDetails = (props) => {
 						<div className="upload__center center">
 							<div className="upload__wrapper">
 								<div className="upload__head">
-									<h2 className="upload__title h2">
-										Create single collectible
-									</h2>
+									<h2 className="upload__title h2">Create New Artwork</h2>
 								</div>
-								<div className="upload__form">
-									<div className="upload__list">
-										<div className="upload__item">
-											<div className="upload__category">Upload file</div>
-											<div className="upload__note">
-												Drag or choose your file to upload
-											</div>
-											<div className="upload__file">
-												<input
-													className="upload__input"
-													type="file"
-													ref={imageRef}
-													onChange={(event) => {
-														setFile(event.target.files[0]);
-														setShowPreview((prevState) => !prevState);
-													}}
-												/>
-												{!file ? (
-													<>
-														<div className="upload__icon">
-															<svg className="icon icon-upload-file">
-																<use xlinkHref="#icon-upload-file"></use>
-															</svg>
+								<Formik
+									initialValues={initialValues}
+									validationSchema={validationSchema}
+								>
+									{({
+										values,
+										errors,
+										setFieldValue,
+										touched,
+										handleBlur,
+										handleChange,
+										isSubmitting,
+									}) => (
+										<Form autoComplete="off">
+											<div className="upload__form">
+												<div className="upload__list">
+													<div className="upload__item">
+														<div className="upload__category">Upload file</div>
+														<div className="upload__note">
+															Drag or choose your file to upload
 														</div>
-														<div className="upload__format">
-															PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.
+														<div className="upload__file">
+															<input
+																className="upload__input"
+																type="file"
+																name="fileImage"
+																values={values.fileImage}
+																onChange={handleChange}
+																onBlur={handleBlur}
+																ref={imageRef}
+																// !!WORKING
+																/* onChange={(event) => {
+																	setFile(event.target.files[0]);
+																	setShowPreview((prevState) => !prevState);
+																}} */
+															/>
+															{!file ? (
+																<>
+																	<div className="upload__icon">
+																		<svg className="icon icon-upload-file">
+																			<use xlinkHref="#icon-upload-file"></use>
+																		</svg>
+																	</div>
+																	<div className="upload__format">
+																		PNG, GIF, WEBP, MP4 or MP3. Max 1Gb.
+																	</div>
+																</>
+															) : (
+																<div className="upload__format">
+																	{file.name}
+																</div>
+															)}
 														</div>
-													</>
-												) : (
-													<div className="upload__format">{file.name}</div>
-												)}
-											</div>
-										</div>
-										<div className="upload__item">
-											<div className="upload__category">Item Details</div>
-											<div className="upload__fieldset">
-												<div className="field">
-													<div className="field__label">Item name</div>
-													<div className="field__wrap">
-														<input
-															className="field__input"
-															type="text"
-															name="item"
-															placeholder='e. g. Redeemable Bitcoin Card with logo"'
-															required
-														/>
 													</div>
-												</div>
-												<div className="field">
-													<div className="field__label">Description</div>
-													<div className="field__wrap">
-														<input
-															className="field__input"
-															type="text"
-															name="description"
-															placeholder="e. g. “After purchasing you will able to recived the logo...”"
-															required
-														/>
-													</div>
-												</div>
-												<div className="upload__row">
-													<div className="upload__col">
-														<div className="field">
-															<div className="field__label">Royalties</div>
-															<div className="field__wrap">
-																<select className="select">
-																	<option>10%</option>
-																	<option>20%</option>
-																	<option>30%</option>
-																</select>
-																{/* <div className="nice-select select open" tabindex="0">
-                                  <span className="current">30%</span>
-                                  <ul className="list">
-                                    <li data-value="10%" className="option" onClick={}>
-                                      10%
-                                    </li>
-                                    <li data-value="20%" className="option focus">
-                                      20%
-                                    </li>
-                                    <li data-value="30%" className="option selected">
-                                      30%
-                                    </li>
-                                  </ul>
-															  </div> */}
+													<div className="upload__item">
+														<div className="upload__category">Item Details</div>
+														<div className="upload__fieldset">
+															<div className="field">
+																<div className="field__label">Item name</div>
+																<div className="field__wrap">
+																	<input
+																		className="field__input"
+																		type="text"
+																		name="name"
+																		placeholder='e. g. Redeemable Bitcoin Card with logo"'
+																		onChange={handleChange}
+																		onBlur={handleBlur}
+																		value={values.name}
+																		required
+																	/>
+																</div>
+															</div>
+															<div className="field">
+																<div className="field__label">Description</div>
+																<div className="field__wrap">
+																	<input
+																		className="field__input"
+																		type="text"
+																		name="description"
+																		placeholder="e. g. “After purchasing you will able to recived the logo...”"
+																		required
+																	/>
+																</div>
+															</div>
+															<div className="upload__row">
+																<div className="upload__col">
+																	<div className="field">
+																		<div className="field__label">Size</div>
+																		<div className="field__wrap">
+																			<input
+																				className="field__input"
+																				type="text"
+																				name="size"
+																				placeholder="e. g. Size"
+																				required
+																			/>
+																		</div>
+																	</div>
+																</div>
+																<div className="upload__col">
+																	<div className="field">
+																		<div className="field__label">
+																			Propertie
+																		</div>
+																		<div className="field__wrap">
+																			<input
+																				className="field__input"
+																				type="text"
+																				name="propertie"
+																				placeholder="e. g. Propertie"
+																				required
+																			/>
+																		</div>
+																	</div>
+																</div>
 															</div>
 														</div>
 													</div>
-													<div className="upload__col">
-														<div className="field">
-															<div className="field__label">Size</div>
-															<div className="field__wrap">
-																<input
-																	className="field__input"
-																	type="text"
-																	name="size"
-																	placeholder="e. g. Size"
-																	required
-																/>
+												</div>
+												<div className="upload__options">
+													<div className="upload__option">
+														<div className="upload__box">
+															<div className="upload__category">
+																Put on sale
+															</div>
+															<div className="upload__text">
+																You’ll receive bids on this item
 															</div>
 														</div>
+														<label className="switch">
+															<input
+																className="switch__input"
+																type="checkbox"
+															/>
+															<span className="switch__inner">
+																<span className="switch__box"></span>
+															</span>
+														</label>
 													</div>
-													<div className="upload__col">
-														<div className="field">
-															<div className="field__label">Propertie</div>
-															<div className="field__wrap">
-																<input
-																	className="field__input"
-																	type="text"
-																	name="propertie"
-																	placeholder="e. g. Propertie"
-																	required
-																/>
+													<div className="upload__option">
+														<div className="upload__box">
+															<div className="upload__category">
+																Instant sale price
+															</div>
+															<div className="upload__text">
+																Enter the price for which the item will be
+																instantly sold
 															</div>
 														</div>
+														<label className="switch">
+															<input
+																className="switch__input"
+																type="checkbox"
+															/>
+															<span className="switch__inner">
+																<span className="switch__box"></span>
+															</span>
+														</label>
 													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div className="upload__options">
-										<div className="upload__option">
-											<div className="upload__box">
-												<div className="upload__category">Put on sale</div>
-												<div className="upload__text">
-													You’ll receive bids on this item
-												</div>
-											</div>
-											<label className="switch">
-												<input
-													className="switch__input"
-													type="checkbox"
-													checked="checked"
-												/>
-												<span className="switch__inner">
-													<span className="switch__box"></span>
-												</span>
-											</label>
-										</div>
-										<div className="upload__option">
-											<div className="upload__box">
-												<div className="upload__category">
-													Instant sale price
-												</div>
-												<div className="upload__text">
-													Enter the price for which the item will be instantly
-													sold
-												</div>
-											</div>
-											<label className="switch">
-												<input className="switch__input" type="checkbox" />
-												<span className="switch__inner">
-													<span className="switch__box"></span>
-												</span>
-											</label>
-										</div>
-										<div className="upload__option">
-											<div className="upload__box">
-												<div className="upload__category">
-													Unlock once purchased
-												</div>
-												<div className="upload__text">
-													Content will be unlocked after successful transaction
-												</div>
-											</div>
-											<label className="switch">
-												<input className="switch__input" type="checkbox" />
-												<span className="switch__inner">
-													<span className="switch__box"></span>
-												</span>
-											</label>
-										</div>
-										<div className="upload__category">Choose collection</div>
+													<div className="upload__option">
+														<div className="upload__box">
+															<div className="upload__category">
+																Unlock once purchased
+															</div>
+															<div className="upload__text">
+																Content will be unlocked after successful
+																transaction
+															</div>
+														</div>
+														<label className="switch">
+															<input
+																className="switch__input"
+																type="checkbox"
+															/>
+															<span className="switch__inner">
+																<span className="switch__box"></span>
+															</span>
+														</label>
+													</div>
+													{/* <div className="upload__category">Choose collection</div>
 										<div className="upload__text">
 											Choose an exiting collection or create a new one
 										</div>
@@ -317,29 +353,35 @@ const UploadDetails = (props) => {
 													Legend Photography
 												</div>
 											</div>
-										</div>
-									</div>
-									<div className="upload__foot">
-										<button className="button-stroke tablet-show upload__button">
-											Preview
-										</button>
-										<a
-											className="button upload__button js-popup-open"
-											href="#popup-wallet"
-											data-effect="mfp-zoom-in"
-										>
-											<span>Create item</span>
-											<svg className="icon icon-arrow-next">
-												<use xlinkHref="#icon-arrow-next"></use>
-											</svg>
-										</a>
-										<div className="upload__saving">
-											Auto saving
-											<div className="loader"></div>
-										</div>
-									</div>
-								</div>
+										</div> */}
+												</div>
+												<div className="upload__foot">
+													<button className="button-stroke tablet-show upload__button">
+														Preview
+													</button>
+													<a
+														className="button upload__button js-popup-open"
+														href="#popup-wallet"
+														data-effect="mfp-zoom-in"
+													>
+														<span>Create item</span>
+														<svg className="icon icon-arrow-next">
+															<use xlinkHref="#icon-arrow-next"></use>
+														</svg>
+													</a>
+													<div className="upload__saving">
+														Auto saving
+														<div className="loader"></div>
+													</div>
+												</div>
+											</div>
+											<pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
+										</Form>
+									)}
+								</Formik>
 							</div>
+
+							{/* PREVIEW */}
 							<div className="preview js-preview">
 								<div className="preview__inner">
 									<button className="preview__close js-preview-close">
