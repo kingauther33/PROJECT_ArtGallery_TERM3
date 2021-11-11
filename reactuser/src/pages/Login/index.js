@@ -40,14 +40,16 @@ const Login = () => {
 			})
 			.then((response) => {
 				if (response.data.role === 'Admin') {
-					localStorage.setItem('token', response.data.token);
-					localStorage.setItem('role', response.data.role);
-					window.location.reload();
-				} else {
 					setSubmitError({
 						isSubmitError: true,
-						errorMessage: 'Please login using Admin Account!!',
+						errorMessage: 'Please login using Customer or Artist Account!!',
 					});
+				} else {
+					localStorage.setItem('token', response.data.token);
+					localStorage.setItem('role', response.data.role);
+					localStorage.setItem('firstName', response.data.firstName);
+					localStorage.setItem('lastName', response.data.lastName);
+					window.location.reload();
 				}
 			})
 			.catch((err) => {
@@ -61,7 +63,7 @@ const Login = () => {
 
 	return (
 		<>
-			{localStorage.getItem('token') && <Redirect to="/admin-dashboard" />}
+			{localStorage.getItem('token') && <Redirect to="/home" />}
 
 			<div className={styles['limiter']}>
 				<div className={styles['container-login100']}>

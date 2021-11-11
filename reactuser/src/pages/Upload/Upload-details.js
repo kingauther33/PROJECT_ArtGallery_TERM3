@@ -1,12 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { storage } from 'API/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from '@firebase/storage';
+import { Link } from 'react-router-dom';
 
 const UploadDetails = (props) => {
 	const [progress, setProgress] = useState(0);
 	const [showPreview, setShowPreview] = useState(false);
 	const [file, setFile] = useState();
 	const imageRef = useRef(null);
+
+	const initialState = {};
 
 	const formHandler = (e) => {
 		e.preventDefault();
@@ -42,15 +45,6 @@ const UploadDetails = (props) => {
 
 	return (
 		<>
-			{/* <script>
-      console.log(localStorage.getItem('darkMode'));
-      if (localStorage.getItem('darkMode') === "on") {
-        document.body.classList.add("dark");
-        document.addEventListe  ner("DOMContentLoaded", function() {
-          document.querySelector('.js-theme input').checked = true;
-        });
-      }
-    </script> */}
 			<div>
 				<h2>Testing Input</h2>
 				<form onSubmit={formHandler}>
@@ -63,6 +57,30 @@ const UploadDetails = (props) => {
 			</div>
 			<div className="outer">
 				<div className="outer__inner">
+					<div class="control">
+						<div class="control__center center">
+							<Link
+								class="button-stroke button-small control__button"
+								to="/home"
+							>
+								<svg class="icon icon-arrow-prev">
+									<use xlinkHref="#icon-arrow-prev"></use>
+								</svg>
+								<span>Back to home</span>
+							</Link>
+							<div class="breadcrumbs">
+								<ul class="breadcrumbs">
+									<li class="breadcrumbs__item">
+										<Link class="breadcrumbs__link" to="/home">
+											Home
+										</Link>
+									</li>
+									<li class="breadcrumbs__item">Upload Item</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 					<div className="section upload">
 						<div className="upload__center center">
 							<div className="upload__wrapper">
@@ -85,7 +103,7 @@ const UploadDetails = (props) => {
 													ref={imageRef}
 													onChange={(event) => {
 														setFile(event.target.files[0]);
-														console.log(file);
+														setShowPreview((prevState) => !prevState);
 													}}
 												/>
 												{!file ? (
@@ -338,74 +356,7 @@ const UploadDetails = (props) => {
 														src={URL.createObjectURL(file)}
 														alt="Card preview"
 													/>
-													<div className="card__control">
-														<div className="status-green card__category">
-															purchasing !
-														</div>
-														<button className="card__favorite">
-															<svg className="icon icon-heart">
-																<use xlinkHref="#icon-heart"></use>
-															</svg>
-														</button>
-														<a
-															className="button-small card__button js-popup-open"
-															href="#popup-bid"
-															data-effect="mfp-zoom-in"
-														>
-															<span>Place a bid</span>
-															<svg className="icon icon-scatter-up">
-																<use xlinkHref="#icon-scatter-up"></use>
-															</svg>
-														</a>
-													</div>
 												</div>
-												<a className="card__link" href="item">
-													<div className="card__body">
-														<div className="card__line">
-															<div className="card__title">
-																Black Golden Tiger
-															</div>
-															<div className="card__price">2.45 ETH</div>
-														</div>
-														<div className="card__line">
-															<div className="card__users">
-																<div className="card__avatar">
-																	<img
-																		src="img/content/avatar-1.jpg"
-																		alt="Avatar"
-																	/>
-																</div>
-																<div className="card__avatar">
-																	<img
-																		src="img/content/avatar-3.jpg"
-																		alt="Avatar"
-																	/>
-																</div>
-																<div className="card__avatar">
-																	<img
-																		src="img/content/avatar-4.jpg"
-																		alt="Avatar"
-																	/>
-																</div>
-															</div>
-															<div className="card__counter">3 in stock</div>
-														</div>
-													</div>
-													<div className="card__foot">
-														<div className="card__status">
-															<svg className="icon icon-candlesticks-up">
-																<use xlinkHref="#icon-candlesticks-up"></use>
-															</svg>
-															Highest bid <span>0.001 ETH</span>
-														</div>
-														<div className="card__bid">
-															New bid{' '}
-															<span role="img" aria-label="fire">
-																🔥
-															</span>
-														</div>
-													</div>
-												</a>
 											</div>
 											<a className="preview__clear" href="/">
 												<svg className="icon icon-circle-close">
@@ -419,6 +370,7 @@ const UploadDetails = (props) => {
 							</div>
 						</div>
 					</div>
+
 					<div className="popup popup_wallet mfp-hide" id="popup-wallet">
 						<div className="popup__title h4">Folow steps</div>
 						<div className="steps">

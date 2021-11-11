@@ -27,6 +27,9 @@ const images = {
 		img: require('./support.png').default,
 	},
 	logo: require('./logo2.svg').default,
+	Login: {
+		hero: require('./login-hero.png').default,
+	},
 };
 
 export default images;
