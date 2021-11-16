@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import images from 'assets';
 import axios from 'axios';
 import { API, HeaderOptions } from 'API';
@@ -22,21 +22,29 @@ const Profile = () => {
 	});
 
 	const [artworks, setArtWorks] = useState([]);
-	const [showDeleteModal, setShowDeleteModal] = useState(false);
-	const [artworkModal, setArtworkModal] = useState({});
+	const [customerRequest, setCustomerRequest] = useState({
+		status: 0,
+	});
+	const [showRequestSaleModal, setShowRequestSaleModal] = useState(false);
+	const [showRequestArtistModal, setShowRequestArtistModal] = useState(false);
+	const [artworkModalData, setArtworkModalData] = useState({});
 	const [openBackdrop, setOpenBackdrop] = useState(false);
 	const { id: userIdParam } = useParams();
 	const userId = localStorage.getItem('id');
 
 	const onRequestHandler = (data) => {
-		setShowDeleteModal(true);
-		setArtworkModal(data);
+		setShowRequestSaleModal(true);
+		setArtworkModalData(data);
 	};
 
-	const onRequestSubmit = async () => {
+	const onBecomeArtistHandler = () => {
+		setShowRequestArtistModal(true);
+	};
+
+	const onRequestSaleSubmit = async () => {
 		setOpenBackdrop(true);
 		const artworkChangeStatus = {
-			...artworkModal,
+			...artworkModalData,
 			status: 1,
 		};
 
@@ -44,21 +52,46 @@ const Profile = () => {
 		debugger;
 
 		await axios
-			.put(API.editArtworkStatus.url + artworkModal.id, json, HeaderOptions)
+			.put(API.editArtworkStatus.url + artworkModalData.id, json, HeaderOptions)
 			.then((res) => console.log(res))
 			.catch((err) => console.error(err))
 			.finally(() => {
 				setOpenBackdrop(false);
-				setArtworkModal(false);
+				setShowRequestSaleModal(false);
 				fetchArtworks();
 			});
 	};
 
-	const onCloseDeleteModal = () => {
-		setShowDeleteModal(false);
+	const onRequestArtistSubmit = async () => {
+		setOpenBackdrop(true);
+		const customerToSubmit = {
+			customerId: userId,
+		};
+
+		const json = JSON.stringify(customerToSubmit);
+
+		debugger;
+
+		await axios
+			.post(API.createCustomerRequest.url, json, HeaderOptions)
+			.then((res) => console.log(res))
+			.catch((err) => console.error(err))
+			.finally(() => {
+				setOpenBackdrop(false);
+				setShowRequestArtistModal(false);
+				fetchCustomerRequest();
+			});
 	};
 
-	const fetchArtworks = async () => {
+	const onCloseRequestSaleModal = () => {
+		setShowRequestSaleModal(false);
+	};
+
+	const onCloseRequestArtistModal = () => {
+		setShowRequestArtistModal(false);
+	};
+
+	const fetchArtworks = useCallback(async () => {
 		await axios
 			.get(API.getArtworkByUser.url + userId, HeaderOptions)
 			.then((res) => {
@@ -68,11 +101,11 @@ const Profile = () => {
 			.catch((err) => console.log(err))
 			.finally(() => {
 				setOpenBackdrop(false);
-				setShowDeleteModal(false);
+				setShowRequestSaleModal(false);
 			});
-	};
+	}, [userId]);
 
-	const fetchUser = async () => {
+	const fetchUser = useCallback(async () => {
 		await axios
 			.get(API.getUserById.url + userId, HeaderOptions)
 			.then((res) => {
@@ -80,16 +113,27 @@ const Profile = () => {
 				console.log(res.data);
 			})
 			.catch((err) => console.log(err));
-	};
+	}, [userId]);
+
+	const fetchCustomerRequest = useCallback(async () => {
+		await axios
+			.get(API.getCustomerRequestByPersonId.url + userId, HeaderOptions)
+			.then((res) => {
+				setCustomerRequest(res.data);
+				console.log(res.data);
+			})
+			.catch((err) => console.log(err));
+	}, [userId]);
 
 	useEffect(() => {
 		setOpenBackdrop(true);
 
 		fetchUser();
 		fetchArtworks();
+		fetchCustomerRequest();
 
 		return () => {};
-	}, []);
+	}, [fetchArtworks, fetchCustomerRequest, fetchUser]);
 
 	return (
 		<>
@@ -99,22 +143,21 @@ const Profile = () => {
 					<div className="profile">
 						<div className="profile__head js-profile-head profile__bg">
 							<div className="profile__center center">
-								<div className="profile__file">
-									<input type="file" />
-									<div className="profile__wrap">
-										<svg className="icon icon-upload-file">
-											<use xlinkHref="#icon-upload-file"></use>
-										</svg>
-										<div className="profile__info">
-											Drag and drop your photo here
-										</div>
-										<div className="profile__text">or click to browse</div>
-									</div>
-									<button className="button-small profile__button js-profile-save">
-										Save photo
-									</button>
-								</div>
 								<div className="profile__btns">
+									<p
+										className={`button-small text-white me-3 ${
+											user.role === 'Artist' ? 'bg-success' : 'bg-danger'
+										}`}
+									>
+										<span className="me-3">
+											{user.role === 'Artist' ? 'Approved' : 'Not Approved'}
+										</span>
+										{user.role === 'Artist' ? (
+											<i class="fas fa-user-check"></i>
+										) : (
+											<i className="fas fa-user-times"></i>
+										)}
+									</p>
 									<a
 										className="button-stroke button-small profile__button"
 										href="profile-edit.html"
@@ -133,9 +176,16 @@ const Profile = () => {
 							<div className="profile__center center">
 								<div className="user">
 									<div className="user__avatar">
-										<img src={user.avatar ? user.avatar : 'https://firebasestorage.googleapis.com/v0/b/fir-artgallery-storage.appspot.com/o/files%2FdefaultAva.png?alt=media&token=80389b41-4d3f-45ec-b259-2cc6276ca53b'} alt="Avatar" />
+										<img
+											src={
+												user.avatar
+													? user.avatar
+													: 'https://firebasestorage.googleapis.com/v0/b/fir-artgallery-storage.appspot.com/o/files%2FdefaultAva.png?alt=media&token=80389b41-4d3f-45ec-b259-2cc6276ca53b'
+											}
+											alt="Avatar"
+										/>
 									</div>
-									<div className="user__name">{`${user.lastName} ${user.firstName}`}</div>
+									<div className="user__name mb-3">{`${user.lastName} ${user.firstName}`}</div>
 									{/* <div className="user__code">
 										<div className="user__number">0xc4c16a645...b21a</div>
 										<button className="user__copy">
@@ -144,8 +194,10 @@ const Profile = () => {
 											</svg>
 										</button>
 									</div> */}
-									<div className="h5 text-primary">Deposit:{user.deposit}</div>
-									<div className="user__control">
+									<div className="h5 text-primary mb-3">
+										Deposit:{user.deposit}
+									</div>
+									<div className="user__control mb-3">
 										<div className="user__btns">
 											<Link
 												to="/deposit"
@@ -155,6 +207,8 @@ const Profile = () => {
 											</Link>
 										</div>
 									</div>
+									<h4 className="m_text-dark">{user.role}</h4>
+
 									{/* <div className="user__socials">
 										<a
 											className="user__social"
@@ -205,134 +259,177 @@ const Profile = () => {
 									</div> */}
 
 									{/* // !BODY */}
-									<div className="profile__container">
-										<div className="profile__item js-tabs-item d-block">
-											<div className="profile__list">
-												{artworks.length === 0 ? (
-													<h4 className="text-primary text-center">
-														No Artwork to display
-													</h4>
-												) : (
-													artworks.map((artwork, idx) => {
-														return (
-															<div className="card" key={idx}>
-																<div className="card__preview">
-																	<img
-																		srcSet={artwork.images}
-																		alt="Card preview"
-																	/>
-																	<div className="card__control">
-																		<div className={`${artwork.status === 4 ? 'status-red' : 'status-green'} card__category`}>
-																			{artwork.status === 0
-																				? 'REQUEST TO SELL'
-																				: artwork.status === 1
-																				? 'REQUESTING'
-																				: artwork.status === 2
-																				? 'SELLING'
-																				: artwork.status === 3 
-																				? 'SOLD' : ''}
-																		</div>
-																		{/* <button className="card__favorite">
+									{user.role === 'Customer' ? (
+										// !YOU ARE CUSTOMER NOW
+										<>
+											{customerRequest.status === 0 ? (
+												<div className="d-flex align-items-center justify-content-center flex-grow-1 mb-3">
+													<h4>Processing your request to become artist ...</h4>
+												</div>
+											) : (
+												<div className="d-flex align-items-center justify-content-end flex-grow-1 mb-3">
+													<Link
+														className="button description__button"
+														to="#"
+														onClick={onBecomeArtistHandler}
+													>
+														Become An Artist
+													</Link>
+												</div>
+											)}
+										</>
+									) : // !YOU ARE ARTIST NOW
+									artworks.length === 0 ? (
+										<div className="d-flex align-items-center justify-content-between flex-grow-1">
+											<h4 className="text-primary">No Artwork to display</h4>
+											<Link
+												className="button description__button"
+												to="/upload-details"
+											>
+												Upload artwork
+											</Link>
+										</div>
+									) : (
+										<>
+											<div className="d-flex align-items-center justify-content-end flex-grow-1 mb-3">
+												<Link
+													className="button description__button"
+													to="/upload-details"
+												>
+													Upload artwork
+												</Link>
+											</div>
+											<div className="profile__container">
+												<div className="profile__item js-tabs-item d-block">
+													<div className="profile__list">
+														{artworks.map((artwork, idx) => {
+															return (
+																<div className="card" key={idx}>
+																	<div className="card__preview">
+																		<img
+																			srcSet={artwork.images}
+																			alt="Card preview"
+																		/>
+																		<div className="card__control">
+																			<div
+																				className={`${
+																					artwork.status === 4
+																						? 'status-red'
+																						: 'status-green'
+																				} card__category`}
+																			>
+																				{artwork.status === 0
+																					? 'REQUEST TO SELL'
+																					: artwork.status === 1
+																					? 'REQUESTING'
+																					: artwork.status === 2
+																					? 'SELLING'
+																					: artwork.status === 3
+																					? 'SOLD'
+																					: ''}
+																			</div>
+																			{/* <button className="card__favorite">
 																		<svg className="icon icon-heart">
 																			<use xlinkHref="#icon-heart"></use>
 																		</svg>
 																	</button> */}
-																		{artwork.status === 0 && (
-																			<Link
-																				className="button-small card__button js-popup-open"
-																				to="#"
-																				data-effect="mfp-zoom-in"
-																				onClick={onRequestHandler.bind(
-																					null,
-																					artwork
-																				)}
-																			>
-																				<span>
-																					{artwork.status === 0
-																						? 'SELL NOW'
-																						: ''}
-																				</span>
-																				<svg className="icon icon-scatter-up">
-																					<use xlinkHref="#icon-scatter-up"></use>
-																				</svg>
-																			</Link>
-																		)}
-																	</div>
-																</div>
-																<a className="card__link" href="item.html">
-																	<div className="card__body">
-																		<div className="card__line">
-																			<div className="card__title">
-																				{artwork.name}
-																			</div>
-																			{artwork.status === 0 ? (
-																				<div className="card__price">
-																					PLEASE REQUEST
-																				</div>
-																			) : artwork.status === 1 ? (
-																				<div className="card__price">
-																					CALCULATING
-																				</div>
-																			) : (artwork.status === 2 ||
-																			artwork.status === 3) ? (
-																				<div className="card__price">
-																					{artwork.currentPrice}
-																				</div>
-																			) : (
-																				<div className="card__price status-red text-white shadow-none">
-																					DECLINED
-																				</div>
+																			{artwork.status === 0 && (
+																				<Link
+																					className="button-small card__button js-popup-open"
+																					to="#"
+																					data-effect="mfp-zoom-in"
+																					onClick={onRequestHandler.bind(
+																						null,
+																						artwork
+																					)}
+																				>
+																					<span>
+																						{artwork.status === 0
+																							? 'SELL NOW'
+																							: ''}
+																					</span>
+																					<svg className="icon icon-scatter-up">
+																						<use xlinkHref="#icon-scatter-up"></use>
+																					</svg>
+																				</Link>
 																			)}
 																		</div>
-																		<div className="card__line">
-																			<div className="card__users">
-																				<div className="card__avatar">
-																					<img
-																						src={images.Homepage.avatar1}
-																						alt="Avatar"
-																					/>
+																	</div>
+																	<a className="card__link" href="item.html">
+																		<div className="card__body">
+																			<div className="card__line">
+																				<div className="card__title">
+																					{artwork.name}
 																				</div>
-																				<div className="card__avatar">
-																					<img
-																						src={images.Homepage.avatar1}
-																						alt="Avatar"
-																					/>
+																				{artwork.status === 0 ? (
+																					<div className="card__price">
+																						PLEASE REQUEST
+																					</div>
+																				) : artwork.status === 1 ? (
+																					<div className="card__price">
+																						CALCULATING
+																					</div>
+																				) : artwork.status === 2 ||
+																				  artwork.status === 3 ? (
+																					<div className="card__price">
+																						{artwork.currentPrice}
+																					</div>
+																				) : (
+																					<div className="card__price status-red text-white shadow-none">
+																						DECLINED
+																					</div>
+																				)}
+																			</div>
+																			<div className="card__line">
+																				<div className="card__users">
+																					<div className="card__avatar">
+																						<img
+																							src={images.Homepage.avatar1}
+																							alt="Avatar"
+																						/>
+																					</div>
+																					<div className="card__avatar">
+																						<img
+																							src={images.Homepage.avatar1}
+																							alt="Avatar"
+																						/>
+																					</div>
+																					<div className="card__avatar">
+																						<img
+																							src={images.Homepage.avatar1}
+																							alt="Avatar"
+																						/>
+																					</div>
 																				</div>
-																				<div className="card__avatar">
-																					<img
-																						src={images.Homepage.avatar1}
-																						alt="Avatar"
-																					/>
+																				<div className="card__counter">
+																					3 in stock
 																				</div>
 																			</div>
-																			<div className="card__counter">
-																				3 in stock
+																		</div>
+																		<div className="card__foot">
+																			<div className="card__status">
+																				<svg className="icon icon-candlesticks-up">
+																					<use xlinkHref="#icon-candlesticks-up"></use>
+																				</svg>
+																				Highest bid <span>0.001 ETH</span>
+																			</div>
+																			<div className="card__bid">
+																				New bid{' '}
+																				<span role="img" aria-label="fire">
+																					🔥
+																				</span>
 																			</div>
 																		</div>
-																	</div>
-																	<div className="card__foot">
-																		<div className="card__status">
-																			<svg className="icon icon-candlesticks-up">
-																				<use xlinkHref="#icon-candlesticks-up"></use>
-																			</svg>
-																			Highest bid <span>0.001 ETH</span>
-																		</div>
-																		<div className="card__bid">
-																			New bid{' '}
-																			<span role="img" aria-label="fire">
-																				🔥
-																			</span>
-																		</div>
-																	</div>
-																</a>
-															</div>
-														);
-													})
-												)}
+																	</a>
+																</div>
+															);
+														})}
+													</div>
+													{/* <div className="loader"></div> */}
+												</div>
 											</div>
-											{/* <div className="loader"></div> */}
-										</div>
-									</div>
+										</>
+									)}
 								</div>
 							</div>
 						</div>
@@ -463,17 +560,33 @@ const Profile = () => {
 			</div>
 
 			<CustomBackdrop openBackdrop={openBackdrop} />
-			<Modal show={showDeleteModal} onHide={onCloseDeleteModal}>
+			<Modal show={showRequestSaleModal} onHide={onCloseRequestSaleModal}>
 				<Modal.Header closeButton>
 					<Modal.Title>
 						Are you sure you want to request to put your art on sale?
 					</Modal.Title>
 				</Modal.Header>
 				<Modal.Footer>
-					<Button variant="secondary" onClick={onCloseDeleteModal}>
+					<Button variant="secondary" onClick={onCloseRequestSaleModal}>
 						No
 					</Button>
-					<Button variant="primary" onClick={onRequestSubmit}>
+					<Button variant="primary" onClick={onRequestSaleSubmit}>
+						Yes
+					</Button>
+				</Modal.Footer>
+			</Modal>
+
+			<Modal show={showRequestArtistModal} onHide={onCloseRequestArtistModal}>
+				<Modal.Header closeButton>
+					<Modal.Title>
+						Are you sure you want to request to become an artist?
+					</Modal.Title>
+				</Modal.Header>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={onCloseRequestArtistModal}>
+						No
+					</Button>
+					<Button variant="primary" onClick={onRequestArtistSubmit}>
 						Yes
 					</Button>
 				</Modal.Footer>

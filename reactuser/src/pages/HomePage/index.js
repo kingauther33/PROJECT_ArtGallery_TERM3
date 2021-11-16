@@ -278,7 +278,7 @@ const HomePage = () => {
 				<div className="section discover">
 					<div className="discover__center center">
 						<h3 className="discover__title h3">Discover</h3>
-						<div className="discover__top">
+						{/* <div className="discover__top">
 							<select className="select">
 								<option>Recently added</option>
 								<option>Long added</option>
@@ -380,7 +380,7 @@ const HomePage = () => {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> */}
 						<div className="discover__list">
 							<div className="discover__slider js-slider-discover js-slider-resize">
 								<div className="card">

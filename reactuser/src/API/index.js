@@ -78,6 +78,22 @@ export const API = {
 		},
 		method: 'PUT',
 	},
+
+	createCustomerRequest: {
+		url: BASE_URL + 'CustomerRequests', // + id
+		params: {
+			customerId: 0,
+		},
+		method: 'POST',
+	},
+
+	getCustomerRequestByPersonId: {
+		url: BASE_URL + 'CustomerRequests/GetCustomerRequestByPersonId/', // + id
+		params: {
+			customerId: 0,
+		},
+		method: 'POST',
+	},
 };
 
 export const HeaderOptions = {
