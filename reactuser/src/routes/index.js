@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Route } from 'react-router-dom';
+import { Route, useLocation, Redirect } from 'react-router-dom';
+import Profile from 'pages/Profile';
 
 const routeWrapper = (Layout, Page) => {
 	const LayoutSwitcher = (props) => (

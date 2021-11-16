@@ -10,6 +10,7 @@ const Header = () => {
 		localStorage.removeItem('role');
 		localStorage.removeItem('lastName');
 		localStorage.removeItem('firstName');
+		localStorage.removeItem('id');
 		window.location.reload();
 	};
 
@@ -17,7 +18,9 @@ const Header = () => {
 		<header>
 			<div className="header-main center">
 				<div className="header-menu">
-					<img src={images.logo} alt="Logo" width="70" />
+					<Link to="/home">
+						<img src={images.logo} alt="Logo" width="70" />
+					</Link>
 					<ul className="header-nav">
 						<li>
 							<Link className="header__a" to="/home">

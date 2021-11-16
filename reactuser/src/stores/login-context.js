@@ -6,6 +6,7 @@ const LoginContext = React.createContext({
 	token: '',
 	lastName: '',
 	firstName: '',
+	id: 0,
 	setLoginState: () => {},
 });
 

@@ -33,7 +33,8 @@ button::-moz-focus-inner {
     border: 0; }
 
 button {
-    background: none; }
+    background: none;
+}
 
 textarea {
     overflow: auto; }
@@ -1188,9 +1189,12 @@ body.dark .section-bg {
     line-height: 1;
     text-align: center;
     color: #FCFCFD;
-    transition: all .2s; }
+    transition: all .2s;
+    text-decoration: none !important; }
 [class^="button"]:hover {
-    background: #044eff; }
+    background: #044eff;
+    color: #fff;
+    text-decoration: none;}
 [class^="button"].disabled {
     opacity: .5;
     pointer-events: none; }
@@ -1215,7 +1219,8 @@ body.dark [class^="button"].error {
 .button-stroke {
     background: none;
     box-shadow: 0 0 0 2px #E6E8EC inset;
-    color: #23262F; }
+    color: #23262F;
+    text-decoration: none; }
 .button-stroke .icon {
     fill: #23262F;
     transition: fill .2s; }
@@ -1316,6 +1321,14 @@ body.dark .button-circle-stroke:hover {
 
 .status-green {
     background: #45B26B; }
+
+.status-red {
+    background: rgb(212, 56, 56);
+}
+
+.status-yellow {
+    background: rgb(212, 56, 56);
+}
 
 .status-purple {
     background: #9757D7; }
@@ -2755,7 +2768,8 @@ body.dark .field__input:focus, body.dark .field__textarea:focus {
 
 .card {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    border: none !important; }
 .card:hover .card__preview > img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1); }
@@ -2770,7 +2784,9 @@ body.dark .field__input:focus, body.dark .field__textarea:focus {
     width: 100%;
     transition: -webkit-transform 1s;
     transition: transform 1s;
-    transition: transform 1s, -webkit-transform 1s; }
+    transition: transform 1s, -webkit-transform 1s;
+    height: 275px;
+    object-fit: cover;  }
 .card__control {
     position: absolute;
     top: 0;
@@ -2823,6 +2839,7 @@ body.dark .card__favorite {
 body.dark .card__favorite:hover .icon {
     fill: #FCFCFD; }
 .card__button {
+    text-decoration: none;
     position: absolute;
     left: 50%;
     bottom: 16px;
@@ -2837,7 +2854,10 @@ body.dark .card__favorite:hover .icon {
     flex-direction: column;
     flex-grow: 1;
     padding: 20px 0;
-    color: #23262F; }
+    color: #23262F;
+    text-decoration: none;}
+.card__link:hover {
+    color: #23262F;}
 body.dark .card__link {
     color: #FCFCFD; }
 .card__body {
@@ -5536,7 +5556,7 @@ body.dark .result__category {
     display: flex;
     justify-content: flex-end; }
 .profile__bg{
-    background-image: url("./src/assets/bg-profile.png");
+    background-image: url('https://ui8-crypter-nft-html.herokuapp.com/img/content/bg-profile.jpg');
 }
 .profile__head.active .profile__btns {
     opacity: 0; }
@@ -5759,7 +5779,8 @@ body.dark .profile__link.active {
 .profile .card {
     flex: 0 0 calc(33.333% - 32px);
     width: calc(33.333% - 32px);
-    margin: 32px 16px 0; }
+    margin: 32px 16px 0;
+    border: none; }
 @media only screen and (max-width: 1339px) {
     .profile .card {
         flex: 0 0 calc(33.333% - 20px);
@@ -7183,13 +7204,11 @@ body.dark .accept__row:first-child {
 
 
 header{
-    margin-bottom: 10px;
     border-bottom: solid 1px #d7d4d4;
 
     top: 0;
     left: 0;
     width: 100%;
-
 }
 .footer{
   background-color:white;

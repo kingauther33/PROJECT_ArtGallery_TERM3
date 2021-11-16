@@ -9,21 +9,30 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginProvider from 'stores/LoginProvider';
 
 function App() {
+	const id = localStorage.getItem('id');
+
 	return (
 		<LoginProvider>
 			<BrowserRouter>
 				<Switch>
 					<Redirect from="/" to="/home" exact />
+					{id ? (
+						<Redirect from="/profile" to={`/profile/${id}`} exact />
+					) : (
+						<Redirect from="/profile/:id" to="/home" exact />
+					)}
+
+					{/* ARRAY MAP */}
 					{routes.map((route, index) => (
 						<ArtGalleryRoutes
 							key={index}
 							path={route.path}
 							page={route.page}
 							layout={route.layout}
-							exact
+							exact={true}
 						/>
 					))}
-					{/* ARRAY MAP */}
+
 					<Route path="/404" component={Error404} exact />
 					<Redirect from="*" to="/404" />
 				</Switch>

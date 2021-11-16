@@ -1,54 +1,74 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { storage } from 'API/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from '@firebase/storage';
-import { Link } from 'react-router-dom';
-import { Formik, Form } from 'formik';
+import { Link, Redirect, useHistory, withRouter } from 'react-router-dom';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import { HeaderOptions, API } from 'API';
+import Select from 'react-select';
+import CustomBackdrop from 'components/CustomBackdrop';
 
 const UploadDetails = (props) => {
 	const [progress, setProgress] = useState(0);
 	const [showPreview, setShowPreview] = useState(false);
-	const [file, setFile] = useState();
+	const [categoryOptions, setCategoryOptions] = useState([
+		{ value: '', label: '' },
+	]);
+	const [openBackdrop, setOpenBackdrop] = useState(false);
+	// const [file, setFile] = useState();
 	const imageRef = useRef(null);
+	let history = useHistory();
 
 	const initialValues = {
 		name: '',
 		description: '',
-		fileImage: File,
+		images: null,
 		year: 0,
 		author: '',
 		location: '',
+		categoryId: 0,
+		// saleRequest: false,
 	};
 
-	const validationSchema = {
+	const validationSchema = Yup.object().shape({
 		name: Yup.string()
 			.min(2, 'Too short!')
 			.max(50, 'Too long!')
-			.required('Required!'),
+			.required('Name is required!'),
 		description: Yup.string()
 			.min(2, 'Too short!')
 			.max(50, 'Too long!')
-			.required('Required!'),
-		fileImage: Yup.mixed().required('Required!'),
-		year: Yup.number().required('Required!'),
+			.required('Description is required!'),
+		images: Yup.mixed().required('You need to provide a file!'),
+		year: Yup.number().required('Year is required!'),
 		author: Yup.string()
 			.min(2, 'Too short!')
 			.max(50, 'Too long!')
-			.required('Required!'),
+			.required('Author is required!'),
 		location: Yup.string()
-			.min(2, 'Too short!')
+		.min(2, 'Too short!')
 			.max(50, 'Too long!')
-			.required('Required!'),
+			.required('Location is required!'),
+		categoryId: Yup.number().test(
+			'Is positive?',
+			'Category need to be selected!',
+			(value) => value > 0
+		),
+		// saleRequest: Yup.bool(),
+	});
+
+	const uploadToDatabase = async (json) => {
+		await axios
+			.post(API.post_artwork.url, json, HeaderOptions)
+			.then((res) => console.log(res))
+			.catch((err) => console.log(err));
 	};
 
-	const formHandler = (e) => {
-		e.preventDefault();
-		console.log(file);
-		setShowPreview((prevState) => !prevState);
-		// uploadFiles(file);
-	};
+	const submitHandler = async (values) => {
+		setOpenBackdrop(true);
+		const file = values.images;
 
-	const uploadFiles = (file) => {
 		if (!file) return;
 
 		const storageRef = ref(storage, `/files/${file.name}`);
@@ -66,94 +86,145 @@ const UploadDetails = (props) => {
 			(err) => console.log(err),
 			() => {
 				console.log(uploadTask);
-				getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-					console.log(url);
-				});
+				getDownloadURL(uploadTask.snapshot.ref)
+					.then((url) => {
+						console.log(url);
+						const jsonObject = {
+							...values,
+							images: url,
+						};
+						debugger;
+
+						const json = JSON.stringify(jsonObject);
+						uploadToDatabase(json);
+						history.push('/profile')
+						window.scrollTo(0, 0)
+					})
+					.catch((err) => {
+						console.log(err);
+					})
+					.finally(() => {
+						setOpenBackdrop(false);
+					});
 			}
 		);
 	};
 
+	const getCategories = async () => {
+		await axios
+			.get(API.getCategories.url)
+			.then((res) => {
+				const options = res.data.map((category) => {
+					let categoryId = category.id;
+					let categoryName = category.name;
+
+					return {
+						value: categoryId,
+						label: categoryName,
+					};
+				});
+
+				console.log(options);
+				setCategoryOptions(options);
+			})
+			.catch((err) => console.log(err));
+	};
+
+	useEffect(() => {
+		getCategories();
+	}, []);
+
 	return (
 		<>
-			<div>
-				<h2>Testing Input</h2>
-				<form onSubmit={formHandler}>
-					<input type="file" className="form-control" />
-					<button type="submit" className="btn btn-primary">
-						Submit Upload File
-					</button>
-				</form>
-				<h2>Uploaded {progress} %</h2>
-			</div>
+			{localStorage.role !== 'Artist' && <Redirect to="/" />}
+			<CustomBackdrop openBackdrop={openBackdrop} />
+
 			<div className="outer">
 				<div className="outer__inner">
-					<div class="control">
-						<div class="control__center center">
+					<div className="control">
+						<div className="control__center center">
 							<Link
-								class="button-stroke button-small control__button"
+								className="button-stroke button-small control__button"
 								to="/home"
 							>
-								<svg class="icon icon-arrow-prev">
+								<svg className="icon icon-arrow-prev">
 									<use xlinkHref="#icon-arrow-prev"></use>
 								</svg>
 								<span>Back to home</span>
 							</Link>
-							<div class="breadcrumbs">
-								<ul class="breadcrumbs">
-									<li class="breadcrumbs__item">
-										<Link class="breadcrumbs__link" to="/home">
+							<div className="breadcrumbs">
+								<ul className="breadcrumbs">
+									<li className="breadcrumbs__item">
+										<Link className="breadcrumbs__link" to="/home">
 											Home
 										</Link>
 									</li>
-									<li class="breadcrumbs__item">Upload Item</li>
+									<li className="breadcrumbs__item">Upload Item</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 
-					<div className="section upload">
-						<div className="upload__center center">
-							<div className="upload__wrapper">
-								<div className="upload__head">
-									<h2 className="upload__title h2">Create New Artwork</h2>
-								</div>
-								<Formik
-									initialValues={initialValues}
-									validationSchema={validationSchema}
-								>
-									{({
-										values,
-										errors,
-										setFieldValue,
-										touched,
-										handleBlur,
-										handleChange,
-										isSubmitting,
-									}) => (
-										<Form autoComplete="off">
+					<Formik
+						initialValues={initialValues}
+						validationSchema={validationSchema}
+						onSubmit={submitHandler}
+					>
+						{({
+							values,
+							errors,
+							setFieldValue,
+							touched,
+							handleBlur,
+							handleChange,
+							isSubmitting,
+						}) => (
+							<Form autoComplete="off">
+								<div className="section upload">
+									<div className="upload__center center">
+										<div className="upload__wrapper">
+											<div className="upload__head">
+												<h2 className="upload__title h2">Create New Artwork</h2>
+											</div>
+
 											<div className="upload__form">
 												<div className="upload__list">
 													<div className="upload__item">
+														{/* // !FILE IMAGE */}
 														<div className="upload__category">Upload file</div>
 														<div className="upload__note">
 															Drag or choose your file to upload
 														</div>
 														<div className="upload__file">
-															<input
+															{/* <input
 																className="upload__input"
 																type="file"
-																name="fileImage"
-																values={values.fileImage}
-																onChange={handleChange}
-																onBlur={handleBlur}
 																ref={imageRef}
-																// !!WORKING
-																/* onChange={(event) => {
+																onChange={(event) => {
 																	setFile(event.target.files[0]);
 																	setShowPreview((prevState) => !prevState);
-																}} */
-															/>
-															{!file ? (
+																}}
+															/> */}
+
+															<Field name="images">
+																{({ field, form }) => (
+																	<input
+																		className="upload__input"
+																		type="file"
+																		ref={imageRef}
+																		onChange={(event) => {
+																			// setFile(event.target.files[0]);
+																			setShowPreview((prevState) => !prevState);
+																			setFieldValue(
+																				'images',
+																				event.target.files[0]
+																			);
+																		}}
+																	/>
+																)}
+															</Field>
+
+															{!values.images ? (
 																<>
 																	<div className="upload__icon">
 																		<svg className="icon icon-upload-file">
@@ -166,16 +237,25 @@ const UploadDetails = (props) => {
 																</>
 															) : (
 																<div className="upload__format">
-																	{file.name}
+																	{values.images.name}
 																</div>
 															)}
 														</div>
+														{errors.images && (
+															<div className="h6 text-danger mt-3">
+																{errors.images}
+															</div>
+														)}
 													</div>
+
 													<div className="upload__item">
-														<div className="upload__category">Item Details</div>
+														{/* // !Name */}
+														<div className="upload__category">
+															Artwork Details
+														</div>
 														<div className="upload__fieldset">
 															<div className="field">
-																<div className="field__label">Item name</div>
+																<div className="field__label">Name</div>
 																<div className="field__wrap">
 																	<input
 																		className="field__input"
@@ -185,10 +265,18 @@ const UploadDetails = (props) => {
 																		onChange={handleChange}
 																		onBlur={handleBlur}
 																		value={values.name}
-																		required
 																	/>
 																</div>
 															</div>
+															{errors.name && (
+																<div
+																	className="h6 text-danger mb-4"
+																	style={{ marginTop: '-1rem' }}
+																>
+																	{errors.name}
+																</div>
+															)}
+															{/* // !Description */}
 															<div className="field">
 																<div className="field__label">Description</div>
 																<div className="field__wrap">
@@ -197,221 +285,215 @@ const UploadDetails = (props) => {
 																		type="text"
 																		name="description"
 																		placeholder="e. g. “After purchasing you will able to recived the logo...”"
-																		required
+																		onChange={handleChange}
+																		onBlur={handleBlur}
+																		value={values.description}
 																	/>
 																</div>
 															</div>
+															{errors.description && (
+																<div
+																	className="h6 text-danger mb-4"
+																	style={{ marginTop: '-1rem' }}
+																>
+																	{errors.description}
+																</div>
+															)}
+
+															{/* // !AUTHOR AND LOCATION */}
 															<div className="upload__row">
 																<div className="upload__col">
 																	<div className="field">
-																		<div className="field__label">Size</div>
+																		<div className="field__label">Author</div>
 																		<div className="field__wrap">
 																			<input
 																				className="field__input"
 																				type="text"
-																				name="size"
-																				placeholder="e. g. Size"
-																				required
+																				name="author"
+																				placeholder="e. g. Leonardo Da Vinci"
+																				onChange={handleChange}
+																				onBlur={handleBlur}
+																				value={values.author}
 																			/>
 																		</div>
 																	</div>
 																</div>
+
 																<div className="upload__col">
 																	<div className="field">
-																		<div className="field__label">
-																			Propertie
-																		</div>
+																		<div className="field__label">Location</div>
 																		<div className="field__wrap">
 																			<input
 																				className="field__input"
 																				type="text"
-																				name="propertie"
-																				placeholder="e. g. Propertie"
-																				required
+																				name="location"
+																				placeholder="e. g. Paris"
+																				onChange={handleChange}
+																				onBlur={handleBlur}
+																				value={values.location}
 																			/>
 																		</div>
 																	</div>
 																</div>
 															</div>
+
+															{/* // !AUTHOR AND LOCATION ERROR */}
+															<div className="row">
+																<div className="col-md-4">
+																	{errors.author && (
+																		<div className="h6 text-danger mt-3">
+																			{errors.author}
+																		</div>
+																	)}
+																</div>
+																<div className="col-md-4">
+																	{errors.location && (
+																		<div className="h6 text-danger mt-3">
+																			{errors.author}
+																		</div>
+																	)}
+																</div>
+															</div>
+
+															{/* // !YEAR AND CATEGORY SELECT */}
+															<div className="upload__row mt-3">
+																{/* // !YEAR */}
+																<div className="upload__col">
+																	<div className="field">
+																		<div className="field__label">Year</div>
+																		<div className="field__wrap">
+																			<input
+																				className="field__input"
+																				type="number"
+																				name="year"
+																				placeholder="Year"
+																				onChange={handleChange}
+																				onBlur={handleBlur}
+																				value={values.year}
+																			/>
+																		</div>
+																	</div>
+																</div>
+
+																{/* // !CATEGORY */}
+																<div className="upload__col">
+																	<div className="field">
+																		<div className="field__label">Category</div>
+																		<div className="field__wrap">
+																			<Field name="categoryId">
+																				{({ field, form }) => (
+																					<Select
+																						options={categoryOptions}
+																						value={
+																							categoryOptions
+																								? categoryOptions.find(
+																										(option) =>
+																											option.value ===
+																											field.value
+																								  )
+																								: ''
+																						}
+																						onChange={(option) =>
+																							form.setFieldValue(
+																								field.name,
+																								option.value
+																							)
+																						}
+																						onBlur={field.onBlur}
+																					/>
+																				)}
+																			</Field>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															{/* // !AUTHOR AND LOCATION ERROR */}
+															<div className="row">
+																<div className="col-md-4">
+																	{errors.year && (
+																		<div className="h6 text-danger mt-3">
+																			{errors.year}
+																		</div>
+																	)}
+																</div>
+																<div className="col-md-4">
+																	{errors.categoryId && (
+																		<div className="h6 text-danger mt-3">
+																			{errors.categoryId}
+																		</div>
+																	)}
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
-												<div className="upload__options">
-													<div className="upload__option">
-														<div className="upload__box">
-															<div className="upload__category">
-																Put on sale
-															</div>
-															<div className="upload__text">
-																You’ll receive bids on this item
-															</div>
-														</div>
-														<label className="switch">
-															<input
-																className="switch__input"
-																type="checkbox"
-															/>
-															<span className="switch__inner">
-																<span className="switch__box"></span>
-															</span>
-														</label>
-													</div>
-													<div className="upload__option">
-														<div className="upload__box">
-															<div className="upload__category">
-																Instant sale price
-															</div>
-															<div className="upload__text">
-																Enter the price for which the item will be
-																instantly sold
-															</div>
-														</div>
-														<label className="switch">
-															<input
-																className="switch__input"
-																type="checkbox"
-															/>
-															<span className="switch__inner">
-																<span className="switch__box"></span>
-															</span>
-														</label>
-													</div>
-													<div className="upload__option">
-														<div className="upload__box">
-															<div className="upload__category">
-																Unlock once purchased
-															</div>
-															<div className="upload__text">
-																Content will be unlocked after successful
-																transaction
-															</div>
-														</div>
-														<label className="switch">
-															<input
-																className="switch__input"
-																type="checkbox"
-															/>
-															<span className="switch__inner">
-																<span className="switch__box"></span>
-															</span>
-														</label>
-													</div>
-													{/* <div className="upload__category">Choose collection</div>
-										<div className="upload__text">
-											Choose an exiting collection or create a new one
-										</div>
-										<div className="upload__cards">
-											<div className="upload__card">
-												<div
-													className="upload__plus"
-													style={{ backgroundColor: '#4BC9F0' }}
-												>
-													<svg className="icon icon-plus">
-														<use xlinkHref="#icon-plus"></use>
-													</svg>
-												</div>
-												<div className="upload__subtitle">
-													Create collection
-												</div>
-											</div>
-											<div className="upload__card">
-												<div
-													className="upload__plus"
-													style={{ backgroundColor: '#45B26B' }}
-												>
-													<svg className="icon icon-plus">
-														<use xlinkHref="#icon-plus"></use>
-													</svg>
-												</div>
-												<div className="upload__subtitle">
-													Crypto Legend - Professor
-												</div>
-											</div>
-											<div className="upload__card">
-												<div
-													className="upload__plus"
-													style={{ backgroundColor: '#EF466F' }}
-												>
-													<svg className="icon icon-plus">
-														<use xlinkHref="#icon-plus"></use>
-													</svg>
-												</div>
-												<div className="upload__subtitle">
-													Crypto Legend - Professor
-												</div>
-											</div>
-											<div className="upload__card">
-												<div
-													className="upload__plus"
-													style={{ backgroundColor: '#9757D7' }}
-												>
-													<svg className="icon icon-plus">
-														<use xlinkHref="#icon-plus"></use>
-													</svg>
-												</div>
-												<div className="upload__subtitle">
-													Legend Photography
-												</div>
-											</div>
-										</div> */}
-												</div>
+
 												<div className="upload__foot">
-													<button className="button-stroke tablet-show upload__button">
+													{/* <button className="button-stroke tablet-show upload__button">
 														Preview
-													</button>
-													<a
+													</button> */}
+													<button
 														className="button upload__button js-popup-open"
 														href="#popup-wallet"
 														data-effect="mfp-zoom-in"
 													>
-														<span>Create item</span>
+														<span>Create Item</span>
 														<svg className="icon icon-arrow-next">
 															<use xlinkHref="#icon-arrow-next"></use>
 														</svg>
-													</a>
-													<div className="upload__saving">
+													</button>
+													{/* <div className="upload__saving">
 														Auto saving
 														<div className="loader"></div>
-													</div>
+													</div> */}
 												</div>
 											</div>
 											<pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
-										</Form>
-									)}
-								</Formik>
-							</div>
+										</div>
 
-							{/* PREVIEW */}
-							<div className="preview js-preview">
-								<div className="preview__inner">
-									<button className="preview__close js-preview-close">
-										<svg className="icon icon-close">
-											<use xlinkHref="#icon-close"></use>
-										</svg>
-									</button>
-									<div className="preview__info">Preview</div>
-									{showPreview && (
-										<>
-											<div className="card">
-												<div className="card__preview">
-													<img
-														src={URL.createObjectURL(file)}
-														alt="Card preview"
-													/>
-												</div>
+										{/* PREVIEW */}
+										<div className="preview js-preview">
+											<div className="preview__inner">
+												<button className="preview__close js-preview-close">
+													<svg className="icon icon-close">
+														<use xlinkHref="#icon-close"></use>
+													</svg>
+												</button>
+												<div className="preview__info">Preview</div>
+												{showPreview && (
+													<>
+														<div className="card">
+															<div className="card__preview">
+																<img
+																	src={URL.createObjectURL(values.images)}
+																	alt="Card preview"
+																/>
+															</div>
+														</div>
+														<button
+															className="preview__clear"
+															href="#"
+															onClick={() => {
+																setShowPreview(false);
+																setFieldValue('images', null);
+																// setFile(null);
+															}}
+														>
+															<svg className="icon icon-circle-close">
+																<use xlinkHref="#icon-circle-close"></use>
+															</svg>
+															Clear all
+														</button>
+													</>
+												)}
 											</div>
-											<a className="preview__clear" href="/">
-												<svg className="icon icon-circle-close">
-													<use xlinkHref="#icon-circle-close"></use>
-												</svg>
-												Clear all
-											</a>
-										</>
-									)}
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
+							</Form>
+						)}
+					</Formik>
 
 					<div className="popup popup_wallet mfp-hide" id="popup-wallet">
 						<div className="popup__title h4">Folow steps</div>
@@ -476,6 +558,7 @@ const UploadDetails = (props) => {
 					</div>
 				</div>
 			</div>
+
 			<div style={{ display: 'none' }}>
 				<svg width="0" height="0">
 					<symbol
@@ -827,4 +910,4 @@ const UploadDetails = (props) => {
 	);
 };
 
-export default UploadDetails;
+export default withRouter(UploadDetails);

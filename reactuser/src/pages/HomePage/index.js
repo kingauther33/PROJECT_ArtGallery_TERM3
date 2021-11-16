@@ -664,7 +664,10 @@ const HomePage = () => {
 									</Link>
 								)}
 
-								<Link className="button-stroke description__button" to="search">
+								<Link
+									className="button-stroke description__button"
+									to="/search"
+								>
 									Discover more
 								</Link>
 							</div>

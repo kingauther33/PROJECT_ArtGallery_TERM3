@@ -1,6 +1,5 @@
 const BASE_URL = 'https://localhost:44379/api/';
 
-
 export const API = {
 	getArtworks: {
 		url: BASE_URL + 'Artworks',
@@ -44,13 +43,48 @@ export const API = {
 		}),
 		method: 'POST',
 	},
+	post_artwork: {
+		url: BASE_URL + 'Artworks',
+		params: JSON.stringify({
+			name: '',
+			description: '',
+			fileImage: '',
+			year: 0,
+			author: '',
+			location: '',
+			categoryId: 0,
+			createdAt: Date.now(),
+		}),
+		method: 'POST',
+	},
+
+	getUserById: {
+		url: BASE_URL + 'Users/', // + id
+		params: {},
+		method: 'GET',
+	},
+
+	getArtworkByUser: {
+		url: BASE_URL + 'Artworks/GetArtworkByPerson/', // + id
+		params: {},
+		method: 'GET',
+	},
+
+	editArtworkStatus: {
+		url: BASE_URL + 'Artworks/', // + id
+		params: {
+			id: 0,
+			status: 0,
+		},
+		method: 'PUT',
+	},
 };
 
 export const HeaderOptions = {
-    headers: {
-        'Content-Type': 'application/json',
+	headers: {
+		'Content-Type': 'application/json',
 		'Access-Control-Allow-Origin': '*',
 		Authorization: `Bearer ${localStorage.getItem('token')}`,
 		Accept: 'application/json',
-    }
-}
+	},
+};

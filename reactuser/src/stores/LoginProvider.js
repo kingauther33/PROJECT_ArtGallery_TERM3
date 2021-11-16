@@ -7,6 +7,7 @@ const initialLoginState = {
 	token: '',
 	lastName: '',
 	firstName: '',
+	id: 0,
 };
 
 const LoginProvider = (props) => {
@@ -18,6 +19,7 @@ const LoginProvider = (props) => {
 		token: loginState.token,
 		lastName: loginState.lastName,
 		firstName: loginState.firstName,
+		id: loginState.id,
 		setLoginState: setLoginState,
 	};
 
@@ -29,6 +31,7 @@ const LoginProvider = (props) => {
 				role: localStorage.getItem('role'),
 				lastName: localStorage.getItem('lastName'),
 				firstName: localStorage.getItem('firstName'),
+				id: localStorage.getItem('id'),
 			});
 		}
 

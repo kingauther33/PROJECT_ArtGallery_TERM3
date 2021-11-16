@@ -3,7 +3,7 @@ import UserLayout from 'layout/UserLayout';
 import HomePage from 'pages/HomePage';
 import AboutUs from 'pages/AboutUs';
 import search from 'pages/Search/search';
-import Profile from 'pages/Profile/Profile';
+import Profile from 'pages/Profile';
 import ProfileEdit from 'pages/Profile/Profile-edit';
 import item from 'pages/Item/Item';
 import Activity from 'pages/Activity/Activity';
@@ -33,14 +33,14 @@ const ContactUsRoute = {
 	page: ContactUs, // PAGE ứng với ROUTE đó
 };
 
-const SearchRoute = {
+const ArtworkRoute = {
 	path: '/artwork', // URL trên browser
 	layout: UserLayout, //LAYOUT ứng với từng ROUTE
 	page: search, // PAGE ứng với ROUTE đó
 };
 
 const ProfileRoute = {
-	path: '/profile', // URL trên browser
+	path: '/profile/:id', // URL trên browser
 	layout: UserLayout, // LAYOUT ứng với từng ROUTE
 	page: Profile, // PAGE ứng với ROUTE đó
 };
@@ -92,7 +92,7 @@ export const routes = [
 	HomePageRoute,
 	AboutUsRoute,
 	ContactUsRoute,
-	SearchRoute,
+	ArtworkRoute,
 	ProfileRoute,
 	ProfileEditRoute,
 	ItemRoute,

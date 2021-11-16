@@ -49,6 +49,8 @@ const Login = () => {
 					localStorage.setItem('role', response.data.role);
 					localStorage.setItem('firstName', response.data.firstName);
 					localStorage.setItem('lastName', response.data.lastName);
+					localStorage.setItem('id', response.data.id);
+
 					window.location.reload();
 				}
 			})
