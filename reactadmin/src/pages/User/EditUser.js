@@ -183,6 +183,7 @@ const EditUser = () => {
 												<SelectInput
 													options={options}
 													title="Role"
+													name="role"
 													errors={errors.role}
 													touched={touched.role}
 												/>

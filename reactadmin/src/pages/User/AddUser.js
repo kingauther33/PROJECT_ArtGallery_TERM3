@@ -23,7 +23,7 @@ const AddUser = () => {
 		[]
 	);
 
-	const initialState = {
+	const initialValues = {
 		firstName: '',
 		lastName: '',
 		email: '',
@@ -100,7 +100,7 @@ const AddUser = () => {
 							</div>
 							<div className="card-body">
 								<Formik
-									initialValues={initialState}
+									initialValues={initialValues}
 									onSubmit={handleSubmit}
 									validationSchema={validationSchema}
 								>
@@ -161,6 +161,7 @@ const AddUser = () => {
 
 												<SelectInput
 													options={options}
+													name="role"
 													title="Role"
 													errors={errors.role}
 													touched={touched.role}

@@ -51,6 +51,12 @@ export const StyledTable = styled.div`
 		background: lightgreen;
 	}
 
+	.table .inprocess,
+	.table .inprocess:hover,
+	.table .inprocess:nth-child(even) {
+		background: lightyellow;
+	}
+
 	.table .failed,
 	.table .failed:hover,
 	.table .failed:nth-child(even) {

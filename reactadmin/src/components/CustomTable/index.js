@@ -64,7 +64,7 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 	};
 
 	const getStatusClassName = (row) => {
-		console.log(row);
+		// console.log(row);
 		let statusClassName;
 
 		if (row.original?.status) {
@@ -76,6 +76,24 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 					statusClassName = 'disabled failed';
 					break;
 				case 'In processing':
+					statusClassName = '';
+					break;
+				default:
+					statusClassName = '';
+					break;
+			}
+
+			switch (row.original.status) {
+				case 'IN AUNCTION':
+					statusClassName = 'disabled inprocess';
+					break;
+				case 'SOLD':
+					statusClassName = 'disabled success';
+					break;
+				case 'UNAPPROVED':
+					statusClassName = 'disabled failed';
+					break;
+				case 'NEED TO BE HANDLED':
 					statusClassName = '';
 					break;
 				default:
@@ -133,7 +151,20 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 												{cell.column.Header}
 												{':'}
 											</span>{' '}
-											{cell.render('Cell')}
+											{console.log(cell)}
+											{cell.column.Header === 'Preview' ? (
+												<img
+													srcSet={cell.value}
+													style={{
+														height: '125px',
+														width: '175px',
+														objectFit: 'cover',
+													}}
+													alt="Preview"
+												/>
+											) : (
+												cell.render('Cell')
+											)}
 										</td>
 									))}
 								</tr>

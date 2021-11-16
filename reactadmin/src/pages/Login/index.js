@@ -42,6 +42,8 @@ const Login = () => {
 				if (response.data.role === 'Admin') {
 					localStorage.setItem('token', response.data.token);
 					localStorage.setItem('role', response.data.role);
+					localStorage.setItem('firstName', response.data.firstName);
+					localStorage.setItem('lastName', response.data.lastName);
 					window.location.reload();
 				} else {
 					setSubmitError({

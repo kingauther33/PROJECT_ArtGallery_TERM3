@@ -73,6 +73,24 @@ export const API = {
 		params: {},
 		method: 'GET',
 	},
+
+	get_artwork_sale_requests: {
+		url: BASE_URL + 'Artworks/GetArtworkSaleRequests',
+		params: {},
+		method: 'GET',
+	},
+
+	get_artwork_by_id: {
+		url: BASE_URL + 'Artworks/', // + id
+		params: {},
+		method: 'GET',
+	},
+
+	getCategories: {
+		url: BASE_URL + 'Categories',
+		params: {},
+		method: 'GET',
+	},
 };
 
 export const HeaderOptions = {

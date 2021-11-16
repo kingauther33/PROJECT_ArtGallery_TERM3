@@ -7,6 +7,8 @@ import EditUser from 'pages/User/EditUser';
 import Login from 'pages/Login';
 import CustomerRequest from 'pages/CustomerRequest';
 import Aunction from 'pages/Aunction';
+import ArtworkSaleRequest from 'pages/ArtworkSaleRequest';
+import ArtworkSaleRequestDetail from 'pages/ArtworkSaleRequest/ArtworkSaleRequestDetail';
 
 const AdminDashboardRoute = {
 	path: '/admin-dashboard', // URL trên browser
@@ -50,6 +52,18 @@ const AunctionRoute = {
 	page: Aunction,
 };
 
+const ArtworkSaleRequestRoute = {
+	path: '/artwork-sale-request',
+	layout: AdminLayout,
+	page: ArtworkSaleRequest,
+};
+
+const ArtworkSaleRequestDetailRoute = {
+	path: '/artwork-sale-request/:id',
+	layout: AdminLayout,
+	page: ArtworkSaleRequestDetail,
+};
+
 export const routes = [
 	AdminDashboardRoute,
 	ManageUserRoute,
@@ -58,4 +72,6 @@ export const routes = [
 	LoginRoute,
 	CustomerRequestRoute,
 	AunctionRoute,
+	ArtworkSaleRequestDetailRoute,
+	ArtworkSaleRequestRoute,
 ];

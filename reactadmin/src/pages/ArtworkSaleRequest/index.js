@@ -8,7 +8,7 @@ import { Modal, Button } from 'react-bootstrap';
 import SnackbarPopup from 'components/SnackbarPopup';
 import { TextField } from '@mui/material';
 
-const CustomerRequest = () => {
+const ArtworkSaleRequest = () => {
 	const [listData, setListData] = useState([]);
 	const [openBackdrop, setOpenBackdrop] = useState(false);
 	const [listRows, setListRows] = useState([]);
@@ -29,16 +29,24 @@ const CustomerRequest = () => {
 				accessor: 'index',
 			},
 			{
-				Header: 'Customer Name',
-				accessor: 'customer.lastName',
+				Header: 'Artwork Name',
+				accessor: 'name',
+			},
+			{
+				Header: 'Description',
+				accessor: 'description',
+			},
+			{
+				Header: 'Current Price',
+				accessor: 'currentPrice',
+			},
+			{
+				Header: 'Preview',
+				accessor: 'images',
 			},
 			{
 				Header: 'Status',
 				accessor: 'status',
-			},
-			{
-				Header: 'Response',
-				accessor: 'response',
 			},
 			{
 				Header: 'Action',
@@ -82,7 +90,7 @@ const CustomerRequest = () => {
 			})
 			.finally(() => {
 				setShowModalApprove(false);
-				fetchUserRequests();
+				fetchArtworkSaleRequests();
 			});
 	};
 
@@ -132,39 +140,44 @@ const CustomerRequest = () => {
 			})
 			.finally(() => {
 				setShowModalDeny(false);
-				fetchUserRequests();
+				fetchArtworkSaleRequests();
 			});
 	};
 
-	const fetchUserRequests = async () => {
+	const fetchArtworkSaleRequests = async () => {
 		setOpenBackdrop(true);
 
 		await axios
-			.get(API.get_customer_requests.url, HeaderOptions)
+			.get(API.get_artwork_sale_requests.url, HeaderOptions)
 			.then((res) => {
+				setListData(res.data);
 				let datas = res.data;
 				datas.map((data) => {
+					if (data.description.length > 25) {
+						data.description = data.description.substring(0, 25) + ' ...';
+					}
+					data.currentPrice = data.currentPrice ? data.currentPrice : 0;
+
 					switch (data.status) {
-						case 0:
-							data.status = 'In processing';
-							break;
 						case 1:
-							data.status = 'Declined';
+							data.status = 'NEED TO BE HANDLED';
 							break;
 						case 2:
-							data.status = 'Approved';
+							data.status = 'IN AUNCTION';
+							break;
+						case 3:
+							data.status = 'SOLD';
+							break;
+						case 4:
+							data.status = 'UNAPPROVED';
 							break;
 						default:
-							data.status = 'In processing';
-					}
-
-					if (!data.response) {
-						data.response = 'In processing';
+							data.status = 'NEED TO BE HANDLED';
 					}
 
 					return data;
 				});
-				setListData(datas);
+				console.log(res.data);
 			})
 			.catch((err) => console.log(err))
 			.finally(() => {
@@ -173,7 +186,7 @@ const CustomerRequest = () => {
 	};
 
 	useEffect(() => {
-		fetchUserRequests();
+		fetchArtworkSaleRequests();
 	}, []);
 
 	useEffect(() => {
@@ -181,32 +194,16 @@ const CustomerRequest = () => {
 		let index = 1;
 		if (listData.length) {
 			dataFetched = listData.map((data) => {
-				const approveHandler = (data) => {
-					setShowModalApprove(true);
-					setDataModifying(data);
-				};
-
-				const denyHandler = (data) => {
-					setShowModalDeny(true);
-					setDataModifying(data);
-				};
-
 				data.index = index++;
 
 				data.action = (
 					<>
-						<button
+						<Link
+							to={`/artwork-sale-request/${data.id}`}
 							className="btn btn-success mr-3"
-							onClick={approveHandler.bind(this, data)}
 						>
-							APPROVE
-						</button>
-						<button
-							className="btn btn-danger"
-							onClick={denyHandler.bind(this, data)}
-						>
-							DENY
-						</button>
+							DETAILS
+						</Link>
 					</>
 				);
 
@@ -225,7 +222,7 @@ const CustomerRequest = () => {
 					<div className="col-12">
 						<div className="card">
 							<div className="card-header">
-								<h5 className="title">Customer Request To Become Artist</h5>
+								<h5 className="title">Artist Request To Sale</h5>
 							</div>
 							<div className="card-body">
 								<CustomTable columns={columns} listData={listRows} />
@@ -288,4 +285,4 @@ const CustomerRequest = () => {
 	);
 };
 
-export default CustomerRequest;
+export default ArtworkSaleRequest;

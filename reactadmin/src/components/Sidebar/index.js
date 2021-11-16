@@ -25,6 +25,11 @@ const sideBarItems = [
 		name: 'Aunction',
 		icon: 'business_money-coins',
 	},
+	{
+		link: '/artwork-sale-request',
+		name: 'Artwork Sale Request',
+		icon: 'business_money-coins',
+	},
 ];
 
 const AdminSidebar = () => {

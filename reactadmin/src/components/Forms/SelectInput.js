@@ -4,7 +4,7 @@ import React from 'react';
 import Select from 'react-select';
 
 const SelectInput = (props) => {
-	const { options, title, errors, touched } = props;
+	const { options, title, errors, touched, name } = props;
 
 	return (
 		<>
@@ -20,7 +20,7 @@ const SelectInput = (props) => {
 				</h6>
 			</div>
 			<div className="col-md-10">
-				<Field name="role">
+				<Field name={name}>
 					{({ field, form }) => (
 						<Select
 							options={options}
