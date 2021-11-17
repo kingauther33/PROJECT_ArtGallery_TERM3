@@ -10,6 +10,7 @@ import SelectInput from 'components/Forms/SelectInput';
 import SnackbarPopup from 'components/SnackbarPopup';
 import { Redirect } from 'react-router-dom';
 import CheckboxInput from 'components/Forms/CheckboxInput';
+import FormText from 'components/Forms/FormText';
 
 const ArtworkSaleRequestDetail = () => {
 	const [initialValues, setInitialValues] = useState({
@@ -19,7 +20,8 @@ const ArtworkSaleRequestDetail = () => {
 		location: '',
 		currentPrice: 0,
 		year: 0,
-		checkDecline: false,
+		checkDecline: true,
+		reason: '',
 	});
 	const [categoryOptions, setCategoryOptions] = useState([
 		{ value: '', label: '' },
@@ -44,7 +46,7 @@ const ArtworkSaleRequestDetail = () => {
 			.required('Required!'),
 		description: Yup.string()
 			.min(2, 'Too short!')
-			.max(50, 'Too long!')
+			.max(300, 'Too long!')
 			.required('Required!'),
 		location: Yup.string()
 			.min(2, 'Too short!')
@@ -53,6 +55,10 @@ const ArtworkSaleRequestDetail = () => {
 		currentPrice: Yup.number().required('Required!'),
 		year: Yup.number().required('Required!'),
 		categoryId: Yup.number().required('Required!'),
+		reason: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
 	});
 
 	const fetchArtworkById = useCallback(async () => {
@@ -61,8 +67,9 @@ const ArtworkSaleRequestDetail = () => {
 		await axios
 			.get(API.get_artwork_by_id.url + artworkId, HeaderOptions)
 			.then((res) => {
-				console.log(res.data);
-				setInitialValues(res.data);
+				let datas = res.data;
+				datas.checkDecline = true;
+				setInitialValues(datas);
 			})
 			.catch((err) => console.log(err))
 			.finally(() => {
@@ -126,22 +133,22 @@ const ArtworkSaleRequestDetail = () => {
 									}) => (
 										<Form autoComplete="off">
 											<div className="row align-items-center px-3">
-												<TextInput
+												<FormText
 													fullWidth={true}
 													title="Name"
-													name="name"
-													type="text"
-													errors={errors.name}
-													touched={touched.name}
+													value={values.name}
 												/>
 
-												<TextInput
+												<FormText
 													fullWidth={true}
 													title="Author"
-													name="author"
-													type="text"
-													errors={errors.author}
-													touched={touched.author}
+													value={values.author}
+												/>
+
+												<FormText
+													fullWidth={true}
+													title="Location"
+													value={values.location}
 												/>
 
 												<TextInput
@@ -151,15 +158,6 @@ const ArtworkSaleRequestDetail = () => {
 													type="text"
 													errors={errors.description}
 													touched={touched.description}
-												/>
-
-												<TextInput
-													fullWidth={true}
-													title="Location"
-													name="location"
-													type="text"
-													errors={errors.location}
-													touched={touched.location}
 												/>
 
 												<TextInput
@@ -179,7 +177,6 @@ const ArtworkSaleRequestDetail = () => {
 													errors={errors.year}
 													touched={touched.year}
 												/>
-
 												<TextInput
 													fullWidth={false}
 													title="Year"
@@ -188,7 +185,6 @@ const ArtworkSaleRequestDetail = () => {
 													errors={errors.year}
 													touched={touched.year}
 												/>
-
 												<SelectInput
 													options={categoryOptions}
 													title="Category"
@@ -196,28 +192,22 @@ const ArtworkSaleRequestDetail = () => {
 													errors={errors.category}
 													touched={touched.category}
 												/>
-
 												<CheckboxInput
 													title="Do you accept this artwork to be sold"
-													name
-													type
-													errors
-													touched
-													fullWidth
-													checked
+													name="checkDecline"
+													errors={errors.checkDecline}
+													checked={values.checkDecline}
 												/>
-
-												{values.checkDecline && (
+												{!values.checkDecline && (
 													<TextInput
 														fullWidth={false}
-														title="Year"
-														name="year"
-														type="number"
-														errors={errors.year}
-														touched={touched.year}
+														title="Reason not for sale"
+														name="reason"
+														type="text"
+														errors={errors.reason}
+														touched={touched.reason}
 													/>
 												)}
-
 												<button
 													type="submit"
 													className="btn btn-primary ml-3"

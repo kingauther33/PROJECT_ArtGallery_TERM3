@@ -49,6 +49,21 @@ namespace ReactAPI.Controllers
             return customerRequest;
         }
 
+        [HttpGet("GetCustomerRequestByPersonId/{id}")]
+        public async Task<ActionResult<CustomerRequest>> GetCustomerRequestByPersonId(int id)
+        {
+            var customerRequest = await _context.CustomerRequests
+                .Where(u => u.IsDeleted == 0 && u.CustomerId == id)
+                .FirstOrDefaultAsync();
+
+            if (customerRequest == null)
+            {
+                return NotFound();
+            }
+
+            return customerRequest;
+        }
+
         // PUT: api/CustomerRequests/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -84,12 +99,19 @@ namespace ReactAPI.Controllers
         [HttpPost("{id}")]
         public async Task<IActionResult> UpdateStatus(int id, int status, string response)
         {
-            var customerToUpdate = await _context.CustomerRequests.FirstOrDefaultAsync(c => c.Id == id && c.IsDeleted == 0);
+            var customerRequestToUpdate = await _context.CustomerRequests.FirstOrDefaultAsync(c => c.Id == id && c.IsDeleted == 0);
 
-            var userToUpdate = await _context.Users.FirstOrDefaultAsync(u => u.Id == id && u.IsDeleted == 0);
-            customerToUpdate.Status = status;
-            customerToUpdate.Response = response;
-            userToUpdate.Role = "Artist";
+            var adminId = User.FindFirst("Id")?.Value;
+
+            var userToUpdate = await _context.Users
+                .FirstOrDefaultAsync(u => u.Id == customerRequestToUpdate.CustomerId && u.IsDeleted == 0);
+            customerRequestToUpdate.Status = status;
+            customerRequestToUpdate.Response = response;
+            customerRequestToUpdate.AdminId = Int32.Parse(adminId);
+            if (status == 2)
+            {
+                userToUpdate.Role = "Artist";
+            }
 
             try
             {
@@ -115,6 +137,7 @@ namespace ReactAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<CustomerRequest>> PostCustomerRequest(CustomerRequest customerRequest)
         {
+            customerRequest.CreatedAt = DateTime.Now;
             _context.CustomerRequests.Add(customerRequest);
             await _context.SaveChangesAsync();
 

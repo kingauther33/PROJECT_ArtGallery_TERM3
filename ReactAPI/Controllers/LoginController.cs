@@ -44,7 +44,8 @@ namespace ReactAPI.Controllers
                         new Claim(JwtRegisteredClaimNames.Sub, _configuration["Jwt:Subject"]),
                         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                         new Claim(JwtRegisteredClaimNames.Iat, DateTime.Now.ToString()),
-                        new Claim("Id", user.Email),
+                        new Claim("Id", user.Id.ToString()),
+                        new Claim("Email", user.Email),
                         new Claim("FirstName", user.FirstName),
                         new Claim("LastName", user.LastName),
                         new Claim("Role", user.Role),
@@ -54,7 +55,7 @@ namespace ReactAPI.Controllers
                     var sign = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
                     var token = new JwtSecurityToken(_configuration["Jwt:Issuer"], _configuration["Jwt:Audience"], claims, expires: DateTime.Now.AddDays(1), signingCredentials: sign);
 
-                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), role = user.Role, id = user.Id });
+                    return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), role = user.Role, id = user.Id, firstName = user.FirstName, lastName = user.LastName });
                 }
 
                 return BadRequest("Username or password incorrect!");

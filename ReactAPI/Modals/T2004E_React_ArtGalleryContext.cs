@@ -61,6 +61,8 @@ namespace ReactAPI.Modals
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
+                entity.Property(e => e.CurrentPrice).HasColumnName("current_price");
+
                 entity.Property(e => e.Description).HasColumnName("description");
 
                 entity.Property(e => e.Images).HasColumnName("images");
@@ -78,6 +80,8 @@ namespace ReactAPI.Modals
                 entity.Property(e => e.Status)
                     .HasColumnName("status")
                     .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.UnapproveReason).HasColumnName("unapprove_reason");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
@@ -157,11 +161,17 @@ namespace ReactAPI.Modals
                     .HasColumnType("datetime")
                     .HasColumnName("finished_at");
 
+                entity.Property(e => e.FixedPrice)
+                    .HasColumnName("fixed_price")
+                    .HasDefaultValueSql("((9999999))");
+
                 entity.Property(e => e.HighestMoneyBid).HasColumnName("highest_money_bid");
 
                 entity.Property(e => e.IsDeleted)
                     .HasColumnName("is_deleted")
                     .HasDefaultValueSql("((0))");
+
+                entity.Property(e => e.StartingPrice).HasColumnName("starting_price");
 
                 entity.HasOne(d => d.Admin)
                     .WithMany(p => p.AunctionAdmins)
@@ -345,10 +355,14 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E6164428A86D0")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E61644320B532")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.Avatar)
+                    .HasColumnName("avatar")
+                    .HasDefaultValueSql("('https://firebasestorage.googleapis.com/v0/b/fir-artgallery-storage.appspot.com/o/files%2FdefaultAva.png?alt=media&token=80389b41-4d3f-45ec-b259-2cc6276ca53b')");
 
                 entity.Property(e => e.ConfirmPassword)
                     .IsRequired()

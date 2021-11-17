@@ -17,14 +17,17 @@ const CheckboxInput = (props) => {
 			</div>
 			<div className="col-md-9">
 				<Field name={name}>
-					{({ field }) => (
+					{({ field, form }) => (
 						<Checkbox
 							checked={checked}
-							onChange={field.handleChange}
-							fullWidth={fullWidth}
+							onChange={(e) => {
+								form.setFieldValue(name, e.target.checked);
+							}}
+							// fullWidth={fullWidth}
 							// type={type}
 							// placeholder={title}
 							// variant="standard"
+							inputProps={{ 'aria-label': 'primary checkbox' }}
 						/>
 					)}
 				</Field>

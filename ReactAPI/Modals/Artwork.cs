@@ -16,10 +16,12 @@ namespace ReactAPI.Modals
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public double? CurrentPrice { get; set; }
         public string Images { get; set; }
         public long? Year { get; set; }
         public string Author { get; set; }
         public int? Status { get; set; }
+        public string UnapproveReason { get; set; }
         public string Location { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? IsDeleted { get; set; }
