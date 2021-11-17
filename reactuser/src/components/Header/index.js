@@ -28,11 +28,6 @@ const Header = () => {
 							</Link>
 						</li>
 						<li>
-							<Link className="header__a" to="">
-								Artist
-							</Link>
-						</li>
-						<li>
 							<Link className="header__a" to="/artwork">
 								Artwork
 							</Link>

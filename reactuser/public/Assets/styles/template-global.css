@@ -3683,10 +3683,12 @@ body.dark .footer__row {
         display: none;
         padding-bottom: 32px; } }
 .footer__menu {
+
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
 .footer__link {
+    text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-size: 14px;
     line-height: 1.14286;
@@ -3729,7 +3731,9 @@ body.dark .footer__row {
     transition: color .2s; }
 .footer__note a:hover {
     color: #044eff; }
-
+.logo-footer{
+    height: 40px;
+}
 .breadcrumbs {
     display: flex; }
 @media only screen and (max-width: 767px) {

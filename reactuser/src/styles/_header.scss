@@ -33,8 +33,8 @@ header {
 }
 
 .header__a:hover {
-	text-decoration: underline #23262f;
-	color: #23262f;
+
+	color: #8096d4;
 }
 
 .btn-header {
@@ -47,8 +47,9 @@ header {
 	border-radius: 10px;
 	cursor: pointer;
 	border: solid 1px;
+	text-decoration: none;
 }
 
 .btn-header:hover {
-	background-color: rgba(35, 38, 47, 0.6);
+	background-color: rgba(229, 230, 234, 0.6);
 }
