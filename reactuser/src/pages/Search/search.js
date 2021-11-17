@@ -8,28 +8,8 @@ const search = () => {
 				<div class="outer__inner">
 					<div class="section-pt80 catalog">
 						<div class="catalog__center center">
-							<div class="catalog__top">
-								<div class="catalog__title">Type your keywords</div>
-								<form class="catalog__search">
-									<input
-										class="catalog__input"
-										type="text"
-										name="search"
-										placeholder="Search..."
-										required
-									/>
-									<button class="catalog__result">
-										<svg class="icon icon-search">
-											<use xlinkHref="#icon-search"></use>
-										</svg>
-									</button>
-								</form>
-							</div>
+
 							<div class="catalog__sorting">
-								<select class="select">
-									<option>Newest</option>
-									<option>Oldest</option>
-								</select>
 								<div class="catalog__nav">
 									<a class="catalog__link active" href="/">
 										All items
@@ -52,57 +32,6 @@ const search = () => {
 								</div>
 							</div>
 							<div class="catalog__row">
-								<div class="catalog__filters">
-									<div class="range">
-										<div class="range__label">Price range</div>
-										<div
-											class="range__slider js-slider"
-											data-min="0.01"
-											data-max="10"
-											data-start="5"
-											data-step="0.1"
-											data-tooltips="true"
-											data-postfix=" ETH"
-										></div>
-										<div class="range__indicators">
-											<div class="range__text">0.01 ETH</div>
-											<div class="range__text">10 ETH</div>
-										</div>
-									</div>
-									<div class="catalog__group">
-										<div class="field">
-											<div class="field__label">price</div>
-											<select class="select">
-												<option>Most liked</option>
-												<option>Least liked</option>
-											</select>
-										</div>
-										<div class="field">
-											<div class="field__label">color</div>
-											<select class="select">
-												<option>All colors</option>
-												<option>Black</option>
-												<option>Green</option>
-												<option>Pink</option>
-												<option>Purple</option>
-											</select>
-										</div>
-										<div class="field">
-											<div class="field__label">creator</div>
-											<select class="select">
-												<option>Verified only</option>
-												<option>All</option>
-												<option>Most liked</option>
-											</select>
-										</div>
-									</div>
-									<a class="catalog__reset" href="/">
-										<svg class="icon icon-close-circle-fill">
-											<use xlinkHref="#icon-close-circle-fill"></use>
-										</svg>
-										Reset filter
-									</a>
-								</div>
 								<div class="catalog__wrapper">
 									<div class="catalog__list">
 										<div class="card">
