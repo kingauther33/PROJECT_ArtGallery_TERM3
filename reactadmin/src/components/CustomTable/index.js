@@ -60,6 +60,7 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 	);
 
 	const pageChange = (e) => {
+		window.scrollTo(0, 0);
 		gotoPage(e.selected);
 	};
 
@@ -85,13 +86,13 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 
 			switch (row.original.status) {
 				case 'IN AUNCTION':
-					statusClassName = 'disabled inprocess';
+					statusClassName = 'inprocess';
 					break;
 				case 'SOLD':
-					statusClassName = 'disabled success';
+					statusClassName = 'success';
 					break;
 				case 'UNAPPROVED':
-					statusClassName = 'disabled failed';
+					statusClassName = 'failed';
 					break;
 				case 'NEED TO BE HANDLED':
 					statusClassName = '';
@@ -105,10 +106,13 @@ const CustomTable = ({ columns, listData, deleteAPI, editURL, dataFetch }) => {
 		if (row.original.artwork?.status) {
 			switch (row.original.artwork.status) {
 				case 'Sold':
-					statusClassName = 'disabled success';
+					statusClassName = 'success';
 					break;
 				case 'Selling':
-					statusClassName = 'disabled processing';
+					statusClassName = 'processing';
+					break;
+				case 'Declined':
+					statusClassName = 'failed';
 					break;
 				case 'Standby':
 					statusClassName = '';

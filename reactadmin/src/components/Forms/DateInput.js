@@ -8,7 +8,7 @@ const DateInput = (props) => {
 		<>
 			<div className="col-3 py-3 mt-2">
 				{/* <h5 className="font-weight-bold">Title:</h5> */}
-				<h5 className="font-weight-bold">{props.title}:</h5>
+				<h6 className="font-weight-bold">{props.title}</h6>
 			</div>
 			<div className="col-9">
 				<Field name={props.name}>

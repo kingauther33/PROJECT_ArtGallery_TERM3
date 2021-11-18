@@ -7,7 +7,7 @@ const TextInput = (props) => {
 
 	return (
 		<>
-			<div className="col-md-2">
+			<div className="col-md-3">
 				<h6
 					className="card-title"
 					style={{ margin: '10px 0', letterSpacing: '-0.08em' }}
@@ -29,13 +29,13 @@ const TextInput = (props) => {
 				</Field>
 			</div>
 			{errors && touched ? (
-				<div className="offset-2 col-md-10 mb-3">
+				<div className="offset-3 col-md-9 mb-3">
 					<Typography variant="inherit" color="error">
 						{errors}
 					</Typography>
 				</div>
 			) : (
-				<div className="offset-2 col-md-10 mb-3">&nbsp;</div>
+				<div className="offset-3 col-md-9 mb-3">&nbsp;</div>
 			)}
 		</>
 	);

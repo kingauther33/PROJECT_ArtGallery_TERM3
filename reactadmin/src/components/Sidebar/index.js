@@ -21,13 +21,13 @@ const sideBarItems = [
 		icon: 'users_circle-08',
 	},
 	{
-		link: '/manage-aunction',
-		name: 'Aunction',
+		link: '/artwork-sale-request',
+		name: 'Artwork Sale Request',
 		icon: 'business_money-coins',
 	},
 	{
-		link: '/artwork-sale-request',
-		name: 'Artwork Sale Request',
+		link: '/manage-aunction',
+		name: 'Aunction',
 		icon: 'business_money-coins',
 	},
 ];

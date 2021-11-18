@@ -7,7 +7,7 @@ const CheckboxInput = (props) => {
 
 	return (
 		<>
-			<div className="col-md-6">
+			<div className="col-md-3">
 				<h6
 					className="card-title"
 					style={{ margin: '10px 0', letterSpacing: '-0.08em' }}
@@ -15,7 +15,7 @@ const CheckboxInput = (props) => {
 					{title}
 				</h6>
 			</div>
-			<div className="col-md-6">
+			<div className="col-md-9">
 				<Field name={name}>
 					{({ field, form }) => (
 						<Checkbox
@@ -32,7 +32,7 @@ const CheckboxInput = (props) => {
 					)}
 				</Field>
 			</div>
-			<div className="offset-2 col-md-10 mb-3">&nbsp;</div>
+			<div className="offset-3 col-md-9 mb-3">&nbsp;</div>
 		</>
 	);
 };

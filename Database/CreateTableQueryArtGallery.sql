@@ -180,7 +180,7 @@ CREATE TABLE [dbo].[aunction]
  [created_at]        datetime NOT NULL ,
  [finished_at]       datetime NULL ,
  [is_deleted]		 int NULL DEFAULT 0,
- [artwork_id]        int NULL ,
+ [artwork_id]        int NULL UNIQUE,
  [admin_id]          int NULL ,
  [buyer_id]          int NULL ,
 

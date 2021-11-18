@@ -139,6 +139,9 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("aunction");
 
+                entity.HasIndex(e => e.ArtworkId, "UQ__aunction__C13510DAD27090E7")
+                    .IsUnique();
+
                 entity.HasIndex(e => e.ArtworkId, "fkIdx_102");
 
                 entity.HasIndex(e => e.BuyerId, "fkIdx_161");
@@ -179,8 +182,8 @@ namespace ReactAPI.Modals
                     .HasConstraintName("FK_165");
 
                 entity.HasOne(d => d.Artwork)
-                    .WithMany(p => p.Aunctions)
-                    .HasForeignKey(d => d.ArtworkId)
+                    .WithOne(p => p.Aunction)
+                    .HasForeignKey<Aunction>(d => d.ArtworkId)
                     .HasConstraintName("FK_98");
 
                 entity.HasOne(d => d.Buyer)
@@ -355,7 +358,7 @@ namespace ReactAPI.Modals
             {
                 entity.ToTable("user");
 
-                entity.HasIndex(e => e.Email, "UQ__user__AB6E61644320B532")
+                entity.HasIndex(e => e.Email, "UQ__user__AB6E616464BEA66C")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnName("id");

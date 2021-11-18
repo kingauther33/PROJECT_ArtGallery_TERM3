@@ -10,7 +10,6 @@ namespace ReactAPI.Modals
         public Artwork()
         {
             ArtworkComments = new HashSet<ArtworkComment>();
-            Aunctions = new HashSet<Aunction>();
         }
 
         public int Id { get; set; }
@@ -30,7 +29,7 @@ namespace ReactAPI.Modals
 
         public virtual Category Category { get; set; }
         public virtual User User { get; set; }
+        public virtual Aunction Aunction { get; set; }
         public virtual ICollection<ArtworkComment> ArtworkComments { get; set; }
-        public virtual ICollection<Aunction> Aunctions { get; set; }
     }
 }

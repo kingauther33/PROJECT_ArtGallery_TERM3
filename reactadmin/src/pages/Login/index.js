@@ -189,8 +189,6 @@ const Login = () => {
 											></i>
 										</Link>
 									</div>
-
-									<pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
 								</Form>
 							)}
 						</Formik>

@@ -12,21 +12,29 @@ import { Redirect } from 'react-router-dom';
 import CheckboxInput from 'components/Forms/CheckboxInput';
 import FormText from 'components/Forms/FormText';
 import DateInput from 'components/Forms/DateInput';
+import { Typography } from '@mui/material';
+import { format } from 'date-fns';
+import ImagePreview from 'components/Forms/ImagePreview';
 
 const ArtworkSaleRequestDetail = () => {
-	const [initialValues, setInitialValues] = useState({
-		name: '',
-		author: '',
-		description: '',
-		location: '',
-		startingPrize: 0,
-		status: 0,
-		fixedPrize: 0,
-		year: 0,
-		checkDecline: true,
-		reason: '',
-		endDate: '',
-	});
+	const defaultValues = useMemo(
+		() => ({
+			name: '',
+			author: '',
+			description: '',
+			location: '',
+			startingPrice: 0,
+			status: 0,
+			fixedPrice: 0,
+			year: 0,
+			checkDecline: true,
+			unapproveReason: '',
+			endDate: new Date(),
+		}),
+		[]
+	);
+
+	const [initialValues, setInitialValues] = useState(defaultValues);
 	/* const [categoryOptions, setCategoryOptions] = useState([
 		{ value: '', label: '' },
 	]); */
@@ -40,33 +48,53 @@ const ArtworkSaleRequestDetail = () => {
 	const { id: artworkId } = useParams();
 
 	const validationSchema = Yup.object().shape({
-		name: Yup.string()
+		// name: Yup.string()
+		// 	.min(2, 'Too short!')
+		// 	.max(50, 'Too long!')
+		// 	.required('Required!'),
+		// author: Yup.string()
+		// 	.min(2, 'Too short!')
+		// 	.max(50, 'Too long!')
+		// 	.required('Required!'),
+		// description: Yup.string()
+		// 	.min(2, 'Too short!')
+		// 	.max(300, 'Too long!')
+		// 	.required('Required!'),
+		// location: Yup.string()
+		// 	.min(2, 'Too short!')
+		// 	.max(50, 'Too long!')
+		// 	.required('Required!'),
+		// year: Yup.number().required('Required!'),
+		// categoryName: Yup.string()
+		// 	.min(2, 'Too short!')
+		// 	.max(50, 'Too long!')
+		// 	.required('Required!'),
+		startingPrice: Yup.number().min(1).required('Required!'),
+		fixedPrice: Yup.number()
+			.required('Required!')
+			.test({
+				name: 'min',
+				message: 'Fixed Price must be more than Starting Price',
+				test: function (value) {
+					return value > parseFloat(this.parent.startingPrice);
+				},
+			}),
+		checkDecline: Yup.bool(),
+		unapproveReason: Yup.string()
 			.min(2, 'Too short!')
 			.max(50, 'Too long!')
-			.required('Required!'),
-		author: Yup.string()
-			.min(2, 'Too short!')
-			.max(50, 'Too long!')
-			.required('Required!'),
-		description: Yup.string()
-			.min(2, 'Too short!')
-			.max(300, 'Too long!')
-			.required('Required!'),
-		location: Yup.string()
-			.min(2, 'Too short!')
-			.max(50, 'Too long!')
-			.required('Required!'),
-		currentPrice: Yup.number().required('Required!'),
-		fixedPrize: Yup.number().required('Required!'),
-		year: Yup.number().required('Required!'),
-		categoryName: Yup.string()
-			.min(2, 'Too short!')
-			.max(50, 'Too long!')
-			.required('Required!'),
-		reason: Yup.string()
-			.min(2, 'Too short!')
-			.max(50, 'Too long!')
-			.required('Required!'),
+			.nullable(true)
+			.test({
+				name: 'check',
+				message: 'Cannot be null if unchecked',
+				test: function (value) {
+					if (this.parent.checkDecline) {
+						return true;
+					}
+
+					return value !== null;
+				},
+			}),
 		endDate: Yup.date()
 			.min(
 				new Date(),
@@ -82,49 +110,102 @@ const ArtworkSaleRequestDetail = () => {
 			.get(API.get_artwork_by_id.url + artworkId, HeaderOptions)
 			.then((res) => {
 				let datas = res.data;
-				datas.checkDecline = true;
-				datas.startingPrize = 0;
-				datas.endDate = new Date();
-				datas.fixedPrize = 0;
-				setInitialValues(datas);
+				setInitialValues({
+					...defaultValues,
+					...datas,
+				});
 			})
 			.catch((err) => console.log(err))
 			.finally(() => {
 				setOpenBackdrop(false);
 			});
-	}, [artworkId]);
-
-	/* const getCategories = async () => {
-		await axios
-			.get(API.getCategories.url)
-			.then((res) => {
-				const options = res.data.map((category) => {
-					let categoryId = category.id;
-					let categoryName = category.name;
-
-					return {
-						value: categoryId,
-						label: categoryName,
-					};
-				});
-
-				console.log(options);
-				setCategoryOptions(options);
-			})
-			.catch((err) => console.log(err));
-	}; */
+	}, [artworkId, defaultValues]);
 
 	useEffect(() => {
 		fetchArtworkById();
-		// getCategories();
 
 		return () => {};
 	}, [fetchArtworkById]);
 
-	const handleSubmit = (values) => {};
+	const handleSubmit = async (values) => {
+		debugger;
+		console.log(values);
+		setOpenBackdrop(true);
+		if (values.checkDecline) {
+			values.status = 2;
+		} else {
+			values.status = 4;
+		}
+		const artworkToEdit = {
+			id: values.id,
+			description: values.description,
+			unapproveReason: values.unapproveReason,
+			status: values.status,
+			currentPrice: values.startingPrice,
+		};
+
+		const JSONArtworkToEdit = JSON.stringify(artworkToEdit);
+
+		const aunctionToCreate = {
+			startingPrice: values.startingPrice,
+			highestMoneyBid: 0,
+			fixedPrice: values.fixedPrice,
+			createdAt: new Date(),
+			finishedAt: values.endDate,
+			artworkId: values.id,
+			adminId: localStorage.getItem('id'),
+		};
+
+		const JSONAunctionToCreate = JSON.stringify(aunctionToCreate);
+
+		const requestEditArtwork = axios.put(
+			API.edit_artwork.url + initialValues.id,
+			JSONArtworkToEdit,
+			HeaderOptions
+		);
+
+		const requestCreateAunction = axios.post(
+			API.create_aunction.url,
+			JSONAunctionToCreate,
+			HeaderOptions
+		);
+
+		debugger;
+
+		await axios
+			.all([requestEditArtwork, requestCreateAunction])
+			.then(
+				axios.spread((...responses) => {
+					debugger;
+					const responseEditArtwork = responses[0];
+					const responseCreateAunction = responses[1];
+					console.log(responseEditArtwork);
+					console.log(responseCreateAunction);
+					setNotification({
+						message: 'Successfully created new aunction!',
+						isOpen: true,
+						isSuccess: true,
+					});
+				})
+			)
+			.catch((err) => {
+				console.error(err);
+				setNotification({
+					message: 'Failed to create new aunction!',
+					isOpen: true,
+					isSuccess: false,
+				});
+			})
+			.finally(() => {
+				setOpenBackdrop(false);
+			});
+	};
 
 	return (
 		<>
+			{notification.message === 'Successfully created new aunction!' && (
+				<Redirect to="/artwork-sale-request" />
+			)}
 			<div className="panel-header panel-header-sm"></div>
 			<div className="content">
 				<div className="row">
@@ -154,6 +235,26 @@ const ArtworkSaleRequestDetail = () => {
 								</p>
 							</div>
 							<div className="card-body">
+								{initialValues.status === 4 && (
+									<>
+										<div className="col-3">
+											<h6
+												className="card-title text-danger"
+												style={{
+													margin: '10px 0',
+													letterSpacing: '-0.08em',
+												}}
+											>
+												Reason to unapprove
+											</h6>
+										</div>
+										<div className="col-9">
+											<Typography color="red">
+												{initialValues.unapproveReason}
+											</Typography>
+										</div>
+									</>
+								)}
 								<Formik
 									initialValues={initialValues}
 									onSubmit={handleSubmit}
@@ -182,6 +283,11 @@ const ArtworkSaleRequestDetail = () => {
 													value={values.author}
 												/>
 
+												<ImagePreview
+													imageURL={values.images}
+													name={values.name}
+												/>
+
 												<FormText
 													fullWidth={true}
 													title="Location"
@@ -190,22 +296,14 @@ const ArtworkSaleRequestDetail = () => {
 
 												<FormText
 													fullWidth={true}
-													title="Location"
+													title="Year"
 													value={values.year}
 												/>
-
-												{/* <SelectInput
-															options={categoryOptions}
-															title="Category"
-															name="categoryId"
-															errors={errors.category}
-															touched={touched.category}
-														/> */}
 
 												<FormText
 													fullWidth={true}
 													title="Category"
-													value={values.category.name}
+													value={values.category ? values.category.name : ''}
 												/>
 
 												{initialValues.status === 1 ? (
@@ -221,24 +319,24 @@ const ArtworkSaleRequestDetail = () => {
 
 														<TextInput
 															fullWidth={false}
-															title="Starting Bid Prize"
-															name="startingPrize"
+															title="Starting Bid Price"
+															name="startingPrice"
 															type="number"
-															errors={errors.startingPrize}
-															touched={touched.startingPrize}
+															errors={errors.startingPrice}
+															touched={touched.startingPrice}
 														/>
 
 														<TextInput
 															fullWidth={false}
-															title="Fixed Prize"
-															name="fixedPrize"
+															title="Fixed Price"
+															name="fixedPrice"
 															type="number"
-															errors={errors.fixedPrize}
-															touched={touched.fixedPrize}
+															errors={errors.fixedPrice}
+															touched={touched.fixedPrice}
 														/>
 
 														<DateInput
-															title="Finish Time"
+															title="Finish Date"
 															name="endDate"
 															values={values.endDate}
 															errors={errors.endDate}
@@ -254,12 +352,12 @@ const ArtworkSaleRequestDetail = () => {
 
 														{!values.checkDecline && (
 															<TextInput
-																fullWidth={false}
+																fullWidth={true}
 																title="Reason not for sale"
-																name="reason"
+																name="unapproveReason"
 																type="text"
-																errors={errors.reason}
-																touched={touched.reason}
+																errors={errors.unapproveReason}
+																touched={touched.unapproveReason}
 															/>
 														)}
 													</>
@@ -273,21 +371,39 @@ const ArtworkSaleRequestDetail = () => {
 
 														<FormText
 															fullWidth={true}
-															title="Starting Prize"
-															value={values.startingPrize}
+															title="Starting Price"
+															value={
+																values.aunction
+																	? values.aunction.startingPrice
+																	: 0
+															}
+														/>
+
+														<FormText
+															fullWidth={true}
+															title="Finish Date"
+															value={
+																values.aunction
+																	? format(
+																			new Date(values.aunction.finishedAt),
+																			'dd/MM/yyyy'
+																	  )
+																	: 0
+															}
 														/>
 													</>
 												)}
 
-												<button
-													type="submit"
-													className="btn btn-primary ml-3"
-													style={{ width: '15%' }}
-												>
-													Submit
-												</button>
+												{initialValues.status === 1 && (
+													<button
+														type="submit"
+														className="btn btn-primary ml-3"
+														style={{ width: '15%' }}
+													>
+														Submit
+													</button>
+												)}
 											</div>
-											<pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
 										</Form>
 									)}
 								</Formik>

@@ -183,7 +183,6 @@ const AddUser = () => {
 													Submit
 												</button>
 											</div>
-											<pre>{JSON.stringify({ values, errors }, null, 4)}</pre>
 										</Form>
 									)}
 								</Formik>

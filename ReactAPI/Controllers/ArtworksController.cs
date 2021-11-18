@@ -36,6 +36,7 @@ namespace ReactAPI.Controllers
         public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworkSaleRequests()
         {
             return await _context.Artworks
+                .Include(a => a.Aunction)
                 .Where(a => a.IsDeleted == 0 && a.Status > 0)
                 .OrderBy(a => a.Status)
                 .ToListAsync();
@@ -47,6 +48,7 @@ namespace ReactAPI.Controllers
         {
             var artwork = await _context.Artworks
                 .Include(a => a.Category)
+                .Include(a => a.Aunction)
                 .Where(a => a.IsDeleted == 0 && a.Id == id)
                 .FirstOrDefaultAsync();
 
@@ -89,6 +91,39 @@ namespace ReactAPI.Controllers
 
             try
             {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ArtworkExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        [Authorize]
+        [HttpPut("EditArtwork/{id}")]
+        public async Task<IActionResult> EditArtwork(int id, Artwork artwork)
+        {
+            try
+            {
+                var artworkToEdit = await _context.Artworks.FirstOrDefaultAsync(a => a.Id == id && a.IsDeleted == 0);
+
+                artworkToEdit.Description = artwork.Description;
+                artworkToEdit.UnapproveReason = artwork.UnapproveReason;
+                artworkToEdit.Status = artwork.Status;
+                artworkToEdit.CurrentPrice = artwork.CurrentPrice;
+
+                _context.Entry(artworkToEdit).State = EntityState.Modified;
+
+
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

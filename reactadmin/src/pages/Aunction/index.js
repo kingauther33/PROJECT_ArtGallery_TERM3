@@ -149,14 +149,17 @@ const Aunction = () => {
 				let datas = res.data;
 				datas.map((data) => {
 					switch (data.artwork.status) {
-						case 0:
+						case 1:
 							data.artwork.status = 'Standby';
 							break;
-						case 1:
+						case 2:
 							data.artwork.status = 'Selling';
 							break;
-						case 2:
+						case 3:
 							data.artwork.status = 'Sold';
+							break;
+						case 4:
+							data.artwork.status = 'Declined';
 							break;
 						default:
 							data.artwork.status = 'Standby';

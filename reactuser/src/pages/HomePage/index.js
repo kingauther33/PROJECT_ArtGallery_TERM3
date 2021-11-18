@@ -18,7 +18,7 @@ const HomePage = () => {
 				console.log(res.data);
 				setListData(res.data);
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => console.error(error));
 	};
 
 	useEffect(() => {
@@ -122,6 +122,9 @@ const HomePage = () => {
 					</div>
 				</div>
 				<div className="section-pb selection">
+					<div className="center">
+						<h3 className="discover__title h3">Bidding</h3>
+					</div>
 					<div className="selection__center center">
 						<div className="selection__row">
 							<div className="selection__col">
@@ -204,73 +207,6 @@ const HomePage = () => {
 									</div>
 								</Link>
 							</div>
-						</div>
-						<div className="selection__sidebar">
-							<div className="selection__info">
-								Latest upload from creators{' '}
-								<span role="img" aria-label="fire">
-									🔥
-								</span>
-							</div>
-							<div className="selection__list">
-								<div className="selection__user">
-									<div className="selection__avatar">
-										<img src={images.Homepage.avatar1} alt="Avatar" />
-										<div className="selection__number">6</div>
-									</div>
-									<div className="selection__description">
-										<div className="selection__name">Payton Harris</div>
-										<div className="selection__price">
-											<span>2.456</span> ETH
-										</div>
-									</div>
-								</div>
-								<div className="selection__user">
-									<div className="selection__avatar">
-										<img src={images.Homepage.avatar1} alt="Avatar" />
-										<div className="selection__number">2</div>
-									</div>
-									<div className="selection__description">
-										<div className="selection__name">Anita Bins</div>
-										<div className="selection__price">
-											<span>2.456</span> ETH
-										</div>
-									</div>
-								</div>
-								<div className="selection__user">
-									<div className="selection__avatar">
-										<img src={images.Homepage.avatar1} alt="Avatar" />
-										<div className="selection__number">3</div>
-									</div>
-									<div className="selection__description">
-										<div className="selection__name">Joana Wuckert</div>
-										<div className="selection__price">
-											<span>2.456</span> ETH
-										</div>
-									</div>
-								</div>
-								<div className="selection__user">
-									<div className="selection__avatar">
-										<img src={images.Homepage.avatar1} alt="Avatar" />
-										<div className="selection__number">4</div>
-									</div>
-									<div className="selection__description">
-										<div className="selection__name">Lorena Ledner</div>
-										<div className="selection__price">
-											<span>2.456</span> ETH
-										</div>
-									</div>
-								</div>
-							</div>
-							<Link
-								className="button-stroke button-small selection__button"
-								to="search"
-							>
-								<span>Discover more</span>
-								<svg className="icon icon-arrow-next">
-									<use xlinkHref="#icon-arrow-next"></use>
-								</svg>
-							</Link>
 						</div>
 					</div>
 				</div>
@@ -630,7 +566,9 @@ const HomePage = () => {
 							</div>
 						</div>
 						<div className="discover__btns">
-							<button className="button-stroke button-small">Load more</button>
+							<Link to="/artwork" className="button-stroke button-small">
+								Load more
+							</Link>
 						</div>
 					</div>
 				</div>

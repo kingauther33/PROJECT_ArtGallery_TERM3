@@ -8,7 +8,7 @@ const SelectInput = (props) => {
 
 	return (
 		<>
-			<div className="col-md-2">
+			<div className="col-md-3">
 				<h6
 					className="card-title"
 					style={{
@@ -19,7 +19,7 @@ const SelectInput = (props) => {
 					{title}
 				</h6>
 			</div>
-			<div className="col-md-10">
+			<div className="col-md-9">
 				<Field name={name}>
 					{({ field, form }) => (
 						<Select
@@ -39,13 +39,13 @@ const SelectInput = (props) => {
 				</Field>
 			</div>
 			{errors && touched ? (
-				<div className="offset-2 col-md-10">
+				<div className="offset-3 col-md-9">
 					<Typography variant="inherit" color="error">
 						{errors}
 					</Typography>
 				</div>
 			) : (
-				<div className="offset-2 col-md-10">&nbsp;</div>
+				<div className="offset-3 col-md-9">&nbsp;</div>
 			)}
 		</>
 	);

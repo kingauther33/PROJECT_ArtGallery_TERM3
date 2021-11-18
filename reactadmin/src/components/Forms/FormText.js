@@ -7,7 +7,7 @@ const FormText = (props) => {
 
 	return (
 		<>
-			<div className="col-md-2">
+			<div className="col-md-3">
 				<h6
 					className="card-title"
 					style={{ margin: '10px 0', letterSpacing: '-0.08em' }}

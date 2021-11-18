@@ -5626,17 +5626,17 @@ Created using IcoMoon - icomoon.io
 } */
 
 .m_bg-gray {
-	background-color: lightgrey;
+	background-color: lightgrey !important;
 }
 
 .m_bg-danger {
-	background-color: indianred;
+	background-color: indianred !important;
 }
 
 .m_bg-green {
-	background-color: lightgreen;
+	background-color: lightgreen !important;
 }
 
 .m_bg-yellow {
-	background-color: lightyellow;
+	background-color: orange !important;
 }

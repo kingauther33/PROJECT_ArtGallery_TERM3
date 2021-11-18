@@ -90,6 +90,8 @@ namespace ReactAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Aunction>> PostAunction(Aunction aunction)
         {
+            aunction.CreatedAt = DateTime.Now;
+
             _context.Aunctions.Add(aunction);
             await _context.SaveChangesAsync();
 

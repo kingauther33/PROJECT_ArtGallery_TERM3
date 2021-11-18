@@ -86,10 +86,22 @@ export const API = {
 		method: 'GET',
 	},
 
+	edit_artwork: {
+		url: BASE_URL + 'Artworks/EditArtwork/', // + id
+		params: {},
+		method: 'PUT',
+	},
+
 	getCategories: {
 		url: BASE_URL + 'Categories',
 		params: {},
 		method: 'GET',
+	},
+
+	create_aunction: {
+		url: BASE_URL + 'Aunctions',
+		params: {},
+		method: 'POST',
 	},
 };
 
