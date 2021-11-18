@@ -13,7 +13,9 @@ namespace ReactAPI.Modals
         }
 
         public int Id { get; set; }
-        public double HighestMoneyBid { get; set; }
+        public double? StartingPrice { get; set; }
+        public double? HighestMoneyBid { get; set; }
+        public double? FixedPrice { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? FinishedAt { get; set; }
         public int? IsDeleted { get; set; }

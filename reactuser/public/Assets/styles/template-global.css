@@ -2280,7 +2280,8 @@ body.dark .selection__row {
     overflow: hidden; }
 .selection__preview img {
     width: 100%;
-
+    height: 200px;
+    object-fit: cover;
     transition: -webkit-transform 1s;
     transition: transform 1s;
     transition: transform 1s, -webkit-transform 1s; }

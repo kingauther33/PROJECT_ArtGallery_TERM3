@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,11 +31,22 @@ namespace ReactAPI.Controllers
                 .ToListAsync();
         }
 
+        [Route("GetArtworkSaleRequests")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworkSaleRequests()
+        {
+            return await _context.Artworks
+                .Where(a => a.IsDeleted == 0 && a.Status > 0)
+                .OrderBy(a => a.Status)
+                .ToListAsync();
+        }
+
         // GET: api/Artworks/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Artwork>> GetArtwork(int id)
         {
             var artwork = await _context.Artworks
+                .Include(a => a.Category)
                 .Where(a => a.IsDeleted == 0 && a.Id == id)
                 .FirstOrDefaultAsync();
 
@@ -45,8 +58,20 @@ namespace ReactAPI.Controllers
             return artwork;
         }
 
+        [Authorize]
+        [HttpGet("GetArtworkByPerson/{personId}")]
+        public async Task<ActionResult<List<Artwork>>> GetArtworkByPerson(int personId)
+        {
+            var artworkByPerson = await _context.Artworks
+                .Include(a => a.User)
+                .Where(a => a.IsDeleted == 0 && a.User.Id == personId).ToListAsync();
+
+            return artworkByPerson;
+        }
+
         // PUT: api/Artworks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArtwork(int id, Artwork artwork)
         {
@@ -83,9 +108,20 @@ namespace ReactAPI.Controllers
 
         // POST: api/Artworks
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Artwork>> PostArtwork(Artwork artwork)
         {
+            if (User.FindFirst("Role")?.Value != "Artist")
+            {
+                return Unauthorized("You are not ARTIST!!");
+            }
+
+            string userId = User.FindFirst("Id")?.Value;
+
+            artwork.UserId = Int32.Parse(userId);
+            artwork.CreatedAt = DateTime.Now;
+
             _context.Artworks.Add(artwork);
             await _context.SaveChangesAsync();
 

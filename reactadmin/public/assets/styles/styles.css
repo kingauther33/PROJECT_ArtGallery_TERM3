@@ -5624,3 +5624,19 @@ Created using IcoMoon - icomoon.io
 /* .input-group-append {
 	transform: translateX(1px);
 } */
+
+.m_bg-gray {
+	background-color: lightgrey;
+}
+
+.m_bg-danger {
+	background-color: indianred;
+}
+
+.m_bg-green {
+	background-color: lightgreen;
+}
+
+.m_bg-yellow {
+	background-color: lightyellow;
+}

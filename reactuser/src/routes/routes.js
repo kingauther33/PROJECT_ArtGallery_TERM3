@@ -13,6 +13,7 @@ import ContactUs from 'pages/ContactUs';
 import Deposit from 'pages/Deposit/index';
 import NoLayout from 'layout/NoLayout';
 import Login from 'pages/Login';
+import Register from "../pages/Login/Register";
 
 // USER
 const HomePageRoute = {
@@ -86,6 +87,11 @@ const LoginRoute = {
 	layout: NoLayout,
 	page: Login,
 };
+const RegisterRoute = {
+	path: '/register',
+	layout: NoLayout,
+	page: Register,
+};
 
 export const routes = [
 	// USER
@@ -101,4 +107,5 @@ export const routes = [
 	UploadVariantsRoute,
 	DepositRoute,
 	LoginRoute,
+	RegisterRoute,
 ];

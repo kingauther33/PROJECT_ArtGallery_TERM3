@@ -29,6 +29,7 @@ namespace ReactAPI.Modals
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Role { get; set; }
+        public string Avatar { get; set; }
         public double? Deposit { get; set; }
         public DateTime CreatedAt { get; set; }
         public int? IsDeleted { get; set; }

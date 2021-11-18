@@ -7,7 +7,7 @@ const CheckboxInput = (props) => {
 
 	return (
 		<>
-			<div className="col-md-2">
+			<div className="col-md-6">
 				<h6
 					className="card-title"
 					style={{ margin: '10px 0', letterSpacing: '-0.08em' }}
@@ -15,29 +15,24 @@ const CheckboxInput = (props) => {
 					{title}
 				</h6>
 			</div>
-			<div className="col-md-9">
+			<div className="col-md-6">
 				<Field name={name}>
-					{({ field }) => (
+					{({ field, form }) => (
 						<Checkbox
 							checked={checked}
-							onChange={field.handleChange}
-							fullWidth={fullWidth}
+							onChange={(e) => {
+								form.setFieldValue(name, e.target.checked);
+							}}
+							// fullWidth={fullWidth}
 							// type={type}
 							// placeholder={title}
 							// variant="standard"
+							inputProps={{ 'aria-label': 'primary checkbox' }}
 						/>
 					)}
 				</Field>
 			</div>
-			{errors && touched ? (
-				<div className="offset-2 col-md-10 mb-3">
-					<Typography variant="inherit" color="error">
-						{errors}
-					</Typography>
-				</div>
-			) : (
-				<div className="offset-2 col-md-10 mb-3">&nbsp;</div>
-			)}
+			<div className="offset-2 col-md-10 mb-3">&nbsp;</div>
 		</>
 	);
 };

@@ -183,7 +183,7 @@ const Login = () => {
 									</div>
 
 									<div className="text-center pt-5 mt-5">
-										<Link className={styles['txt2']} to="#">
+										<Link className={styles['txt2']} to="Register">
 											Create your Account
 											<i
 												className="fa fa-arrow-right ms-2"

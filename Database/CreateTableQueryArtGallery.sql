@@ -1,4 +1,4 @@
-IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'T2004E_React_ArtGallery')
+﻿IF NOT EXISTS(SELECT * FROM sys.databases WHERE name = 'T2004E_React_ArtGallery')
 BEGIN
 CREATE DATABASE T2004E_React_ArtGallery
 
@@ -20,6 +20,7 @@ CREATE TABLE [dbo].[user]
  [password]         nvarchar(max) NOT NULL ,
  [confirm_password] nvarchar(max) NOT NULL ,
  [role]             nvarchar(max) NOT NULL ,
+ [avatar]			nvarchar(max) NULL DEFAULT 'https://firebasestorage.googleapis.com/v0/b/fir-artgallery-storage.appspot.com/o/files%2FdefaultAva.png?alt=media&token=80389b41-4d3f-45ec-b259-2cc6276ca53b',
  [deposit]          float NULL ,
  [created_at]       datetime NOT NULL ,
  [is_deleted]		int NULL DEFAULT 0,
@@ -96,19 +97,20 @@ GO
 IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='artwork')
 CREATE TABLE [dbo].[artwork]
 (
- [id]          int IDENTITY NOT NULL ,
- [name]        nvarchar(max) NOT NULL ,
- [description] nvarchar(max) NULL ,
- [images]      nvarchar(max) NULL ,
- --[price]       float NULL ,
- [year]        bigint NULL ,
- [author]	   nvarchar(max) NOT NULL,
- [status]      int NULL DEFAULT 0 ,
- [location]    nvarchar(max) NULL ,
- [created_at]  datetime NOT NULL ,
- [is_deleted]	int NULL DEFAULT 0,
- [category_id] int NULL ,
- [user_id]     int NULL ,
+ [id]				int IDENTITY NOT NULL ,
+ [name]				nvarchar(max) NOT NULL ,
+ [description]		nvarchar(max) NULL ,
+ [current_price]	 float NULL,
+ [images]			nvarchar(max) NULL ,
+ [year]				bigint NULL ,
+ [author]			nvarchar(max) NOT NULL,
+ [status]			int NULL DEFAULT 0 ,  --0: Chưa request, 1: Requesting, 2: SELLING, 3: SOLD, 4: FAILED REQUEST(tác phẩm đần quá abcxyz)
+ [unapprove_reason]	nvarchar(max) NULL,
+ [location]			nvarchar(max) NULL ,
+ [created_at]		datetime NOT NULL ,
+ [is_deleted]		int NULL DEFAULT 0,
+ [category_id]		int NULL ,
+ [user_id]			int NULL ,
 
 
  CONSTRAINT [PK_149] PRIMARY KEY CLUSTERED ([id] ASC),
@@ -172,7 +174,9 @@ IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s
 CREATE TABLE [dbo].[aunction]
 (
  [id]                int IDENTITY NOT NULL ,
- [highest_money_bid] float NOT NULL ,
+ [starting_price]	 float NULL,
+ [highest_money_bid] float NULL ,
+ [fixed_price]		 float NULL DEFAULT 9999999,
  [created_at]        datetime NOT NULL ,
  [finished_at]       datetime NULL ,
  [is_deleted]		 int NULL DEFAULT 0,
