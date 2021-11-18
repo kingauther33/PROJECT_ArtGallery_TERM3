@@ -5,7 +5,7 @@ import AboutUs from 'pages/AboutUs';
 import search from 'pages/Search/search';
 import Profile from 'pages/Profile';
 import ProfileEdit from 'pages/Profile/Profile-edit';
-import item from 'pages/Item/Item';
+import Item from 'pages/Item/Item';
 import Activity from 'pages/Activity/Activity';
 import UploadDetails from 'pages/Upload/Upload-details';
 import UploadVariants from 'pages/Upload/Upload-variants';
@@ -13,7 +13,7 @@ import ContactUs from 'pages/ContactUs';
 import Deposit from 'pages/Deposit/index';
 import NoLayout from 'layout/NoLayout';
 import Login from 'pages/Login';
-import Register from "../pages/Login/Register";
+import Register from '../pages/Login/Register';
 
 // USER
 const HomePageRoute = {
@@ -53,9 +53,9 @@ const ProfileEditRoute = {
 };
 
 const ItemRoute = {
-	path: '/item', // URL trên browser
+	path: '/item/:id', // URL trên browser
 	layout: UserLayout, // LAYOUT ứng với từng ROUTE
-	page: item, // PAGE ứng với ROUTE đó
+	page: Item, // PAGE ứng với ROUTE đó
 };
 
 const ActivityRoute = {

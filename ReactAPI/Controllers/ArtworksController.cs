@@ -27,7 +27,17 @@ namespace ReactAPI.Controllers
         public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworks()
         {
             return await _context.Artworks
+                .Include(a => a.Aunction)
                 .Where(a => a.IsDeleted == 0)
+                .ToListAsync();
+        }
+
+        [HttpGet("GetArtworksBidding")]
+        public async Task<ActionResult<IEnumerable<Artwork>>> GetArtworksBidding()
+        {
+            return await _context.Artworks
+                .Include(a => a.Aunction)
+                .Where(a => a.IsDeleted == 0 && a.Status == 2)
                 .ToListAsync();
         }
 
@@ -58,6 +68,37 @@ namespace ReactAPI.Controllers
             }
 
             return artwork;
+        }
+
+        // GET: api/Artworks/5
+        [HttpGet("GetHighestBidLog/{artworkId}")]
+        public async Task<ActionResult<AunctionLog>> GetHighestBidArtwork(int artworkId)
+        {
+            var aunctionLogHighestBid = await _context.AunctionLogs
+                .Include(a => a.Aunction)
+                .Include(a => a.Buyer)
+                .Where(a => a.IsDeleted == 0 && a.Aunction.ArtworkId == artworkId)
+                .OrderByDescending(a => a.MoneyBid)
+                .FirstOrDefaultAsync();
+
+            //AunctionLog log = new() { };
+            //log.MoneyBid = aunctionLogHighestBid[0].MoneyBid;
+
+            //foreach (var aunctionLog in aunctionLogHighestBid)
+            //{
+
+            //    if (aunctionLog.MoneyBid > log.MoneyBid)
+            //    {
+            //        log = aunctionLog;
+            //    }
+            //}
+
+            if (aunctionLogHighestBid == null)
+            {
+                return NotFound();
+            }
+
+            return aunctionLogHighestBid;
         }
 
         [Authorize]

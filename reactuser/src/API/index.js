@@ -7,6 +7,24 @@ export const API = {
 		method: 'GET',
 	},
 
+	getArtworkById: {
+		url: BASE_URL + 'Artworks/',
+		params: {},
+		method: 'GET',
+	},
+
+	getHighestBidLog: {
+		url: BASE_URL + 'Artworks/GetHighestBidLog/',
+		params: {},
+		method: 'GET',
+	},
+
+	getArtworksBidding: {
+		url: BASE_URL + 'Artworks/GetArtworksBidding',
+		params: {},
+		method: 'GET',
+	},
+
 	getArtworkComments: {
 		url: BASE_URL + 'ArtworkComments',
 		params: {},

@@ -1,15 +1,33 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { API, HeaderOptions } from 'API';
 import images from 'assets';
+import LoginContext from 'stores/login-context';
 
-const search = () => {
+const Search = () => {
+	const [allArtworks, setAllArtworks] = useState([]);
+
+	const fetchAllArtworks = async () => {
+		await axios
+			.get(API.getArtworks.url, HeaderOptions)
+			.then((res) => {
+				setAllArtworks(res.data);
+			})
+			.catch((error) => console.error(error));
+	};
+
+	useEffect(() => {
+		fetchAllArtworks();
+	}, []);
+
 	return (
 		<>
 			<div class="outer">
 				<div class="outer__inner">
 					<div class="section-pt80 catalog">
 						<div class="catalog__center center">
-
-							<div class="catalog__sorting">
+							{/* <div class="catalog__sorting">
 								<div class="catalog__nav">
 									<a class="catalog__link active" href="/">
 										All items
@@ -30,7 +48,7 @@ const search = () => {
 										Video
 									</a>
 								</div>
-							</div>
+							</div> */}
 							<div class="catalog__row">
 								<div class="catalog__wrapper">
 									<div class="catalog__list">
@@ -107,6 +125,7 @@ const search = () => {
 												</div>
 											</a>
 										</div>
+
 										<div class="card">
 											<div class="card__preview">
 												<img
@@ -1134,4 +1153,4 @@ const search = () => {
 	);
 };
 
-export default search;
+export default Search;
