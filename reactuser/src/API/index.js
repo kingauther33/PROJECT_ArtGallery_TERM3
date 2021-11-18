@@ -94,6 +94,18 @@ export const API = {
 		},
 		method: 'POST',
 	},
+	post_Register: {
+		url: BASE_URL + 'Users/Register',
+		params: JSON.stringify({
+			firstName: '',
+			lastName: '',
+			email: '',
+			password: '',
+			confirmPassword: '',
+			createdAt: Date.now(),
+		}),
+		method: 'POST',
+	},
 };
 
 export const HeaderOptions = {
