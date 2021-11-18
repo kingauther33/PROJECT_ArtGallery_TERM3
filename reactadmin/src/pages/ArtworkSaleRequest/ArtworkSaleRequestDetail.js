@@ -11,6 +11,7 @@ import SnackbarPopup from 'components/SnackbarPopup';
 import { Redirect } from 'react-router-dom';
 import CheckboxInput from 'components/Forms/CheckboxInput';
 import FormText from 'components/Forms/FormText';
+import DateInput from 'components/Forms/DateInput';
 
 const ArtworkSaleRequestDetail = () => {
 	const [initialValues, setInitialValues] = useState({
@@ -20,13 +21,15 @@ const ArtworkSaleRequestDetail = () => {
 		location: '',
 		startingPrize: 0,
 		status: 0,
+		fixedPrize: 0,
 		year: 0,
 		checkDecline: true,
 		reason: '',
+		endDate: '',
 	});
-	const [categoryOptions, setCategoryOptions] = useState([
+	/* const [categoryOptions, setCategoryOptions] = useState([
 		{ value: '', label: '' },
-	]);
+	]); */
 
 	const [openBackdrop, setOpenBackdrop] = useState(false);
 	const [notification, setNotification] = useState({
@@ -54,11 +57,21 @@ const ArtworkSaleRequestDetail = () => {
 			.max(50, 'Too long!')
 			.required('Required!'),
 		currentPrice: Yup.number().required('Required!'),
+		fixedPrize: Yup.number().required('Required!'),
 		year: Yup.number().required('Required!'),
-		categoryId: Yup.number().required('Required!'),
+		categoryName: Yup.string()
+			.min(2, 'Too short!')
+			.max(50, 'Too long!')
+			.required('Required!'),
 		reason: Yup.string()
 			.min(2, 'Too short!')
 			.max(50, 'Too long!')
+			.required('Required!'),
+		endDate: Yup.date()
+			.min(
+				new Date(),
+				`End Date must be after ${new Date().toLocaleDateString()}`
+			)
 			.required('Required!'),
 	});
 
@@ -71,6 +84,8 @@ const ArtworkSaleRequestDetail = () => {
 				let datas = res.data;
 				datas.checkDecline = true;
 				datas.startingPrize = 0;
+				datas.endDate = new Date();
+				datas.fixedPrize = 0;
 				setInitialValues(datas);
 			})
 			.catch((err) => console.log(err))
@@ -79,7 +94,7 @@ const ArtworkSaleRequestDetail = () => {
 			});
 	}, [artworkId]);
 
-	const getCategories = async () => {
+	/* const getCategories = async () => {
 		await axios
 			.get(API.getCategories.url)
 			.then((res) => {
@@ -97,11 +112,11 @@ const ArtworkSaleRequestDetail = () => {
 				setCategoryOptions(options);
 			})
 			.catch((err) => console.log(err));
-	};
+	}; */
 
 	useEffect(() => {
 		fetchArtworkById();
-		getCategories();
+		// getCategories();
 
 		return () => {};
 	}, [fetchArtworkById]);
@@ -211,6 +226,23 @@ const ArtworkSaleRequestDetail = () => {
 															type="number"
 															errors={errors.startingPrize}
 															touched={touched.startingPrize}
+														/>
+
+														<TextInput
+															fullWidth={false}
+															title="Fixed Prize"
+															name="fixedPrize"
+															type="number"
+															errors={errors.fixedPrize}
+															touched={touched.fixedPrize}
+														/>
+
+														<DateInput
+															title="Finish Time"
+															name="endDate"
+															values={values.endDate}
+															errors={errors.endDate}
+															touched={touched.endDate}
 														/>
 
 														<CheckboxInput

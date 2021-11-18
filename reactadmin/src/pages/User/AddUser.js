@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import TextInput from 'components/Forms/TextInput';
 import SelectInput from 'components/Forms/SelectInput';
 import axios from 'axios';
-import { API } from 'API';
+import { API, HeaderOptions } from 'API';
 import SnackbarPopup from 'components/SnackbarPopup';
 import { Redirect } from 'react-router-dom';
 
@@ -68,7 +68,7 @@ const AddUser = () => {
 	const handleSubmit = async (values) => {
 		const json = JSON.stringify(values);
 		await axios
-			.post(API.post_user.url, json)
+			.post(API.post_user.url, json, HeaderOptions)
 			.then((res) => {
 				setNotification({
 					message: 'Successfully created new user!',
