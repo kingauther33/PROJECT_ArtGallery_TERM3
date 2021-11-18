@@ -87,7 +87,6 @@ namespace ReactAPI.Controllers
 
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [Authorize]
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {

@@ -46,6 +46,7 @@ namespace ReactAPI.Controllers
         public async Task<ActionResult<Artwork>> GetArtwork(int id)
         {
             var artwork = await _context.Artworks
+                .Include(a => a.Category)
                 .Where(a => a.IsDeleted == 0 && a.Id == id)
                 .FirstOrDefaultAsync();
 

@@ -18,7 +18,8 @@ const ArtworkSaleRequestDetail = () => {
 		author: '',
 		description: '',
 		location: '',
-		currentPrice: 0,
+		startingPrize: 0,
+		status: 0,
 		year: 0,
 		checkDecline: true,
 		reason: '',
@@ -69,6 +70,7 @@ const ArtworkSaleRequestDetail = () => {
 			.then((res) => {
 				let datas = res.data;
 				datas.checkDecline = true;
+				datas.startingPrize = 0;
 				setInitialValues(datas);
 			})
 			.catch((err) => console.log(err))
@@ -113,8 +115,28 @@ const ArtworkSaleRequestDetail = () => {
 				<div className="row">
 					<div className="col-12">
 						<div className="card">
-							<div className="card-header">
+							<div className="card-header d-flex justify-content-between">
 								<h5 className="title">Artwork Sale Request Detail</h5>
+								<p
+									className={`btn active me-3 ${
+										initialValues?.status === 1
+											? 'm_bg-grey'
+											: initialValues?.status === 2
+											? 'm_bg-yellow'
+											: initialValues?.status === 3
+											? 'm_bg-green'
+											: 'm_bg-red'
+									}`}
+									style={{ cursor: 'auto' }}
+								>
+									{initialValues?.status === 1
+										? 'NEED TO BE HANDLED'
+										: initialValues?.status === 2
+										? 'IN AUNCTION'
+										: initialValues?.status === 3
+										? 'SOLD'
+										: 'DECLINED'}
+								</p>
 							</div>
 							<div className="card-body">
 								<Formik
@@ -151,63 +173,80 @@ const ArtworkSaleRequestDetail = () => {
 													value={values.location}
 												/>
 
-												<TextInput
+												<FormText
 													fullWidth={true}
-													title="Description"
-													name="description"
-													type="text"
-													errors={errors.description}
-													touched={touched.description}
+													title="Location"
+													value={values.year}
 												/>
 
-												<TextInput
-													fullWidth={false}
-													title="Starting Bid Prize"
-													name="currentPrize"
-													type="number"
-													errors={errors.currentPrize}
-													touched={touched.currentPrize}
-												/>
+												{/* <SelectInput
+															options={categoryOptions}
+															title="Category"
+															name="categoryId"
+															errors={errors.category}
+															touched={touched.category}
+														/> */}
 
-												<TextInput
-													fullWidth={false}
-													title="Year"
-													name="year"
-													type="number"
-													errors={errors.year}
-													touched={touched.year}
-												/>
-												<TextInput
-													fullWidth={false}
-													title="Year"
-													name="year"
-													type="number"
-													errors={errors.year}
-													touched={touched.year}
-												/>
-												<SelectInput
-													options={categoryOptions}
+												<FormText
+													fullWidth={true}
 													title="Category"
-													name="categoryId"
-													errors={errors.category}
-													touched={touched.category}
+													value={values.category.name}
 												/>
-												<CheckboxInput
-													title="Do you accept this artwork to be sold"
-													name="checkDecline"
-													errors={errors.checkDecline}
-													checked={values.checkDecline}
-												/>
-												{!values.checkDecline && (
-													<TextInput
-														fullWidth={false}
-														title="Reason not for sale"
-														name="reason"
-														type="text"
-														errors={errors.reason}
-														touched={touched.reason}
-													/>
+
+												{initialValues.status === 1 ? (
+													<>
+														<TextInput
+															fullWidth={true}
+															title="Description"
+															name="description"
+															type="text"
+															errors={errors.description}
+															touched={touched.description}
+														/>
+
+														<TextInput
+															fullWidth={false}
+															title="Starting Bid Prize"
+															name="startingPrize"
+															type="number"
+															errors={errors.startingPrize}
+															touched={touched.startingPrize}
+														/>
+
+														<CheckboxInput
+															title="Do you accept this artwork to be sold"
+															name="checkDecline"
+															errors={errors.checkDecline}
+															checked={values.checkDecline}
+														/>
+
+														{!values.checkDecline && (
+															<TextInput
+																fullWidth={false}
+																title="Reason not for sale"
+																name="reason"
+																type="text"
+																errors={errors.reason}
+																touched={touched.reason}
+															/>
+														)}
+													</>
+												) : (
+													<>
+														<FormText
+															fullWidth={true}
+															title="Description"
+															value={values.description}
+														/>
+
+														<FormText
+															fullWidth={true}
+															title="Starting Prize"
+															value={values.startingPrize}
+														/>
+													</>
 												)}
+
 												<button
 													type="submit"
 													className="btn btn-primary ml-3"
